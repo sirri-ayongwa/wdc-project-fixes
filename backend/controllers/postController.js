@@ -125,7 +125,6 @@ exports.updatePost = async (req, res, next) => {
             }
 
         }
-
         const postUpdate = await Post.findByIdAndUpdate(req.params.id, data, { new: true });
 
         res.status(200).json({
