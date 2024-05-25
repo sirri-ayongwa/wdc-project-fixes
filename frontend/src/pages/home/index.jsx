@@ -1,11 +1,12 @@
 import React from 'react';
 import "./style.css"
+import HeroSection from '../../components/hero';
 
 function HomePage() {
     return (
-        <div>
-            <h2>Home page</h2>
-        </div>
+        <>
+            <HeroSection/>
+        </>
     )
 }
 
