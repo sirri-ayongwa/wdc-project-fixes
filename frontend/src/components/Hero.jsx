@@ -38,8 +38,8 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainwave. Upgrade your productivity
-            with Brainwave, the open AI chat app.
+            GDMAS is equipped with state-of-the-art technology that integrates
+            satelite imagery and weather station data.
           </p>
           <Button href="/pricing" white>
             Get started
