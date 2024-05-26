@@ -1,13 +1,24 @@
-import React from 'react';
-import "./style.css"
-import HeroSection from '../../components/hero';
+import ButtonGradient from "../../assets/svg/ButtonGradient";
+import Benefits from "../../components/Benefits";
+import Collaboration from "../../components/Collaboration";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Hero from "../../components/Hero";
+import Pricing from "../../components/Pricing";
+import Roadmap from "../../components/Roadmap";
+import Services from "../../components/Services";
 
-function HomePage() {
-    return (
-        <>
-            <HeroSection/>
-        </>
-    )
-}
+const HomePage = () => {
+  return (
+    <>
+      <Hero />
+      <Benefits />
+      <Collaboration />
+      <Services />
+      {/* <Pricing />
+      <Roadmap /> */}
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;

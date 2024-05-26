@@ -7,21 +7,36 @@ import Hero from "./components/Hero";
 import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/home";
+import NotfoundPage from "./pages/notfound";
+import SignIn from "./pages/signin";
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import SignUp from "./pages/signup";
+import AdminPage from "./pages/admin";
 
 const App = () => {
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
-        <Hero />
-        <Benefits />
-        <Collaboration />
-        <Services />
-        <Pricing />
-        <Roadmap />
+
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/management/wdc/worddisastercenter/admin"
+            element={<AdminPage />}
+          />
+
+          <Route path="*" element={<NotfoundPage />} />
+        </Routes>
+        <ToastContainer />
         <Footer />
       </div>
-
       <ButtonGradient />
     </>
   );

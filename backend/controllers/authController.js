@@ -23,6 +23,7 @@ exports.signup = async (req, res, next) => {
 exports.signin = async (req, res, next) => {
     try {
         const { email, password } = req.body;
+        // console.log(req.body)
         //validation
         if (!email) {
             return next(new ErrorResponse("please add an email", 403));

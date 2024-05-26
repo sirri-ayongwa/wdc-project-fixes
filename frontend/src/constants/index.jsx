@@ -36,38 +36,57 @@ import {
   yourlogo,
 } from "../assets";
 
+import Volcano from "../assets/volcano.png";
+import Tornado from "../assets/tornado.png";
+import Wave from "../assets/wave.png";
+import Mud from "../assets/mud.png";
+import Floods from "../assets/floods.png";
+import Fire from "../assets/fire.png";
+import Earthquake from "../assets/earthquake.png";
+import desert from "../assets/desert.png";
+import Flooding from "../assets/floooding.png";
+
 export const navigation = [
   {
     id: "0",
     title: "Home",
-    url: "#features",
+    url: "/",
   },
   {
     id: "1",
     title: "Blogs",
-    url: "#pricing",
+    url: "/blogs",
   },
   {
     id: "2",
     title: "About",
-    url: "#how-to-use",
+    url: "/about",
   },
   {
     id: "3",
     title: "Services",
-    url: "#roadmap",
+    url: "/services",
   },
   {
     id: "4",
     title: "Sign up",
-    url: "#signup",
+    url: "/signup",
     onlyMobile: true,
+    notconnected: true,
   },
   {
     id: "5",
     title: "Sign in",
-    url: "#login",
+    url: "/signin",
     onlyMobile: true,
+    notconnected: true,
+  },
+  {
+    id: "6",
+    title: "Profile",
+    url: "/profile",
+    onlyMobile: true,
+    onlyConnected: true,
   },
 ];
 
@@ -77,11 +96,7 @@ export const notificationImages = [notification4, notification3, notification2];
 
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
-export const brainwaveServices = [
-  "Photo generating",
-  "Photo enhance",
-  "Seamless Integration",
-];
+export const brainwaveServices = ["Detection System", "Real-Time Alerts"];
 
 export const brainwaveServicesIcons = [
   recording03,
@@ -128,71 +143,76 @@ export const roadmap = [
 ];
 
 export const collabText =
-  "With smart automation and top-notch security, it's the perfect solution for teams looking to work smarter.";
+  "The GDMAS software platform monitors various types of disasters \
+  worldwide including earthquakes, tsunamis, hurricanes, floods, \
+  wildfires, and industrial accidents. It aggregate data from multiple \
+  sources such as satellite imagery, weather stations, seismic \
+  sensors, and social media feeds to provide real-time alerts and \
+  advanced analytics.";
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
-    text: collabText,
+    title: "Real-Time Alerts and Analytics",
+    text: "With the GDMAS system, stakeholders receive real-time alerts and access to advanced analytics.\
+     This allows them to stay informed about ongoing disasters and make data-driven decisions to mitigate risks and respond effectively.",
   },
   {
     id: "1",
-    title: "Smart Automation",
-  },
-  {
-    id: "2",
-    title: "Top-notch Security",
+    title: "Comprehensive Data Sources",
+    text: "The GDMAS platform leverages a wide range of data sources, including satellite imagery\
+    weather stations, seismic sensors, social media feeds, and other relevant sources. By aggregating and \
+    analyzing this data, it provides comprehensive insights into disaster events and their potential impact",
   },
 ];
 
 export const collabApps = [
   {
     id: "0",
-    title: "Figma",
-    icon: figma,
+    title: "Volcano",
+    icon: Volcano,
     width: 26,
     height: 36,
   },
   {
     id: "1",
-    title: "Notion",
-    icon: notion,
+    title: "Tornado",
+    icon: Tornado,
     width: 34,
     height: 36,
   },
   {
     id: "2",
-    title: "Discord",
-    icon: discord,
+    title: "Rain",
+    icon: Floods,
     width: 36,
     height: 28,
   },
   {
     id: "3",
-    title: "Slack",
-    icon: slack,
+    title: "Floods",
+    icon: Flooding,
     width: 34,
     height: 35,
   },
   {
     id: "4",
-    title: "Photoshop",
-    icon: photoshop,
+    title: "Fire",
+    icon: Fire,
     width: 34,
     height: 34,
   },
   {
     id: "5",
-    title: "Protopie",
-    icon: protopie,
+    title: "Wave",
+    icon: Wave,
     width: 34,
     height: 34,
   },
   {
     id: "6",
-    title: "Framer",
-    icon: framer,
+    title: "Landslide",
+    icon: Mud,
     width: 26,
     height: 34,
   },
@@ -244,52 +264,18 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    title: "Detection System",
+    text: "Aggregate data from multiple sources to detect and predict natural man-made disasters.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
   {
     id: "1",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-    backgroundUrl: "assets/benefits/card-2.svg",
-    iconUrl: benefitIcon2,
-    imageUrl: benefitImage2,
-    light: true,
-  },
-  {
-    id: "2",
-    title: "Connect everywhere",
-    text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
-    backgroundUrl: "assets/benefits/card-3.svg",
-    iconUrl: benefitIcon3,
-    imageUrl: benefitImage2,
-  },
-  {
-    id: "3",
-    title: "Fast responding",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    backgroundUrl: "assets/benefits/card-4.svg",
-    iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
-    light: true,
-  },
-  {
-    id: "4",
-    title: "Ask anything",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    backgroundUrl: "assets/benefits/card-5.svg",
+    title: "Real-Time Alerts",
+    text: "Notifies stakeholders of potential disasters as they are detected, enabling immediate response.",
+    backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
-  },
-  {
-    id: "5",
-    title: "Improve everyday",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-    backgroundUrl: "assets/benefits/card-6.svg",
-    iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
   },
 ];

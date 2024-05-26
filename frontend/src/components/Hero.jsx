@@ -10,6 +10,8 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import { MdTornado, MdCloud } from "react-icons/md";
+import { FaWater, FaWaveSquare } from "react-icons/fa";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -63,18 +65,30 @@ const Hero = () => {
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                    {heroIcons.map((icon, index) => (
+                    {/* {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
                         <img src={icon} width={24} height={25} alt={icon} />
                       </li>
-                    ))}
+                    ))} */}
+                    <li className="p-5">
+                      <MdTornado />
+                    </li>
+                    <li className="p-5">
+                      <MdCloud />
+                    </li>
+                    <li className="p-5">
+                      <FaWater />
+                    </li>
+                    <li className="p-5">
+                      <FaWaveSquare />
+                    </li>
                   </ul>
                 </ScrollParallax>
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code generation"
+                    title="Real-time alerts for various types of disasters"
                   />
                 </ScrollParallax>
               </div>

@@ -3,6 +3,7 @@ import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
+import Button from "./Button";
 
 const Pricing = () => {
   return (
@@ -27,10 +28,10 @@ const Pricing = () => {
           </div>
         </div>
 
-        <Heading
-          tag="Get started with Brainwave"
-          title="Pay once, use forever"
-        />
+        <Heading tag="Get started with GDMAS" title="Become a stakeholder" />
+        <div className="flex justify-center m-2">
+          <Button>Get Started</Button>
+        </div>
 
         <div className="relative">
           <PricingList />
