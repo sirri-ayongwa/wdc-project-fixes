@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { signin, signup } from "../../api/user";
-import { useNavigate } from "react-router-dom";
+import { profile, signin, signup } from "../../api/user";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -10,6 +10,19 @@ function SignUp() {
   const [pending, setPending] = useState(false);
   const [name, setName] = useState("");
   const navigate = useNavigate();
+
+  const myprofile = async () => {
+    const res = await profile();
+    if (res?.success) {
+      //   console.log(res);
+      navigate("/profile");
+    }
+  };
+
+  useEffect(() => {
+    // navigate("");
+    myprofile();
+  }, []);
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +53,9 @@ function SignUp() {
       <br />
       <br />
       <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
-        <h2 className="text-2xl font-bold text-white mb-6">Login</h2>
+        <h2 className="text-2xl text-center font-bold text-white mb-6">
+          Register
+        </h2>
 
         <form onSubmit={HandleSubmit}>
           <div className="mb-4">
@@ -123,6 +138,12 @@ function SignUp() {
             >
               {!pending ? "Sign In" : "..."}
             </button>
+          </div>
+          <div className="text-center m-2">
+            <span>Already have an account ? </span>{" "}
+            <Link className="underline text-center" to="/signin">
+              Login
+            </Link>
           </div>
         </form>
       </div>

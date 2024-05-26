@@ -1,6 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-const baseURL = import.meta.env.VITE_API_BASE_URL
-const client = axios.create({baseURL});
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+const client = axios.create({ baseURL });
+axios.defaults.withCredentials = true;
 
 export default client;

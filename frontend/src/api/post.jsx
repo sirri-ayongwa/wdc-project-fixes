@@ -1,11 +1,13 @@
 import client from "./client";
+import Cookies from "js-cookie";
 
 const api_suffix = "/api/posts/";
 
 export const create = async (body) => {
   try {
-    const { data } = await client.post(`${api_suffix}/post/create`, body, {
-      withCredentials: true,
+    // console.log(JSON.parse(localStorage.getItem("userAuth"))?.token);
+    client.defaults.withCredentials = true;
+    const { data } = await client.post(`${api_suffix}post/create`, body, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -22,9 +24,6 @@ export const showPost = async () => {
   try {
     const { data } = await client.get(`${api_suffix}posts/posts/show`, {
       withCredentials: true,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
     });
     // console.log(data);
     return data;

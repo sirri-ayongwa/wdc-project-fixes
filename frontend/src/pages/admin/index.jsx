@@ -13,7 +13,7 @@ function AdminPage() {
     if (res?.success) {
       //   console.log(res);
       if (res.user.role === "admin" || res.user.role === "dev") {
-        setUser(user);
+        setUser(res.user);
       } else {
         toast.warn("Redirected to home page ! You don't have the permission");
         navigate("/");

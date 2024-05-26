@@ -60,6 +60,7 @@ const sendTokenResponse = async (user, codeStatus, res) => {
         .cookie('token', token, options)
         .json({
             success: true,
+            token: token,
             id: user._id,
             role: user.role
         })

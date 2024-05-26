@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { signin } from "../../api/user";
-import { useNavigate } from "react-router-dom";
+import { profile, signin } from "../../api/user";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "../../components/Button";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const navigate = useNavigate();
+
+  const myprofile = async () => {
+    const res = await profile();
+    if (res?.success) {
+      // console.log(res);
+      navigate("/profile");
+    }
+  };
+
+  useEffect(() => {
+    // navigate("");
+    myprofile();
+  }, []);
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -18,9 +32,14 @@ function SignIn() {
     const res = await signin({ email, password });
     if (res?.success) {
       toast.success(`Welcome back ${email}`);
-      //   console.log(res);
-      localStorage.setItem("userAuth", JSON.stringify({ email, id: res.id }));
+      console.log(res);
+      localStorage.setItem(
+        "userAuth",
+        JSON.stringify({ email, id: res.id, token: res.token })
+      );
+
       setPending(false);
+      // console.log(res);
       navigate("/");
     } else {
       //   console.log(res.response.data);
@@ -36,7 +55,9 @@ function SignIn() {
       <br />
       <br />
       <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
-        <h2 className="text-2xl font-bold text-white mb-6">Login</h2>
+        <h2 className="text-2xl font-bold text-white mb-6 text-center">
+          Login
+        </h2>
 
         <form onSubmit={HandleSubmit}>
           <div className="mb-4">
@@ -84,6 +105,13 @@ function SignIn() {
             >
               {!pending ? "Sign In" : "..."}
             </button>
+          </div>
+
+          <div className="text-center m-2">
+            <span>Don't have an account ? </span>{" "}
+            <Link className="underline text-center" to="/signup">
+              Register
+            </Link>
           </div>
         </form>
       </div>

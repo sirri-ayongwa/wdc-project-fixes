@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import SignUp from "./pages/signup";
 import AdminPage from "./pages/admin";
+import ProfilePage from "./pages/profile";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}
           />
+          <Route path="/profile" element={<ProfilePage />} />
 
           <Route path="*" element={<NotfoundPage />} />
         </Routes>

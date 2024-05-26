@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { signup, signin, logout, userProfile, allusersadmin, getUser, getProfile } = require('../controllers/authController');
 const { isAuthenticated, isAdmin } = require('../middleware/auth');
+const multer = require('../middleware/multer');
 
 //auth routes
 // /api/users/signup
@@ -11,7 +12,7 @@ router.post('/signin', signin);
 // /api/users/logout
 router.get('/logout', logout);
 // /api/users/getusers
-router.get("/users", isAuthenticated, isAdmin, allusersadmin);
+router.get("/users", multer.single('image'), isAuthenticated, isAdmin, allusersadmin);
 // /api/users/getuser
 router.get("/single/:id", isAuthenticated, isAdmin, getUser);
 // /api/users/getprofile
