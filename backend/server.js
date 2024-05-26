@@ -49,7 +49,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
-app.use(cors({origin: ["http://localhost:5173", process.env.FRONTEND, ], credentials: true}));
+app.use(cors({origin: ["http://localhost:5173", process.env.FRONTEND, "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app", "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app", "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app"], credentials: true}));
 
 // prevent SQL injection
 app.use(mongoSanitize());

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getProfile, profile } from "../../api/user";
 import { toast } from "react-toastify";
 import BlogForm from "../../components/blogForm";
+import CreatePost from "./createpost";
 
 function AdminPage() {
   const navigate = useNavigate();
@@ -35,7 +36,8 @@ function AdminPage() {
       <br />
       <br />
 
-      <BlogForm />
+      {/* <BlogForm /> */}
+      <CreatePost />
     </div>
   );
 }
