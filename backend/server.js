@@ -111,7 +111,7 @@ io.on('connection', (socket) => {
   })
 })
 
-exports.io = io
+// exports.io = io
 
 server.listen(port, () => {
   console.log(` Server running on port ${port}`);
