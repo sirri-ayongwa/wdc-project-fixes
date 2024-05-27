@@ -91,6 +91,7 @@ allowCors()
 app.use(
   cors({
     origin: ["https://world-disaster-center.vercel.app", "http://localhost:5173"],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true
   })
 )
