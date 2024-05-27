@@ -46,26 +46,27 @@ app.use(
   })
 );
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: [
-//       process.env.FRONTEND,
-//       "http://localhost:5173",
-//       "https://world-disaster-center.vercel.app",
-//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
-//       "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
-//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
-//     ],
-//     credentials: true,
-//   })
-// );
-
 app.use(
   cors({
-    origin: 'https://world-disaster-center.vercel.app',
-    credentials: true
+    origin: [
+      process.env.FRONTEND,
+      "http://localhost:5173",
+      "https://world-disaster-center.vercel.app",
+      "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+      "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
+      "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+    ],
+    credentials: true,
   })
-)
+);
+
+// app.use(
+//   cors({
+//     origin: ["https://world-disaster-center.vercel.app", "http://localhost:5173"],
+//     credentials: true
+//   })
+// )
+
 
 // prevent SQL injection
 app.use(mongoSanitize());
@@ -78,6 +79,15 @@ app.use(
     },
   })
 );
+
+// app.use(cors({origin: "*"}));
+// app.use(function (req, res, next) {
+//   //Enabling CORS
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+//     next();
+//   });
 // prevent Cross-site Scripting XSS
 app.use(xss());
 //limit queries per 15mn
