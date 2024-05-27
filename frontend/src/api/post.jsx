@@ -22,7 +22,7 @@ export const create = async (body) => {
 
 export const showPost = async () => {
   try {
-    const { data } = await client.get(`${api_suffix}posts/posts/show`, {
+    const { data } = await client.get(`${api_suffix}posts/show`, {
       withCredentials: true,
     });
     // console.log(data);

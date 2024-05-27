@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { profile, signin } from "../../api/user";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 
 function SignIn() {
@@ -9,12 +9,15 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const myprofile = async () => {
     const res = await profile();
     if (res?.success) {
       // console.log(res);
       navigate("/profile");
+    } else {
+      localStorage.removeItem("userAuth");
     }
   };
 

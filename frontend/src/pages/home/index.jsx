@@ -7,6 +7,8 @@ import Hero from "../../components/Hero";
 import Pricing from "../../components/Pricing";
 import Roadmap from "../../components/Roadmap";
 import Services from "../../components/Services";
+import Blogs from "../../components/blogs";
+import ContactForm from "../../components/contactForm";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage = () => {
       <Benefits />
       <Collaboration />
       <Services />
+      <Blogs isHome={false} />
+      <ContactForm />
       {/* <Pricing />
       <Roadmap /> */}
     </>

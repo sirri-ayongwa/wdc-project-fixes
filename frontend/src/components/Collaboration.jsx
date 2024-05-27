@@ -26,7 +26,7 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <Button>Join Us</Button>
+          <Button href="/signin">Join Us</Button>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">

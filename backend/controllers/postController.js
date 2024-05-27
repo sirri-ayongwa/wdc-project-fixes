@@ -6,8 +6,6 @@ const main = require('../server');
 //create post
 exports.createPost = async (req, res, next) => {
     const { title, content, postedBy, image, likes, comments } = req.body;
-    console.log(req.body)
-    console.log("here")
 
     try {
         //upload image in cloudinary
@@ -44,11 +42,13 @@ exports.createPost = async (req, res, next) => {
 exports.showPost = async (req, res, next) => {
     try {
         const posts = await Post.find().sort({ createdAt: -1 }).populate('postedBy', 'name');
+        // console.log("here");
         res.status(201).json({
             success: true,
             posts
         })
     } catch (error) {
+        // console.log(error)
         next(error);
     }
 
@@ -58,7 +58,7 @@ exports.showPost = async (req, res, next) => {
 //show single post
 exports.showSinglePost = async (req, res, next) => {
     try {
-        const post = await Post.findById(req.params.id).populate('comments.postedBy', 'name');
+        const post = await Post.findById(req.params.id).populate('postedBy', 'name');
         res.status(200).json({
             success: true,
             post
@@ -227,9 +227,7 @@ exports.removeLike = async (req, res, next) => {
             success: true,
             post
         })
-
     } catch (error) {
         next(error);
     }
-
 }

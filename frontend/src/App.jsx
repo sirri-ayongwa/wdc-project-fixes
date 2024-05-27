@@ -17,6 +17,10 @@ import { ToastContainer } from "react-toastify";
 import SignUp from "./pages/signup";
 import AdminPage from "./pages/admin";
 import ProfilePage from "./pages/profile";
+import AdminDashboard from "./pages/admin/dashboard";
+import BlogsPage from "./pages/blogs";
+import SingleBlogDisplay from "./pages/blog";
+import AboutPage from "./pages/about";
 
 const App = () => {
   return (
@@ -28,6 +32,9 @@ const App = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}

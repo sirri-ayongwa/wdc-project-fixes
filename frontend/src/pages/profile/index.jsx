@@ -17,6 +17,7 @@ function ProfilePage() {
     } else {
       toast.warn("Redirected to home page ! check your network");
       navigate("/signin");
+      localStorage.removeItem("userAuth");
     }
   };
 
