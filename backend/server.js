@@ -4,52 +4,68 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-var cors = require('cors');
-var cookieParser = require('cookie-parser');
-const path = require('path');
-const mongoSanitize = require('express-mongo-sanitize');
-const helmet = require('helmet');
+var cors = require("cors");
+var cookieParser = require("cookie-parser");
+const path = require("path");
+const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
 const xss = require("xss-clean");
-const rateLimit = require('express-rate-limit')
-const hpp = require('hpp');
-
-
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
 
 //adding socket.io configuration
-const http = require('http');
+const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-const errorHandler = require('./middleware/error');
-
-
+const errorHandler = require("./middleware/error");
 
 //import routes
-const authRoutes = require('./routes/authRoutes');
-const postRoute = require('./routes/postRoute');
-
+const authRoutes = require("./routes/authRoutes");
+const postRoute = require("./routes/postRoute");
 
 //database connection
-mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-})
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
   .then(() => console.log("DB connected"))
   .catch((err) => console.log(err));
 
-
 //MIDDLEWARE
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "5mb" }));
-app.use(bodyParser.urlencoded({
-  limit: "5mb",
-  extended: true
-}));
+app.use(
+  bodyParser.urlencoded({
+    limit: "5mb",
+    extended: true,
+  })
+);
 app.use(cookieParser());
-app.use(cors({origin: ["http://localhost:5173",'https://world-disaster-center.vercel.app',  process.env.FRONTEND, "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app", "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app", "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app"], credentials: true}));
+// app.use(
+//   cors({
+//     origin: [
+//       process.env.FRONTEND,
+//       "http://localhost:5173",
+//       "https://world-disaster-center.vercel.app",
+//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+//       "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
+//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+//     ],
+//     credentials: true,
+//   })
+// );
+
+app.use(
+  cors({
+    origin: 'https://world-disaster-center.vercel.app',
+    credentials: true
+  })
+)
 
 // prevent SQL injection
 app.use(mongoSanitize());
@@ -58,10 +74,10 @@ app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      "img-src": ["'self'", "https: data:"]
-    }
+      "img-src": ["'self'", "https: data:"],
+    },
   })
-)
+);
 // prevent Cross-site Scripting XSS
 app.use(xss());
 //limit queries per 15mn
@@ -70,20 +86,20 @@ const limiter = rateLimit({
   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-})
+});
 app.use(limiter);
 //HTTP Param Pollution
 app.use(hpp());
 
 //ROUTES MIDDLEWARE
-app.use('/api/users', authRoutes);
-app.use('/api/posts', postRoute);
+app.use("/api/users", authRoutes);
+app.use("/api/posts", postRoute);
 
-__dirname = path.resolve()
+__dirname = path.resolve();
 
-app.get('/', (req, res) => {
-  res.send('API is running....')
-})
+app.get("/", (req, res) => {
+  res.send("API is running....");
+});
 
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '/frontend/build')))
@@ -97,27 +113,25 @@ app.get('/', (req, res) => {
 //   })
 // }
 
-
 //error middleware
 app.use(errorHandler);
 
 //port
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 9000;
 
 // app.listen(port, () => {
 //     console.log(` Server running on port ${port}`);
 // })
-io.on('connection', (socket) => {
+io.on("connection", (socket) => {
   //console.log('a user connected', socket.id);
-  socket.on('comment', (msg) => {
+  socket.on("comment", (msg) => {
     // console.log('new comment received', msg);
     io.emit("new-comment", msg);
-  })
-})
+  });
+});
 
 // exports.io = io
 
 server.listen(port, () => {
   console.log(` Server running on port ${port}`);
-})
-
+});

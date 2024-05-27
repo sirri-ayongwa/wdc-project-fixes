@@ -15,7 +15,7 @@ function WDCProvider({ children }) {
     const res = await showPost();
 
     if (res?.success) {
-      console.log(res);
+      // console.log(res);
       setPending(false);
 
       setPosts(res?.posts);
@@ -30,7 +30,7 @@ function WDCProvider({ children }) {
     setPending(false);
 
     if (res?.success) {
-      console.log(res);
+      // console.log(res);
 
       setUsers(res?.items);
     }

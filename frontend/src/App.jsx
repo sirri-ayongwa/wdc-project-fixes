@@ -21,6 +21,8 @@ import AdminDashboard from "./pages/admin/dashboard";
 import BlogsPage from "./pages/blogs";
 import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
+import ContactForm from "./components/contactForm";
+import ServicesPage from "./pages/services";
 
 const App = () => {
   return (
@@ -35,6 +37,8 @@ const App = () => {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}
