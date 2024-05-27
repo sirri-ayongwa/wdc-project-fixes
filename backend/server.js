@@ -79,19 +79,17 @@ const allowCors = fn => async (req, res) => {
 }
 
 // console.log(process.env.FRONTEND)
-// app.use(cors(
-//   {
-//     origin: ["http://localhost:5173", process.env.FRONTEND],
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
-//   }
-// ))
+app.use(cors(
+  {
+    origin: ["http://localhost:5173", process.env.FRONTEND],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+  }
+))
 // app.use(allowCors())
 // allowCors();
-app.use(
-  cors()
-)
-
-
+// app.use(
+//   cors()
+// );
 // prevent SQL injection
 app.use(mongoSanitize());
 // adding security headers
