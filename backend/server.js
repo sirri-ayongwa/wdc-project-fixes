@@ -46,40 +46,67 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: [
-      "https://world-disaster-center.vercel.app",
-      process.env.FRONTEND,
-      "http://localhost:5173",
-      "https://world-disaster-center.vercel.app",
-      "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
-      "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
-      "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
-    ],
-    credentials: true,
-  })
-);
-
 // app.use(
 //   cors({
-//     origin: ["https://world-disaster-center.vercel.app", "http://localhost:5173"],
-//     credentials: true
+//     origin: [
+//       "https://world-disaster-center.vercel.app",
+//       process.env.FRONTEND,
+//       "http://localhost:5173",
+//       "https://world-disaster-center.vercel.app",
+//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+//       "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
+//       "https://world-disaster-center-oltqguv3b-josephbakulikiras-projects.vercel.app",
+//     ],
+//     credentials: true,
 //   })
-// )
+// );
+
+const allowCors = fn => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  // another common pattern
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+  if (req.method === 'OPTIONS') {
+    res.status(200).end()
+    return
+  }
+  return await fn(req, res)
+}
+
+// console.log(process.env.FRONTEND)
+// app.use(cors(
+//   {
+//     origin: ["http://localhost:5173", process.env.FRONTEND],
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true
+//   }
+// ))
+allowCors()
+
+app.use(
+  cors({
+    origin: ["https://world-disaster-center.vercel.app", "http://localhost:5173"],
+    credentials: true
+  })
+)
 
 
 // prevent SQL injection
 app.use(mongoSanitize());
 // adding security headers
-app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      "img-src": ["'self'", "https: data:"],
-    },
-  })
-);
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     useDefaults: true,
+//     directives: {
+//       "img-src": ["'self'", "https: data:"],
+//     },
+//   })
+// );
 
 // app.use(cors({origin: "*"}));
 // app.use(function (req, res, next) {
@@ -90,7 +117,7 @@ app.use(
 //     next();
 //   });
 // prevent Cross-site Scripting XSS
-app.use(xss());
+// app.use(xss());
 //limit queries per 15mn
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
