@@ -49,6 +49,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
+      "https://world-disaster-center.vercel.app",
       process.env.FRONTEND,
       "http://localhost:5173",
       "https://world-disaster-center.vercel.app",
