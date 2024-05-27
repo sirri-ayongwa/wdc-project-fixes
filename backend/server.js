@@ -82,18 +82,13 @@ const allowCors = fn => async (req, res) => {
 // app.use(cors(
 //   {
 //     origin: ["http://localhost:5173", process.env.FRONTEND],
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     credentials: true
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
 //   }
 // ))
-allowCors()
-
+// app.use(allowCors())
+// allowCors();
 app.use(
-  cors({
-    origin: ["https://world-disaster-center.vercel.app", "http://localhost:5173"],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true
-  })
+  cors()
 )
 
 
@@ -109,7 +104,7 @@ app.use(mongoSanitize());
 //   })
 // );
 
-// app.use(cors({origin: "*"}));
+// app.use(cors({origin: "*", credentials: true}));
 // app.use(function (req, res, next) {
 //   //Enabling CORS
 //   res.header("Access-Control-Allow-Origin", "*");

@@ -23,6 +23,7 @@ import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
 import ContactForm from "./components/contactForm";
 import ServicesPage from "./pages/services";
+import { ContactPage } from "@mui/icons-material";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
           <Route
             path="/management/wdc/worddisastercenter/admin"
