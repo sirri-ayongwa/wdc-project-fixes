@@ -16,7 +16,12 @@ function ContactForm() {
     // return
     // console.log("working")
     emailjs
-      .sendForm("service_id", "Template_id", form.current, "public_id")
+      .sendForm(
+        "service_3cuvkls",
+        "template_zsnn9zs",
+        form.current,
+        "S6rrT9Cqk-qhVNtap"
+      )
       .then((result) => {
         setPending(false);
         toast.success("Message sent", { theme: "dark" });
@@ -45,6 +50,7 @@ function ContactForm() {
               Full Name
             </label>
             <input
+              name="from_name"
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               type="text"
             />
@@ -59,7 +65,7 @@ function ContactForm() {
             </label>
             <input
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-              name="email"
+              name="from_email"
               id="email"
               type="email"
             />
