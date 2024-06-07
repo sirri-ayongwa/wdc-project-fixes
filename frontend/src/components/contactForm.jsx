@@ -50,6 +50,8 @@ function ContactForm() {
               Full Name
             </label>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               name="from_name"
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               type="text"
@@ -64,6 +66,8 @@ function ContactForm() {
               Email Address
             </label>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               name="from_email"
               id="email"
@@ -79,6 +83,8 @@ function ContactForm() {
               Message
             </label>
             <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               rows="3"
               name="message"
