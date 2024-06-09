@@ -4,7 +4,7 @@ const api_suffix = "/api/users/";
 
 export const signup = async (body) => {
   try {
-    const { data } = await client.post(`${api_suffix}signup`, body);
+    const { data } = await client.post(`${api_suffix}signup`, body, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -15,7 +15,7 @@ export const signup = async (body) => {
 
 export const signin = async (credentials) => {
   try {
-    const { data } = await client.post(`${api_suffix}signin`, credentials);
+    const { data } = await client.post(`${api_suffix}signin`, credentials, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -26,7 +26,7 @@ export const signin = async (credentials) => {
 
 export const logout = async () => {
   try {
-    const { data } = await client.get(`${api_suffix}logout`);
+    const { data } = await client.get(`${api_suffix}logout`, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -37,7 +37,7 @@ export const logout = async () => {
 
 export const profile = async () => {
   try {
-    const { data } = await client.get(`${api_suffix}me`);
+    const { data } = await client.get(`${api_suffix}me`, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -48,7 +48,7 @@ export const profile = async () => {
 
 export const getProfile = async (id) => {
   try {
-    const { data } = await client.get(`${api_suffix}profile/${id}`);
+    const { data } = await client.get(`${api_suffix}profile/${id}`, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -59,7 +59,7 @@ export const getProfile = async (id) => {
 
 export const getUser = async (id) => {
   try {
-    const { data } = await client.get(`${api_suffix}single/${id}`);
+    const { data } = await client.get(`${api_suffix}single/${id}`, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
@@ -70,7 +70,7 @@ export const getUser = async (id) => {
 
 export const getAllUsers = async () => {
   try {
-    const { data } = await client.get(`${api_suffix}users`);
+    const { data } = await client.get(`${api_suffix}users`, {withCredentials: true});
     // console.log(data);
     return data;
   } catch (error) {
