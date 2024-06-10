@@ -87,18 +87,18 @@ const allowCors = fn => async (req, res) => {
 //   }
 // ));
 
-// const corsConfig = {
-//   origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org"],
-//   credentials: true,
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
-// };
+const corsConfig = {
+  origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org"],
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+};
 
 // app.use(cors(corsConfig));
 
-const corsConfig = {
-  origin: true,
-  credentials: true,
-};
+// const corsConfig = {
+//   origin: true,
+//   credentials: true,
+// };
 
 app.use(cors(corsConfig));
 app.options('*', cors(corsConfig))
