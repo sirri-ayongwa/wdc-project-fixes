@@ -88,7 +88,7 @@ const allowCors = fn => async (req, res) => {
 // ));
 
 const corsConfig = {
-  origin: true,
+  origin: ["http://localhost:5173", process.env.FRONTEND],
   credentials: true,
 };
 
