@@ -79,12 +79,22 @@ const allowCors = fn => async (req, res) => {
 }
 
 // console.log(process.env.FRONTEND)
-app.use(cors(
-  {
-    origin: ["http://localhost:5173", process.env.FRONTEND],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
-  }
-))
+// app.use(cors(
+//   {
+//     credentials: true,
+//     origin: ["http://localhost:5173", process.env.FRONTEND],
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+//   }
+// ));
+
+const corsConfig = {
+  origin: true,
+  credentials: true,
+};
+
+app.use(cors(corsConfig));
+app.options('*', cors(corsConfig))
+
 // app.use(allowCors())
 // allowCors();
 // app.use(
