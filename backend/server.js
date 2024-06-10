@@ -89,7 +89,8 @@ const allowCors = fn => async (req, res) => {
 
 const corsConfig = {
   origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org"],
-  credentials: true
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
 };
 
 app.use(cors(corsConfig));
