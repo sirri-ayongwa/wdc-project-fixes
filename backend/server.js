@@ -14,10 +14,10 @@ const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 
 //adding socket.io configuration
-const http = require("http");
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+// const http = require("http");
+// const server = http.createServer(app);
+// const { Server } = require("socket.io");
+// const io = new Server(server);
 
 const errorHandler = require("./middleware/error");
 
@@ -89,8 +89,7 @@ const allowCors = fn => async (req, res) => {
 
 const corsConfig = {
   origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org"],
-  credentials: true,
-  optionSuccessStatus:200
+  credentials: true
 };
 
 app.use(cors(corsConfig));
@@ -164,16 +163,16 @@ const port = process.env.PORT || 9000;
 // app.listen(port, () => {
 //     console.log(` Server running on port ${port}`);
 // })
-io.on("connection", (socket) => {
-  //console.log('a user connected', socket.id);
-  socket.on("comment", (msg) => {
-    // console.log('new comment received', msg);
-    io.emit("new-comment", msg);
-  });
-});
+// io.on("connection", (socket) => {
+//   //console.log('a user connected', socket.id);
+//   socket.on("comment", (msg) => {
+//     // console.log('new comment received', msg);
+//     io.emit("new-comment", msg);
+//   });
+// });
 
 // exports.io = io
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(` Server running on port ${port}`);
 });
