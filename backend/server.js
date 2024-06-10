@@ -88,9 +88,9 @@ const allowCors = fn => async (req, res) => {
 // ));
 
 const corsConfig = {
-  origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org"],
+  origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org", "https://world-disaster-center-backend.vercel.app"],
   credentials: true,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD'] 
 };
 
 // app.use(cors(corsConfig));
@@ -101,7 +101,7 @@ const corsConfig = {
 // };
 
 app.use(cors(corsConfig));
-app.options('*', cors(corsConfig))
+// app.options('*', cors(corsConfig))
 
 // app.use(allowCors())
 // allowCors();
