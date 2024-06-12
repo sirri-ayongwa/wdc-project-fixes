@@ -37,9 +37,9 @@ const Benefits = () => {
                     alt={item.title}
                   /> */}
 
-                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                  <Link to="/blogs" className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
                     Explore more
-                  </p>
+                  </Link>
 
                   <Arrow />
                 </div>
