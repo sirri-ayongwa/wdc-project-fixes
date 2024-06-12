@@ -25,7 +25,7 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <img className="absolute opacity-15 min-h-[400px]" width="100%"  src={GIF1} alt="world data"/>
+      <img className="absolute opacity-25 min-h-[400px]" width="100%"  src={GIF1} alt="world data"/>
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
