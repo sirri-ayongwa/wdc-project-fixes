@@ -6,7 +6,6 @@ const main = require('../server');
 //create post
 exports.createPost = async (req, res, next) => {
     const { title, content, postedBy, image, likes, comments } = req.body;
-
     try {
         //upload image in cloudinary
         const result = await cloudinary.uploader.upload(image, {

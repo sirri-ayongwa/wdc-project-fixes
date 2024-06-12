@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "https://world-disaster-center-backend.vercel.app",
   "scripts": {
     "dev": "vite",
     "ssl-dev": "HTTPS=true SSL_CRT_FILE=./certs/cert.crt SSL_KEY_FILE=./certs/cert.key vite",
