@@ -107,19 +107,6 @@ const corsConfig = {
 
 app.use(cors(corsConfig));
 
-// const corsConfig = {
-//   origin: true,
-//   credentials: true,
-// };
-
-// app.use(cors(corsConfig));
-// app.options('*', cors(corsConfig))
-
-// app.use(allowCors())
-// allowCors();
-// app.use(
-//   cors()
-// );
 // prevent SQL injection
 app.use(mongoSanitize());
 // adding security headers
