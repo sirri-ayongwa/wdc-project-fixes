@@ -99,6 +99,8 @@ const corsConfig = {
     "https://localhost:5173", 
     "https://www.worlddisastercenter.org",
     "https://worlddisastercenter.org",
+    "http://www.worlddisastercenter.org",
+
     process.env.FRONTEND, 
     "https://www.worlddisastercenter.org", 
     "https://world-disaster-center-backend.vercel.app"],
@@ -109,26 +111,7 @@ app.use(cors(corsConfig));
 
 // prevent SQL injection
 app.use(mongoSanitize());
-// adding security headers
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     useDefaults: true,
-//     directives: {
-//       "img-src": ["'self'", "https: data:"],
-//     },
-//   })
-// );
 
-// app.use(cors({origin: "*", credentials: true}));
-// app.use(function (req, res, next) {
-//   //Enabling CORS
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
-//     next();
-//   });
-// prevent Cross-site Scripting XSS
-// app.use(xss());
 //limit queries per 15mn
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
