@@ -3,11 +3,12 @@ import ContactForm from "../components/contactForm";
 
 function ContactPage() {
   return (
-    <div>
+    <section>
       <br />
       <br />
       <ContactForm />
-    </div>
+      <br/>
+    </section>
   );
 }
 

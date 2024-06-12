@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import PricingList from "./PricingList";
 import { LeftLine, RightLine } from "./design/Pricing";
 import Button from "./Button";
+import {Link} from 'react-router-dom'
 
 const Pricing = () => {
   return (
@@ -29,9 +30,9 @@ const Pricing = () => {
         </div>
 
         <Heading tag="Get started with GDMAS" title="Become a stakeholder" />
-        <div className="flex justify-center m-2">
+        {/* <div className="flex justify-center m-2">
           <Button>Get Started</Button>
-        </div>
+        </div> */}
 
         <div className="relative">
           <PricingList />
@@ -40,12 +41,12 @@ const Pricing = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <a
+          <Link
             className="text-xs font-code font-bold tracking-wider uppercase border-b"
-            href="/pricing"
+            to="/about"
           >
             See the full details
-          </a>
+          </Link>
         </div>
       </div>
     </Section>

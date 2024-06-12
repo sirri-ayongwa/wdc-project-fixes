@@ -19,6 +19,7 @@ const HomePage = () => {
       <Services />
       <Blogs isHome={false} />
       <ContactForm />
+      <Pricing />
       {/* <Pricing />
       <Roadmap /> */}
     </>
