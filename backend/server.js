@@ -61,22 +61,26 @@ app.use(cookieParser());
 //   })
 // );
 
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  )
-  if (req.method === 'OPTIONS') {
-    res.status(200).end()
-    return
-  }
-  return await fn(req, res)
-}
+// const allowCors = fn => async (req, res) => {
+//   res.setHeader('Access-Control-Allow-Credentials', true)
+//   // res.setHeader('Access-Control-Allow-Origin', '*')
+//   // another common pattern
+//   res.setHeader('Access-Control-Allow-Origin', "https://localhost:5173");
+//   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+//   res.setHeader(
+//     'Access-Control-Allow-Headers',
+//     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+//   )
+//   if (req.method === 'OPTIONS') {
+//     res.status(200).end()
+//     return
+//   }
+//   return await fn(req, res)
+// }
+
+// allowCors();
+
+// app.use(cors());
 
 // console.log(process.env.FRONTEND)
 // app.use(cors(
@@ -88,19 +92,18 @@ const allowCors = fn => async (req, res) => {
 // ));
 
 const corsConfig = {
-  origin: ["http://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org", "https://world-disaster-center-backend.vercel.app"],
+  origin: ["http://localhost:5173", "https://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org", "https://world-disaster-center-backend.vercel.app"],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD'] 
 };
 
-// app.use(cors(corsConfig));
+app.use(cors(corsConfig));
 
 // const corsConfig = {
 //   origin: true,
 //   credentials: true,
 // };
 
-app.use(cors(corsConfig));
+// app.use(cors(corsConfig));
 // app.options('*', cors(corsConfig))
 
 // app.use(allowCors())

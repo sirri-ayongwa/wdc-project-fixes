@@ -16,6 +16,8 @@ package-lock.json
 /backend/package-lock.json
 package-lock.json
 
+certs
+/frontend/certs
 # misc
 .env
 .DS_Store
