@@ -92,7 +92,16 @@ app.use(cookieParser());
 // ));
 
 const corsConfig = {
-  origin: ["http://localhost:5173", "https://localhost:5173", process.env.FRONTEND, "https://www.worlddisastercenter.org", "https://world-disaster-center-backend.vercel.app"],
+  origin: [
+    "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
+    "https://world-disaster-center-fqyc4nqnr-josephbakulikiras-projects.vercel.app",
+    "http://localhost:5173", 
+    "https://localhost:5173", 
+    "https://www.worlddisastercenter.org",
+    "https://worlddisastercenter.org",
+    process.env.FRONTEND, 
+    "https://www.worlddisastercenter.org", 
+    "https://world-disaster-center-backend.vercel.app"],
   credentials: true,
 };
 
