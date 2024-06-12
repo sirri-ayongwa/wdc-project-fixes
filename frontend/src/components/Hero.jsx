@@ -46,7 +46,7 @@ const Hero = () => {
             GDMAS is equipped with state-of-the-art technology that integrates
             satelite imagery and weather station data.
           </p>
-          <Button href="/pricing" white>
+          <Button href="/contact" white>
             Get started
           </Button>
         </div>
