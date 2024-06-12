@@ -31,7 +31,7 @@ const PricingList = () => {
           <h4 className="h4 mb-4">Become a stakeholder</h4>
 
           <p className="body-2 min-h-[4rem] mb-3 text-n-1/50">
-            let us know how we can improve !
+            join us to always be ahead .
           </p>
 
           <Link
@@ -50,7 +50,7 @@ const PricingList = () => {
           <h4 className="h4 mb-4">Fund our work</h4>
 
           <p className="body-2 min-h-[4rem] mb-3 text-n-1/50">
-            let us know how we can improve !
+            consider supporting our work !
           </p>
 
           <Link
