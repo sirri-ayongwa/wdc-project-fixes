@@ -32,7 +32,7 @@ const Hero = () => {
         src={DottedWorld}
         alt="world data"
       /> */}
-      <video className="absolute backgroundImageGif"autoPlay={true} loop={true} muted>
+      <video className="absolute backgroundImageGif object-cover"autoPlay={true} loop={true} muted>
       <source src={VID1} type="video/mp4"/>
       </video>
       <div className="container relative" ref={parallaxRef}>
