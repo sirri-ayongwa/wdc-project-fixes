@@ -12,7 +12,8 @@ import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
-import GIF1 from '../assets/gif/2.webp'
+import GIF1 from "../assets/gif/world.gif";
+import VID1 from '../assets/video/Digital World Map.mp4'
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -25,7 +26,15 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <img className="absolute opacity-25 min-h-[400px]" width="100%"  src={GIF1} alt="world data"/>
+      {/* <img
+        className="absolute backgroundImageGif"
+        width="100%"
+        src={DottedWorld}
+        alt="world data"
+      /> */}
+      <video className="absolute backgroundImageGif"autoPlay={true} loop={true} muted>
+      <source src={VID1} type="video/mp4"/>
+      </video>
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h1 mb-6">
@@ -40,7 +49,6 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
-            
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             GDMAS is equipped with state-of-the-art technology that integrates
@@ -57,8 +65,8 @@ const Hero = () => {
 
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
-                  src={DottedWorld}
-                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
+                  src={GIF1}
+                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] object-cover"
                   width={1024}
                   height={490}
                   alt="AI"
@@ -100,14 +108,14 @@ const Hero = () => {
             <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            <img
+            {/* <img
               src={GlobalWorld}
               className="w-100 opacity-15"
               // style={{ opacity: "0.3", width: "100vw" }}
               width={1440}
               height={1800}
               alt="hero"
-            />
+            /> */}
           </div>
 
           <BackgroundCircles />
@@ -115,7 +123,6 @@ const Hero = () => {
 
         {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />   */}
       </div>
-
       <BottomLine />
     </Section>
   );

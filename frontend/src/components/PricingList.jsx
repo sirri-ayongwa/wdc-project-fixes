@@ -36,7 +36,7 @@ const PricingList = () => {
 
           <Link
             className="w-full mb-6"
-            to="/contact"
+            to="/donate"
             // white={!!item.price}
           >
             More Info
@@ -55,11 +55,11 @@ const PricingList = () => {
 
           <Link
             className="w-full mb-6"
-            to="/contact"
+            to="/donate"
             // white={!!item.price}
           >
             {/* {item.price ? "Get started" : "Contact us"} */}
-            More Info
+            Donate
           </Link>
         </div>
     </div>
