@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 function DropdownItem({ title, routings, setOpenNavigation }) {
   const [toggled, setToggled] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
 
   // useEffect(() => {
   //   setToggled(false);
@@ -71,7 +71,7 @@ function DropdownItem({ title, routings, setOpenNavigation }) {
                   onClick={() => setOpenNavigation(false)}
                   tabIndex="-1"
                   id={`menu-item-${index}`}
-                  key="item"
+                  key={item}
                   to={routings[item]}
                 >
                   {item}
