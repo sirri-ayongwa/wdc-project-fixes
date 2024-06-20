@@ -13,7 +13,7 @@ import CompanyLogos from "./CompanyLogos";
 import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
 import GIF1 from "../assets/gif/world.gif";
-import VID1 from '../assets/video/Digital World Map.mp4'
+import VID1 from "../assets/video/Digital World Map.mp4";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -32,8 +32,13 @@ const Hero = () => {
         src={DottedWorld}
         alt="world data"
       /> */}
-      <video className="absolute backgroundImageGif object-cover"autoPlay={true} loop={true} muted>
-      <source src={VID1} type="video/mp4"/>
+      <video
+        className="absolute backgroundImageGif object-cover"
+        autoPlay={true}
+        loop={true}
+        muted
+      >
+        <source src={VID1} type="video/mp4" />
       </video>
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
@@ -54,7 +59,7 @@ const Hero = () => {
             GDMAS is equipped with state-of-the-art technology that integrates
             satelite imagery and weather station data.
           </p>
-          <Button href="/contact" white>
+          <Button href="/login" white>
             Get started
           </Button>
         </div>
