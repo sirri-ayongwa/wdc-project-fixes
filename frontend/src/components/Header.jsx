@@ -71,13 +71,7 @@ const Header = () => {
                 "our values": "/about/values",
               }}
             />
-            <DropdownItem
-              title="Our Work"
-              routings={{
-                "Our services": "/services",
-                "Our Projects": "/projects",
-              }}
-            />
+
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/blogs"
@@ -92,6 +86,14 @@ const Header = () => {
             >
               Contact Us
             </Link>
+            <DropdownItem
+              setOpenNavigation={setOpenNavigation}
+              title="Our Work"
+              routings={{
+                "Our services": "/services",
+                "Our Projects": "/projects",
+              }}
+            />
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/donate"
