@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-function DropdownItem({ title, routings }) {
+function DropdownItem({ title, routings, setOpenNavigation }) {
   const [toggled, setToggled] = useState(false);
   const location = useLocation();
 
@@ -15,7 +15,9 @@ function DropdownItem({ title, routings }) {
         <div>
           <button
             onMouseEnter={() => setToggled(true)}
-            onClick={() => setToggled(!toggled)}
+            onClick={() => {
+              setToggled(!toggled);
+            }}
             type="button"
             className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2 font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             id="menu-button"
@@ -66,6 +68,7 @@ function DropdownItem({ title, routings }) {
                 <Link
                   className="block px-4 py-2 text-sm text-gray-700"
                   role="menuitem"
+                  onClick={() => setOpenNavigation(false)}
                   tabIndex="-1"
                   id={`menu-item-${index}`}
                   key="item"

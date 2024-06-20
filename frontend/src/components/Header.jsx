@@ -55,12 +55,14 @@ const Header = () => {
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             <Link
+              onClick={() => setOpenNavigation(false)}
               to="/"
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Home
             </Link>
             <DropdownItem
+              setOpenNavigation={setOpenNavigation}
               title="About Us"
               routings={{
                 "Who we are": "/about",
@@ -77,18 +79,21 @@ const Header = () => {
               }}
             />
             <Link
+              onClick={() => setOpenNavigation(false)}
               to="/blogs"
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Blogs
             </Link>
             <Link
+              onClick={() => setOpenNavigation(false)}
               to="/contact"
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Contact Us
             </Link>
             <Link
+              onClick={() => setOpenNavigation(false)}
               to="/donate"
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold ring-1 rounded-2xl ring-n-6  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
             >
