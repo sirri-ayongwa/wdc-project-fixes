@@ -5,9 +5,9 @@ function DropdownItem({ title, routings }) {
   const [toggled, setToggled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    setToggled(false);
-  }, [location]);
+  // useEffect(() => {
+  //   setToggled(false);
+  // }, [location]);
 
   return (
     <div className="">
