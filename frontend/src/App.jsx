@@ -25,13 +25,12 @@ import WhatWeOfferPage from "./pages/offer";
 import EagleProject from "./pages/project/eagle";
 import { useEffect } from "react";
 
-
 const App = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [location]);
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
@@ -50,21 +49,17 @@ const App = () => {
           <Route path="/about/values" element={<OurValuePage />} />
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/donate" element={<DonorsPage/>} />
-          <Route path="/projects" element={<ProjectsPage/>}/>
-          <Route path="/projects/eagle" element={<EagleProject/>}/>
+          <Route path="/donate" element={<DonorsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/eagle" element={<EagleProject />} />
 
-          <Route 
-            path="/contact"
-            element={<ContactPage />}
-          />
+          <Route path="/contact" element={<ContactPage />} />
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}
           />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotfoundPage />} />
-
         </Routes>
         <ToastContainer />
         <Footer />

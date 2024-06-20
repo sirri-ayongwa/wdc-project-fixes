@@ -33,9 +33,9 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
-  // useEffect(() => {
-  //   setOpenNavigation(false);
-  // }, [pathname]);
+  useEffect(() => {
+    setOpenNavigation(false);
+  }, [pathname]);
 
   return (
     <div

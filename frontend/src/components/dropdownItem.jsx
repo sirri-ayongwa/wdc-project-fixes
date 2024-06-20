@@ -3,11 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 
 function DropdownItem({ title, routings, setOpenNavigation }) {
   const [toggled, setToggled] = useState(false);
-  // const location = useLocation();
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   setToggled(false);
-  // }, [location]);
+  useEffect(() => {
+    setToggled(false);
+  }, [location]);
 
   return (
     <div className="">
