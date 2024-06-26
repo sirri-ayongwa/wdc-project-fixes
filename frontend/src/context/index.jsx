@@ -11,28 +11,38 @@ function WDCProvider({ children }) {
   const [token, setToken] = useState("");
 
   const FetchBlogs = async () => {
-    setPending(true);
-    const res = await showPost();
+    try {
+      setPending(true);
+      const res = await showPost();
 
-    if (res?.success) {
-      // console.log(res);
-      setPending(false);
+      if (res?.success) {
+        // console.log(res);
+        setPending(false);
 
-      setPosts(res?.posts);
-    } else {
+        setPosts(res?.posts);
+      } else {
+        setPending(false);
+      }
+    } catch (err) {
+      console.log(err);
       setPending(false);
     }
   };
 
   const FetchUsers = async () => {
-    setPending(true);
-    const res = await getAllUsers();
-    setPending(false);
+    try {
+      setPending(true);
+      const res = await getAllUsers();
+      setPending(false);
 
-    if (res?.success) {
-      // console.log(res);
+      if (res?.success) {
+        // console.log(res);
 
-      setUsers(res?.items);
+        setUsers(res?.items);
+      }
+    } catch (err) {
+      console.log(err);
+      setPending(false);
     }
   };
 

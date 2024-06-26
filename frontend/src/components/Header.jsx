@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import WDC from "../assets/images/wdc.png";
+import WDC from "../assets/images/wdcimage.png";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
@@ -19,17 +19,17 @@ const Header = () => {
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
-      enablePageScroll();
+      // enablePageScroll();
     } else {
       setOpenNavigation(true);
-      disablePageScroll();
+      // disablePageScroll();
     }
   };
 
   const handleClick = () => {
     if (!openNavigation) return;
 
-    enablePageScroll();
+    // enablePageScroll();
     setOpenNavigation(false);
   };
 
@@ -45,15 +45,21 @@ const Header = () => {
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <Link className="block w-[12rem] xl:mr-8" to="/">
-          <img src={WDC} width={110} height={50} alt="Brainwave" />
+          <div className="flex whitespace-nowrap">
+            <img src={WDC} width={90} height={30} alt="Brainwave" />
+            <div className="flex flex-col items-center text-center align-center justify-center">
+              <span className="logo-style-1">WORLD DISASTER</span>
+              <span className="logo-style-2">CENTER</span>
+            </div>
+          </div>
         </Link>
 
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent opacity-90`}
+          } fixed top-[5rem]  left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent opacity-90`}
         >
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+          <div className="relative gap-x-3 z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/"
@@ -68,7 +74,8 @@ const Header = () => {
                 "Who we are": "/about",
                 "Our vision": "/about/vision",
                 "Our mission": "/about/mission",
-                "our values": "/about/values",
+                "Our values": "/about/values",
+                "Our team": "/about/team",
               }}
             />
 
@@ -78,6 +85,13 @@ const Header = () => {
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Blogs
+            </Link>
+            <Link
+              onClick={() => setOpenNavigation(false)}
+              to="/partners"
+              className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
+            >
+              Partners
             </Link>
             <Link
               onClick={() => setOpenNavigation(false)}
@@ -92,8 +106,10 @@ const Header = () => {
               routings={{
                 "Our services": "/services",
                 "Our Projects": "/projects",
+                Events: "/events",
               }}
             />
+
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/donate"

@@ -624,7 +624,7 @@ const WhoWeAre = () => {
                   Intelligence (HUMINT). By amalgamating these domains, we
                   provide unparalleled insights and capabilities, empowering
                   humanitarian and development organizations to make informed,
-                  strategic decisions that protect and uplift the world’s most
+                  strategic decisions that protect and uplift the world's most
                   vulnerable populations.
                 </p>
                 <p className="mb-8 text-base text-body-color dark:text-dark-6">
@@ -639,21 +639,35 @@ const WhoWeAre = () => {
                   facilitating targeted, efficient, and effective assistance
                   during times of critical need.
                 </p>
-                
               </div>
             </div>
           </div>
         </div>
         <div>
-            <Heading 
-            title="World Disaster Center"
-            />
-            <div className="container"> 
-            <span className="text-gray-500">
-            At our core, WDC stands as a beacon of innovation in natural disaster response and anthropogenic crisis mitigation, including the pervasive impacts of climate change. We are committed to advancing the integration of technology and human-driven data interpretation, fostering an environment where strategic and evidence-based decision-making prevails.
-Our foundational philosophy is rooted in the belief that every disaster presents an opportunity — an opportunity to not only react but to proactively prepare and build resilience against future threats. By harnessing the collective power of AI and HUMintegrated insights, WDC crafts scalable, adaptable solutions that anticipate disaster scenarios, enhancing global readiness and mitigative capacities.
-Through vigorous advocacy, WDC champions the implementation of sustainable disaster risk reduction policies that prioritize equity and effectiveness. We advocate for frameworks that recognize and address the complexities of global and local dynamics in disaster management. Our work ensures that resilience-building and preparedness are accessible to all, particularly the underserved and vulnerable communities that are most affected by disasters. </span>
-            </div>
+          <Heading title="World Disaster Center" />
+          <div className="container">
+            <span className="text-gray-300">
+              At our core, WDC stands as a beacon of innovation in natural
+              disaster response and anthropogenic crisis mitigation, including
+              the pervasive impacts of climate change. We are committed to
+              advancing the integration of technology and human-driven data
+              interpretation, fostering an environment where strategic and
+              evidence-based decision-making prevails. Our foundational
+              philosophy is rooted in the belief that every disaster presents an
+              opportunity — an opportunity to not only react but to proactively
+              prepare and build resilience against future threats. By harnessing
+              the collective power of AI and HUMintegrated insights, WDC crafts
+              scalable, adaptable solutions that anticipate disaster scenarios,
+              enhancing global readiness and mitigative capacities. Through
+              vigorous advocacy, WDC champions the implementation of sustainable
+              disaster risk reduction policies that prioritize equity and
+              effectiveness. We advocate for frameworks that recognize and
+              address the complexities of global and local dynamics in disaster
+              management. Our work ensures that resilience-building and
+              preparedness are accessible to all, particularly the underserved
+              and vulnerable communities that are most affected by disasters.{" "}
+            </span>
+          </div>
         </div>
       </section>
     </>

@@ -24,13 +24,16 @@ import ProjectsPage from "./pages/project";
 import WhatWeOfferPage from "./pages/offer";
 import EagleProject from "./pages/project/eagle";
 import { useEffect } from "react";
+import TeamPage from "./components/team";
+import EventsPage from "./components/events";
+import PartnersPage from "./components/partner";
 
 const App = () => {
   const location = useLocation();
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [location]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
@@ -48,12 +51,17 @@ const App = () => {
           <Route path="/about/vision" element={<VisionPage />} />
           <Route path="/about/values" element={<OurValuePage />} />
           <Route path="/about/mission" element={<MissionPage />} />
+          <Route path="/about/team" element={<TeamPage />} />
+
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/donate" element={<DonorsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/eagle" element={<EagleProject />} />
+          <Route path="/events" element={<EventsPage />} />
 
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
+
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}

@@ -33,7 +33,7 @@ import {
   sliders04,
   telegram,
   twitter,
-  yourlogo,
+  wdcPartnerLogo,
 } from "../assets";
 
 import Volcano from "../assets/volcano.png";
@@ -99,7 +99,13 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
+export const companyLogos = [
+  wdcPartnerLogo,
+  wdcPartnerLogo,
+  wdcPartnerLogo,
+  wdcPartnerLogo,
+  wdcPartnerLogo,
+];
 
 export const brainwaveServices = ["Detection System", "Real-Time Alerts"];
 
