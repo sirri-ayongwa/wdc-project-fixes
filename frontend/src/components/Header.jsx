@@ -113,9 +113,40 @@ const Header = () => {
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/donate"
-              className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold ring-1 rounded-2xl ring-n-6  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
+              className="inline-flex  whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold ring-1 rounded-2xl ring-n-6  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
             >
               Donate
+            </Link>
+
+            <Link
+              onClick={() => setOpenNavigation(false)}
+              to="/signin"
+              className="inline-flex lg:hidden whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold rounded-2xl  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
+            >
+              {auth?.id ? "" : "signin"}
+            </Link>
+
+            <Link
+              onClick={() => setOpenNavigation(false)}
+              to="/signup"
+              className="inline-flex lg:hidden whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold  rounded-2xl  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
+            >
+              {auth?.id ? "" : "signup"}
+            </Link>
+
+            <Link
+              onClick={() => setOpenNavigation(false)}
+              to="/profile"
+              className="inline-flex lg:hidden whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold  rounded-2xl  hover:bg-n-6 text-gray-400 hover:text-white shadow-sm  hover:bg-n-6"
+            >
+              {auth?.id ? (
+                <span className=" capitalize flex items-center">
+                  <FaUser className="m-1" />
+                  {auth?.email.split("@")[0]}
+                </span>
+              ) : (
+                ""
+              )}
             </Link>
           </div>
 
