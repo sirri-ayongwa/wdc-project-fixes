@@ -37,6 +37,7 @@ exports.createPost = async (req, res, next) => {
 }
 
 
+
 //show posts
 exports.showPost = async (req, res, next) => {
     try {
@@ -158,6 +159,8 @@ exports.addComment = async (req, res, next) => {
     }
 
 }
+
+// complete Profile
 
 //remove comment
 // exports.removeComment = async (req, res, next) => {

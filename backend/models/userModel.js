@@ -4,14 +4,12 @@ const jwt = require('jsonwebtoken');
 
 
 const userSchema = new mongoose.Schema({
-
     name: {
         type: String,
         trim: true,
         required: [true, 'first name is required'],
         maxlength: 32,
     },
-
     email: {
         type: String,
         trim: true,
@@ -28,11 +26,65 @@ const userSchema = new mongoose.Schema({
         required: [true, 'password is required'],
         minlength: [6, 'password must have at least (6) caracters'],
     },
-
     role: {
         type: String,
         default: 'user'
-    }
+    },
+    profileCompleted: {
+        type: Boolean,
+        default: false
+    },
+    dob: {
+        type: Date,  
+    },
+    education: [
+        {
+            institution: {type: String},
+            degree: {type: String},
+            startYear: {type: Date},
+            endYear: {type: Date}
+        }
+    ],
+    profession: {
+		type: String
+	},
+	country: {
+		type: String,
+	},
+	state: {
+		type: String,
+	},
+	town: {
+		type: String
+	},
+	address: {
+		type: String
+	},
+    skills: {
+        type: [String],
+        default: []
+    },
+    imgUrl: {
+        type: String,
+        default: ""
+    },
+    contact: {
+        type: String,
+        default: 0
+    },
+    bio: {
+        type: String,
+        default: ""
+    },
+    rating: {
+        type: Number,
+        default: 0
+    },
+    jobsApplied: [
+        {
+            _id: {type: mongoose.Schema.Types.ObjectId},
+        }
+    ]
 }, { timestamps: true })
 
 

@@ -100,7 +100,7 @@ const corsConfig = {
     "https://www.worlddisastercenter.org",
     "https://worlddisastercenter.org",
     "http://www.worlddisastercenter.org",
-
+    "http://localhost:5173/profile/complete",
     process.env.FRONTEND, 
     "https://www.worlddisastercenter.org", 
     "https://world-disaster-center-backend.vercel.app"],

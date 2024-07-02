@@ -23,7 +23,10 @@ export const create = async (body) => {
 
 export const showPost = async () => {
   try {
-    const { data } = await client.get(`${api_suffix}posts/show`, {withCredentials: true, method: "GET"});
+    const { data } = await client.get(`${api_suffix}posts/show`, {
+      withCredentials: true,
+      method: "GET",
+    });
     // console.log(data);
     return data;
   } catch (error) {
@@ -34,7 +37,10 @@ export const showPost = async () => {
 
 export const showSinglePost = async (id) => {
   try {
-    const { data } = await client.get(`${api_suffix}post/${id}` , {withCredentials: true, method: "GET"});
+    const { data } = await client.get(`${api_suffix}post/${id}`, {
+      withCredentials: true,
+      method: "GET",
+    });
     // console.log(data);
     return data;
   } catch (error) {
@@ -45,7 +51,10 @@ export const showSinglePost = async (id) => {
 
 export const deletePost = async (id) => {
   try {
-    const { data } = await client.delete(`${api_suffix}delete/post/${id}`, {withCredentials: true, method: "DELETE"});
+    const { data } = await client.delete(`${api_suffix}delete/post/${id}`, {
+      withCredentials: true,
+      method: "DELETE",
+    });
     // console.log(data);
     return data;
   } catch (error) {
@@ -58,8 +67,8 @@ export const updatePost = async (id, title, content, image) => {
   try {
     const { data } = await client.put(
       `${api_suffix}update/post/${id}`,
-      { title, content, image }
-      , {withCredentials: true}
+      { title, content, image },
+      { withCredentials: true }
     );
     // console.log(data);
     return data;
@@ -73,7 +82,8 @@ export const addComment = async (id, comment) => {
   try {
     const { data } = await client.put(
       `${api_suffix}comment/post/${id}`,
-      { comment }, {withCredentials: true, method: "PUT"}
+      { comment },
+      { withCredentials: true, method: "PUT" }
     );
     // console.log(data);
     return data;
@@ -87,7 +97,8 @@ export const removeComment = async (id, comment) => {
   try {
     const { data } = await client.put(
       `${api_suffix}comment/post/${id}`,
-      { comment }, {withCredentials: true, method: "PUT"}
+      { comment },
+      { withCredentials: true, method: "PUT" }
     );
     // console.log(data);
     return data;
@@ -101,7 +112,8 @@ export const addLike = async (id) => {
   try {
     const { data } = await client.put(
       `${api_suffix}addlike/post/${id}`,
-      {}, {withCredentials: true, method: "PUT"}
+      {},
+      { withCredentials: true, method: "PUT" }
     );
     // console.log(data);
     return data;
@@ -115,7 +127,8 @@ export const removeLike = async (id) => {
   try {
     const { data } = await client.put(
       `${api_suffix}removelike/post/${id}`,
-      {}, {withCredentials: true, method: "PUT"}
+      {},
+      { withCredentials: true, method: "PUT" }
     );
     // console.log(data);
     return data;

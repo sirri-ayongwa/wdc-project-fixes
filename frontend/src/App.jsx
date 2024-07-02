@@ -27,6 +27,8 @@ import { useEffect } from "react";
 import TeamPage from "./components/team";
 import EventsPage from "./components/events";
 import PartnersPage from "./components/partner";
+import ProfileForm from "./pages/profileForm";
+import UpdateProfile from "./pages/updateProfile";
 
 const App = () => {
   const location = useLocation();
@@ -43,6 +45,9 @@ const App = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile/complete/:id" element={<ProfileForm />} />
+          <Route path="/profile/update/:id" element={<UpdateProfile />} />
+
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />

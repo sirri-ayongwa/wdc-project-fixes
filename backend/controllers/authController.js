@@ -1,6 +1,7 @@
 
 const User = require('../models/userModel');
 const ErrorResponse = require('../utils/errorResponse');
+const cloudinary = require('../utils/cloudinary');
 
 exports.signup = async (req, res, next) => {
     const { email } = req.body;
@@ -48,6 +49,101 @@ exports.signin = async (req, res, next) => {
         next(error);
     }
 }
+
+
+//complete profile
+exports.completeProfile = async (req, res, next) => {
+    const { education, skills, name, dob, image, contact, bio, country, state, town, address, profession  } = req.body;
+    const {id} = req.params;
+    // console.log(id);
+    // console.log(req.body)
+    try {
+        const user = await User.findById(id);
+        if(!user){
+            return res.status(404).json({success: false, message: "Error, User not found"})
+        }
+        //upload image in cloudinary
+        const result = await cloudinary.uploader.upload(image, {
+            folder: "profiles",
+            width: 1200,
+            crop: "scale"
+        });
+        user.name = name;
+        user.education = education;
+        user.skills = skills;
+        user.imgUrl = result.secure_url;
+        user.profession = profession;
+        user.country = country;
+        user.state = state;
+        user.town = town;
+        user.address = address;
+        user.contact = contact;
+        user.bio = bio;
+        user.profileCompleted = true;
+        user.dob = dob;
+
+        await user.save();
+        
+        res.status(201).json({
+            success: true,
+            user
+        })
+
+
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+
+}
+
+//update profile
+exports.updateProfile = async (req, res, next) => {
+    const { name, education, skills, image, dob, contact, bio, country, state, town, address, profession  } = req.body;
+    const {id} = req.params;
+    // console.log(file)
+    try {
+        const user = await User.findById(id);
+        if(!user){
+            return res.status(404).json({success: false, message: "Error, User not found"})
+        }
+        //upload image in cloudinary
+        const result = await cloudinary.uploader.upload(image, {
+            folder: "profiles",
+            width: 1200,
+            crop: "scale"
+        });
+
+        user.name = name;
+        user.education = education;
+        user.skills = skills;
+        user.imgUrl = result.secure_url;
+        user.profession = profession;
+        user.country = country;
+        user.state = state;
+        user.town = town;
+        user.address = address;
+        user.contact = contact;
+        user.bio = bio;
+        user.profileCompleted = true;
+        user.dob = dob;
+
+
+        await user.save();
+        
+        res.status(201).json({
+            success: true,
+            user
+        })
+
+
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+
+}
+
 
 const sendTokenResponse = async (user, codeStatus, res) => {
     const token = await user.getJwtToken();
