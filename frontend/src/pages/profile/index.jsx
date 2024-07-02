@@ -9,14 +9,15 @@ function ProfilePage() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [edit, setEdit] = useState(false);
+  const auth = JSON.parse(localStorage.getItem("userAuth"));
 
   const myprofile = async () => {
-    const res = await profile();
+    const res = await profile(auth.id);
     if (res?.success) {
       //   console.log(res);
       setUser(res.user);
     } else {
-      toast.warn("Redirected to home page ! check your network");
+      toast.warn("Redirected to home page ! check your network - go");
       navigate("/signin");
       localStorage.removeItem("userAuth");
     }

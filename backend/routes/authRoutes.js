@@ -21,6 +21,6 @@ router.get("/single/:id", isAuthenticated, isAdmin, getUser);
 // /api/users/getprofile
 router.get("/profile/:id", getProfile);
 // /api/users/me
-router.get('/me', isAuthenticated, userProfile);
+router.get('/me/:id', userProfile);
 
 module.exports = router;

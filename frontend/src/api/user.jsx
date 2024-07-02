@@ -90,9 +90,9 @@ export const logout = async () => {
   }
 };
 
-export const profile = async () => {
+export const profile = async (id) => {
   try {
-    const { data } = await client.get(`${api_suffix}me`, {
+    const { data } = await client.get(`${api_suffix}me/${id}`, {
       withCredentials: true,
       method: "GET",
     });
