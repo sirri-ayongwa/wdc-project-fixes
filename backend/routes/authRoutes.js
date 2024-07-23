@@ -17,9 +17,10 @@ router.put("/update/profile/:id", updateProfile)
 // /api/users/logout
 router.get('/logout', logout);
 // /api/users/getusers
-router.get("/users", isAuthenticated, allusersadmin);
+// TODO: SECURITY -> ADD IS isAdmin middleware for more security
+router.get("/users",allusersadmin);
 // /api/users/getuser
-router.get("/single/:id", isAuthenticated, isAdmin, getUser);
+router.get("/single/:id", getUser);
 // /api/users/getprofile
 router.get("/profile/:id", getProfile);
 // /api/users/me
