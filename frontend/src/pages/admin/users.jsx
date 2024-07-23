@@ -173,7 +173,10 @@ function AdminUsers() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box
+          sx={style}
+          style={{ maxHeight: "95vh", overflow: "auto", overflowY: "auto" }}
+        >
           {(user?.type === "individual" ||
             user?.type === undefined ||
             user?.type === "normal") && (
