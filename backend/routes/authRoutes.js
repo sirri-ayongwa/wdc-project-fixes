@@ -17,7 +17,7 @@ router.put("/update/profile/:id", updateProfile)
 // /api/users/logout
 router.get('/logout', logout);
 // /api/users/getusers
-router.get("/users", isAuthenticated, isAdmin, allusersadmin);
+router.get("/users", isAuthenticated, allusersadmin);
 // /api/users/getuser
 router.get("/single/:id", isAuthenticated, isAdmin, getUser);
 // /api/users/getprofile
