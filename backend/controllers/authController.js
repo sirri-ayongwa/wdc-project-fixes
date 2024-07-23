@@ -53,11 +53,12 @@ exports.signin = async (req, res, next) => {
 
 //complete profile
 exports.completeProfile = async (req, res, next) => {
-    const { education, skills, name, dob, image, contact, bio, country, state, town, address, profession  } = req.body;
-    const {id} = req.params;
+    
     // console.log(id);
     // console.log(req.body)
     try {
+        const { education, skills, type, name, dob, image, contact, bio, country, state, town, address, profession  } = req.body;
+        const {id} = req.params;
         const user = await User.findById(id);
         if(!user){
             return res.status(404).json({success: false, message: "Error, User not found"})
@@ -81,6 +82,7 @@ exports.completeProfile = async (req, res, next) => {
         user.bio = bio;
         user.profileCompleted = true;
         user.dob = dob;
+        user.type = type;
 
         await user.save();
         
@@ -96,6 +98,56 @@ exports.completeProfile = async (req, res, next) => {
     }
 
 }
+
+//complete profile
+exports.completeCompanyProfile = async (req, res, next) => {
+    // console.log("here")
+    // console.log(id);
+    // console.log(req.body)
+    try {
+        const { description, type, domain, name, startDate, image, contact, website, country, state, town, address, mission  } = req.body;
+    
+        const {id} = req.params;
+        const user = await User.findById(id);
+        if(!user){
+            return res.status(404).json({success: false, message: "Error, User not found"})
+        }
+        //upload image in cloudinary
+        const result = await cloudinary.uploader.upload(image, {
+            folder: "profiles",
+            width: 1200,
+            crop: "scale"
+        });
+        user.name = name;
+        user.description = description;
+        user.domain = domain;
+        user.imgUrl = result.secure_url;
+        user.website = website;
+        user.country = country;
+        user.state = state;
+        user.town = town;
+        user.address = address;
+        user.contact = contact;
+        user.mission = mission;
+        user.profileCompleted = true;
+        user.startDate = startDate;
+        user.type = type
+        await user.save();
+        
+        res.status(201).json({
+            success: true,
+            user
+        })
+
+
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+
+}
+
+
 
 //update profile
 exports.updateProfile = async (req, res, next) => {
@@ -225,9 +277,17 @@ exports.getProfile = async (req, res, next) => {
 
 //user profile
 exports.userProfile = async (req, res, next) => {
-    const user = await User.findById(req.params.id).select('-password');
-    res.status(200).json({
-        success: true,
-        user
-    })
+    try{
+        const user = await User.findById(req.params.id).select('-password');
+        res.status(200).json({
+            success: true,
+            user
+        })
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: error.message || "Error,"
+        })
+    }
 }

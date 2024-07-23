@@ -41,9 +41,10 @@ const CreatePost = () => {
 
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
-      createNewPost(values);
+      createNewPost(values)
+        .then((e) => actions.resetForm())
+        .catch((err) => toast.error(err || "Erreur"));
       //alert(JSON.stringify(values, null, 2));
-      actions.resetForm();
     },
   });
 

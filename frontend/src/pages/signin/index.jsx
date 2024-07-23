@@ -38,7 +38,7 @@ function SignIn() {
       console.log(res);
       localStorage.setItem(
         "userAuth",
-        JSON.stringify({ email, id: res.id, token: res.token })
+        JSON.stringify({ email, id: res.id, token: res.token, role: res?.role })
       );
 
       setPending(false);

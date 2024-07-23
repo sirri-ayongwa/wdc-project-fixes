@@ -60,10 +60,7 @@ const userSchema = new mongoose.Schema({
 	address: {
 		type: String
 	},
-    skills: {
-        type: [String],
-        default: []
-    },
+    skills: [],
     imgUrl: {
         type: String,
         default: ""
@@ -84,7 +81,28 @@ const userSchema = new mongoose.Schema({
         {
             _id: {type: mongoose.Schema.Types.ObjectId},
         }
-    ]
+    ],
+    type: {
+        type: String,
+        default: "normal" // individual, enterprise
+    },
+    description: {
+        type: String,
+        required: false,
+    },
+    startDate: {
+        type: Date,  
+    },
+    mission: {
+        type: String,
+        required: false  
+    },
+    website: {
+        type: String,
+        required: false  
+    },
+    domain: [],
+
 }, { timestamps: true })
 
 

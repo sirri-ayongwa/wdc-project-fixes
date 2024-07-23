@@ -29,6 +29,8 @@ import EventsPage from "./components/events";
 import PartnersPage from "./components/partner";
 import ProfileForm from "./pages/profileForm";
 import UpdateProfile from "./pages/updateProfile";
+import TypePage from "./pages/typePage";
+import ProfileEnterprisePage from "./pages/ProfileEnterprisePage";
 
 const App = () => {
   const location = useLocation();
@@ -45,7 +47,19 @@ const App = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/profile/complete/:id" element={<ProfileForm />} />
+          <Route
+            path="/profile/individual/complete/:id"
+            element={<ProfileForm />}
+          />
+          <Route
+            path="/profile/enterprise/complete/:id"
+            element={<ProfileEnterprisePage />}
+          />
+          <Route
+            path="/profile/npo/complete/:id"
+            element={<ProfileEnterprisePage />}
+          />
+          <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
 
           <Route path="/blogs" element={<BlogsPage />} />
@@ -57,16 +71,13 @@ const App = () => {
           <Route path="/about/values" element={<OurValuePage />} />
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/about/team" element={<TeamPage />} />
-
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/donate" element={<DonorsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/eagle" element={<EagleProject />} />
           <Route path="/events" element={<EventsPage />} />
-
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/partners" element={<PartnersPage />} />
-
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}

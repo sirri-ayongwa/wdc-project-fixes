@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { signup, signin, logout, userProfile, allusersadmin, getUser, getProfile, completeProfile, updateProfile } = require('../controllers/authController');
+const { signup, signin, logout, userProfile, allusersadmin, getUser, getProfile, completeProfile, updateProfile, completeCompanyProfile } = require('../controllers/authController');
 const { isAuthenticated, isAdmin } = require('../middleware/auth');
 
 //auth routes
@@ -10,6 +10,8 @@ router.post('/signup', signup);
 router.post('/signin', signin);
 // /api/users/complete-profile
 router.post("/complete/profile/:id", completeProfile)
+router.post("/complete/company/:id", completeCompanyProfile)
+
 // /api/users/update-profile
 router.put("/update/profile/:id", updateProfile)
 // /api/users/logout

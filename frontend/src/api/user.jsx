@@ -41,6 +41,31 @@ export const completeProfile = async (body, id) => {
   // axios.post(`${import.meta.env.VITE_API_BASE_URL}${api_suffix}complete/profile/${id}`, body, {headers: {"Content-Type": "multipart/form-data"}}, data: formData).then(response => )
 };
 
+export const completeCompanyProfile = async (body, id) => {
+  try {
+    console.log(body);
+    const { data } = await client.post(
+      `${api_suffix}complete/company/${id}`,
+      body,
+      {
+        withCredentials: true,
+        method: "POST",
+        // headers: {
+        //   "Content-Type": "multipart/form-data",
+        // },
+        data: body,
+      }
+    );
+    // const data.
+    // console.log(data);
+    return data;
+  } catch (error) {
+    // console.log(error);
+    return error;
+  }
+  // axios.post(`${import.meta.env.VITE_API_BASE_URL}${api_suffix}complete/profile/${id}`, body, {headers: {"Content-Type": "multipart/form-data"}}, data: formData).then(response => )
+};
+
 export const updateProfile = async (body, id) => {
   try {
     const { data } = await client.put(
@@ -92,6 +117,7 @@ export const logout = async () => {
 
 export const profile = async (id) => {
   try {
+    // alert(id);
     const { data } = await client.get(`${api_suffix}me/${id}`, {
       withCredentials: true,
       method: "GET",

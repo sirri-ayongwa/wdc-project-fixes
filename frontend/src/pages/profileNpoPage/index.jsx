@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { completeProfile } from "../../api/user";
+import { completeCompanyProfile, completeProfile } from "../../api/user";
 import Heading from "../../components/Heading";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 // import { Button } from "@mui/material";
@@ -15,11 +15,13 @@ import Dropzone from "react-dropzone";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 // import skilltextraw from "../../constants/skills.txt";
 
-function ProfileForm() {
+function NPOForm() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [edit, setEdit] = useState(false);
   const { id } = useParams();
+  const userType = useLocation().pathname.split("/")[2];
+  //   console.log();
 
   const [loading, setLoading] = useState(false);
   const {
@@ -38,14 +40,14 @@ function ProfileForm() {
       state: "",
       town: "",
       number: "",
-      dob: "",
-      bio: "",
+      description: "",
+      mission: "",
       country: "",
-      profession: "",
       name: "",
-      education: [],
-      skills: [],
-      type: "individual",
+      startDate: "",
+      website: "",
+      domain: [],
+      type: userType,
     },
 
     // validationSchema: validationSchema,
@@ -62,18 +64,28 @@ function ProfileForm() {
     endYear: "",
   });
   const [skills, setSkills] = useState([
-    "Data analysis",
-    "Emergency Management",
-    "Resource Management",
-    "Risk Assessment and Mitigation",
-    "Crisis Communication",
-    "Leadership",
-    "Quick Decision-Making",
-    "Adaptability",
-    "Stress Management",
-    "Empathy and Cultural Sensitivity",
-    "Physical Fitness",
-    "Endurance",
+    "Logistics Cluster",
+    "Emergency Telecommunications Cluster",
+    "Health Cluster",
+    "Nutrition Cluster",
+    "Water, Sanitation, and Hygiene (WASH) Cluster",
+    "Camp Coordination and Camp Management (CCCM) Cluster",
+    "Shelter Cluster",
+    "Protection Cluster",
+    "Education Cluster",
+    "Early Recovery Cluster",
+    "Agriculture Cluster",
+    "Logistics Cluster",
+    "Emergency Telecommunications Cluster",
+    "Health Cluster",
+    "Nutrition Cluster",
+    "Water, Sanitation, and Hygiene (WASH) Cluster",
+    "Camp Coordination and Camp Management (CCCM) Cluster",
+    "Shelter Cluster",
+    "Protection Cluster",
+    "Education Cluster",
+    "Early Recovery Cluster",
+    "Agriculture Cluster",
   ]);
   const [currentskill, setCurrentSkill] = useState("");
   const [infoContact, setInfoContact] = useState({
@@ -81,14 +93,14 @@ function ProfileForm() {
     state: "",
     town: "",
     number: "",
-    dob: "",
-    bio: "",
+    description: "",
+    mission: "",
     country: "",
-    profession: "",
+    website: "",
     name: "",
-    education: [],
-    skills: [],
-    type: "individual",
+    startDate: "",
+    domain: [],
+    type: userType,
   });
 
   const updateInfoContact = (new_value, ob_key) => {
@@ -96,27 +108,23 @@ function ProfileForm() {
     setInfoContact(new_info_contact);
     setFieldValue(ob_key, new_value);
   };
-
   const listskillupdate = (new_skill) => {
     let new_c = { ...infoContact };
     // new_c.skills = infoContact?.skills || [];
-    if (infoContact?.skills?.includes(new_skill.toLowerCase())) {
-      let indexof = infoContact.skills.indexOf(new_skill.toLowerCase());
-      new_c.skills.splice(indexof, 1);
+    if (infoContact?.domain?.includes(new_skill.toLowerCase())) {
+      let indexof = infoContact.domain.indexOf(new_skill.toLowerCase());
+      new_c.domain.splice(indexof, 1);
       return setInfoContact(new_c);
     }
 
-    new_c.skills?.push(new_skill.toLowerCase());
+    new_c.domain?.push(new_skill.toLowerCase());
     setInfoContact(new_c);
-    setFieldValue("skills", new_c.skills);
+    setFieldValue("domain", new_c.domain);
     // console.log(infoContact);
   };
-
-  //   console.log(useParams());
-
   const complete = async () => {
     setLoading(true);
-    const res = await completeProfile(values, id);
+    const res = await completeCompanyProfile(values, id);
 
     if (res?.success) {
       setLoading(false);
@@ -131,18 +139,10 @@ function ProfileForm() {
       //   localStorage.removeItem("userAuth");
     }
   };
-
-  //   const readFile = () => {
-  //     fetch(skilltextraw)
-  //       .then((r) => r.text())
-  //       .then((text) => setSkills(text.split("\r\n")));
-  //   };
-
   const updateEduc = (new_value, searchkey) => {
     const new_educ = { ...educ, [searchkey]: new_value };
     setEduc(new_educ);
   };
-
   const removeEducation = (index, e) => {
     e.preventDefault();
     const info_contact = { ...infoContact };
@@ -150,7 +150,6 @@ function ProfileForm() {
     setInfoContact(info_contact);
     setFieldValue("education", info_contact.skills);
   };
-
   const appendEducation = (e) => {
     e.preventDefault();
     if (
@@ -303,13 +302,13 @@ function ProfileForm() {
         <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
-              Full Name
+              Company name
             </label>
             <input
               className="px-3 py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 text-center focus:border-color-3"
               value={infoContact?.name}
               onChange={(e) => updateInfoContact(e.target.value, "name")}
-              placeholder="your fullname"
+              placeholder="name"
               type="text"
               style={{ width: "100%" }}
               required
@@ -320,12 +319,12 @@ function ProfileForm() {
         <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
-              Date of Birth{" "}
+              start date
             </label>
             <input
               className="px-3 py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 text-center focus:border-color-3"
-              value={infoContact?.dob}
-              onChange={(e) => updateInfoContact(e.target.value, "dob")}
+              value={infoContact?.startDate}
+              onChange={(e) => updateInfoContact(e.target.value, "startDate")}
               placeholder="dd/mm/yy"
               type="date"
               style={{ width: "100%" }}
@@ -354,14 +353,30 @@ function ProfileForm() {
         <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
-              Bio{" "}
+              Description{" "}
             </label>
             <textarea
               style={{ width: "100%" }}
               className="px-3 py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 focus:border-color-3"
-              value={infoContact?.bio}
-              onChange={(e) => updateInfoContact(e.target.value, "bio")}
-              placeholder="Bio"
+              value={infoContact?.description}
+              onChange={(e) => updateInfoContact(e.target.value, "description")}
+              placeholder="About the company"
+              type="text"
+              required
+            />
+          </div>
+        </div>
+        <div className=" list-item items-center  m-2 justify-start align-middle ">
+          <div className="flex items-center gap-4">
+            <label className="text-xl text-gray-300 whitespace-nowrap">
+              Mission{" "}
+            </label>
+            <textarea
+              style={{ width: "100%" }}
+              className="px-3 py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 focus:border-color-3"
+              value={infoContact?.mission}
+              onChange={(e) => updateInfoContact(e.target.value, "mission")}
+              placeholder="Your mission"
               type="text"
               required
             />
@@ -432,14 +447,14 @@ function ProfileForm() {
         <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
-              Profession{" "}
+              website{" "}
             </label>
             <input
               style={{ width: "100%" }}
               className="px-3 py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 focus:border-color-3"
-              value={infoContact?.profession}
-              onChange={(e) => updateInfoContact(e.target.value, "profession")}
-              placeholder="Your Profession"
+              value={infoContact?.website}
+              onChange={(e) => updateInfoContact(e.target.value, "website")}
+              placeholder="website URL"
               type="text"
               required
             />
@@ -448,14 +463,14 @@ function ProfileForm() {
         <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
-              Skills{" "}
+              Sectors - Domain{" "}
             </label>
             <textarea
               className="px-3 w-[100%] py-2 m-2 rounded-lg border-solid border-2 border-color-1 bg-n-11 focus:border-color-3"
-              value={infoContact?.skills?.join(", ")}
+              value={infoContact?.domain?.join(", ")}
               style={{ width: "100%", minHeight: "80px" }}
               onChange={() => null}
-              placeholder="Your Skills"
+              placeholder="sectors-domain"
               type="text"
               required
             ></textarea>
@@ -466,7 +481,7 @@ function ProfileForm() {
             return (
               <div
                 className={` ${
-                  infoContact?.skills?.includes(sk.toLowerCase())
+                  infoContact?.domain?.includes(sk.toLowerCase())
                     ? "bg-[#28694950]"
                     : "bg-transparent"
                 } whitespace-nowrap rounded-md border-solid border-2 border-gray-700 px-2 py-2 my-1 text-gray-400 cursor-pointer hover:text-gray-100 `}
@@ -478,7 +493,7 @@ function ProfileForm() {
             );
           })}
         </div>
-        <div className=" list-item items-center  m-2 justify-start align-middle ">
+        {/* <div className=" list-item items-center  m-2 justify-start align-middle ">
           <div className="flex items-center gap-4">
             <label className="text-xl text-gray-300 whitespace-nowrap">
               Education{" "}
@@ -552,7 +567,7 @@ function ProfileForm() {
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         <div className="flex justify-center m-2">
           <button
@@ -572,4 +587,4 @@ function ProfileForm() {
   );
 }
 
-export default ProfileForm;
+export default NPOForm;
