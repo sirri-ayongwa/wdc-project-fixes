@@ -1,22 +1,27 @@
-import { curve, heroBackground, robot } from "../assets";
-import GlobalWorld from "../assets/hero/globalNetwork.jpg";
-import DottedWorld from "../assets/hero/dottedWord.jpg";
+import { curve } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
-import CompanyLogos from "./CompanyLogos";
 import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
 import GIF1 from "../assets/gif/world.gif";
 import VID1 from "../assets/video/Digital World Map.mp4";
+import { useLocation } from "react-router-dom";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
+  const [auth, setAuth] = useState(
+    JSON.parse(localStorage.getItem("userAuth"))
+  );
+  const location = useLocation();
+
+  useEffect(() => {
+    setAuth(JSON.parse(localStorage.getItem("userAuth")));
+  }, [location]);
 
   return (
     <Section
@@ -26,12 +31,6 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      {/* <img
-        className="absolute backgroundImageGif"
-        width="100%"
-        src={DottedWorld}
-        alt="world data"
-      /> */}
       <video
         className="absolute backgroundImageGif object-cover"
         autoPlay={true}
@@ -59,8 +58,8 @@ const Hero = () => {
             GDMAS is equipped with state-of-the-art technology that integrates
             satelite imagery and weather station data.
           </p>
-          <Button href="/signin" white>
-            Get started
+          <Button href={auth?.id?.length > 0 ? "/about" : "/signin"} white>
+            {auth?.id?.length > 0 ? "Learn more" : "Get started"}
           </Button>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
@@ -112,21 +111,10 @@ const Hero = () => {
 
             <Gradient />
           </div>
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            {/* <img
-              src={GlobalWorld}
-              className="w-100 opacity-15"
-              // style={{ opacity: "0.3", width: "100vw" }}
-              width={1440}
-              height={1800}
-              alt="hero"
-            /> */}
-          </div>
+          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]"></div>
 
           <BackgroundCircles />
         </div>
-
-        {/* <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />   */}
       </div>
       <BottomLine />
     </Section>
