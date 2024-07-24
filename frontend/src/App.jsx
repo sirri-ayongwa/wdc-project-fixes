@@ -23,7 +23,7 @@ import MissionPage from "./pages/mission";
 import ProjectsPage from "./pages/project";
 import WhatWeOfferPage from "./pages/offer";
 import EagleProject from "./pages/project/eagle";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TeamPage from "./components/team";
 import EventsPage from "./components/events";
 import PartnersPage from "./components/partner";
@@ -32,15 +32,25 @@ import UpdateProfile from "./pages/updateProfile";
 import TypePage from "./pages/typePage";
 import ProfileEnterprisePage from "./pages/ProfileEnterprisePage";
 import ChatBotComponent from "./components/chatbot";
+import LoaderAnimation from "./components/loading";
 
 const App = () => {
   const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
+
   return (
     <>
+      {loading ? <LoaderAnimation /> : null}
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
 

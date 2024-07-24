@@ -158,3 +158,15 @@
   width: 60px !important;
   height: 60px !important;
 }
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: 99999 !important;
+  background: #01043683
+}

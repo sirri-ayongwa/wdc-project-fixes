@@ -5,6 +5,8 @@ import Chat from "../assets/chatbot/chat.png";
 import Bot from "../assets/chatbot/robot.png";
 import Assistant from "../assets/chatbot/technical-support.png";
 import { useState } from "react";
+import WDCLogo from "../assets/images/wdcimage.png";
+import WDCLogo2 from "../assets/images/wdclogobg.png";
 
 const questions = {
   "What is GDMAS?":
@@ -28,7 +30,7 @@ const ChatBotComponent = () => {
   const formStyle = {
     marginTop: 10,
     marginLeft: 20,
-    border: "1px solid #491d8d",
+    border: "1px solid #289ed4",
     padding: 10,
     borderRadius: 5,
     maxWidth: 300,
@@ -81,8 +83,8 @@ const ChatBotComponent = () => {
   const settings = {
     isOpen: false,
     general: {
-      primaryColor: "#000c2e",
-      secondaryColor: "#141d4b",
+      primaryColor: "#126aa5",
+      secondaryColor: "#126aa5",
       fontFamily: "Arial, sans-serif",
       embedded: false,
     },
@@ -93,7 +95,7 @@ const ChatBotComponent = () => {
       storageKey: "chatbot_assistant_history_wdc",
     },
     chatButton: {
-      icon: Chat,
+      icon: WDCLogo,
     },
     botBubble: {
       showAvatar: true,
@@ -103,7 +105,7 @@ const ChatBotComponent = () => {
     },
     header: {
       title: "WDC Assistant Bot",
-      avatar: Assistant,
+      avatar: WDCLogo2,
       buttons: [Button.CLOSE_CHAT_BUTTON],
     },
     notification: {
@@ -124,7 +126,7 @@ const ChatBotComponent = () => {
   // styles here
   const styles = {
     headerStyle: {
-      background: "#000522",
+      background: "#126aa5",
       color: "#ffffff",
       padding: "10px",
     },
