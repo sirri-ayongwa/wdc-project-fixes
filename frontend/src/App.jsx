@@ -31,6 +31,7 @@ import ProfileForm from "./pages/profileForm";
 import UpdateProfile from "./pages/updateProfile";
 import TypePage from "./pages/typePage";
 import ProfileEnterprisePage from "./pages/ProfileEnterprisePage";
+import ChatBotComponent from "./components/chatbot";
 
 const App = () => {
   const location = useLocation();
@@ -88,6 +89,7 @@ const App = () => {
         <ToastContainer />
         <Footer />
       </div>
+      <ChatBotComponent />
       <ButtonGradient />
     </>
   );
