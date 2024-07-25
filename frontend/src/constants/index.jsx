@@ -268,21 +268,45 @@ export const pricing = [
 
 export const benefits = [
   {
-    id: "0",
-    title: "Detection System",
-    text: "Aggregate data from multiple sources to detect and predict natural man-made disasters.",
+    id: "00",
+    title: "DH App",
+    text: "A real time system providing early warning alerts on disasters, real-time contingency advices and mitigation plans world wide- A vanguard in the humanitarian sector for people supported and humanitarian practitioners",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
   {
-    id: "1",
-    title: "Real-Time Alerts",
-    text: "Notifies stakeholders of potential disasters as they are detected, enabling immediate response.",
+    id: "01",
+    title: "Disaster Heroes:",
+    text: "Our trained and experienced heroes on disasters, always ready for deployment, to support communities affected, collaborate with partners on the ground",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
+  {
+    id: "02",
+    title: "WDC store",
+    text: "An infinite innovative solutions for humanitarians to be more efficient in their activities - All of them are based on our DH app",
+    backgroundUrl: "assets/benefits/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: benefitImage2,
+  },
+  // {
+  //   id: "0",
+  //   title: "Detection System",
+  //   text: "Aggregate data from multiple sources to detect and predict natural man-made disasters.",
+  //   backgroundUrl: "assets/benefits/card-1.svg",
+  //   iconUrl: benefitIcon1,
+  //   imageUrl: benefitImage2,
+  // },
+  // {
+  //   id: "1",
+  //   title: "Real-Time Alerts",
+  //   text: "Notifies stakeholders of potential disasters as they are detected, enabling immediate response.",
+  //   backgroundUrl: "assets/benefits/card-1.svg",
+  //   iconUrl: benefitIcon1,
+  //   imageUrl: benefitImage2,
+  // },
 ];
 
 export const socials = [

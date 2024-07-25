@@ -170,3 +170,51 @@
   z-index: 99999 !important;
   background: #01043683
 }
+
+.animate-rotation {
+  animation: rotate-around 10s infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.animate-rotation-opposite {
+  animation: rotate-around-opposite 10s infinite;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.animate-rotation:hover {
+  animation-play-state: paused;
+
+}
+
+.animate-rotation-opposite:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotate-around {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-around-opposite {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.popupInfo {
+  position: absolute;
+  background: white;
+  z-index: 9999 !important;
+  color: black;
+  padding: 8px;
+  border-radius: 8px;
+  /* transform: translate(-50%, -50%); */
+  /* transform: translateX(-50%); */
+  /* transform: translateY(-50%); */
+
+}
