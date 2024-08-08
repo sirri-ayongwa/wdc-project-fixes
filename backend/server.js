@@ -90,7 +90,7 @@ app.use(cookieParser());
 //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
 //   }
 // ));
-
+// TODO: To restructure and clean later
 const corsConfig = {
   origin: [
     "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
@@ -103,6 +103,8 @@ const corsConfig = {
     "http://www.worlddisastercenter.org",
     "http://localhost:5173/profile/complete",
     process.env.FRONTEND, 
+    process.env.WDCAPPFRONTEND,
+    "https://wdc-app.vercel.app",
     "https://www.worlddisastercenter.org", 
     "https://world-disaster-center-backend.vercel.app"],
   credentials: true,
