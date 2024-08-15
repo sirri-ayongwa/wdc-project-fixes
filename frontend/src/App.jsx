@@ -22,6 +22,7 @@ import OurValuePage from "./pages/value";
 import MissionPage from "./pages/mission";
 import ProjectsPage from "./pages/project";
 import WhatWeOfferPage from "./pages/offer";
+import Testing from "./pages/recordPage.jsx";
 import EagleProject from "./pages/project/eagle";
 import { useEffect, useState } from "react";
 import TeamPage from "./components/team";
@@ -72,7 +73,7 @@ const App = () => {
           />
           <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
-
+          <Route path="/ms73700841.txt" element={<Testing />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
