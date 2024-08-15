@@ -73,7 +73,7 @@ const App = () => {
           />
           <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
-          <Route path="/ms73700841.txt" element={<Testing />} />
+          {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
