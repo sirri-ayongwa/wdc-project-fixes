@@ -43,7 +43,7 @@ function TypePage() {
           <Button
             onClick={() => navigate(`/profile/${value}/complete/${id}`)}
             variant="outlined"
-            disabled={value !== "individual" && value !== "enterprise"}
+            disabled={value !== "individual" && value !== "enterprise" && value !== "npo"}
           >
             Continue {">"}
           </Button>
