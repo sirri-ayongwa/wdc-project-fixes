@@ -17,7 +17,7 @@ function ContactForm() {
     // console.log("working")
     emailjs
       .sendForm(
-        "service_3cuvkls",
+        "service_d3yy0xf",
         "template_zsnn9zs",
         form.current,
         "S6rrT9Cqk-qhVNtap"

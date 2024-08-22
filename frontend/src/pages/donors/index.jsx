@@ -16,7 +16,7 @@ export default function DonorsPage() {
         // console.log("working")
         emailjs
         .sendForm(
-            "service_3cuvkls",
+            "service_d3yy0xf",
             "template_0l6a5vh",
             form.current,
             "S6rrT9Cqk-qhVNtap"
@@ -43,7 +43,7 @@ export default function DonorsPage() {
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Become a donor.</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-            World Disaster Center (WDC) is supported by a diversified donor base, including the United Nations, governmental agencies, donations and private foundations. Our partnerships reflect a global commitment to enhancing disaster resilience and supporting communities in need.
+            World Disaster Center (WDC) is supported by a diversified donor base, including governmental agencies, donations and private foundations. Our partnerships reflect a global commitment to enhancing disaster resilience and supporting communities in need.
             </p>
             <form ref={form} onSubmit={sendEmail} className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -63,7 +63,7 @@ export default function DonorsPage() {
                 disabled={pending}
                 className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
-               {pending ? " sending ..." : "Donate and Subscribe"}
+               {pending ? " sending ... " : "Donate and Subscribe"}
               </button>
             </form>
           </div>
