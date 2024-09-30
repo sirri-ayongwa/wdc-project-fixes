@@ -44,7 +44,7 @@ const Hero = () => {
           <h1 className="h1 mb-6">
             The Global Disaster Monitoring&nbsp;and&nbsp;Alert System {` `}
             <span className="inline-block relative">
-              GDMAS{" "}
+              UNITY OF CHANGE{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -55,8 +55,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            GDMAS is equipped with state-of-the-art technology that integrates
-            satelite imagery and weather station data.
+            Tranforming Challenges into Opportunities
           </p>
           <Button href={auth?.id?.length > 0 ? "/about" : "/signin"} white>
             {auth?.id?.length > 0 ? "Learn more" : "Get started"}

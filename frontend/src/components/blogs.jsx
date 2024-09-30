@@ -20,7 +20,7 @@ const Blogs = ({ isHome = true }) => {
           title="What we’re working on"
         />
 
-        <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
+        <div className="relative grid gap-6 md:grid-cols-3 md:gap-4 md:pb-[7rem]">
           {posts?.map((item) => {
             // const status = item.status === "done" ? "Done" : "In progress";
 

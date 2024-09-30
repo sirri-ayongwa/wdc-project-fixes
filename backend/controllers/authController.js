@@ -210,7 +210,10 @@ const sendTokenResponse = async (user, codeStatus, res) => {
             success: true,
             token: token,
             id: user._id,
-            role: user.role
+            role: user.role,
+            name: user?.name,
+            email: user?.email,
+            imgUrl: user?.imgUrl
         })
 }
 

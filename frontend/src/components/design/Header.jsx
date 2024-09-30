@@ -1,4 +1,3 @@
-import { background } from "../../assets";
 import GlobalWorld from "../../assets/hero/globalNetwork.jpg";
 import DottedWorld from "../../assets/hero/dottedWord.jpg";
 

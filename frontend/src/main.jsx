@@ -6,11 +6,9 @@ import App from "./App.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Router>
-      <WDCProvider>
-        <App />
-      </WDCProvider>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <WDCProvider>
+      <App />
+    </WDCProvider>
+  </Router>
 );

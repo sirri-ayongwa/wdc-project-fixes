@@ -1,35 +1,16 @@
 import {
   benefitIcon1,
-  benefitIcon2,
-  benefitIcon3,
-  benefitIcon4,
-  benefitImage2,
   chromecast,
   disc02,
-  discord,
   discordBlack,
   facebook,
-  figma,
   file02,
-  framer,
   homeSmile,
   instagram,
-  notification2,
-  notification3,
-  notification4,
-  notion,
-  photoshop,
   plusSquare,
-  protopie,
-  raindrop,
   recording01,
   recording03,
-  roadmap1,
-  roadmap2,
-  roadmap3,
-  roadmap4,
   searchMd,
-  slack,
   sliders04,
   telegram,
   twitter,
@@ -45,6 +26,7 @@ import Fire from "../assets/fire.png";
 import Earthquake from "../assets/earthquake.png";
 import desert from "../assets/desert.png";
 import Flooding from "../assets/floooding.png";
+// import raindrop from '../assets/'
 
 export const navigation = [
   {
@@ -97,7 +79,7 @@ export const navigation = [
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
-export const notificationImages = [notification4, notification3, notification2];
+export const notificationImages = [];
 
 export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
@@ -109,42 +91,6 @@ export const brainwaveServicesIcons = [
   disc02,
   chromecast,
   sliders04,
-];
-
-export const roadmap = [
-  {
-    id: "0",
-    title: "Voice recognition",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap1,
-    colorful: true,
-  },
-  {
-    id: "1",
-    title: "Gamification",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    date: "May 2023",
-    status: "progress",
-    imageUrl: roadmap2,
-  },
-  {
-    id: "2",
-    title: "Chatbot customization",
-    text: "Allow users to customize the chatbot's appearance and behavior, making it more engaging and fun to interact with.",
-    date: "May 2023",
-    status: "done",
-    imageUrl: roadmap3,
-  },
-  {
-    id: "3",
-    title: "Integration with APIs",
-    text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-    date: "May 2023",
-    status: "progress",
-    imageUrl: roadmap4,
-  },
 ];
 
 export const collabText =
@@ -224,11 +170,13 @@ export const collabApps = [
   {
     id: "7",
     title: "Raindrop",
-    icon: raindrop,
+    icon: Floods,
     width: 38,
     height: 32,
   },
 ];
+
+export const roadmap = [];
 
 export const pricing = [
   {
@@ -273,7 +221,7 @@ export const benefits = [
     text: "A real time system providing early warning alerts on disasters, real-time contingency advices and mitigation plans world wide- A vanguard in the humanitarian sector for people supported and humanitarian practitioners",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: "",
   },
   {
     id: "01",
@@ -281,7 +229,7 @@ export const benefits = [
     text: "Our trained and experienced heroes on disasters, always ready for deployment, to support communities affected, collaborate with partners on the ground",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: "",
   },
   {
     id: "02",
@@ -289,7 +237,7 @@ export const benefits = [
     text: "An infinite innovative solutions for humanitarians to be more efficient in their activities - All of them are based on our DH app",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
-    imageUrl: benefitImage2,
+    imageUrl: "",
   },
   // {
   //   id: "0",
