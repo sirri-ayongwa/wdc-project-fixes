@@ -1,21 +1,14 @@
 import React from "react";
 import Section from "./Section";
 import { socials } from "../constants";
+import NewsLetter from "./newsletter";
 
 const Footer = () => {
   return (
     <Section crosses className="!px-0 !py-10">
       <div className="container flex justify-center ">
         <div>
-          <h3 className="text-color-1 text-center">Our addresses</h3>
-          <ul>
-            <li className="text-gray-400">
-              <b>New York</b> 1660 Madison Avenue apt 6B, New York, NY, 10029
-            </li>
-            <li className="text-gray-400">
-              <b>Austria</b> 5020, Wolf-Dietrich Strabe 31, Salzburg, Salzburg
-            </li>
-          </ul>
+          <NewsLetter />
         </div>
       </div>
       <br />
