@@ -5,7 +5,7 @@ function PartnersPage() {
   return (
     <>
       <br />
-      <CompanyLogos />
+      {/* <CompanyLogos /> */}
     </>
   );
 }

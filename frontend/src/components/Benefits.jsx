@@ -37,9 +37,12 @@ const Benefits = () => {
                     alt={item.title}
                   /> */}
 
-                  <span className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                    Discover Michael
-                  </span>
+                  <a
+                    href={item?.url}
+                    className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider"
+                  >
+                    Explore more
+                  </a>
 
                   <Arrow />
                 </div>
