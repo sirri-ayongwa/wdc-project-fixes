@@ -101,15 +101,6 @@ function TeamPage() {
       name: "David Mulume",
       image: davidmulume,
     },
-    // {
-    //   location: "Sudan",
-    //   title: "",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Zeinab Saad",
-    //   image: zeinab,
-    // },
     {
       location: "Kenya",
       title: "",
@@ -128,15 +119,6 @@ function TeamPage() {
       name: "Anselme Konan",
       image: Anselme,
     },
-    // {
-    //   location: "Germany",
-    //   title: "",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Aparna Srivastava",
-    //   image: Aparna,
-    // },
     {
       location: "Ghana",
       title: "",
@@ -263,15 +245,6 @@ function TeamPage() {
       name: "Samche Ellen",
       image: samchen,
     },
-    // {
-    //   location: "USA",
-    //   title: "",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Scott walker",
-    //   image: scott,
-    // },
   ];
   return (
     <div>
