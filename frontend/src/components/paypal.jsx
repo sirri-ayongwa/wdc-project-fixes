@@ -11,7 +11,7 @@ function PaypalComponent() {
       <button className="button">
         <img
           src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png"
-          alt="Check out with PayPal"
+          alt="Donate with paypal"
         />
         {/* <span className="text">Discover</span> */}
         <span className="svg">

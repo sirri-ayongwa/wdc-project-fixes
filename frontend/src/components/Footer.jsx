@@ -2,6 +2,8 @@ import React from "react";
 import Section from "./Section";
 import { socials } from "../constants";
 import NewsLetter from "./newsletter";
+import WDC from "../assets/images/wdclogobg.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,6 +14,115 @@ const Footer = () => {
         </div>
       </div>
       <br />
+      <div className="" style={{ marginInline: "50px" }}>
+        <hr
+          style={{
+            borderColor: "#6c8fa3",
+            color: "black",
+            background: "black",
+          }}
+        />
+      </div>
+      <br />
+      <div>
+        <div className="container flex justify-center">
+          <h4></h4>
+          <div className="flex items-center gap-2">
+            <div
+              style={{
+                width: "80px",
+                height: "80px",
+                borderRadius: "40px",
+                overflow: "hidden",
+              }}
+            >
+              <img src={WDC} alt="WDC logo" />
+            </div>
+            <div>
+              <p className=" font-bold">World Disaster Center</p>
+              <ul>
+                <li className="text-gray-400">
+                  New York 1660 Madison Avenue, New York, NY, 10029
+                </li>
+                <li className="text-gray-400">
+                  Austria 5020, Wolf-Dietrich Strabe 31
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container flex justify-around">
+        <div>
+          <br />
+          <br />
+          <h3 className="font-bold underline" style={{ marginBottom: "6px" }}>
+            About Us
+          </h3>
+          <ul style={{ listStyle: "bullet" }}>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/about">
+                Who we are
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/about/vision">
+                Our Vision
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/about/values">
+                Our Values
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/about/mission">
+                Our Mission
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/about/careers">
+                Careers
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <br />
+          <br />
+          <h3 className="font-bold underline" style={{ marginBottom: "6px" }}>
+            Pages
+          </h3>
+          <ul style={{ listStyle: "bullet" }}>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/">
+                Acceuil
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/donate">
+                Donate
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/team">
+                meet our team
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/blogs">
+                Blogs
+              </Link>
+            </li>
+            <li style={{ marginBottom: "4px" }}>
+              <Link className="text-gray-400" to="/contact">
+                Contact us
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
       <br />
       <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <div className="flex justify-center">
