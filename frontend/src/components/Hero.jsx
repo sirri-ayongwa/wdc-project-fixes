@@ -8,7 +8,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
-import GIF1 from "../assets/gif/michaelapp2.gif";
+import GIF1 from "../assets/gif/world.gif";
 import VID1 from "../assets/video/Digital World Map.mp4";
 import { useLocation } from "react-router-dom";
 
@@ -44,7 +44,7 @@ const Hero = () => {
           <h1 className="h1 mb-6">
             The Global Disaster Monitoring&nbsp;and&nbsp;Alert System {` `}
             <span className="inline-block relative">
-              United For Change{" "}
+              Michael{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -57,8 +57,8 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Transforming Challenges into Opportunities
           </p>
-          <Button href={auth?.id?.length > 0 ? "/about" : "/signin"} white>
-            {auth?.id?.length > 0 ? "Learn more" : "Get started"}
+          <Button href={"/about"} white>
+            {"Learn more about michael"}
           </Button>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">

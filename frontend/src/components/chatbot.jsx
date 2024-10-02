@@ -9,19 +9,19 @@ import WDCLogo from "../assets/images/wdcimage.png";
 import WDCLogo2 from "../assets/images/wdclogobg.png";
 
 const questions = {
-  "What is GDMAS?":
-    "GDMAS stands for Global Disaster Monitoring and Alert System. It integrates satellite imagery and weather station data to detect and predict natural and man-made disasters.",
-  "What types of disasters does GDMAS monitor?":
-    "GDMAS monitors various types of disasters, including earthquakes, tsunamis, hurricanes, floods, wildfires, industrial accidents, ...",
-  "How can I become a stakeholder in GDMAS?":
+  "What is Michael?":
+    "Michael stands for Global Disaster Monitoring and Alert System. It integrates satellite imagery and weather station data to detect and predict natural and man-made disasters.",
+  "What types of disasters does Michael monitor?":
+    "Michael monitors various types of disasters, including earthquakes, tsunamis, hurricanes, floods, wildfires, industrial accidents, ...",
+  "How can I become a stakeholder in Michael?":
     "You can join us as a stakeholder by visiting our website and filling out the “Become a stakeholder” form. This will keep you informed and ahead of potential disasters.",
-  "How does GDMAS provide real-time alerts?":
-    "GDMAS aggregates data from multiple sources such as satellite imagery, weather stations, seismic sensors, and social media feeds to provide real-time alerts and advanced analytics",
-  "Is GDMAS accessible to the public?":
-    "Yes, GDMAS provides public access to real-time disaster alerts and historical data. You can explore our interactive maps and sign in or sign to our platform to stay updated.",
-  "How accurate are GDMAS predictions?":
-    "GDMAS predictions are based on scientific models and historical data. While we strive for accuracy, unforeseen factors can impact the precision of our alerts.",
-  "Can I embed GDMAS alerts on my website?": "This feature is coming soon.",
+  "How does Michael provide real-time alerts?":
+    "Michael aggregates data from multiple sources such as satellite imagery, weather stations, seismic sensors, and social media feeds to provide real-time alerts and advanced analytics",
+  "Is Michael accessible to the public?":
+    "Yes, Michael provides public access to real-time disaster alerts and historical data. You can explore our interactive maps and sign in or sign to our platform to stay updated.",
+  "How accurate are Michael predictions?":
+    "Michael predictions are based on scientific models and historical data. While we strive for accuracy, unforeseen factors can impact the precision of our alerts.",
+  "Can I embed Michael alerts on my website?": "This feature is coming soon.",
   more: "To learn more about World Disaster Center, visit the about page on our website !",
 };
 
@@ -41,14 +41,14 @@ const ChatBotComponent = () => {
       message: "Hello! Welcome to world disaster center, How can i help you?",
       //   chatDisabled: true,
       options: [
-        "What is GDMAS?",
-        "What types of disasters does GDMAS monitor?",
+        "What is Michael?",
+        "What types of disasters does Michael monitor?",
         "How can i join the World Disaster Center?",
-        "How can I become a stakeholder in GDMAS?",
-        "How does GDMAS provide real-time alerts?",
-        "Is GDMAS accessible to the public?",
-        "How accurate are GDMAS predictions?",
-        "Can I embed GDMAS alerts on my website?",
+        "How can I become a stakeholder in Michael?",
+        "How does Michael provide real-time alerts?",
+        "Is Michael accessible to the public?",
+        "How accurate are Michael predictions?",
+        "Can I embed Michael alerts on my website?",
         "more",
       ],
       function: (params) => setForm({ ...form, name: params.userInput }),
@@ -58,10 +58,10 @@ const ChatBotComponent = () => {
       message: "here are some frequently asked questions",
       //   chatDisabled: true,
       options: [
-        "How does GDMAS provide real-time alerts?",
-        "Is GDMAS accessible to the public?",
-        "How accurate are GDMAS predictions?",
-        "Can I embed GDMAS alerts on my website?",
+        "How does Michael provide real-time alerts?",
+        "Is Michael accessible to the public?",
+        "How accurate are Michael predictions?",
+        "Can I embed Michael alerts on my website?",
       ],
       function: (params) => setForm({ ...form, name: params.userInput }),
       path: "give_response",

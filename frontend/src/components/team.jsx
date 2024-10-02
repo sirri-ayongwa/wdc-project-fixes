@@ -61,7 +61,7 @@ function TeamPage() {
   const ClevelExecutives = [
     {
       location: "Canada",
-      title: "CEO",
+      title: "Chief Executif Officer",
       bio: "",
       email: "",
       socials: [],
@@ -70,7 +70,7 @@ function TeamPage() {
     },
     {
       location: "Kenya",
-      title: "CIO",
+      title: "Chief Information Officer",
       bio: "",
       email: "",
       socials: [],
@@ -79,7 +79,7 @@ function TeamPage() {
     },
     {
       location: "DRC",
-      title: "CTO",
+      title: "Chief Technical Officer",
       bio: "",
       email: "",
       socials: [],
@@ -472,7 +472,7 @@ function TeamPage() {
                       className="object-cover w-full rounded-xl aspect-square"
                       src={member?.image}
                       alt={member.name}
-                      style={{ height: "400px", aspectRation: "4:3" }}
+                      style={{ height: "200px", aspectRation: "4:3" }}
                     />
                   </div>
                   <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">

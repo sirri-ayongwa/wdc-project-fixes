@@ -94,7 +94,7 @@ export const brainwaveServicesIcons = [
 ];
 
 export const collabText =
-  "The GDMAS software platform monitors various types of disasters \
+  "The Michael software platform monitors various types of disasters \
   worldwide including earthquakes, tsunamis, hurricanes, floods, \
   wildfires, and industrial accidents. It aggregate data from multiple \
   sources such as satellite imagery, weather stations, seismic \
@@ -105,13 +105,13 @@ export const collabContent = [
   {
     id: "0",
     title: "Real-Time Alerts and Analytics",
-    text: "With the GDMAS system, stakeholders receive real-time alerts and access to advanced analytics.\
+    text: "With the Michael system, stakeholders receive real-time alerts and access to advanced analytics.\
      This allows them to stay informed about ongoing disasters and make data-driven decisions to mitigate risks and respond effectively.",
   },
   {
     id: "1",
     title: "Comprehensive Data Sources",
-    text: "The GDMAS platform leverages a wide range of data sources, including satellite imagery\
+    text: "The Michael platform leverages a wide range of data sources, including satellite imagery\
     weather stations, seismic sensors, social media feeds, and other relevant sources. By aggregating and \
     analyzing this data, it provides comprehensive insights into disaster events and their potential impact",
   },
@@ -224,6 +224,7 @@ export const benefits = [
     imageUrl: "",
     hyperlink: "",
     comingsoon: false,
+    url: "/solutions",
   },
   {
     id: "01",
@@ -234,16 +235,18 @@ export const benefits = [
     imageUrl: "",
     hyperlink: "",
     comingsoon: false,
+    url: "/signin",
   },
   {
     id: "02",
-    title: "Impack Stories",
+    title: "Impact Stories",
     text: "An infinite innovative solutions for humanitarians to be more efficient in their activities - All of them are based on our DH app",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
     hyperlink: "",
     comingsoon: true,
+    url: "",
   },
   // {
   //   id: "0",

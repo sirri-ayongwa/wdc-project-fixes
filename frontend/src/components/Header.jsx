@@ -82,11 +82,11 @@ const Header = () => {
 
             <Link
               onClick={() => setOpenNavigation(false)}
-              to="/blogs"
+              to="/solutions"
               style={{ zIndex: "9999" }}
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
-              Blogs
+              Solutions
             </Link>
             <Link
               onClick={() => setOpenNavigation(false)}

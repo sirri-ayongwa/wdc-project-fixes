@@ -16,7 +16,7 @@ const Blogs = ({ isHome = true }) => {
     <Section className="overflow-hidden" id="roadmap">
       <div className="container md:pb-10">
         <Heading
-          tag="World Disaster center Articles"
+          tag="World Disaster center Solutions"
           title="What we’re working on"
         />
 
