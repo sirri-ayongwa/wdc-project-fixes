@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import Anne from "../assets/team/anne.jpg";
-import Anselme from "../assets/team/AnselmeKonan.jpg";
-import Aparna from "../assets/team/Aparna Srivastava.jpg";
-import Ayuba from "../assets/team/AyubaAbubakar.jpg";
-import Boaz from "../assets/team/boaz muliri.jpg";
-import bujumbura from "../assets/team/bujumbura.jpg";
-import choice from "../assets/team/choice.jpg";
-import davidk from "../assets/team/DavidKabanga.jpg";
-import davidmulume from "../assets/team/davidmulume.jpg";
-import doddy from "../assets/team/DoddyMatabaro.jpg";
-import isaac from "../assets/team/isaac.jpg";
-import james from "../assets/team/james.jpg";
-import jane from "../assets/team/Jane.jpg";
-import josephb from "../assets/team/joseph.jpg";
-import kibwe from "../assets/team/kibwe.jpg";
-import ledoux from "../assets/team/LedouxMedi.jpg";
-import marc from "../assets/team/marc.jpg";
-import maria from "../assets/team/MariaKohutova.jpg";
-import marie from "../assets/team/marie.jpg";
-import oluwan from "../assets/team/Oluwandosin.jpg";
-import Rolande from "../assets/team/RolandeNamegabe.jpg";
-import Ruth from "../assets/team/Ruth.jpg";
-import samchen from "../assets/team/samchen.jpg";
-import scott from "../assets/team/scottwalker.jpg";
-import zainab from "../assets/team/Zainab.jpg";
-import zeinab from "../assets/team/zeinab.jpg";
-import sapiens from "../assets/team/sapiens.jpg";
+import Anne from "../assets/team/anne.png";
+import Anselme from "../assets/team/AnselmeKonan.png";
+import Aparna from "../assets/team/Aparna Srivastava.png";
+import Ayuba from "../assets/team/AyubaAbubakar.png";
+import Boaz from "../assets/team/boaz muliri.png";
+import bujumbura from "../assets/team/bujumbura.png";
+import choice from "../assets/team/choice.png";
+import davidk from "../assets/team/DavidKabanga.png";
+import davidmulume from "../assets/team/davidmulume.png";
+import doddy from "../assets/team/DoddyMatabaro.png";
+import isaac from "../assets/team/isaac.png";
+import james from "../assets/team/james.png";
+import jane from "../assets/team/Jane.png";
+import josephb from "../assets/team/joseph.png";
+import kibwe from "../assets/team/kibwe.png";
+import ledoux from "../assets/team/LedouxMedi.png";
+import marc from "../assets/team/marc.png";
+import maria from "../assets/team/MariaKohutova.png";
+import marie from "../assets/team/marie.png";
+import oluwan from "../assets/team/Oluwandosin.png";
+import Rolande from "../assets/team/RolandeNamegabe.png";
+import Ruth from "../assets/team/Ruth.png";
+import samchen from "../assets/team/samchen.png";
+import scott from "../assets/team/scottwalker.png";
+import zainab from "../assets/team/Zainab.png";
+import zeinab from "../assets/team/zeinab.png";
+import sapiens from "../assets/team/sapiens.png";
 import WDCLogo from "../assets/images/wdclogobg.png";
 
 function TeamPage() {
@@ -87,7 +87,8 @@ function TeamPage() {
       image: davidk,
     },
   ];
-  const staff = [
+
+  const TeamLeads = [
     {
       location: "DRC",
       title: "Head of Information System",
@@ -115,6 +116,21 @@ function TeamPage() {
       name: "David Mulume",
       image: davidmulume,
     },
+  ];
+
+  const interns = [
+    {
+      location: "",
+      title: "Forecast Intern",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Gagana Md",
+      image: WDCLogo,
+    },
+  ];
+
+  const staff = [
     {
       location: "Ivory Coast",
       title: "Data Analyst",
@@ -204,15 +220,6 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Francine Nabintu",
-      image: WDCLogo,
-    },
-    {
-      location: "",
-      title: "Forecast Intern",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Gagana Md",
       image: WDCLogo,
     },
     {
@@ -413,7 +420,7 @@ function TeamPage() {
               </button>
               <button
                 onClick={() => {
-                  setTeam(staff);
+                  setTeam(TeamLeads);
                   setTab(2);
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
@@ -422,7 +429,33 @@ function TeamPage() {
                     : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
                 }`}
               >
+                Team Lead
+              </button>
+              <button
+                onClick={() => {
+                  setTeam(staff);
+                  setTab(3);
+                }}
+                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
+                  tab === 3
+                    ? "bg-blue-600 text-white"
+                    : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
+                }`}
+              >
                 Staff
+              </button>
+              <button
+                onClick={() => {
+                  setTeam(interns);
+                  setTab(4);
+                }}
+                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
+                  tab === 4
+                    ? "bg-blue-600 text-white"
+                    : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
+                }`}
+              >
+                Interns
               </button>
             </div>
           </div>
@@ -434,12 +467,14 @@ function TeamPage() {
                   key={`${index}-member`}
                   className="flex flex-col items-center"
                 >
-                  <img
-                    className="object-cover w-full rounded-xl aspect-square"
-                    src={member?.image}
-                    alt={member.name}
-                  />
-
+                  <div className="" style={{ background: "#ffffffaa" }}>
+                    <img
+                      className="object-cover w-full rounded-xl aspect-square"
+                      src={member?.image}
+                      alt={member.name}
+                      style={{ height: "400px", aspectRation: "4:3" }}
+                    />
+                  </div>
                   <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
                     {member.name}
                   </h1>

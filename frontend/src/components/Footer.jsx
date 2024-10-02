@@ -36,7 +36,11 @@ const Footer = () => {
                 overflow: "hidden",
               }}
             >
-              <img src={WDC} alt="WDC logo" />
+              <img
+                src={WDC}
+                style={{ width: "80px", height: "80px" }}
+                alt="WDC logo"
+              />
             </div>
             <div>
               <p className=" font-bold">World Disaster Center</p>

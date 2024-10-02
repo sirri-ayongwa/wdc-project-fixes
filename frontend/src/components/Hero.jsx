@@ -8,7 +8,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
-import GIF1 from "../assets/gif/world.gif";
+import GIF1 from "../assets/gif/michaelapp2.gif";
 import VID1 from "../assets/video/Digital World Map.mp4";
 import { useLocation } from "react-router-dom";
 
@@ -71,7 +71,6 @@ const Hero = () => {
                   src={GIF1}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] object-cover"
                   width={1024}
-                  height={490}
                   alt="AI"
                 />
 
