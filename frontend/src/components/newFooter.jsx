@@ -3,6 +3,8 @@ import WDCLogo from "../assets/images/wdclogobg.png";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LinkedIn } from "@mui/icons-material";
+import { CgMail } from "react-icons/cg";
+import { MdLocationPin } from "react-icons/md";
 
 function NewFooter() {
   return (
@@ -15,7 +17,7 @@ function NewFooter() {
                 <div className="flex justify-center">
                   <h4></h4>
                   <div className="flex items-center gap-2">
-                    <div
+                    {/* <div
                       style={{
                         width: "80px",
                         height: "80px",
@@ -28,17 +30,29 @@ function NewFooter() {
                         style={{ width: "80px", height: "80px" }}
                         alt="WDC logo"
                       />
-                    </div>
+                    </div> */}
                     <div>
                       <p className=" font-bold">World Disaster Center</p>
                       <ul>
-                        <li className="text-sm text-gray-400">
-                          <span>
-                            New York 1660 Madison Avenue, New York, NY, 10029
-                          </span>
+                        <li className="text-sm my-2 text-gray-400 flex ">
+                          <MdLocationPin className="mx-1" size={20} />
+                          <div>
+                            <h4 className="text-gray-200 font-bold">
+                              New York Headquarters
+                            </h4>
+                            <span>
+                              New York 1660 Madison Avenue, New York, NY, 10029
+                            </span>
+                          </div>
                         </li>
-                        <li className="text-sm text-gray-400">
-                          <span>Austria 5020, Wolf-Dietrich Strabe 31</span>
+                        <li className="text-sm my-2 text-gray-400 flex ">
+                          <MdLocationPin className="mx-1" size={20} />
+                          <div>
+                            <h4 className="text-gray-200 font-bold">
+                              Austria Headquarters
+                            </h4>
+                            <span>Austria 5020, Wolf-Dietrich Strabe 31</span>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -46,15 +60,11 @@ function NewFooter() {
                 </div>
               </div>
             </a>
-            <p className="py-8 text-sm text-gray-400 lg:max-w-xs text-center lg:text-left">
-              Transforming Challenges to Opportunities.
+            <p className="py-4 text-sm text-gray-400 lg:max-w-xs text-center lg:text-left">
+              World Disaster Center is a Nonprofit Organization.
+              <br />
+              <b>EIN/tax ID number: 99-5085143</b>
             </p>
-            <Link
-              to="/contact"
-              className="py-2.5 px-5 h-9 block w-fit bg-n-5 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-n-9 lg:mx-0"
-            >
-              Contact us
-            </Link>
           </div>
 
           <div className="lg:mx-auto text-left ">
@@ -75,9 +85,9 @@ function NewFooter() {
                   About
                 </Link>
               </li>
-              <li>
+              <li className="">
                 <a href="/team" className=" text-blue-300 hover:text-blue-500">
-                  meet our team
+                  Team
                 </a>
               </li>
             </ul>
@@ -85,7 +95,7 @@ function NewFooter() {
 
           <div className="lg:mx-auto text-left ">
             <h4 className="text-lg text-gray-300 font-medium mb-7">
-              Case Studies
+              Solutions
             </h4>
             <ul className="text-sm  transition-all duration-500">
               <li className="mb-6">
@@ -126,7 +136,15 @@ function NewFooter() {
                   Get in Touch
                 </Link>
               </li>
-              <li className="mb-6">
+              {/* <li>
+                <Link
+                  to="/cotnact"
+                  className=" text-blue-300 hover:text-blue-500"
+                >
+                  Contact us
+                </Link>
+              </li> */}
+              {/* <li className="mb-6">
                 <Link
                   to="/"
                   onClick={() => toast("coming soon", { theme: "dark" })}
@@ -143,7 +161,7 @@ function NewFooter() {
                 >
                   Privacy Policy
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

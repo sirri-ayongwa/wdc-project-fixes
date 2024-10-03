@@ -75,6 +75,7 @@ const Header = () => {
                 "Our vision": "/about/vision",
                 "Our mission": "/about/mission",
                 "Our values": "/about/values",
+                "What we offer": "/about/what-we-offer",
               }}
             />
 

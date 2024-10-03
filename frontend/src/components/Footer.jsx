@@ -111,7 +111,7 @@ const Footer = () => {
             </li>
             <li style={{ marginBottom: "4px" }}>
               <Link className="text-gray-400" to="/team">
-                meet our team
+                Team
               </Link>
             </li>
             <li style={{ marginBottom: "4px" }}>

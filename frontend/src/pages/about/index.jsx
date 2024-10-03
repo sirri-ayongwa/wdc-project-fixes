@@ -17,18 +17,12 @@ function AboutPage() {
       <br />
       <WhoWeAre />
       <div className="flex justify-center">
-      <Button href="https://issuu.com/worlddisastercenter/docs/wdc_008_bleu_format">
-        Read more
-      </Button>
+        <Button href="https://issuu.com/worlddisastercenter/docs/wdc_008_bleu_format">
+          Read more
+        </Button>
       </div>
-      <OurMission/>
-      <OurVision/>
-      <OurValues/>
-      <QNA/>
       <HowWeWork />
       <Services />
-      <Benefits />
-      <Collaboration />
     </div>
   );
 }
