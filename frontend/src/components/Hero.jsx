@@ -10,10 +10,11 @@ import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
 import GIF1 from "../assets/gif/world.gif";
 import VID1 from "../assets/video/Digital World Map.mp4";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
+  const navigate = useNavigate();
   const [auth, setAuth] = useState(
     JSON.parse(localStorage.getItem("userAuth"))
   );
@@ -57,7 +58,7 @@ const Hero = () => {
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Transforming Challenges into Opportunities
           </p>
-          <Button href={"/about"} white>
+          <Button href={"https://doc.storydoc.ai/fDqGCI"} white>
             {"Learn more about michael"}
           </Button>
         </div>
@@ -66,45 +67,46 @@ const Hero = () => {
             <div className="relative bg-n-8 rounded-[1rem]">
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
-                  src={GIF1}
-                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] object-cover"
-                  width={1024}
-                  alt="AI"
-                />
+              <Link to="/request-demo">
+                <div className="cursor-pointer aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                  <img
+                    src={GIF1}
+                    className=" cursor-pointer w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] object-cover"
+                    width={1024}
+                    alt="AI"
+                  />
+                  <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
-
-                <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                    {/* {heroIcons.map((icon, index) => (
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                      {/* {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
                         <img src={icon} width={24} height={25} alt={icon} />
                       </li>
                     ))} */}
-                    <li className="p-5">
-                      <MdTornado />
-                    </li>
-                    <li className="p-5">
-                      <MdCloud />
-                    </li>
-                    <li className="p-5">
-                      <FaWater />
-                    </li>
-                    <li className="p-5">
-                      <FaWaveSquare />
-                    </li>
-                  </ul>
-                </ScrollParallax>
+                      <li className="p-5">
+                        <MdTornado />
+                      </li>
+                      <li className="p-5">
+                        <MdCloud />
+                      </li>
+                      <li className="p-5">
+                        <FaWater />
+                      </li>
+                      <li className="p-5">
+                        <FaWaveSquare />
+                      </li>
+                    </ul>
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Real-time alerts for various types of disasters"
-                  />
-                </ScrollParallax>
-              </div>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
+                      title="Real-time alerts for various types of disasters"
+                    />
+                  </ScrollParallax>
+                </div>
+              </Link>
             </div>
 
             <Gradient />

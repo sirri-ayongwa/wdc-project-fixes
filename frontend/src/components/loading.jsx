@@ -15,7 +15,7 @@ function LoaderAnimation() {
 
   return (
     <Fade>
-      <div className="loader-container">
+      <div className="loader-container overscroll-none">
         <Lottie
           options={defaultOptions}
           height={250}

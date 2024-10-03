@@ -63,7 +63,6 @@ const Header = () => {
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/"
-              style={{ zIndex: "9999" }}
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Home
@@ -76,14 +75,12 @@ const Header = () => {
                 "Our vision": "/about/vision",
                 "Our mission": "/about/mission",
                 "Our values": "/about/values",
-                Carreers: "/about/carreers",
               }}
             />
 
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/solutions"
-              style={{ zIndex: "9999" }}
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Solutions
@@ -91,15 +88,20 @@ const Header = () => {
             <Link
               onClick={() => setOpenNavigation(false)}
               to="/team"
-              style={{ zIndex: "9999" }}
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Team
             </Link>
             <Link
               onClick={() => setOpenNavigation(false)}
+              to="/careers"
+              className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
+            >
+              Careers
+            </Link>
+            <Link
+              onClick={() => setOpenNavigation(false)}
               to="/contact"
-              style={{ zIndex: "9999" }}
               className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2  font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
             >
               Contact Us

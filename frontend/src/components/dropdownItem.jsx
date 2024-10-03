@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function DropdownItem({ title, routings, setOpenNavigation }) {
   const [toggled, setToggled] = useState(false);
+  const [popuphover, setpopupHover] = useState(false);
+  const popupref = useRef();
   const location = useLocation();
 
   useEffect(() => {
@@ -10,7 +12,7 @@ function DropdownItem({ title, routings, setOpenNavigation }) {
   }, [location]);
 
   return (
-    <div className="">
+    <div>
       <div className="relative inline-block text-left">
         <div>
           <button
@@ -42,23 +44,23 @@ function DropdownItem({ title, routings, setOpenNavigation }) {
         <div
           onMouseLeave={() => setToggled(false)}
           className={` ${
-            toggled
-              ? "transform opacity-100 scale-100"
-              : "transform opacity-0 scale-95"
+            toggled ? "transform block scale-100" : "transform hidden scale-95"
           } absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none `}
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
+          ref={popupref}
           tabIndex="-1"
         >
           <div className="py-1" role="none">
             {Object.keys(routings).map((item, index) => {
               return (
                 <Link
-                  className="block px-4 py-2 text-sm text-gray-700"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
                   role="menuitem"
                   onClick={() => setOpenNavigation(false)}
                   tabIndex="-1"
+                  style={{ zIndex: "9999" }}
                   id={`menu-item-${index}`}
                   key={item}
                   to={routings[item]}

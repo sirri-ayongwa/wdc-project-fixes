@@ -39,7 +39,7 @@ const Benefits = () => {
 
                   <a
                     href={item?.url}
-                    className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider"
+                    className="ml-auto font-code text-xs font-bold uppercase tracking-wider hover:text-cyan-300"
                   >
                     {item?.url === "" ? "Coming soon" : "Explore more"}
                   </a>
@@ -49,12 +49,19 @@ const Benefits = () => {
               </div>
 
               {item.light && <GradientLight />}
-
+              <GradientLight />
               <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
+                className="absolute inset-0.5 hover:scale-105"
+                style={{
+                  clipPath: "url(#benefits)",
+                  background: "transparent",
+                  backdropFilter: "blur(40px)",
+                  border: "1px solid #ffaass",
+                  borderLeft: "2px solid #5948b8",
+                  borderBottom: "2px solid #6e71ff44",
+                }}
               >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
+                <div className="absolute inset-0 transition-opacity ">
                   {item.imageUrl && (
                     <img
                       src={DottedWorld}

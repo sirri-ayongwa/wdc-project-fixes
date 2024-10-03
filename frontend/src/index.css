@@ -218,3 +218,39 @@
   /* transform: translateY(-50%); */
 
 }
+
+.discover-button {
+  cursor: pointer !important;
+  z-index: 999 !important;
+}
+
+.discover-button:hover {
+  transform: scale(1.1);
+}
+
+.text-span-discover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.loader-container {
+  overflow: hidden !important;
+  overflow: none !important;
+}
+
+.rcb-chat-tooltip,
+.rcb-tooltip-show {
+  background: rgba(32, 32, 32, 0.5) !important;
+  backdrop-filter: blur(20px);
+}
+
+.rcb-chat-tooltip span {
+  font-size: 15px !important;
+}
+
+.rcb-chat-tooltip-tail {
+  color: rgba(32, 32, 32, 0.411) !important;
+  border-color: transparent transparent transparent rgba(32, 32, 32, 0.5) !important;
+}

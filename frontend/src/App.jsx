@@ -34,6 +34,10 @@ import TypePage from "./pages/typePage";
 import ProfileEnterprisePage from "./pages/ProfileEnterprisePage";
 import ChatBotComponent from "./components/chatbot";
 import LoaderAnimation from "./components/loading";
+import NewFooter from "./components/newFooter.jsx";
+import NewsLetterPage from "./pages/newletter/index.jsx";
+import CareerPage from "./pages/career/index.jsx";
+import DemoPage from "./pages/demo/index.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -84,7 +88,9 @@ const App = () => {
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/about/team" element={<TeamPage />} />
           <Route path="/team" element={<TeamPage />} />
-
+          <Route path="/careers" element={<CareerPage />} />
+          <Route path="/newsletter" element={<NewsLetterPage />} />
+          <Route path="/request-demo" element={<DemoPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/donate" element={<DonorsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
@@ -100,7 +106,8 @@ const App = () => {
           <Route path="*" element={<NotfoundPage />} />
         </Routes>
         <ToastContainer />
-        <Footer />
+        <NewFooter />
+        {/* <Footer /> */}
       </div>
       <ChatBotComponent />
       <ButtonGradient />

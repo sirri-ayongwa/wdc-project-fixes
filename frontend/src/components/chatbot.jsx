@@ -1,9 +1,6 @@
 import ChatBot, { Button } from "react-chatbotify";
 // import { flow } from "../chatbot/flow";
-import { ChatRounded } from "@mui/icons-material";
-import Chat from "../assets/chatbot/chat.png";
 import Bot from "../assets/chatbot/robot.png";
-import Assistant from "../assets/chatbot/technical-support.png";
 import { useState } from "react";
 import WDCLogo from "../assets/images/wdcimage.png";
 import WDCLogo2 from "../assets/images/wdclogobg.png";
@@ -132,12 +129,6 @@ const ChatBotComponent = () => {
     },
     chatWindowStyle: {
       backgroundColor: "#f2f2f2",
-    },
-    chatButtonStyle: {
-      //   background: "transparent",
-      //   display: "flex",
-      //   objectFit: "contain",
-      //   overflow: "auto",
     },
     // ...other styles
   };
