@@ -371,6 +371,10 @@ function TeamPage() {
     staff: staffs,
   };
 
+  const handleChangeTeamKey = (new_key) => {
+    setTeamKey(new_key);
+  };
+
   const [teamkey, setTeamKey] = useState("founders");
 
   return (
@@ -394,7 +398,7 @@ function TeamPage() {
             <div className="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
               <button
                 onClick={() => {
-                  setTeamKey("founders");
+                  handleChangeTeamKey("founders");
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "founders"
@@ -406,7 +410,7 @@ function TeamPage() {
               </button>
               <button
                 onClick={() => {
-                  setTeamKey("clevelexecutives");
+                  handleChangeTeamKey("clevelexecutives");
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "clevelexecutives"
@@ -418,7 +422,7 @@ function TeamPage() {
               </button>
               <button
                 onClick={() => {
-                  setTeamKey("team leads");
+                  handleChangeTeamKey("team leads");
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "team leads"
@@ -430,7 +434,7 @@ function TeamPage() {
               </button>
               <button
                 onClick={() => {
-                  setTeamKey("staff");
+                  handleChangeTeamKey("staff");
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "staff"
@@ -442,7 +446,7 @@ function TeamPage() {
               </button>
               <button
                 onClick={() => {
-                  setTeamKey("interns");
+                  handleChangeTeamKey("interns");
                 }}
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "interns"
@@ -456,30 +460,135 @@ function TeamPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
-            {team_data[teamkey].map((member, index) => {
-              return (
-                <div
-                  key={`${index}-member`}
-                  className="flex flex-col items-center"
-                >
-                  <div className="" style={{ background: "#ffffffaa" }}>
-                    <img
-                      className="object-cover w-full rounded-xl aspect-square"
-                      src={member?.image}
-                      alt={member.name}
-                      style={{ height: "200px", aspectRation: "4:3" }}
-                    />
-                  </div>
-                  <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
-                    {member.name}
-                  </h1>
+            {teamkey === "founders" &&
+              team_data.founders.map((member, index) => {
+                return (
+                  <div
+                    key={`${index}-member`}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="" style={{ background: "#ffffffaa" }}>
+                      <img
+                        className="object-cover w-full rounded-xl aspect-square"
+                        src={member?.image}
+                        alt={member.name}
+                        style={{ height: "200px", aspectRation: "4:3" }}
+                      />
+                    </div>
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                      {member.name}
+                    </h1>
 
-                  <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
-                    {member?.title}
-                  </p>
-                </div>
-              );
-            })}
+                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                      {member?.title}
+                    </p>
+                  </div>
+                );
+              })}
+
+            {teamkey === "clevelexecutives" &&
+              team_data.clevelexecutives.map((member, index) => {
+                return (
+                  <div
+                    key={`${index}-member`}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="" style={{ background: "#ffffffaa" }}>
+                      <img
+                        className="object-cover w-full rounded-xl aspect-square"
+                        src={member?.image}
+                        alt={member.name}
+                        style={{ height: "200px", aspectRation: "4:3" }}
+                      />
+                    </div>
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                      {member.name}
+                    </h1>
+
+                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                      {member?.title}
+                    </p>
+                  </div>
+                );
+              })}
+
+            {teamkey === "team leads" &&
+              team_data["team leads"].map((member, index) => {
+                return (
+                  <div
+                    key={`${index}-member`}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="" style={{ background: "#ffffffaa" }}>
+                      <img
+                        className="object-cover w-full rounded-xl aspect-square"
+                        src={member?.image}
+                        alt={member.name}
+                        style={{ height: "200px", aspectRation: "4:3" }}
+                      />
+                    </div>
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                      {member.name}
+                    </h1>
+
+                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                      {member?.title}
+                    </p>
+                  </div>
+                );
+              })}
+
+            {teamkey === "staff" &&
+              team_data.staff.map((member, index) => {
+                return (
+                  <div
+                    key={`${index}-member`}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="" style={{ background: "#ffffffaa" }}>
+                      <img
+                        className="object-cover w-full rounded-xl aspect-square"
+                        src={member?.image}
+                        alt={member.name}
+                        style={{ height: "200px", aspectRation: "4:3" }}
+                      />
+                    </div>
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                      {member.name}
+                    </h1>
+
+                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                      {member?.title}
+                    </p>
+                  </div>
+                );
+              })}
+
+            {teamkey === "interns" &&
+              team_data.interns.map((member, index) => {
+                return (
+                  <div
+                    key={`${index}-member`}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="" style={{ background: "#ffffffaa" }}>
+                      <img
+                        className="object-cover w-full rounded-xl aspect-square"
+                        src={member?.image}
+                        alt={member.name}
+                        style={{ height: "200px", aspectRation: "4:3" }}
+                      />
+                    </div>
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                      {member.name}
+                    </h1>
+
+                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                      {member?.title}
+                    </p>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>
