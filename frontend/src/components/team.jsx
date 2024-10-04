@@ -55,7 +55,7 @@ function TeamPage() {
   const ClevelExecutives = [
     {
       location: "Canada",
-      title: "Chief Executif Officer",
+      title: "Chief Executive Officer",
       bio: "",
       email: "",
       socials: [],

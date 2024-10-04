@@ -5,7 +5,7 @@ function QNA() {
   return (
     <div>
       <Heading
-        tag="Get started with Michael"
+        tag="Get started with World Disaster Center"
         title="What we offer"
         text="The World Disaster Center (WDC) offers a suite of services and solutions designed to enhance global disaster management and resilience. Our comprehensive approach not only addresses immediate disaster response needs but also focuses on long-term recovery and preparedness, ensuring communities worldwide are equipped to handle and thrive in the face of adversity. Here’s what we offer:"
       />
@@ -328,7 +328,9 @@ function QNA() {
           </p>
         </details>
       </div>
-
+      <br />
+      <br />
+      <br />
       <div className="m-2">
         <div className="flex justify-center">
           <Heading title="Our Catalogue" />

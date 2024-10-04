@@ -22,7 +22,7 @@ const HomePage = () => {
       <Collaboration />
 
       {/* <Services /> */}
-      <Blogs isHome={false} />
+      {/* <Blogs isHome={false} /> */}
       <ContactForm />
       {/* <Pricing /> */}
       {/* <Pricing />

@@ -45,7 +45,7 @@ const Hero = () => {
           <h1 className="h1 mb-6">
             The Global Disaster Monitoring&nbsp;and&nbsp;Alert System {` `}
             <span className="inline-block relative">
-              Michael{" "}
+              ‘‘Michael’’{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -55,8 +55,13 @@ const Hero = () => {
               />
             </span>
           </h1>
-          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Transforming Challenges into Opportunities
+          <p
+            className="body-1 max-w-3xl mx-auto mb-6 text-n-2 font-semibold lg:mb-8"
+            style={{ textShadow: "1px 1px 2px rgba(40, 40, 40, 0.4)" }}
+          >
+            Michael harnesses advanced AI and real-time data to deliver
+            life-saving insights, empowering you to navigate disasters with
+            confidence and control.
           </p>
           <Button href={"https://doc.storydoc.ai/fDqGCI"} white>
             {"Learn more about michael"}

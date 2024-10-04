@@ -41,7 +41,7 @@ function NewFooter() {
                               New York Headquarters
                             </h4>
                             <span>
-                              New York 1660 Madison Avenue, New York, NY, 10029
+                              1660 Madison Avenue, New York, NY, 10029
                             </span>
                           </div>
                         </li>

@@ -94,12 +94,9 @@ export const brainwaveServicesIcons = [
 ];
 
 export const collabText =
-  "The Michael software platform monitors various types of disasters \
+  "The Michael software system monitors various types of disasters \
   worldwide including earthquakes, tsunamis, hurricanes, floods, \
-  wildfires, and industrial accidents. It aggregate data from multiple \
-  sources such as satellite imagery, weather stations, seismic \
-  sensors, and social media feeds to provide real-time alerts and \
-  advanced analytics.";
+  wildfires, and industrial accidents.";
 
 export const collabContent = [
   {
