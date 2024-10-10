@@ -22,74 +22,158 @@ function CareerPage() {
           </div>
           <div className="lg:py-24 md:py-16 py-10 bg-slate-50 xl:px-0 px-10">
             <h2 className="text-gray-900 text-center font-manrope lg:text-4xl text-3xl font-bold leading-10 mb-14">
-              Open Positions
+              Open Volunteering Positions
             </h2>
             <div className="lg:max-w-3xl md:max-w-xl sm:max-w-md max-w-sm mx-auto border border-slate-200 bg-white rounded-2xl p-12">
               <div className="flex justify-between gap-x-8 pb-6 border-b border-gray-200">
                 <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
-                  Data Analyst
+                Website Design and Development
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                          <a
+              href="https://www.volunteermatch.org/search/opp3853051.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
               </div>
               <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
                 <h3 className="hover:text-blue-600 text-gray-900 text-xl font-medium leading-8">
-                  UX/UI Designer
+                Graphic Designers
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                <a
+              href="https://www.volunteermatch.org/search/opp3853054.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
               </div>
               <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
                 <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
-                  AI Specialist
+                Video Editors
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                <a
+              href="https://www.volunteermatch.org/search/opp3853058.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
               </div>
               <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
                 <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
-                  Product Designer
+                Legal Consultant
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                <a
+              href="https://www.volunteermatch.org/search/opp3853064.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
               </div>
               <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
                 <h3 className="text-gray-900 text-xl hover:text-blue-600 font-medium leading-8">
-                  Visualization Specialist
+                Monitoring and Evaluation Specialist
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                <a
+              href="https://www.volunteermatch.org/search/opp3853062.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
+              </div>
+              <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
+                <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                Database and API Developer
+                </h3>
+                <a
+              href="https://www.volunteermatch.org/search/opp3853061.jsp"
+              target="_blank"
+                >
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
+                </button>
+                </a>
+              </div>
+              <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
+                <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                Mobile Application Designer and Developer
+                </h3>
+                <a
+              href="https://www.volunteermatch.org/search/opp3853059.jsp"
+              target="_blank"
+                >
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
+                </button>
+                </a>
+              </div>
+              <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
+                <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                Branding Expert/UX Design
+                </h3>
+                <a
+              href="https://www.volunteermatch.org/search/opp3853055.jsp"
+              target="_blank"
+                >
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
+                </button>
+                </a>
+              </div>
+              <div className="flex justify-between gap-x-8 py-6 border-b border-gray-200">
+                <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                Employee Relations & Welfare
+                </h3>
+                <a
+              href="https://www.volunteermatch.org/search/opp3854157.jsp"
+              target="_blank"
+                >
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
+                </button>
+                </a>
               </div>
               <div className="flex justify-between gap-x-8 pt-6">
                 <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
-                  Project Manager
+                Grant Writer
                 </h3>
-                <button
-                  onClick={() => toast("Coming Soon", { theme: "dark" })}
-                  className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                <a
+              href="https://www.volunteermatch.org/search/opp3853049.jsp"
+              target="_blank"
                 >
-                  Apply
+              <button
+                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+              >
+                Apply
                 </button>
+                </a>
               </div>
             </div>
           </div>

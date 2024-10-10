@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Anne from "../assets/team/anne.png";
 import Anselme from "../assets/team/AnselmeKonan.png";
 import Ayuba from "../assets/team/AyubaAbubakar.png";
-import Boaz from "../assets/team/boaz muliri.png";
 import choice from "../assets/team/choice.png";
 import davidk from "../assets/team/DavidKabanga.png";
 import davidmulume from "../assets/team/davidmulume.png";
@@ -16,14 +15,28 @@ import ledoux from "../assets/team/LedouxMedi.png";
 import marie from "../assets/team/marie.png";
 import oluwan from "../assets/team/Oluwandosin.png";
 import Rolande from "../assets/team/RolandeNamegabe.png";
-import Ruth from "../assets/team/Ruth.png";
+import Ruth from "../assets/team/ruth.png";
 import samchen from "../assets/team/samchen.png";
 import zainab from "../assets/team/Zainab.png";
 import sapiens from "../assets/team/sapiens.png";
 import WDCLogo from "../assets/images/wdclogobg.png";
+import lilla from "../assets/team/lilla.png";
+import manho from "../assets/team/man-ho.png";
+import francine from "../assets/team/francine.png";
+import norbert from "../assets/team/norbert.png";
+import boaz from "../assets/team/boaz.png";
 
 function TeamPage() {
   const founders = [
+    {
+      location: "Qatar",
+      title: "Founder",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Zainab Akhtar",
+      image: zainab,
+    },
     {
       location: "Austria",
       title: "Founder",
@@ -41,15 +54,6 @@ function TeamPage() {
       socials: [],
       name: "Rolande Namegabe",
       image: Rolande,
-    },
-    {
-      location: "Qatar",
-      title: "Founder",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Zainab Akhtar",
-      image: zainab,
     },
   ];
   const ClevelExecutives = [
@@ -69,7 +73,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "James Mbogo",
-      image: james,
+      image: WDCLogo,
     },
     {
       location: "DRC",
@@ -85,30 +89,48 @@ function TeamPage() {
   const TeamLeads = [
     {
       location: "DRC",
-      title: "Head of Information System",
+      title: "Information System",
       bio: "",
       email: "",
       socials: [],
       name: "Joseph Bakulikira",
       image: josephb,
     },
-    {
-      location: "DRC",
-      title: "Head of Policy and Strategy",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Anne Nduku",
-      image: Anne,
-    },
+    // {
+    //   location: "DRC",
+    //   title: "Policy and Strategy",
+    //   bio: "",
+    //   email: "",
+    //   socials: [],
+    //   name: "Anne Nduku",
+    //   image: Anne,
+    // },
     {
       location: "Egypt",
-      title: "Head of Research Analysis and Digital Innovation",
+      title: "Research Analysis and Digital Innovation",
       bio: "",
       email: "",
       socials: [],
       name: "David Mulume",
       image: davidmulume,
+    },
+    {
+      location: "Kenya",
+      title: "Forecast",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Ruth Ndegwa",
+      image: Ruth,
+    },
+    {
+      location: "Germany",
+      title: "Advocacy",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Lilla Albert",
+      image: lilla,
     },
   ];
 
@@ -122,6 +144,15 @@ function TeamPage() {
       name: "Gagana Md",
       image: WDCLogo,
     },
+    {
+      location: "",
+      title: "Forecast Volunteer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Man Ho Wong",
+      image: manho,
+    },
   ];
 
   const staffs = [
@@ -132,16 +163,16 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Anselme Konan",
-      image: Anselme,
+      image: WDCLogo,
     },
     {
       location: "Ghana",
-      title: "Assessment Specialist/Project Manager",
+      title: "Drones Expert",
       bio: "",
       email: "",
       socials: [],
       name: "Ayuba Abubakar",
-      image: Ayuba,
+      image: WDCLogo,
     },
     {
       location: "DRC",
@@ -150,7 +181,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Boaz Muliri",
-      image: Boaz,
+      image: boaz,
     },
     {
       location: "DRC",
@@ -163,7 +194,7 @@ function TeamPage() {
     },
     {
       location: "DRC",
-      title: "Full Stack dev",
+      title: "Full Stack Developer",
       bio: "",
       email: "",
       socials: [],
@@ -172,11 +203,11 @@ function TeamPage() {
     },
     {
       location: "DRC",
-      title: "UX Designer and Marketing Officer",
+      title: "UX Designer",
       bio: "",
       email: "",
       socials: [],
-      name: "John kibwe",
+      name: "John Kibwe",
       image: kibwe,
     },
 
@@ -187,7 +218,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Ellen Samche",
-      image: samchen,
+      image: WDCLogo,
     },
     {
       location: "DRC",
@@ -214,7 +245,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Francine Nabintu",
-      image: WDCLogo,
+      image: francine,
     },
     {
       location: "DRC",
@@ -227,7 +258,7 @@ function TeamPage() {
     },
     {
       location: "DRC",
-      title: "AI specialist",
+      title: "AI Specialist",
       bio: "",
       email: "",
       socials: [],
@@ -264,34 +295,25 @@ function TeamPage() {
     },
     {
       location: "USA",
-      title: "Visualization specialist",
+      title: "Visualization Specialist",
       bio: "",
       email: "",
       socials: [],
-      name: "Oluwandosin",
+      name: "Oluwandosin Agbolabori",
       image: oluwan,
     },
     {
-      location: "Kenya",
-      title: "",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Ruth Ndegwa",
-      image: Ruth,
-    },
-    {
       location: "",
-      title: "Chief Advocacy Officer",
+      title: "Cybersecurity Specialist",
       bio: "",
       email: "",
       socials: [],
-      name: "Lilla Albert",
+      name: "Elvis Matara",
       image: WDCLogo,
     },
     {
       location: "Italy",
-      title: "Information management",
+      title: "Information Management Specialist",
       bio: "",
       email: "",
       socials: [],
@@ -300,34 +322,25 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "Forecast Intern",
+      title: "Geospatial Analyst",
       bio: "",
       email: "",
       socials: [],
-      name: "Man Ho Wong",
+      name: "Mucyo Ndera",
       image: WDCLogo,
     },
     {
       location: "",
-      title: "Geospacial Analyst",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Muchio Ndera",
-      image: WDCLogo,
-    },
-    {
-      location: "",
-      title: "GIS",
+      title: "GIS Expert",
       bio: "",
       email: "",
       socials: [],
       name: "Nakato Jane Hope",
-      image: jane,
+      image: WDCLogo,
     },
     {
       location: "",
-      title: "Forecast Analyst",
+      title: "Forecast Consultant",
       bio: "",
       email: "",
       socials: [],
@@ -336,12 +349,12 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "UI and UX designer",
+      title: "UI and UX Designer",
       bio: "",
       email: "",
       socials: [],
       name: "Norbert Balisha",
-      image: WDCLogo,
+      image: norbert,
     },
     {
       location: "",
@@ -354,7 +367,7 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "Communication specialist",
+      title: "Communication Specialist",
       bio: "",
       email: "",
       socials: [],
@@ -454,7 +467,7 @@ function TeamPage() {
                     : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
                 }`}
               >
-                Interns
+                Interns & Volunteers
               </button>
             </div>
           </div>

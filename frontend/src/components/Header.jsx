@@ -71,11 +71,11 @@ const Header = () => {
               setOpenNavigation={setOpenNavigation}
               title="About Us"
               routings={{
-                "Who we are": "/about",
-                "Our vision": "/about/vision",
-                "Our mission": "/about/mission",
-                "Our values": "/about/values",
-                "What we offer": "/about/what-we-offer",
+                "Who We Are": "/about",
+                "Our Vision": "/about/vision",
+                "Our Mission": "/about/mission",
+                "Our Values": "/about/values",
+                "What We Offer": "/about/what-we-offer",
               }}
             />
 
