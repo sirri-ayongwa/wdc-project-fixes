@@ -15,7 +15,7 @@ import ledoux from "../assets/team/LedouxMedi.png";
 import marie from "../assets/team/marie.png";
 import oluwan from "../assets/team/Oluwandosin.png";
 import Rolande from "../assets/team/RolandeNamegabe.png";
-import Ruth from "../assets/team/ruth.png";
+import Ruth from "../assets/team/Ruth.png";
 import samchen from "../assets/team/samchen.png";
 import zainab from "../assets/team/Zainab.png";
 import sapiens from "../assets/team/sapiens.png";
