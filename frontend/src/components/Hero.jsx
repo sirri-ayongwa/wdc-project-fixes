@@ -56,7 +56,7 @@ const Hero = () => {
             </span>
           </h1>
           <p
-            className="body-1 max-w-3xl mx-auto mb-6 text-n-2 font-semibold lg:mb-8"
+            className="body-1 max-w-[91%] mx-auto mb-6 text-n-2 font-semibold lg:mb-8"
             style={{ textShadow: "1px 1px 2px rgba(40, 40, 40, 0.4)" }}
           >
             Michael harnesses advanced AI and real-time data to deliver

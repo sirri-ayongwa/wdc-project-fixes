@@ -61,9 +61,9 @@ function NewFooter() {
               </div>
             </a>
             <p className="py-4 text-sm text-gray-400 lg:max-w-xs text-center lg:text-left">
-              World Disaster Center is a Nonprofit Organization.
-              <br />
-              <b>EIN/tax ID number: 99-5085143</b>
+              World Disaster Center is a Nonprofit Organization. EIN no. 99-5085143.
+              {/* <br />
+              <b>EIN no. 99-5085143</b> */}
             </p>
           </div>
 
