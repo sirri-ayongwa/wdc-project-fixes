@@ -61,7 +61,7 @@ function NewFooter() {
               </div>
             </a>
             <p className="py-4 text-sm text-gray-400 lg:max-w-xs text-center lg:text-left">
-              World Disaster Center is a Nonprofit Organization. EIN no. 99-5085143.
+                   World Disaster Center is a Non-Profit Organization. EIN Number 99-5085143. ZVR-Nummer: 1671774845.
               {/* <br />
               <b>EIN no. 99-5085143</b> */}
             </p>
