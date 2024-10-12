@@ -160,20 +160,71 @@ function CareerPage() {
                 </button>
                 </a>
               </div>
+
               <div className="flex justify-between gap-x-8 pt-6">
-                <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
-                Grant Writer
-                </h3>
-                <a
-              href="https://www.volunteermatch.org/search/opp3853049.jsp"
-              target="_blank"
-                >
-              <button
-                className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
-              >
-                Apply
-                </button>
-                </a>
+                    <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                    Volunteer Research, Data Collection, and/or GIS Visualization Officer
+                    </h3>
+                    <a
+                      href="https://www.volunteermatch.org/search/opp3854939.jsp"
+                      target="_blank"
+                        >
+                      <button
+                        className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                      >
+                        Apply
+                        </button>
+                    </a>
+              </div>
+
+              <div className="flex justify-between gap-x-8 pt-6">
+                    <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                    Volunteer Information System Management Officer
+                    </h3>
+                    <a
+                      href="https://www.volunteermatch.org/search/opp3854936.jsp"
+                      target="_blank"
+                        >
+                      <button
+                        className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                      >
+                        Apply
+                        </button>
+                    </a>
+              </div>
+
+              <div className="flex justify-between gap-x-8 pt-6">
+                    <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                    LLM and/or Chatbot Development
+                    </h3>
+                    <a
+                      href="https://www.volunteermatch.org/search/opp3854491.jsp"
+                      target="_blank"
+                        >
+                      <button
+                        className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                      >
+                        Apply
+                        </button>
+                    </a>
+              </div>
+
+              
+
+              <div className="flex justify-between gap-x-8 pt-6">
+                    <h3 className="text-gray-900 hover:text-blue-600 text-xl font-medium leading-8">
+                    Grant Writer
+                    </h3>
+                    <a
+                      href="https://www.volunteermatch.org/search/opp3853049.jsp"
+                      target="_blank"
+                        >
+                      <button
+                        className="w-20 h-9 rounded-full bg-indigo-50 hover:bg-indigo-100 transition-all duration-700 text-blue-600 text-xs font-semibold leading-4"
+                      >
+                        Apply
+                        </button>
+                    </a>
               </div>
             </div>
           </div>
