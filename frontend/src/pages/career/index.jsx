@@ -6,7 +6,6 @@ import { openPositons } from "../../assets/data/openPositions";
 import Button from "../../components/Button";
 
 function CareerPage() {
-  
   return (
           <Section className="overflow-hidden" id="career">
             <div className="container flex flex-col justify-center items-center">
@@ -18,10 +17,10 @@ function CareerPage() {
                      conditions, and customer demands through our advanced technology.`}
                   />
             {/* positons list */}
-            <h5 className="text-gray-50 text-left self-start  lg:text-xl text-base font-bold leading-10">
-              Open Volunteering Positions :
+            <h5 className="text-gray-50 text-left  lg:text-xl text-base font-bold leading-10">
+              Open Volunteering Positions
             </h5>
-            <div className=" py-4 self-start ml-10">
+            <div className=" py-4 ">
                 { openPositons.map((item, index)=>(
                     <div key={index} className="flex justify-between gap-8 py-2 border-b border-gray-500">
                         <p className="text-gray-400 hover:text-gray-300 text-xl font-medium leading-8">
