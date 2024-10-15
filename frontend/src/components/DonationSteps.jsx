@@ -9,7 +9,7 @@ import YourDetails from './donate/Details';
 import PayementMethod from './donate/PayementMethod';
 import { Button } from '@mui/material';
 
-const steps = ['Your donation', 'Your details', 'Payement details'];
+const steps = ['Your donation', 'Your details', 'Payment details'];
 
 export default function DonationSteps() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -79,7 +79,6 @@ export default function DonationSteps() {
               Back
             </Button>
             <Box sx={{ flex: '1 1 auto' }} />
-            
             <Button variant='contained' size='large' onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>

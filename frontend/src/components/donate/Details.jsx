@@ -85,7 +85,7 @@ function YourDetails() {
               className="w-full"
             />
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-6">
+        {/*<div className="grid grid-cols-1 gap-4 mb-6">
             <TextField
               variant="outlined"
               size="large"
@@ -100,7 +100,7 @@ function YourDetails() {
               InputLabelProps={{className: 'text-xl'}}
               className="w-full"
             />
-        </div>
+        </div>*/}
         <p className="text-base text-gray-800 mb-4">By completing this action, you give permission for World Disater Center to contact you. You can unsubscribe from updates at any time.</p>
       </div>
   )
