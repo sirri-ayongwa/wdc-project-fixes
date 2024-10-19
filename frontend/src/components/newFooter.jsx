@@ -144,9 +144,9 @@ function NewFooter() {
                   Contact us
                 </Link>
               </li> */}
-              {/* <li className="mb-6">
+              <li className="mb-6">
                 <Link
-                  to="/"
+                  to="/termsCondition"
                   onClick={() => toast("coming soon", { theme: "dark" })}
                   className=" text-blue-300 hover:text-blue-500"
                 >
@@ -155,13 +155,13 @@ function NewFooter() {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/privacyPolicy"
                   onClick={() => toast("coming soon", { theme: "dark" })}
                   className=" text-blue-300 hover:text-blue-500"
                 >
                   Privacy Policy
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
 
@@ -198,8 +198,8 @@ function NewFooter() {
         <div className="py-7 border-t border-gray-200">
           <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
             <span className="text-sm text-gray-500 ">
-              ©<Link to="/">World Disaster Center</Link>{" "}
-              {new Date().getFullYear()}, All rights reserved.
+              Copyright © <Link to="/">World Disaster Center</Link>{" "}
+              {new Date().getFullYear()} |  All Rights Reserved 
             </span>
             <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
               {/* X - twitter */}

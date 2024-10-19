@@ -135,7 +135,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="caption text-n-4 lg:block">
-          © {new Date().getFullYear()}. All rights reserved.
+        Copyright © {new Date().getFullYear()}. All Rights Reserved.
         </p>
 
         <ul className="flex gap-5 flex-wrap">

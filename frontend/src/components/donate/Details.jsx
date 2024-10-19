@@ -22,7 +22,7 @@ function YourDetails() {
   return (
     <div className="p-8 mt-8 mx-auto bg-gray-50 shadow-md">
         <h2 className="text-lg font-semibold text-gray-700">STEP 2</h2>
-        <h1 className="text-3xl font-bold mb-4 text-n-3">Your details</h1>
+        <h1 className="text-3xl font-bold mb-4 text-n-3">Your Details</h1>
 
         {/* Donator information */}
         <p className="text-sm text-gray-600 mb-4"><b className='text-red-600'>*</b> Indicates required field.</p>
@@ -58,7 +58,7 @@ function YourDetails() {
             <TextField
               variant="outlined"
               size="large"
-              label={<span className="text-xl">Email Adress <b className='text-red-600'>*</b></span>}
+              label={<span className="text-xl">Email Address <b className='text-red-600'>*</b></span>}
               name='email'
               type='email'
               value={details.email}
