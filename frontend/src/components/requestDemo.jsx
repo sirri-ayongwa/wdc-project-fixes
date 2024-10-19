@@ -54,7 +54,7 @@ function RequestDemo() {
               <span className="text-yellow-400">Michael</span>
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
-              The Michael software platform monitors various types of disasters
+              The Michael platform monitors various types of disasters
               worldwide including earthquakes, tsunamis, hurricanes, floods,
               wildfires, and industrial accidents. It aggregate data from
               multiple sources such as satellite imagery, weather stations,
