@@ -133,7 +133,7 @@ function PayementMethod() {
                   </div>
            </div>
            <p className=" base-1 text-gray-900" >
-            Your total contribution to create a kinder world for animals is $0. Thank you.
+            Your total contribution to create a safer world for vulnerable people is $0. Thank you.
            </p>
       </div>
     )
