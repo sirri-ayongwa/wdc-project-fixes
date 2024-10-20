@@ -25,6 +25,7 @@ import manho from "../assets/team/man-ho.png";
 import francine from "../assets/team/francine.png";
 import norbert from "../assets/team/norbert.png";
 import boaz from "../assets/team/boaz.png";
+import elvis from "../assets/team/elvis.png";
 
 function TeamPage() {
   const founders = [
@@ -236,7 +237,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Elvis Matara",
-      image: WDCLogo,
+      image: elvis,
     },
     {
       location: "",
