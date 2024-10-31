@@ -63,7 +63,7 @@ const Hero = () => {
             life-saving insights, empowering you to navigate disasters with
             confidence and control.
           </p>
-          <Button href={"https://doc.storydoc.ai/fDqGCI"} white>
+          <Button href={"/request-demo"} white>
             {"Learn more about michael"}
           </Button>
         </div>

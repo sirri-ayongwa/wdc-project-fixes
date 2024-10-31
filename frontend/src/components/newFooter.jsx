@@ -93,7 +93,7 @@ function NewFooter() {
             </ul>
           </div>
 
-          <div className="lg:mx-auto text-left ">
+          {/* <div className="lg:mx-auto text-left ">
             <h4 className="text-lg text-gray-300 font-medium mb-7">
               Solutions
             </h4>
@@ -123,7 +123,7 @@ function NewFooter() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="lg:mx-auto text-left ">
             <h4 className="text-lg text-gray-300 font-medium mb-7">Support</h4>
@@ -144,10 +144,10 @@ function NewFooter() {
                   Contact us
                 </Link>
               </li> */}
-              <li className="mb-6">
+              {/* <li className="mb-6">
                 <Link
                   to="/termsCondition"
-                  onClick={() => toast("coming soon", { theme: "dark" })}
+                  // onClick={() => toast("coming soon", { theme: "dark" })}
                   className=" text-blue-300 hover:text-blue-500"
                 >
                   Terms & Conditions
@@ -155,13 +155,13 @@ function NewFooter() {
               </li>
               <li>
                 <Link
-                  to="/privacyPolicy"
-                  onClick={() => toast("coming soon", { theme: "dark" })}
+                  to="/privacy-policy"
+                  // onClick={() => toast("coming soon", { theme: "dark" })}
                   className=" text-blue-300 hover:text-blue-500"
                 >
                   Privacy Policy
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
