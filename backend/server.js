@@ -95,6 +95,7 @@ const corsConfig = {
   origin: [
     "https://world-disaster-center-git-master-josephbakulikiras-projects.vercel.app",
     "https://world-disaster-center-fqyc4nqnr-josephbakulikiras-projects.vercel.app",
+    "https://wdc-website-official-iuhmniq30-wdc1.vercel.app",
     "http://localhost:5173", 
     "https://localhost:5173",
     "http://localhost:3000",
