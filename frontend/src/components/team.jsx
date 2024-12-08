@@ -402,10 +402,11 @@ function TeamPage() {
 
           <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
             At World Disaster Center, our team is the heart and soul of our
-            mission. We are a diverse group of dedicated professionals, united
+            mission.{/*We are a diverse group of dedicated professionals, united
             by our passion for making a positive impact in the world. Each
             member brings unique skills and experiences that drive our
-            initiatives forward.
+            initiatives forward.*/}
+            
           </p>
 
           <div className="flex items-center justify-center">
