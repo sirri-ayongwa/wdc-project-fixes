@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import Anne from "../assets/team/anne.png";
+import billy from "../assets/team/billy.png";
+import jietong from "../assets/team/jietong.png";
+import jane from "../assets/team/jane.png";
+import chaitra from "../assets/team/chaitra.png";
+import srinivasa from "../assets/team/srinivasa.png";
+import ndifanji from "../assets/team/ndifanji.png";
 import Anselme from "../assets/team/AnselmeKonan.png";
 import Ayuba from "../assets/team/AyubaAbubakar.png";
-import choice from "../assets/team/choice.png";
 import davidk from "../assets/team/DavidKabanga.png";
+import davidboard from "../assets/team/davidk.png";
 import davidmulume from "../assets/team/davidmulume.png";
+import ayushi from "../assets/team/ayushi.png";
+import grace from "../assets/team/mariegrace.png";
 import doddy from "../assets/team/DoddyMatabaro.png";
 import isaac from "../assets/team/isaac.png";
 import james from "../assets/team/james.png";
-import jane from "../assets/team/Jane.png";
+// import jane from "../assets/team/Jane.png";
 import josephb from "../assets/team/joseph.png";
 import kibwe from "../assets/team/kibwe.png";
 import ledoux from "../assets/team/LedouxMedi.png";
+import maria from "../assets/team/maria.png";
 import marie from "../assets/team/marie.png";
 import oluwan from "../assets/team/Oluwandosin.png";
 import Rolande from "../assets/team/RolandeNamegabe.png";
 import Ruth from "../assets/team/Ruth.png";
-import samchen from "../assets/team/samchen.png";
-import zainab from "../assets/team/Zainab.png";
+import zainab from "../assets/team/zainab.png";
 import sapiens from "../assets/team/sapiens.png";
 import WDCLogo from "../assets/images/wdclogobg.png";
 import lilla from "../assets/team/lilla.png";
@@ -28,19 +35,120 @@ import boaz from "../assets/team/boaz.png";
 import elvis from "../assets/team/elvis.png";
 
 function TeamPage() {
-  const founders = [
+  const board = [
     {
       location: "Qatar",
-      title: "Founder",
+      title: "Business Development Manager @ Econet Wireless Zimbabwe",
       bio: "",
       email: "",
       socials: [],
-      name: "Zainab Akhtar",
-      image: zainab,
+      name: "Albert Mawungwe",
+      image: WDCLogo,
     },
     {
       location: "Austria",
-      title: "Founder",
+      title: "Global Data Supply Strategy and Operations Manager @ HERE Technologies",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Clint Leander",
+      image: WDCLogo,
+    },
+    {
+      location: "USA",
+      title: "USCIS OFFICER @ United States Department of Homeland Security",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "David C. Kangamina",
+      image: davidboard,
+    },
+    {
+      location: "Canada",
+      title: "Complaints Officer @ Elections Canada",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Doux Kelvin",
+      image: WDCLogo,
+    },
+    // {
+    //   location: "USA",
+    //   title: "Founder",
+    //   bio: "",
+    //   email: "",
+    //   socials: [],
+    //   name: "Gilbert Arrah",
+    //   image: WDCLogo,
+    // },
+    {
+      location: "USA",
+      title: "Country Director @ Première Urgence International",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Eugide Lalé Mbunda",
+      image: WDCLogo,
+    },
+    {
+      location: "USA",
+      title: "Policy Aide to the Commissioner of the 1st District @ Hennepin County",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Ingrid Kubisa",
+      image: WDCLogo,
+    },
+    {
+      location: "USA",
+      title: "Information Management Delegate @ International Federation of Red Cross and Red Crescent Societies - IFRC",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Jean Stephane Dabone",
+      image: WDCLogo,
+    },
+    {
+      location: "USA",
+      title: "Head of Mission @ Première Urgence Internationale",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Jonathan Itegwa",
+      image:WDCLogo,
+    },
+    {
+      location: "USA",
+      title: "PhD Research Consultant, Migration & Human Rights @  Erasmus University Rotterdam",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Maria Kohutova",
+      image: maria,
+    },
+    {
+      location: "USA",
+      title: "Vice Chair Advisory Panel @ Aidsfonds & Policy Manager @ Transform Health",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Ndifandji Namecha",
+      image: ndifanji,
+    },
+    {
+      location: "USA",
+      title: "Multi-Country Consortium Coordinator & Chief Of Party PARIC_Mali-Burkina Faso @ International Rescue",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Stephen Aksanti",
+      image: WDCLogo,
+    },
+  ];
+  const ClevelExecutives = [
+    {
+      location: "Paris",
+      title: "Co-Founder & Chief Executive Officer",
       bio: "",
       email: "",
       socials: [],
@@ -48,24 +156,22 @@ function TeamPage() {
       image: sapiens,
     },
     {
-      location: "USA",
-      title: "Founder",
+      location: "Qatar",
+      title: "Co-Founder & Chief Scientific Officer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Zainab Akhtar",
+      image: zainab,
+    },
+    {
+      location: "New York",
+      title: "Co-Founder & Chief Communications Officer",
       bio: "",
       email: "",
       socials: [],
       name: "Rolande Namegabe",
       image: Rolande,
-    },
-  ];
-  const ClevelExecutives = [
-    {
-      location: "Canada",
-      title: "Chief Executive Officer",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Choice Ufuoma Okoro",
-      image: choice,
     },
     {
       location: "Kenya",
@@ -83,11 +189,134 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "David Kabanga",
-      image: davidk,
+      image: WDCLogo,
     },
   ];
 
-  const TeamLeads = [
+  // const TeamLeads = [
+  //   {
+  //     location: "DRC",
+  //     title: "Information System",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "Joseph Bakulikira",
+  //     image: josephb,
+  //   },
+  //   {
+  //     location: "Egypt",
+  //     title: "Research Analysis and Digital Innovation",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "David Mulume",
+  //     image: davidmulume,
+  //   },
+  //   {
+  //     location: "Kenya",
+  //     title: "Forecast",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "Ruth Ndegwa",
+  //     image: Ruth,
+  //   },
+  //   {
+  //     location: "Germany",
+  //     title: "Advocacy",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "Lilla Albert",
+  //     image: lilla,
+  //   },
+  // ];
+
+  // const interns = [
+  //   {
+  //     location: "",
+  //     title: "Forecast Intern",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "Gagana Md",
+  //     image: WDCLogo,
+  //   },
+  //   {
+  //     location: "",
+  //     title: "Forecast Volunteer",
+  //     bio: "",
+  //     email: "",
+  //     socials: [],
+  //     name: "Man Ho Wong",
+  //     image: manho,
+  //   },
+  // ];
+
+  const staffs = [
+    {
+      location: "Ivory Coast",
+      title: "Data Scientist",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Billy Libang",
+      image: billy,
+    },
+    {
+      location: "Ivory Coast",
+      title: "Data Scientist",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Jietong Lee",
+      image: jietong,
+    },
+    {
+      location: "Ivory Coast",
+      title: "Dashboard Specialist",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Chaitra Venu Kumar",
+      image: chaitra,
+    },
+    {
+      location: "Ivory Coast",
+      title: "Website Developer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Srinivasa  Perisetla",
+      image: srinivasa,
+    },
+    {
+      location: "Ivory Coast",
+      title: "Data Analyst",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Anselme Konan",
+      image: WDCLogo,
+    },
+    {
+      location: "Ivory Coast",
+      title: "LLM Developer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Ayushi Bhujade",
+      image: ayushi,
+    },
+    {
+      location: "Ivory Coast",
+      title: "Full Stack Developer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Marie Grâce Bahati",
+      image: grace,
+    },
     {
       location: "DRC",
       title: "Information System",
@@ -97,15 +326,6 @@ function TeamPage() {
       name: "Joseph Bakulikira",
       image: josephb,
     },
-    // {
-    //   location: "DRC",
-    //   title: "Policy and Strategy",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Anne Nduku",
-    //   image: Anne,
-    // },
     {
       location: "Egypt",
       title: "Research Analysis and Digital Innovation",
@@ -113,7 +333,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "David Mulume",
-      image: davidmulume,
+      image: WDCLogo,
     },
     {
       location: "Kenya",
@@ -133,9 +353,6 @@ function TeamPage() {
       name: "Lilla Albert",
       image: lilla,
     },
-  ];
-
-  const interns = [
     {
       location: "",
       title: "Forecast Intern",
@@ -153,18 +370,6 @@ function TeamPage() {
       socials: [],
       name: "Man Ho Wong",
       image: manho,
-    },
-  ];
-
-  const staffs = [
-    {
-      location: "Ivory Coast",
-      title: "Data Analyst",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Anselme Konan",
-      image: WDCLogo,
     },
     {
       location: "Ghana",
@@ -211,16 +416,6 @@ function TeamPage() {
       name: "John Kibwe",
       image: kibwe,
     },
-
-    {
-      location: "Ghana",
-      title: "Communication and Social Media Specialist",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Ellen Samche",
-      image: WDCLogo,
-    },
     {
       location: "DRC",
       title: "Data Scientist",
@@ -228,7 +423,7 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Le Doux Medi",
-      image: ledoux,
+      image: WDCLogo,
     },
     {
       location: "",
@@ -241,22 +436,14 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "Finance & HR Officer",
+      title: "HR Officer",
       bio: "",
       email: "",
       socials: [],
       name: "Francine Nabintu",
       image: francine,
     },
-    {
-      location: "DRC",
-      title: "GIS Analyst",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Isaac Ntabala",
-      image: isaac,
-    },
+
     {
       location: "DRC",
       title: "AI Specialist",
@@ -285,15 +472,7 @@ function TeamPage() {
     //   name: "Maria",
     //   image: maria,
     // },
-    {
-      location: "Kenya",
-      title: "Geospacial Analyst",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Mary Muthee",
-      image: marie,
-    },
+
     {
       location: "USA",
       title: "Visualization Specialist",
@@ -301,15 +480,6 @@ function TeamPage() {
       email: "",
       socials: [],
       name: "Oluwandosin Agbolabori",
-      image: oluwan,
-    },
-    {
-      location: "",
-      title: "Cybersecurity Specialist",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Elvis Matara",
       image: WDCLogo,
     },
     {
@@ -323,21 +493,12 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "Geospatial Analyst",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Mucyo Ndera",
-      image: WDCLogo,
-    },
-    {
-      location: "",
-      title: "GIS Expert",
+      title: "GIS Visualization Expert",
       bio: "",
       email: "",
       socials: [],
       name: "Nakato Jane Hope",
-      image: WDCLogo,
+      image: jane,
     },
     {
       location: "",
@@ -359,37 +520,28 @@ function TeamPage() {
     },
     {
       location: "",
-      title: "AI Team Lead",
+      title: "AI Developer",
       bio: "",
       email: "",
       socials: [],
       name: "Seraphin Baributsa",
       image: WDCLogo,
     },
-    {
-      location: "",
-      title: "Communication Specialist",
-      bio: "",
-      email: "",
-      socials: [],
-      name: "Yacinthe Keiza",
-      image: WDCLogo,
-    },
   ];
 
   const team_data = {
-    founders: founders,
     clevelexecutives: ClevelExecutives,
-    "team leads": TeamLeads,
-    interns: interns,
+    // "team leads": TeamLeads,
+    // interns: interns,
     staff: staffs,
+    board: board,
   };
 
   const handleChangeTeamKey = (new_key) => {
     setTeamKey(new_key);
   };
 
-  const [teamkey, setTeamKey] = useState("founders");
+  const [teamkey, setTeamKey] = useState("clevelexecutives");
 
   return (
     <div>
@@ -410,18 +562,7 @@ function TeamPage() {
 
           <div className="flex items-center justify-center">
             <div className="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-              <button
-                onClick={() => {
-                  handleChangeTeamKey("founders");
-                }}
-                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
-                  teamkey === "founders"
-                    ? "bg-blue-600 text-white"
-                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
-                }`}
-              >
-                Founders
-              </button>
+
               <button
                 onClick={() => {
                   handleChangeTeamKey("clevelexecutives");
@@ -434,7 +575,7 @@ function TeamPage() {
               >
                 Executives
               </button>
-              <button
+              {/* <button
                 onClick={() => {
                   handleChangeTeamKey("team leads");
                 }}
@@ -445,7 +586,7 @@ function TeamPage() {
                 }`}
               >
                 Team Lead
-              </button>
+              </button> */}
               <button
                 onClick={() => {
                   handleChangeTeamKey("staff");
@@ -458,7 +599,20 @@ function TeamPage() {
               >
                 Staff
               </button>
+
               <button
+                onClick={() => {
+                  handleChangeTeamKey("board");
+                }}
+                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
+                  teamkey === "board"
+                    ? "bg-blue-600 text-white"
+                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
+                }`}
+              >
+                board
+              </button>
+              {/* <button
                 onClick={() => {
                   handleChangeTeamKey("interns");
                 }}
@@ -469,13 +623,13 @@ function TeamPage() {
                 }`}
               >
                 Interns & Volunteers
-              </button>
+              </button> */}
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
-            {teamkey === "founders" &&
-              team_data.founders.map((member, index) => {
+            {teamkey === "board" &&
+              team_data.board.map((member, index) => {
                 return (
                   <div
                     key={`${index}-member`}
@@ -526,7 +680,7 @@ function TeamPage() {
                 );
               })}
 
-            {teamkey === "team leads" &&
+            {/* {teamkey === "team leads" &&
               team_data["team leads"].map((member, index) => {
                 return (
                   <div
@@ -550,7 +704,7 @@ function TeamPage() {
                     </p>
                   </div>
                 );
-              })}
+              })} */}
 
             {teamkey === "staff" &&
               team_data.staff.map((member, index) => {
@@ -578,7 +732,7 @@ function TeamPage() {
                 );
               })}
 
-            {teamkey === "interns" &&
+            {/* {teamkey === "interns" &&
               team_data.interns.map((member, index) => {
                 return (
                   <div
@@ -602,7 +756,7 @@ function TeamPage() {
                     </p>
                   </div>
                 );
-              })}
+              })} */}
           </div>
         </div>
       </section>
