@@ -28,7 +28,7 @@ import elvis from "../assets/team/elvis.png";
 function TeamPage() {
   const board = [
     // {
-    //   location: "Qatar",
+    //   location: "",
     //   title: "Business Development Manager @ Econet Wireless Zimbabwe",
     //   bio: "",
     //   email: "",
