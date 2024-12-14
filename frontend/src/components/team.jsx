@@ -73,7 +73,7 @@ function TeamPage() {
     //   image: WDCLogo,
     // },
     // {
-    //   location: "USA",
+    //   location: "",
     //   title: "Country Director @ Première Urgence International",
     //   bio: "",
     //   email: "",
