@@ -37,7 +37,7 @@ function TeamPage() {
     //   image: WDCLogo,
     // },
     // {
-    //   location: "Austria",
+    //   location: "",
     //   title: "Global Data Supply Strategy and Operations Manager @ HERE Technologies",
     //   bio: "",
     //   email: "",
