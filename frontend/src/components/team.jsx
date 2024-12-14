@@ -17,7 +17,7 @@ import Rolande from "../assets/team/RolandeNamegabe.png";
 import Ruth from "../assets/team/Ruth.png";
 import zainab from "../assets/team/zainab.png";
 import sapiens from "../assets/team/sapiens.png";
-import WDCLogo from "../assets/images/wdclogobg.png";
+// import WDCLogo from "../assets/images/wdclogobg.png";
 import lilla from "../assets/team/lilla.png";
 import manho from "../assets/team/man-ho.png";
 import francine from "../assets/team/francine.png";
