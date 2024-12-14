@@ -82,7 +82,7 @@ function TeamPage() {
     //   image: WDCLogo,
     // },
     // {
-    //   location: "USA",
+    //   location: "",
     //   title: "Policy Aide to the Commissioner of the 1st District @ Hennepin County",
     //   bio: "",
     //   email: "",
