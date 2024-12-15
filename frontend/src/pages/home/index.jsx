@@ -17,7 +17,7 @@ const HomePage = () => {
     <>
       <Hero />
       <Benefits />
-      <VideoSection />
+      {/* <VideoSection /> */}
 
       <Collaboration />
 
