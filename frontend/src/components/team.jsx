@@ -24,6 +24,7 @@ import francine from "../assets/team/francine.png";
 import norbert from "../assets/team/norbert.png";
 import boaz from "../assets/team/boaz.png";
 import elvis from "../assets/team/elvis.png";
+import jamesmbogo from "../assets/team/JamesMbogo.png";
 
 function TeamPage() {
   const board = [
@@ -164,15 +165,15 @@ function TeamPage() {
       name: "Rolande Namegabe",
       image: Rolande,
     },
-    // {
-    //   location: "Kenya",
-    //   title: "Chief Information Officer",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "James Mbogo",
-    //   image: WDCLogo,
-    // },
+    {
+      location: "Kenya",
+      title: "Chief Information Officer",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "James Mbogo",
+      image: jamesmbogo,
+    },
     // {
     //   location: "DRC",
     //   title: "Chief Technical Officer",
