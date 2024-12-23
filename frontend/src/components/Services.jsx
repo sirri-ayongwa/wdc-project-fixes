@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import { check } from "../assets";
 import { brainwaveServices } from "../constants";
 import World from "../assets/services/world.png";
-import Strengths from "../assets/services/strengths.png";
+// import Strengths from "../assets/services/strengths.png";
 import corevalues from "../assets/services/corevalues.jpg";
 import img1 from "../assets/services/img1.png";
 import img2 from "../assets/services/img2.png";
