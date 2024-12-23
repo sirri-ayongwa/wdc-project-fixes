@@ -4,6 +4,8 @@ import "./style.css";
 function NewsLetter() {
   const [email, setEmail] = useState("");
   return (
+
+    
     <div className="news-letter-container">
       <form
         className="form-news-letter validate"

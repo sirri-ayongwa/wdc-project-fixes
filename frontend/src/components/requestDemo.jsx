@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-import { FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa"; 
 import { MdPeople } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
@@ -50,13 +50,13 @@ function RequestDemo() {
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-md sm:text-center">
             <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
-              Enter your details to get a demo of{" "}
-              <span className="text-yellow-400">Michael</span>
+              
+              <span className="text-red-600">Michael</span> Demo Request{" "}
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
-              The Michael platform monitors various types of disasters
-              worldwide including earthquakes, tsunamis, hurricanes, floods,
-              wildfires, and industrial accidents. It aggregate data from
+              Michael monitors various types of disasters
+              worldwide including earthquakes, hurricanes, floods,
+              wildfires, and industrial accidents. It aggregates data from
               multiple sources such as satellite imagery, weather stations,
               seismic sensors, and social media feeds to provide real-time
               alerts and advanced analytics.
@@ -74,7 +74,7 @@ function RequestDemo() {
                     Full Name
                   </label>
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <FaUser />
+                    <FaUser className="w-5 h-5 text-gray-500 dark:text-gray-400"/>
                   </div>
                   <input
                     className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -95,10 +95,10 @@ function RequestDemo() {
                     Organization
                   </label>
                   <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <MdPeople />
+                    <MdPeople className="w-5 h-5 text-gray-500 dark:text-gray-400"/>
                   </div>
                   <input
-                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-00 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Organization name (Optional)"
                     type="text"
                     id="organization"
@@ -111,7 +111,7 @@ function RequestDemo() {
                 <div className="relative w-full">
                   <label
                     htmlFor="email"
-                    className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                   >
                     Email address
                   </label>

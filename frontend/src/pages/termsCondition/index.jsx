@@ -1,4 +1,6 @@
 import React from "react";
+import Section from "../../components/Section";
+import Heading from "../../components/Heading";
 
 function TermsAndConditionPage() {
   return (
@@ -27,7 +29,6 @@ function TermsAndConditionPage() {
               Access to certain portions of our Site is restricted to registered Users with an account on the Site (<b className="text-n-4">“Account”</b>). You may be required to provide personal information such as your name, telephone number(s), e-mail, street address, credit card number, debit card number, charge card number, or other payment information, along with other personally identifiable information <b className="text-n-4">(“Personal Data”)</b>. Your Personal Data is associated with your Account. By providing such information, you acknowledge and agree that we may, and you specifically authorize us, or permitted third parties, to process all transactions related to the Site and its operation, including but not limited to purchases and/or registration for products and/or services on the Site. You agree to pay all fees and charges, including applicable taxes and surcharges, incurred through your activity on or through the Site and/or through your Account.
             </p>
           </div>
-          
           <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
             <h1 className="  h3 ">2. Registration and Security</h1>
             <h2 className="h4">Account Information:</h2>
@@ -115,10 +116,146 @@ function TermsAndConditionPage() {
             <p>
             You are solely responsible for all activity while using the Site.
             </p>
+            <h2 className="h4">Prohibited Uses:</h2>
+            <p>You represent and warrant not to use the Site for any unlawful or prohibited purposes. This includes, but is not limited to:</p>
+            <ul className="list-disc list-inside ml-8">
+              
+              <li className="mb-2 ml-8">Reselling, renting, leasing, charging, distributing, transferring, or sharing any rights received from the Site.</li>
+              <li className="mb-2 ml-8">Using another party’s username to impersonate, deceive, or engage in fraudulent behavior.</li>
+              <li className="mb-2 ml-8">Selecting a username that is offensive or infringing upon another party’s rights.</li>
+              <li className="mb-2 ml-8">Maintaining a positive and courteous decorum in all interactions on the Site.</li>
+            </ul>
           </div>
+
+          
+          <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+            <h1 className="  h3 "> 10. Feedback </h1>
+            <h2 className="h4">Submitting Feedback:</h2>
+            <p>You can submit feedback via office@worlddisastercenter.org. By submitting feedback (“User Submissions”), you grant the Organization a royalty-free, irrevocable, transferable license to use, modify, publish, translate, create derivative works from, sell, and distribute such submissions.</p>
+            <h2 className=" h4">No Obligation:</h2>
+            <p>The Organization is not obligated to maintain any User Submissions in confidence, pay compensation, or respond to submissions. You agree that your submissions do not violate third-party rights and are not libelous or contain unlawful material.</p>
+          </div>
+
+          <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+            <h1 className="  h3 ">11. Intellectual Property</h1>
+            <h2 className="h4">Ownership:</h2>
+            <p>Our Site, including all content, designs, graphics, source code, and functionality, is owned by us or our licensors and is protected by intellectual property laws.</p>
+            <h2 className=" h4">Usage License:            </h2>
+            <p>You are granted a limited, non-exclusive, non-transferable, and revocable license to access and use the Site, subject to compliance with these Terms. This license does not include the right to download (except for page caching) or modify the Site or its content.            </p>
+          <h2 className=" h4">Restrictions:</h2>
+          <ul className="list-disc list-inside ml-8">
+              <li className="mb-2 ml-8">Do not reproduce, duplicate, copy, sell, resell, or exploit any portion of the Site without express written consent.</li>
+              <li className="mb-2 ml-8">Do not frame or utilize framing techniques to enclose any trademark, logo, or proprietary information of the Site without consent.</li>
+              <li className="mb-2 ml-8">Do not use any Organization logos or proprietary graphics as part of a link without permission.</li>
+          </ul>
+          <h2 className="h4">Respecting Others Intellectual Property:</h2>
+          <p>Users must not use the Site to infringe upon others’ intellectual property rights. If you believe your rights have been infringed, please contact us immediately at office@worlddisastercenter.org</p>
+          </div>
+
+          <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+            <h1 className="  h3 ">12. Additional User Restrictions Related to Intellectual Property</h1>
+            <h2 className="h4">Responsibility for Content:</h2>
+            <p>When posting or submitting information to the Site, you represent that you have ownership, authority, or permission to do so. You further warrant that the information does not infringe upon any third-party rights and will indemnify the Organization against any claims arising from such submissions.</p>
+
+            <h2 className="h4">Prohibited Actions:</h2>
+            <p>Users may not:</p>
+            <ul className="list-disc list-inside ml-8">
+                <li className="mb-2 ml-8"> Copy, download, publish, distribute, or reproduce any Site content without prior written consent.</li>
+                <li className="mb-2 ml-8">Remove, alter, or obscure any trademarks, notices, or intellectual property rights.</li>
+                <li className="mb-2 ml-8">Modify, translate, or create derivative works from Site content.</li>
+                <li className="mb-2 ml-8">Reverse engineer or attempt to discover the source code of any software used on the Site.</li>
+            </ul>
+<h2 className=" h4">License for User-Submitted Content: </h2>
+<p className="">You grant us a worldwide, non-exclusive, royalty-free, sub-licensable, and transferable license to use any User-Submitted Content you provide.</p>
+            </div>
+
+            <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+              <h1 className="  h3 ">13. Disclaimer of Warranties</h1>
+              <h2 className="h4">As-Is Basis:</h2>
+              <p>The Site and all information contained herein are provided &quot;as is&quot; without any warranties of any kind.</p>
+              <h2 className="h4">No Warranties:</h2>
+            <p>World Disaster Center, along with its affiliates, disclaims all warranties, express or implied, including merchantability, non-infringement, and fitness for a particular purpose. We do not guarantee that the Site will be operational, secure, error-free, or virus-free.
+            </p>
+            
+            <h2 className="h4">User Responsibility for Security:</h2>
+            <p>You are responsible for implementing adequate security measures to protect your data and maintain backups of your information.</p>
+
+            <h2 className="h4">Liability for Harmful Material:</h2>
+            <p>We are not liable for any loss or damage caused by malicious attacks, viruses, or other harmful material resulting from your use of the Site or downloading content from it.</p>
+            <h2 className="h4">Legal Exceptions:</h2>
+           <p>Some jurisdictions do not allow the exclusion of certain warranties, so these exclusions may not apply to you.</p>
+      
+            </div>
+
+            <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+              <h1 className="  h3 ">14. Limitation of Liability</h1>
+              <h2 className="h4"> Release of Liability:</h2>
+             <p>To the fullest extent permitted by law, you release World Disaster Center and its affiliates from all liability associated with your use of the Site.</p>
+                <h2 className="h4">No Liability for Damages:</h2>
+                <p>We are not liable for any damages of any kind arising from your use or inability to use the Site, including but not limited to direct, indirect, incidental, punitive, and consequential damages.</p>
+                <h2 className="h4">Legal Exceptions:</h2>
+                <p>This limitation does not affect any liability that cannot be excluded or limited under applicable law.</p>
+
+            </div>
+
+            <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+         <h1 className=" h3"> 15. Indemnification</h1>
+           
+         <h2 className="h4">Your Responsibility to Indemnify:</h2>
+         <p>You agree to indemnify, defend, and hold harmless World Disaster Center and its affiliates from any claims, damages, losses, liabilities, costs, or expenses arising from:</p>
+            <ul className="list-disc list-inside ml-8">
+                  <li className="mb-2 ml-8"> Your access to or use of the Site.</li>
+                  <li className="mb-2 ml-8">Your violation of these Terms of Use.</li>
+                  <li className="mb-2 ml-8"> Any activity related to your Account by you or others.</li>
+                  <li className="mb-2 ml-8"> Your violation of any third-party rights.</li>
+            </ul>
+            <h2 className="h4">Defense of Claims:</h2>
+            <p>We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate with us.</p>
+          </div> 
+
+          <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+              <h1 className="  h3 "> 16. Compliance with COPPA</h1>
+              <h2 className="h4">Children’s Online Privacy Protection Act (COPPA):</h2>
+                <p>This Site is not intended for users under eighteen (18) years of age. If you are under 18, do not provide any personally identifiable information without parental or guardian consent.</p>
+                <h2 className="h4">Parental Consent:</h2>
+                <p>If you are under 18, you must obtain permission from a parent or guardian before providing personal information on the Site.</p>
+                </div>
+                <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+                <h1 className="  h3 ">17. Governing Law and Venue</h1>
+                <h2 className="h4">Applicable Law:</h2>
+                <p>These Terms of Use are governed by the laws of the United States and the State of [Your State], without regard to its conflict of laws principles.</p>
+                <h2 className="h4">Venue:</h2>
+                <p>Any legal actions related to these Terms of Use shall be brought in the federal or state courts located in Austria, Vienna. Both parties waive any objection based on forum non conveniens.</p>
+                </div>
+                <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+                <h1 className="  h3 ">18. Severability and Waiver</h1>
+                <h2 className="h4">Severability:</h2>
+                <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will continue in full force and effect.</p>
+                <h2 className="h4">No Waiver:</h2>
+                <p>Failure to enforce any provision does not constitute a waiver of that provision or any other provision.</p>
+                </div>
+                <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+                  <h1 className="  h3 ">19. Changes to the Terms of Use</h1>
+                  <h2 className="h4">Modifications:</h2>
+                <p>We may update these Terms of Use from time to time. The effective date of the latest revision is identified at the top of the page. It is your responsibility to periodically review the Terms for any changes.</p>
+                </div>
+                <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+                  <h1 className="  h3 ">20. Contact Us</h1>
+                  <h2 className="h4">Questions or Comments:</h2>
+                  <p>For questions or comments about these Terms of Use, contact us at: office@worlddisastercenter.org</p>
+                </div>
+                <div className=" flex flex-col gap-6 p text-gray-300 leading-8">
+                    <h1 className="  h3 ">21. Entire Agreement</h1>
+                    <h2 className="h4">Complete Agreement:</h2>
+                    <p>These Terms of Use, along with our Privacy Policy, constitute the entire agreement between you and World Disaster Center regarding your use of the Site.</p>
+                    <h2 className="h4">Acknowledgment:</h2>
+                    <p>By using the Site, you acknowledge that you have read and agree to be bound by these Terms of Use and all applicable terms and conditions.</p>
+                </div>
       </div>
     </div>
     </Section>
   )}
 
 export default TermsAndConditionPage;
+
+

@@ -1,3 +1,8 @@
+.small-image {
+    height: 100px; /* Adjust the height as needed */
+    object-fit: contain; /* Ensures the image scales correctly */
+  }
+
 .news-letter-container {
 
     .form-news-letter {
@@ -8,7 +13,8 @@
         background: linear-gradient(to right, #032264, #17223b);
         padding: 20px;
         border-radius: 10px;
-        max-width: 350px;
+        max-width: 1100px;
+        margin: 0 auto;
     }
 
     .title {

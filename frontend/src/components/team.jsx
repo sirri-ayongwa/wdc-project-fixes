@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import billy from "../assets/team/billy.png";
 import jietong from "../assets/team/jietong.png";
-import jane from "../assets/team/jane.png";
+import jane from "../assets/team/Jane.png";
 import chaitra from "../assets/team/chaitra.png";
 import srinivasa from "../assets/team/srinivasa.png";
 import ndifanji from "../assets/team/ndifanji.png";
@@ -15,7 +15,7 @@ import kibwe from "../assets/team/kibwe.png";
 import maria from "../assets/team/maria.png";
 import Rolande from "../assets/team/RolandeNamegabe.png";
 import Ruth from "../assets/team/Ruth.png";
-import zainab from "../assets/team/zainab.png";
+import zainab from "../assets/team/Zainab.png";
 import sapiens from "../assets/team/sapiens.png";
 // import WDCLogo from "../assets/images/wdclogobg.png";
 import lilla from "../assets/team/lilla.png";
@@ -25,6 +25,15 @@ import norbert from "../assets/team/norbert.png";
 import boaz from "../assets/team/boaz.png";
 import elvis from "../assets/team/elvis.png";
 import jamesmbogo from "../assets/team/JamesMbogo.png";
+import david from "../assets/team/david_kabanga.png";
+import hugues from "../assets/team/hugues_bisimwa.png"
+import jonathan from "../assets/team/Jonathan_itegwa.png"
+import Section from "./Section";
+import Heading from "./Heading";
+import { Modal } from "@mui/material";
+import { Box } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
 function TeamPage() {
   const board = [
@@ -49,7 +58,7 @@ function TeamPage() {
     {
       location: "USA",
       title: "USCIS OFFICER @ United States Department of Homeland Security",
-      bio: "",
+      bio: "David Kangamina is a distinguished expert specializing in armed conflict analysis, gender-based violence (GBV), child protection, and international human rights and humanitarian law. With extensive experience as a Legal Advisor, Attorney, and Program Manager, he has a demonstrated history of driving impactful results in civic and social organizations. David is highly skilled in public speaking, human resource management, conference interpreting, policy analysis, and legal research. He holds a Master of Laws (LL.M.) in Public International Law from the University of Lubumbashi and a Master’s in International Human Rights and Humanitarian Law from American University, Washington, DC.",
       email: "",
       socials: [],
       name: "David C. Kangamina",
@@ -100,19 +109,19 @@ function TeamPage() {
     //   name: "Jean Stephane Dabone",
     //   image: WDCLogo,
     // },
-    // {
-    //   location: "USA",
-    //   title: "Head of Mission @ Première Urgence Internationale",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Jonathan Itegwa",
-    //   image:WDCLogo,
-    // },
+    {
+      location: "USA",
+      title: "Head of Mission @ Première Urgence Internationale",
+      bio: "Jonathan Itegwa is a seasoned humanitarian leader and project management expert with extensive experience in strategy development, program implementation, and monitoring and evaluation in cross-cultural environments. Currently serving as Head of Mission at Première Urgence Internationale, he has successfully led teams and projects across Africa, focusing on impactful humanitarian operations.",
+      email: "",
+      socials: [],
+      name: "Jonathan Itegwa",
+      image: jonathan,
+    },
     {
       location: "USA",
       title: "PhD Research Consultant, Migration & Human Rights @  Erasmus University Rotterdam",
-      bio: "",
+      bio: "Maria is a highly skilled research consultant specializing in migration, human rights, and project management. With over a decade of experience, she has worked on impactful projects for organizations like the Open Society Foundations. As a proactive leader, Maria has contributed significantly to addressing global challenges like disinformation, climate migration, and civic engagement.",
       email: "",
       socials: [],
       name: "Maria Kohutova",
@@ -121,10 +130,10 @@ function TeamPage() {
     {
       location: "USA",
       title: "Vice Chair Advisory Panel @ Aidsfonds & Policy Manager @ Transform Health",
-      bio: "",
+      bio: "Dr. Ndifanji Melia Namacha is a Malawian physician and global health researcher with over seven years of experience in program management, policy development, and advocacy. She earned her MBBS from the University of Malawi, College of Medicine, and has demonstrated expertise in digital health, strategy formulation, and donor engagement.",
       email: "",
       socials: [],
-      name: "Ndifandji Namecha",
+      name: "Ndifandji Namacha",
       image: ndifanji,
     },
     // {
@@ -141,7 +150,7 @@ function TeamPage() {
     {
       location: "Paris",
       title: "Co-Founder & Chief Executive Officer",
-      bio: "",
+      bio: "A multidisciplinary humanitarian and technology specialist with expertise spanning Earth Sciences, Information Technologies, and Digital Analytics, with over a decade of professional experience. I have extensive knowledge in satellite imagery analysis, Big Data integration, and cutting-edge technologies such as AI, Blockchain, IoT, and Machine Learning, applied to disaster resilience, response, and sustainable development. My work has empowered global communities across 15+ countries, collaborating with international organizations, governments, and NGOs to implement tailored disaster management strategies and inclusive digital solutions.",
       email: "",
       socials: [],
       name: "Sapiens Ndatabaye",
@@ -150,7 +159,7 @@ function TeamPage() {
     {
       location: "Qatar",
       title: "Co-Founder & Chief Scientific Officer",
-      bio: "",
+      bio: "Zainab Akhtar’s expertise lies in GIS, AI, Remote Sensing, Data Science and System Development. Zainab has a Bachelor's in Information Systems from Carnegie Mellon University and is currently pursuing her Masters in Computer Science from Georgia Institute of Technology. She led the Belmont Forum project “Re-Energize DR3” at Qatar Computing Research Institute, developing the patented Flood Insights system, which was shortlisted for the World Summit Awards 2023 and commended by UNDP for its role during the Pakistan Floods 2022. She is the lead author of several prestigious publications and conferences, including WWW'23 and AAAI'24 (Deployed Application Award). Moreover, she has collaborated with various UN agencies (UNDP, UNDPPA) and has been featured in ISPRS SC’s newsletter, Réseau Consulting’s Associates, and earned recognition as a Geospatial World Rising Star 2024.",
       email: "",
       socials: [],
       name: "Zainab Akhtar",
@@ -159,37 +168,37 @@ function TeamPage() {
     {
       location: "New York",
       title: "Co-Founder & Chief Communications Officer",
-      bio: "",
+      bio: "Rolande Namegabe,  is a dedicated architect and social innovator committed to leveraging design for positive community impact. With a strong foundation in architecture and a passion for social good, Rolande has contributed to projects that bridge the gap between aesthetic design and social responsibility. For Rolande, disaster is not just a concept—it’s personal. Growing up in her hometown, she experienced the devastating impact of a natural disaster that forced her family to flee, leaving behind everything they had built. The experience of loss, displacement, and uncertainty left a lasting mark on her. Rather than let her past define her, Rolande transformed her pain into purpose. She joined WDC with a mission to ensure that no one else would have to endure what she did—that communities could be empowered to stay safe, rebuild stronger, and thrive in the face of adversity.",
       email: "",
       socials: [],
       name: "Rolande Namegabe",
       image: Rolande,
     },
     {
-      location: "Kenya",
+      location: "",
       title: "Chief Information Officer",
-      bio: "",
+      bio: "A self driven Geo-Information management specialist/GIS/IMSMA expert and a practicing GPS Land Surveyor with over 20 years’ professional experience. I have in-depth knowledge in Biometrics Information systems, Information Management Systems for mine Action (IMSMA), Geographic Information System (GIS), Geospatial analysis, Remote sensing and GPS mapping, relational database and related information management systems field with extensive experience with international organizations, NGOs, private and international organizations including the UNICEF, UNOCHA, IMMAP UNSOS, AMISOM, UN-DPKO, UNOPS, UNMAS and other UN agencies. I have implemented state-of-the-art technology transfer, through knowledge of best practices in capacity building and enterprise-wide data and application systems including decision support systems incorporating socio-economic and biophysical information of multiple formats and sources. I have also professional experience of inter-agency/inter-cluster collaboration and management between multiple organizations to develop inter-agency GIS/IM/IMSMA/IT systems.",
       email: "",
       socials: [],
       name: "James Mbogo",
       image: jamesmbogo,
     },
-    // {
-    //   location: "DRC",
-    //   title: "Chief Technical Officer",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "David Kabanga",
-    //   image: WDCLogo,
-    // },
+    {
+      location: "DRC",
+      title: "Chief Technical Officer",
+      bio: "A passionate and results-driven software developer with expertise in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I specialize in building robust, scalable, and efficient web applications that deliver seamless user experiences. I thrive on solving complex problems, learning emerging technologies, and collaborating with teams to deliver innovative solutions. My projects showcase my ability to create cutting-edge applications that balance functionality with a great user experience.",
+      email: "",
+      socials: [],
+      name: "David Kabanga",
+      image: david,
+    },
   ];
 
   const staffs = [
     {
       location: "Ivory Coast",
       title: "LLM Developer",
-      bio: "",
+      bio: "I am a data scientist passionate about leveraging data-driven insights to solve complex problems and guide strategic decision-making. With extensive experience in the healthcare sector, I have delivered advanced AI/ML solutions for disease diagnosis, product launches, sales forecasting, and promotional strategy optimization. My expertise spans omni-channel analytics, patient and market access analysis, predictive modeling, and reporting.Academically, I am pursuing a graduate degree in Data Science from UMBC, set to complete in August 2024, and hold a Master of Technology in Computer Science and Analytics from NIT Delhi. Proficient in Python, SQL, PySpark, R, and advanced machine learning techniques, I excel in predictive modeling, time series forecasting, NLP, and optimization. I am committed to continuous innovation and driving impactful, data-driven transformations.",
       email: "",
       socials: [],
       name: "Ayushi Bhujade",
@@ -198,7 +207,7 @@ function TeamPage() {
     {
       location: "Ivory Coast",
       title: "Data Scientist",
-      bio: "",
+      bio: "I have a strong foundation in data science and experience in building robust data pipelines using Python and SQL. My background includes working with cloud platforms like AWS and GCP to develop scalable ETL workflows and integrating APIs for seamless system connectivity. I am passionate about leveraging data-driven solutions to support World Disaster Center, and I always eager to learn new thing.",
       email: "",
       socials: [],
       name: "Billy Libang",
@@ -207,7 +216,7 @@ function TeamPage() {
     {
       location: "DRC",
       title: "GIS Analyst",
-      bio: "",
+      bio: "Boaz MULIRI is a researcher at the World Disaster Center, where he works in Research, Analysis and digital Innovation (RADI) team. Boaz is a crop production engineer with a year and a half of experience in the field. After graduating in Agricultural Engineering from the Université Évangélique en Afrique, where he is currently pursuing a Master’s Degree in Environmental Information Systems, he began his career as an evaluator of soil conservation techniques promoted locally by World Vision and Mercy Corps. His role involved conducting a scientific evaluation of the techniques. He subsequently joined a local organization (RAPD asbl) as a technical assistant for the development of a wetland, and the International Organization for Migration as a field officer for humanitarian aid. His skills include scientific research with data collection and analysis. His main research focus is climate change and carbon sequestration. Outside of work and study, Boaz is a farmer and mentor students at various stages of their research. He is passionate about developing innovative strategies and aims to continue pushing the boundaries of progress.",
       email: "",
       socials: [],
       name: "Boaz Muliri",
@@ -216,7 +225,7 @@ function TeamPage() {
     {
       location: "Ivory Coast",
       title: "Dashboard Specialist",
-      bio: "",
+      bio: "Responsible for creating data-driven reports, disaster preparedness guidebooks, media reports, animated data visualizations, real-time dashboards, and multimedia outputs. With a Master’s in Computer Information Systems from Colorado State University - College of Business, I have a strong foundation in advanced data analytics, visualization, and information management - skills that align with WDC’s mission to use data for disaster resilience and response. Additionally, I bring six years of experience in data analysis, business intelligence, and quality assurance from my work at HP Inc., where I enhanced operational efficiency and customer satisfaction through expertise in operational data analysis, customer retention strategies, and team mentoring - key factors in driving performance and process improvements.",
       email: "",
       socials: [],
       name: "Chaitra Venu Kumar",
@@ -225,7 +234,7 @@ function TeamPage() {
     {
       location: "Egypt",
       title: "Research Analysis and Digital Innovation",
-      bio: "",
+      bio: "Leading a multidisciplinary team within WDC to advance global disaster preparedness through research and digital innovation. Overseeing disaster risk reduction and recovery projects, implementing advanced digital tools, aligning research with practical disaster management needs, and contributing to strategic planning and project impact assessment. With a strong background in program management and conservation, experience spans roles such as Program Assistant at SOS Children’s Villages International (2020–2023) and Ideas For Us DRC (2016–2017), Project Manager at Virunga Foundation (2018–2020), and Researcher and Consultant at Wildlife Conservation Society (2017–2018). These roles demonstrate expertise in project management, research, and supporting initiatives focused on social and environmental impact.",
       email: "",
       socials: [],
       name: "David Mulume",
@@ -234,7 +243,7 @@ function TeamPage() {
     {
       location: "DRC",
       title: "Full Stack Developer",
-      bio: "",
+      bio: "Doddy Matabaro is a skilled software developer with expertise in JavaScript frameworks, PHP, and web application testing. He previously developed a school management application for high schools, streamlining activities like grading, HRM, and fee collection, which enhanced his proficiency in PHP, HTML/CSS, JavaScript, and TypeScript. Fluent in French, English, and Swahili, Doddy is a fast learner, adaptable to new technologies and skills.",
       email: "",
       socials: [],
       name: "Doddy Matabaro",
@@ -243,7 +252,7 @@ function TeamPage() {
     {
       location: "Kenya",
       title: "IT and Cyber Security Officer",
-      bio: "",
+      bio: "Elvis Matara has a Diploma of Education in Cyber Security from the Institute of Software Technologies and currently works on cyber security at the World Disaster Center",
       email: "",
       socials: [],
       name: "Elvis Matara",
@@ -252,11 +261,20 @@ function TeamPage() {
     {
       location: "",
       title: "HR Officer",
-      bio: "",
+      bio: "I’m Francine NABINTU, Finance and HR officer at WDC Master's degree student in business management, Graduated in social sciences in the department of social communication peace and conflict management, I have my degree diploma in organizational communication and i have some professional trainings certificates in women’s empowerment, gender and of course Human Resources management, administration, logistics and supply chain management as well as accounting. I have some experience in communication as i finished in social science in department of communication where all my internships were based on organizational communication and social communication in general. I now have 4 years of experience as a full-time employee, taking care of some administrative tasks, human resources but also some financial tasks  I am characterized by a sense of organization and of proposing pragmatic solutions, a sense of initiative, capacity for conception ability to write and summarize, good oral communication skills.",
       email: "",
       socials: [],
       name: "Francine Nabintu",
       image: francine,
+    },
+    {
+      location: "",
+      title: "Monitoring and Evaluation Specialist",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Hugues Bisimwa",
+      image: hugues,
     },
     {
       location: "Ivory Coast",
@@ -270,7 +288,7 @@ function TeamPage() {
     {
       location: "DRC",
       title: "UX Designer",
-      bio: "",
+      bio: "John Kibwe is a UI-UX, Web & Motion Designer who works as a freelancer. He currently works for WDC (World Disaster Center) where his responsibilities include design work and video/motion footage editing for the organization.",
       email: "",
       socials: [],
       name: "John Kibwe",
@@ -279,7 +297,7 @@ function TeamPage() {
     {
       location: "DRC",
       title: "Information System",
-      bio: "",
+      bio: "Hi there! I'm a passionate programmer, full-stack developer, and game developer enthusiast with a flair for creative coding. As a Game Developer, I work with Unity, pygame, and have some experience with Unreal Engine and 3D modeling. I love crafting immersive experiences and building gameplay mechanics. In my full-stack development work, I use JavaScript, React, and Node.js, working with both SQL databases and MongoDB. I enjoy bridging front-end and back-end development to create comprehensive solutions. Creative coding is another passion of mine - I experiment with generative art and interactive installations, always looking to push boundaries and try new approaches. When I'm not coding, you'll find me playing chess or piano.",
       email: "",
       socials: [],
       name: "Joseph Bakulikira",
@@ -288,7 +306,7 @@ function TeamPage() {
     {
       location: "Germany",
       title: "Advocacy",
-      bio: "",
+      bio: "Lilla Albert is an international development professional specializing in governance, climate change, and reform systems. She holds an MSc in Environment and Development from the University of Leeds and a BSc in International Relations and Sociology from Aston University. Lilla has worked with the United Nations, including the Office of the High Commissioner for Human Rights, where she contributed to humanitarian responses and early warning systems. At DCAF, she addressed military and police security sector reform challenges, designing and delivering professional development programs while also advocating for accountability and transparency in governance systems. Currently, Lilla serves as the Head of Advocacy at the World Disaster Center, where she leads global efforts in disaster risk reduction and resilience. A seasoned speaker and trainer, she has facilitated workshops on human rights, climate resilience, and security reform, empowering diverse audiences to drive sustainable and inclusive solutions.",
       email: "",
       socials: [],
       name: "Lilla Albert",
@@ -297,7 +315,7 @@ function TeamPage() {
     {
       location: "",
       title: "Forecast Developer",
-      bio: "",
+      bio: "Man Ho is a volunteer developer at the World Disaster Center, where he works in the Forecast team. Man Ho is a career switcher who is currently pursuing a Master’s degree in Computer Science at the Georgia Institute of Technology. Before this, he worked as a neuroscience researcher at various institutions in the US, after completing his doctoral study in neuroscience at the International Max Planck Research School in Germany. He also holds a Bachelor’s degree in biotechnology from the Hong Kong Polytechnic University. Throughout his academic journey, he has cultivated a strong interest in data science and scientific software development. Additionally, he is passionate about global development and human-centered technology, hoping to use his skills to contribute to the betterment of global society.",
       email: "",
       socials: [],
       name: "Man Ho Wong",
@@ -306,7 +324,7 @@ function TeamPage() {
     {
       location: "Ivory Coast",
       title: "Full Stack Developer",
-      bio: "",
+      bio: "Marie-Grace is a Software Developer specializing in full-stack web development, trained at Microverse remote school. She has completed over 15 projects, working both independently and in international teams, and solved more than 20 coding challenges alongside global developers. Her technical expertise spans HTML, CSS, JavaScript, React, TypeScript, and Ruby on Rails. Beyond coding, she has developed strong capabilities in communication, time management, technical writing, problem-solving, and teamwork. She emphasizes hands-on learning and maintains a strong focus on creating meaningful solutions to real-world problems through software development, with a commitment to continuous learning and adaptability to new technologies.",
       email: "",
       socials: [],
       name: "Marie Grâce Bahati",
@@ -315,7 +333,7 @@ function TeamPage() {
     {
       location: "",
       title: "GIS Visualization Expert",
-      bio: "",
+      bio: "With a background in environmental science and geographic information systems, she currently serves as a GIS Analyst at the World Disaster Center, where she works remotely from Kampala, Uganda. Her expertise spans Python programming and geospatial data analysis. Since 2022, she has also worked as an Environmental Consultant at ECO Innovations International, focusing on Environment, Health, and Safety (EHS) and GIS applications. Her career in environmental management began with an internship at the National Environment Management Authority Uganda, where she gained hands-on experience conducting environmental compliance inspections. This combination of technical GIS skills and environmental expertise allows her to contribute effectively to both disaster management and environmental conservation efforts.",
       email: "",
       socials: [],
       name: "Nakato Jane Hope",
@@ -324,7 +342,7 @@ function TeamPage() {
     {
       location: "",
       title: "UI and UX Designer",
-      bio: "",
+      bio: "I'm a passionate web and mobile developer, specializing in user interface (UI) design and user experience (UX). With over two years' experience, I've cultivated a remarkable expertise in creating intuitive and attractive digital solutions. After graduating with a degree in computer science, I quickly became interested in user experience design and honed my skills using Figma, an essential design tool, to create interactive prototypes that meet user needs while respecting modern aesthetic criteria.",
       email: "",
       socials: [],
       name: "Norbert Balisha",
@@ -333,7 +351,7 @@ function TeamPage() {
     {
       location: "Kenya",
       title: "Forecast",
-      bio: "",
+      bio: "Hi, I am Ruth Ndegwa, my passion lies in making real difference  in disaster management by utilizing cutting-edge Artificial Intelligence (AI) and Human Intelligence (HUMINT) to revolutionize global catastrophe management. I have a special viewpoint on disaster risk management because of my background in humanitarian operations, data analysis, and strategic planning. I have worked in academic research, corporate strategy, and as a field worker for the UN World Food Programme, where I enhanced the delivery of humanitarian food by streamlining data gathering procedures. My goal at the World Disaster Center is to improve response plans and our knowledge of disasters by combining cutting-edge analytical technologies with real-time, crowdsourced data. My approach focuses on uplifting marginalized groups and encouraging technology and ground-level efforts to work together.  My enthusiasm lies in spearheading inventive, data-centric solutions that not only address calamities but also foster resilience and sustainable growth. My purpose is in line with WDC's vision to redefine global disaster management, and I am excited to work with the team in safeguarding the most vulnerable populations on the planet by making well-informed and well-timed decisions.",
       email: "",
       socials: [],
       name: "Ruth Ndegwa",
@@ -341,8 +359,8 @@ function TeamPage() {
     },
     {
       location: "Ivory Coast",
-      title: "Website Developer",
-      bio: "",
+      title: "Full Stack Developer",
+      bio: "I’m a driven and highly motivated Computer Science student with a strong foundation in programming, passionate about exploring the evolving fields of Machine Learning (ML), AI, Software Development and Full Stack Web Development. I thrive on solving complex problems and I am eager to deepen my understanding of computer science and its real world impact. I’m always looking for opportunities to learn from experienced professionals and to push the boundaries of what technology can do.",
       email: "",
       socials: [],
       name: "Srinivasa  Perisetla",
@@ -453,27 +471,29 @@ function TeamPage() {
 
   const [teamkey, setTeamKey] = useState("clevelexecutives");
 
+  const [open, setOpen] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  const handleOpen = (member) => {
+    setSelectedMember(member);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedMember(null);
+  };
+
   return (
-    <div>
-      <br />
-      <section className="bg-white dark:bg-n-8">
-        <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-            Meet Our Team
-          </h1>
-
-          <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
-            At World Disaster Center, our team is the heart and soul of our
-            mission.{/*We are a diverse group of dedicated professionals, united
-            by our passion for making a positive impact in the world. Each
-            member brings unique skills and experiences that drive our
-            initiatives forward.*/}
-            
-          </p>
-
+    <Section crosses>
+        <div className='container '>
+          <Heading  title='Meet Our Team'
+          text={`At World Disaster Center, our team is the heart and soul of our
+            mission.`}
+          tag={`Disaster Hereos`}
+          />
           <div className="flex items-center justify-center">
             <div className="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-
               <button
                 onClick={() => {
                   handleChangeTeamKey("clevelexecutives");
@@ -486,7 +506,6 @@ function TeamPage() {
               >
                 Executives
               </button>
-
               <button
                 onClick={() => {
                   handleChangeTeamKey("staff");
@@ -494,12 +513,11 @@ function TeamPage() {
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "staff"
                     ? "bg-blue-600 text-white"
-                    : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
+                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
                 }`}
               >
                 Staff
               </button>
-
               <button
                 onClick={() => {
                   handleChangeTeamKey("board");
@@ -507,22 +525,23 @@ function TeamPage() {
                 className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
                   teamkey === "board"
                     ? "bg-blue-600 text-white"
-                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
+                    : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
                 }`}
               >
-                board
+                Board
               </button>
-             
+          
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
-            {teamkey === "board" &&
+          {teamkey === "board" &&
               team_data.board.map((member, index) => {
                 return (
                   <div
                     key={`${index}-member`}
                     className="flex flex-col items-center"
+                    onClick={() => handleOpen(member)}
                   >
                     <div className="" style={{ background: "#ffffffaa" }}>
                       <img
@@ -532,16 +551,17 @@ function TeamPage() {
                         style={{ height: "200px", aspectRation: "4:3" }}
                       />
                     </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
                       {member.name}
                     </h1>
 
-                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200 text-center">
                       {member?.title}
                     </p>
                   </div>
                 );
               })}
+
 
             {teamkey === "clevelexecutives" &&
               team_data.clevelexecutives.map((member, index) => {
@@ -549,6 +569,7 @@ function TeamPage() {
                   <div
                     key={`${index}-member`}
                     className="flex flex-col items-center"
+                    onClick={() => handleOpen(member)}
                   >
                     <div className="" style={{ background: "#ffffffaa" }}>
                       <img
@@ -558,11 +579,11 @@ function TeamPage() {
                         style={{ height: "200px", aspectRation: "4:3" }}
                       />
                     </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
                       {member.name}
                     </h1>
 
-                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200">
                       {member?.title}
                     </p>
                   </div>
@@ -575,6 +596,7 @@ function TeamPage() {
                   <div
                     key={`${index}-member`}
                     className="flex flex-col items-center"
+                    onClick={() => handleOpen(member)}
                   >
                     <div className="" style={{ background: "#ffffffaa" }}>
                       <img
@@ -584,21 +606,71 @@ function TeamPage() {
                         style={{ height: "200px", aspectRation: "4:3" }}
                       />
                     </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">
+                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
                       {member.name}
                     </h1>
 
-                    <p className="mt-2 text-gray-500 capitalize dark:text-gray-300">
+                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200">
                       {member?.title}
                     </p>
                   </div>
                 );
               })}
-
           </div>
-        </div>
-      </section>
-    </div>
+      </div>
+
+       {/* Modal */}
+      <Modal open={open} onClose={handleClose}>
+        <Box
+          className="bg-white rounded-none p-6"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '60%',
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          {selectedMember && (
+            <div className="flex flex-col gap-6">
+              <div className="flex gap-4 w-full h-full">
+                    <div className="w-full lg:w-2/5 overflow-hidden rounded-none  border-r-2">
+                        <img
+                          className="object-fit border-2 shadow-sm shadow-n-4"
+                          src={selectedMember.image}
+                          alt={selectedMember.name}
+                  />
+                     <Typography variant="h6" component="h2" className="text-gray-900 font-semibold">
+                            {selectedMember.name}
+                          </Typography>
+                          <Typography className="mt-2 text-gray-700">{selectedMember.title}</Typography>
+                          <Typography className="mt-4 text-gray-600">
+                            {selectedMember.description}
+                          </Typography>
+                </div>
+                <div className="w-full">
+                  <p className="text-black">
+                    {selectedMember.bio}
+                    {selectedMember.email}
+                  </p>
+                </div>
+              </div>
+             
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleClose}
+                className="mt-6 w-max self-end"
+              >
+                Close
+              </Button>
+            </div>
+          )}
+        </Box>
+      </Modal>
+      </Section>
   );
 }
 

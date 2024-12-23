@@ -1,79 +1,68 @@
+import { Circle } from "@mui/icons-material";
+import { Adjust } from "@mui/icons-material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function DropdownItem({ title, routings, setOpenNavigation }) {
-  const [toggled, setToggled] = useState(false);
-  const [popuphover, setpopupHover] = useState(false);
-  const popupref = useRef();
-  const location = useLocation();
+const DropdownItem = ({ title, routings }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const popupRef = useRef();
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
 
   useEffect(() => {
-    setToggled(false);
-  }, [location]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <div>
-      <div className="relative inline-block text-left">
-        <div>
-          <button
-            onMouseEnter={() => setToggled(true)}
-            onClick={() => {
-              setToggled(!toggled);
-            }}
-            type="button"
-            className="inline-flex whitespace-nowrap justify-center gap-x-1.5 lg:text-lg my-4 text-2xl rounded-md bg-transparent px-3 py-2 font-semibold hover:bg-slate-950 text-gray-400 shadow-sm  hover:bg-gray-50"
-            id="menu-button"
-            aria-expanded="true"
-            aria-haspopup="true"
-          >
-            {title}
-            <svg
-              className="-mr-1 h-5 w-5 text-gray-200"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
+    <div className="relative inline-block text-left ">
+      <button
+        onClick={toggleDropdown}
+        type="button"
+        className={`inline-flex items-center px-1   leading-2 text-base  bg-transparent py-2 space-x-1 font-light text-gray-50 ${isOpen && 'text-n-3' } hover:text-n-3`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        {title}
+        {isOpen ? <ExpandLess /> : <ExpandMore />}
+      </button>
+
+      {isOpen && (
         <div
-          onMouseLeave={() => setToggled(false)}
-          className={` ${
-            toggled ? "transform block scale-100" : "transform hidden scale-95"
-          } absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none `}
+          ref={popupRef}
+          className={`absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition-transform transform ${
+            isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
+          }`}
           role="menu"
           aria-orientation="vertical"
-          aria-labelledby="menu-button"
-          ref={popupref}
-          tabIndex="-1"
+          style={{ transformOrigin: "bottom" }}
         >
-          <div className="py-1" role="none">
-            {Object.keys(routings).map((item, index) => {
-              return (
-                <Link
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-300"
-                  role="menuitem"
-                  onClick={() => setOpenNavigation(false)}
-                  tabIndex="-1"
-                  style={{ zIndex: "9999" }}
-                  id={`menu-item-${index}`}
-                  key={item}
-                  to={routings[item]}
-                >
-                  {item}
-                </Link>
-              );
-            })}
+          {/* Triangle pointer above the dropdown */}
+          <div className="absolute -top-2 right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-n-2  rotate-45 rounded-t rounded-l transform origin-center "></div>
+          <div className="py-5">
+            {Object.entries(routings).map(([item, path], index) => (
+              <Link
+                key={index}
+                to={path}
+                className="block px-4 py-2 text-sm font-normal text-n-7 hover:text-n-4"
+                onClick={() => setIsOpen(false)}
+                role="menuitem"
+              >
+                <Adjust fontSize="8"/> {item}
+              </Link>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
-}
+};
 
 export default DropdownItem;

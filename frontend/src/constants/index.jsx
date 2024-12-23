@@ -215,18 +215,18 @@ export const benefits = [
   {
     id: "00",
     title: "Our Solutions",
-    text: "A real time system providing early warning alerts on disasters, real-time contingency advices and mitigation plans world wide- A vanguard in the humanitarian sector for people supported and humanitarian practitioners",
+    text: "At WDC, we provide technology-driven solutions designed to strengthen disaster preparedness, optimize crisis response, and empower decision-makers. Our services focus on equipping vulnerable communities with the tools and insights needed to mitigate risks, respond effectively, and recover sustainably.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
     hyperlink: "",
     comingsoon: false,
-    url: "/solutions",
+    url: "/what-we-do",
   },
   {
     id: "01",
     title: "Roster",
-    text: "Our trained and experienced heroes on disasters, always ready for deployment, to support communities affected, collaborate with partners on the ground",
+    text: "WDC’s roster includes experienced professionals, local experts, partner organizations, private companies, all ready for immediate action in disaster-affected areas. We value the unique contributions of every member, recognizing that a range of perspectives, skills, and local experiences enhance our ability to respond effectively.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
@@ -236,8 +236,8 @@ export const benefits = [
   },
   {
     id: "02",
-    title: "Impact Stories",
-    text: "An infinite innovative solutions for humanitarians to be more efficient in their activities - All of them are based on our DH app",
+    title: "Partnerships",
+    text: "WDC partners with strategic, technical, and funding collaborators, including financial sponsors and software providers, to bring our solutions to life. Supported by long-term investment partners and in-kind contributions, these collaborations drive sustainable and impactful disaster preperadness, response and recovery innovations.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
@@ -294,4 +294,53 @@ export const socials = [
     iconUrl: facebook,
     url: "#",
   },
+];
+
+
+export const dropdownData = [
+  {
+    title: "About Us",
+    routings: {
+      "About Us": "/about",
+      // "Our Mission": "/about/mission",
+      // "Our Story": "/about/story",
+      // "Our Values": "/about/values",
+      "Our Team": "/about/team",
+    },
+  },
+  // {
+  //   title: "Where We Work",
+  //   routings: {
+  //     Africa: "/where-we-work/africa",
+  //     // Asia: "/",
+  //     // "South America": "/",
+  //     // Europe: "/about",
+  //     // "North America": "/",
+  //     // Antarctica: "/",
+  //     // Oceania: "/",
+  //   },
+  // },
+  {
+    title: "What We Do",
+    routings: {
+      "Our Solutions": "/what-we-do",
+    },
+  },
+  {
+    title: "Resources",
+    routings: {
+      // Events: "/events",
+      News: "/News",
+    },
+  },
+  {
+    title: "Get Involved",
+    routings: {
+      // "Get Involved":"/",
+      // "Donate & Ways to Give": "/donate",
+      "Contact": "/contact",
+      Careers:"/careers",
+    },
+  },
+  
 ];

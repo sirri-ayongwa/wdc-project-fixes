@@ -4,7 +4,7 @@ import Heading from "./Heading";
 const WhoWeAre = () => {
   return (
     <>
-      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-transparent dark:bg-dark">
+      <section className="overflow-hidden pb-12 lg:pt-[50px] lg:pb-[90px] bg-transparent dark:bg-dark">
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -616,18 +616,9 @@ const WhoWeAre = () => {
                   Strengthening Resilience Against Disasters
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                  The World Disaster Center (WDC) is an esteemed international
-                  nonprofit organization at the vanguard of global disaster risk
-                  management. Our mission is to radically enhance the way
-                  disasters are managed across the globe by synthesizing
-                  cutting-edge Artificial Intelligence (AI) with profound Human
-                  Intelligence (HUMINT). By amalgamating these domains, we
-                  provide unparalleled insights and capabilities, empowering
-                  humanitarian and development organizations to make informed,
-                  strategic decisions that protect and uplift the world's most
-                  vulnerable populations.
+                We are the World Disaster Center, a global nonprofit dedicated to transforming how the world prepares for, responds to, and recovers from disasters. Recognizing the gaps in preventive action, fragmented responses, and strained resources that lead to unnecessary loss of life, WDC bridges these challenges with a unified approach. By leveraging cutting-edge technology, uniting global efforts, and empowering communities, we deliver bold, innovative solutions that place people at the center of everything we do—ensuring safety, resilience, and hope for a brighter tomorrow.
                 </p>
-                <p className="mb-8 text-base text-body-color dark:text-dark-6">
+                {/* <p className="mb-8 text-base text-body-color dark:text-dark-6">
                   WDC leverages a revolutionary approach that combines
                   real-time, crowdsourced data from millions of global sources
                   with advanced analytical technology. This initiative not only
@@ -638,12 +629,12 @@ const WhoWeAre = () => {
                   organizations (NGOs), and government entities worldwide,
                   facilitating targeted, efficient, and effective assistance
                   during times of critical need.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <Heading title="World Disaster Center" />
           <div className="container">
             <span className="text-gray-300">
@@ -668,7 +659,7 @@ const WhoWeAre = () => {
               and vulnerable communities that are most affected by disasters.{" "}
             </span>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

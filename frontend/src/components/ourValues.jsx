@@ -8,7 +8,7 @@ const OurValues = () => {
           <div className="grid gap-6 justify-center sm:grid-cols-1 lg:grid-cols-3">
             <SingleCard
               image="https://img.freepik.com/free-photo/global-connections-background-social-media-banner_53876-108500.jpg?t=st=1718806487~exp=1718810087~hmac=43c2a14c69c3bd5820b0f161ad65691361648901c4b98fe978984836b5b8fa94&w=1380"
-              CardTitle="Global Reach"
+              CardTitle="Global Reach and Accessibility"
               titleHref="/#"
               btnHref="/#"
               CardDescription="Extend the reach of our innovative disaster management solutions to every corner of the globe, particularly focusing on undeserved regions. We aim to ensure that no community is left vulnerable or unprepared, fostering a universally inclusive approach to disaster resilience."

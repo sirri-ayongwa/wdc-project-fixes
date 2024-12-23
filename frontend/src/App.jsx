@@ -25,7 +25,7 @@ import WhatWeOfferPage from "./pages/offer";
 import Testing from "./pages/recordPage.jsx";
 import EagleProject from "./pages/project/eagle";
 import { useEffect, useState } from "react";
-import TeamPage from "./components/team";
+import TeamPage from "./components/team.jsx";
 import EventsPage from "./components/events";
 import PartnersPage from "./components/partner";
 import ProfileForm from "./pages/profileForm";
@@ -38,6 +38,16 @@ import NewFooter from "./components/newFooter.jsx";
 import NewsLetterPage from "./pages/newletter/index.jsx";
 import CareerPage from "./pages/career/index.jsx";
 import DemoPage from "./pages/demo/index.jsx";
+import CaseDetail from "./components/CaseDetail.jsx";
+import PrivacyPolicyPage from "./pages/privacyPolicy/index.jsx";
+import TermsAndConditionPage from "./pages/termsCondition/index.jsx";
+import WhatWeDo from "./pages/solution/index.jsx";
+import News from "./pages/news/index.jsx";
+import CookieConsent from "./components/CookieConsent.jsx";
+import Story from './pages/story/index.jsx'
+import Africa from './pages/where_we_work/africa/index.jsx'
+import NewsDetail from "./components/NewsDetail.jsx";
+import EventsDetail from "./components/NewsDetail.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -48,9 +58,10 @@ const App = () => {
   }, [location]);
   useEffect(() => {
     setLoading(true);
+     
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 1000);
   }, []);
 
   return (
@@ -78,16 +89,17 @@ const App = () => {
           <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
           {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
-          <Route path="/solutions" element={<BlogsPage />} />
-          <Route path="/blogs/:id" element={<SingleBlogDisplay />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/events" element={<BlogsPage />} />
+          <Route path="/blog/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
           <Route path="/about/what-we-offer" element={<WhatWeOfferPage />} />
-
+          <Route path="/about/story" element={<Story />} />
           <Route path="/about/vision" element={<VisionPage />} />
           <Route path="/about/values" element={<OurValuePage />} />
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/about/team" element={<TeamPage />} />
-          <Route path="/team" element={<TeamPage />} />
+          <Route path="/where-we-work/africa" element={<Africa />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/newsletter" element={<NewsLetterPage />} />
           <Route path="/request-demo" element={<DemoPage />} />
@@ -98,17 +110,30 @@ const App = () => {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/terms-conditions" element={<TermsAndConditionPage />} />
+          <Route path="/policy" element={<PrivacyPolicyPage />} />
+          <Route path="/news" element={<News />} />
+
           <Route
             path="/management/wdc/worddisastercenter/admin"
             element={<AdminPage />}
           />
           <Route path="/profile" element={<ProfilePage />} />
+
+          {/* Dynamic route for cases */}
+        <Route path="/cases/:caseName" element={<CaseDetail />} />
           <Route path="*" element={<NotfoundPage />} />
+        
+        <Route path="/News/:newsName" element= {<NewsDetail />} />
+        <Route path="/events/:eventsName" element= {<EventsDetail />} />
         </Routes>
+      
+
         <ToastContainer />
         <NewFooter />
         {/* <Footer /> */}
       </div>
+      <CookieConsent/>
       <ChatBotComponent />
       <ButtonGradient />
     </>

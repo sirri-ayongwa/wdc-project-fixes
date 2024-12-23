@@ -10,7 +10,11 @@ import { MdTornado, MdCloud } from "react-icons/md";
 import { FaWater, FaWaveSquare } from "react-icons/fa";
 import GIF1 from "../assets/gif/world.gif";
 import VID1 from "../assets/video/Digital World Map.mp4";
+import MOBILEGIF from "../assets/gif/mobilephones.gif"
+import MICHAEL from "../assets/gif/Michael_Website.gif"
+import DREAM from "../assets/gif/dream.gif"
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Slideshow from "./Slideshow";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -33,7 +37,7 @@ const Hero = () => {
       id="hero"
     >
       <video
-        className="absolute backgroundImageGif object-cover"
+        className="absolute backgroundImageGif object-cover  w-full overflow-hidden"
         autoPlay={true}
         loop={true}
         muted
@@ -63,66 +67,17 @@ const Hero = () => {
             life-saving insights, empowering you to navigate disasters with
             confidence and control.
           </p>
-          <Button href={"/request-demo"} white>
+          <Button href={"https://doc.storydoc.ai/fDqGCI"} white>
             {"Learn more about michael"}
           </Button>
         </div>
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-            <div className="relative bg-n-8 rounded-[1rem]">
-              <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
-
-              <Link to="/request-demo">
-                <div className="cursor-pointer aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                  <img
-                    src={GIF1}
-                    className=" cursor-pointer w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] object-cover"
-                    width={1024}
-                    alt="AI"
-                  />
-                  <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                      {/* {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
-                      </li>
-                    ))} */}
-                      <li className="p-5">
-                        <MdTornado />
-                      </li>
-                      <li className="p-5">
-                        <MdCloud />
-                      </li>
-                      <li className="p-5">
-                        <FaWater />
-                      </li>
-                      <li className="p-5">
-                        <FaWaveSquare />
-                      </li>
-                    </ul>
-                  </ScrollParallax>
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <Notification
-                      className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                      title="Real-time alerts for various types of disasters"
-                    />
-                  </ScrollParallax>
-                </div>
-              </Link>
-            </div>
-
-            <Gradient />
-          </div>
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]"></div>
-
-          <BackgroundCircles />
-        </div>
       </div>
-      <BottomLine />
+      <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]"></div>
+      <BackgroundCircles />
+      {/* <BottomLine /> */}
+      
     </Section>
+    
   );
 };
 

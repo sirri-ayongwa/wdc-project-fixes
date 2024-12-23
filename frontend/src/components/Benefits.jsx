@@ -9,11 +9,12 @@ import { Link } from "react-router-dom";
 
 const Benefits = () => {
   return (
-    <Section id="features">
+    <Section id="features" crosses>
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
-          title="World Disaster Center"
+          title="What We Offer"
+          tag=" Benefits"
         />
 
         <div className="flex flex-wrap gap-10 mb-10 justify-around">

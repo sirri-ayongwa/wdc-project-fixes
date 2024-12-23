@@ -5,204 +5,21 @@ import { toast } from "react-toastify";
 import { LinkedIn } from "@mui/icons-material";
 import { CgMail } from "react-icons/cg";
 import { MdLocationPin } from "react-icons/md";
+import Section from "./Section";
+import WDC from "../assets/images/wdcimage.png";
 
 function NewFooter() {
   return (
-    <footer className="w-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 gap-y-8 md:gap-8 py-10 max-w-sm mx-auto sm:max-w-3xl lg:max-w-full">
-          <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
-            <a href="/" className="flex justify-center lg:justify-start">
-              <div>
-                <div className="flex justify-center">
-                  <h4></h4>
-                  <div className="flex items-center gap-2">
-                    {/* <div
-                      style={{
-                        width: "80px",
-                        height: "80px",
-                        borderRadius: "6px",
-                        overflow: "hidden",
-                      }}
-                    >
-                      <img
-                        src={WDCLogo}
-                        style={{ width: "80px", height: "80px" }}
-                        alt="WDC logo"
-                      />
-                    </div> */}
-                    <div>
-                      <p className=" font-bold">World Disaster Center</p>
-                      <ul>
-                        <li className="text-sm my-2 text-gray-400 flex ">
-                          <MdLocationPin className="mx-1" size={20} />
-                          <div>
-                            <h4 className="text-gray-200 font-bold">
-                              New York Headquarters
-                            </h4>
-                            <span>
-                              1660 Madison Avenue, New York, NY, 10029
-                            </span>
-                          </div>
-                        </li>
-                        <li className="text-sm my-2 text-gray-400 flex ">
-                          <MdLocationPin className="mx-1" size={20} />
-                          <div>
-                            <h4 className="text-gray-200 font-bold">
-                              Austria Headquarters
-                            </h4>
-                            <span>Austria 5020, Wolf-Dietrich Strabe 31</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <p className="py-4 text-sm text-gray-400 lg:max-w-xs text-center lg:text-left">
-                   World Disaster Center is a Non-Profit Organization. EIN Number 99-5085143. ZVR-Nummer: 1671774845.
-              {/* <br />
-              <b>EIN no. 99-5085143</b> */}
-            </p>
-          </div>
+  <Section crosses>
 
-          <div className="lg:mx-auto text-left ">
-            <h4 className="text-lg text-gray-300 font-medium mb-7">
-              QuickLinks
-            </h4>
-            <ul className="text-sm  transition-all duration-500">
-              <li className="mb-6">
-                <Link to="/" className="text-blue-300 hover:text-blue-500">
-                  Home
-                </Link>
-              </li>
-              <li className="mb-6">
-                <Link
-                  to="/about"
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="">
-                <a href="/team" className=" text-blue-300 hover:text-blue-500">
-                  Team
-                </a>
-              </li>
-            </ul>
-          </div>
+  <div className="container mx-auto px-4">
+    <div className="flex justify-between flex-wrap gap-4">
 
-          {/* <div className="lg:mx-auto text-left ">
-            <h4 className="text-lg text-gray-300 font-medium mb-7">
-              Solutions
-            </h4>
-            <ul className="text-sm  transition-all duration-500">
-              <li className="mb-6">
-                <a
-                  href="https://doc.storydoc.ai/fDqGCI"
-                  className="text-blue-300 hover:text-blue-500"
-                >
-                  Michael
-                </a>
-              </li>
-              <li className="mb-6">
-                <a
-                  href="https://doc.storydoc.ai/kpzORE"
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  Tectra
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.storydoc.com/3174584bdf1fd95eadf2cdb597e502af/c91da85c-353c-4d0d-815f-87b5f7fa8b8b/66ed2b214cf8856527abb158"
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  Argus
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
-          <div className="lg:mx-auto text-left ">
-            <h4 className="text-lg text-gray-300 font-medium mb-7">Support</h4>
-            <ul className="text-sm  transition-all duration-500">
-              <li className="mb-6">
-                <Link
-                  to="/contact"
-                  className="text-blue-300 hover:text-blue-500"
-                >
-                  Get in Touch
-                </Link>
-              </li>
-              {/* <li>
-                <Link
-                  to="/cotnact"
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  Contact us
-                </Link>
-              </li> */}
-              {/* <li className="mb-6">
-                <Link
-                  to="/termsCondition"
-                  // onClick={() => toast("coming soon", { theme: "dark" })}
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/privacy-policy"
-                  // onClick={() => toast("coming soon", { theme: "dark" })}
-                  className=" text-blue-300 hover:text-blue-500"
-                >
-                  Privacy Policy
-                </Link>
-              </li> */}
-            </ul>
-          </div>
-
-          <div className="lg:mx-auto text-left ">
-            <h4 className="text-lg text-gray-300 font-medium mb-7">
-              Subscribe
-            </h4>
-            <p className="text-sm text-blue-300 leading-6 mb-7">
-              Subscribe to get the latest news from us
-            </p>
-            <Link
-              to="/newsletter"
-              className="flex items-center justify-center gap-2 border border-n-3 rounded-full py-3 px-6 w-fit lg:mx-0  text-sm text-n-4 font-semibold transition-all duration-500 hover:bg-indigo-50"
-            >
-              Subscribe
-              <svg
-                width="15"
-                height="12"
-                viewBox="0 0 15 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.25 6L13.25 6M9.5 10.5L13.4697 6.53033C13.7197 6.28033 13.8447 6.15533 13.8447 6C13.8447 5.84467 13.7197 5.71967 13.4697 5.46967L9.5 1.5"
-                  stroke="#469de5"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-        <div className="py-7 border-t border-gray-200">
-          <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
-            <span className="text-sm text-gray-500 ">
-              Copyright © <Link to="/">World Disaster Center</Link>{" "}
-              {new Date().getFullYear()} |  All Rights Reserved 
-            </span>
-            <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0 ">
-              {/* X - twitter */}
+    {/*<img src={WDC} className="h-20 w-20" alt="Brainwave" />*/}
+      <div className="mb-6 sm:mb-0">
+        <h4 className="font-bold uppercase mb-4">Get in Touch</h4>
+        <p>office@worlddisastercenter.org</p>
+        <div className="mt-4 flex items-center justify-center gap-2">
               <a
                 href="https://x.com/W_D_Center?t=lmR5T5UpjDbOAHGOp3PnTg&s=09"
                 target="_blank"
@@ -290,11 +107,85 @@ function NewFooter() {
                   />
                 </svg>
               </a>
-            </div>
-          </div>
+
+
+
+
         </div>
       </div>
-    </footer>
+      <div className="mb-6 sm:mb-0">
+            <h4 className="font-bold uppercase mb-4">Quick Links</h4>
+            <ul>
+              <li>
+                <Link to="/about" className="hover:text-gray-300">
+                  Who We Are
+                </Link>
+              </li>
+              <li>
+                <Link to="/what-we-do" className="hover:text-gray-300">
+                  Our Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/team" className="hover:text-gray-300">
+                  Team
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="mb-6 sm:mb-0">
+            <h4 className="font-bold uppercase mb-4">Resources</h4>
+            <ul>
+              <li>
+                <Link to="/careers" className="hover:text-gray-300">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/News" className="hover:text-gray-300">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-gray-300">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Headquarters */}
+          <div className="mb-6 sm:mb-0">
+            <h4 className="font-bold uppercase mb-4">Headquarters</h4>
+            <p className="text-sm mb-2 text-gray-400">
+              1660 Madison Avenue, New York, NY, 10029
+            </p>
+            <p className="text-sm mb-2 text-gray-400">
+              Austria 5020, Wolf-Dietrich Strabe 31
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-600 mt-6 pt-4 text-center">
+          <p className="text-sm">
+            <a href="/policy" className="hover:text-gray-300 underline text-n-3">
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a
+              href="/terms-conditions"
+              className="hover:text-gray-300 underline text-n-3"
+            >
+              Terms and Conditions
+            </a>{" "}
+            | © {new Date().getFullYear()}{" "}
+            <Link to="/">World Disaster Center</Link>. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </Section>
   );
 }
 
