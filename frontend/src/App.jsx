@@ -49,6 +49,7 @@ import Story from './pages/story/index.jsx'
 import Africa from './pages/where_we_work/africa/index.jsx'
 import NewsDetail from "./components/NewsDetail.jsx";
 import EventsDetail from "./components/NewsDetail.jsx";
+import ProductDetail from "./components/ProductDetail.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -90,8 +91,10 @@ const App = () => {
           <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
           {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
+
           <Route path="/solution" element={<WhatWeDo />} />
           <Route path="/global-products" element={<Products />} />
+
           <Route path="/events" element={<BlogsPage />} />
           <Route path="/blog/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
@@ -127,6 +130,7 @@ const App = () => {
           <Route path="*" element={<NotfoundPage />} />
 
         <Route path="/News/:newsName" element= {<NewsDetail />} />
+        <Route path="/global-products/:productName" element= {<ProductDetail />} />
         <Route path="/events/:eventsName" element= {<EventsDetail />} />
         </Routes>
       

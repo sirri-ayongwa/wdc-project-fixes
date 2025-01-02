@@ -1,14 +1,14 @@
-import CaseStudies from "../../components/GlobalProducts";
+import GlobalProducts from "../../components/GlobalProducts";
 import NewsGrid from "../../components/NewsGrid";
 
-const WhatWeDo = ()=> {
+const Products = ()=> {
 
     return (
         <>
-            <CaseStudies />
+            <GlobalProducts /> 
             {/*<NewsGrid/>*/}
         </>
     )
 }
 
-export default WhatWeDo;
+export default Products;

@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import TagLine from "./Tagline";
 import Section from './Section';
 import Heading from './Heading';
-import { caseStudies } from '../assets/data/products';
+import { products } from '../assets/data/products';
 import { Link } from 'react-router-dom';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -20,14 +20,14 @@ const Item = styled(Paper)(({ theme }) => ({
   }),
 }));
 
-export default function CaseStudies() {
+export default function GlobalProducts() {
     
     const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  const totalPages = Math.ceil(caseStudies.length / itemsPerPage);
+  const totalPages = Math.ceil(products.length / itemsPerPage);
   
-    const currentItems = caseStudies.slice(
+    const currentItems = products.slice(
         (currentPage - 1) * itemsPerPage,
        currentPage * itemsPerPage
    );
@@ -47,7 +47,7 @@ export default function CaseStudies() {
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {currentItems.map((item, index) => (
               <Link
-                to={item.coming_soon ? '#' : `/cases/${item.title}`}
+                to={item.coming_soon ? '#' : `/global-products/${item.title}`}
                 key={index}
                 href={item.link}
                 className= "block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"

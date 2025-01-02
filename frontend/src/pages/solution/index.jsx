@@ -5,7 +5,7 @@ const WhatWeDo = ()=> {
 
     return (
         <>
-            <CaseStudies />
+            <CaseStudies /> 
             {/*<NewsGrid/>*/}
         </>
     )

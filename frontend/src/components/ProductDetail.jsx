@@ -1,46 +1,81 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import Section from './Section';
 import Heading from './Heading';
-import { caseStudies } from '../assets/data/case_stadies';
+import { products } from '../assets/data/products';
 import RequestDemo from './requestDemo';
 import  PICTURE  from '../assets/images/Michael_picture.jpeg'
+import React, { useState } from 'react';
 
-const CaseDetail = () => {
-    const { caseName } = useParams();
-    const caseStudy = caseStudies.find(item=> item.title === caseName);
-    if (!caseStudy) {
+const ProductDetail = () => {
+    const { productName } = useParams();
+    const product = products.find(item=> item.title === productName);
+    if (!product) {
         return <Navigate to="/404" />;
       }
+
+    const [month, setMonth] = useState('November')
+
+    const handleMonthChange = (selectedMonth) => {
+      setMonth(selectedMonth);
+    };
+
+    const links = {
+      November: 'https://public.tableau.com/views/WorldDisasterCentreReport/Overview?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
+      December: "",
+      January: ""
+    };
+    
     return (
         <Section crosses>
-        <div className='container '>
-          <Heading title={caseName}  tag={` Case study`}
-           text={caseStudy.description} 
+        <div className=''>
+          <Heading title={productName}  tag={`product`}
+           text={product.description} 
           />
-                  <div className="mt-4 flex justify-center">
-          <a
-            href="https://michael-v2-workshop.vercel.app/" // Replace with your specific URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600"
-          >
-            Try Now
-          </a>
-        </div>
+
+          <div className='flex flex-row p-8 m-8 mx-32 items-center justify-center gap-10'>
+            <button 
+              className={month == "November" ? 'text-xl px-8 py-2 bg-sky-500 rounded-lg' :'text-xl px-8 py-2 bg-sky-700 rounded-lg hover:bg-sky-500'}
+              onClick={() => handleMonthChange('November')}
+            >
+              November 2024
+            </button>
+              
+            <button 
+              className={month == "December" ? 'text-xl px-8 py-2 bg-sky-500 rounded-lg' :'text-xl px-8 py-2 bg-sky-700 rounded-lg hover:bg-sky-500'}
+              onClick={() => handleMonthChange('December')}
+            >
+              December 2024
+            </button>
+
+            <button 
+              className={month == "January" ? 'text-xl px-8 py-2 bg-sky-500 rounded-lg' :'text-xl px-8 py-2 bg-sky-700 rounded-lg hover:bg-sky-500'}
+              onClick={() => handleMonthChange('January')}
+            >
+              January 2025
+            </button>
           </div>
-          <div className='flex flex-row w-screen p-8 gap-4 '>
-            <img
-              className='w-2/5 h-1/2 rounded-2xl'
-              src = {PICTURE}
-              alt = "Michael Picture" 
-            />
-            <div className="w-3/4"> 
-            <iframe src="https://www.slideshare.net/slideshow/embed_code/key/4CANGsyqn4SmlV?hostedIn=slideshare&page=upload" width="476px" height="288px" className="w-full h-full rounded-2xl" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+
+        <div className='mx-16'>
+          {links[month] == "" ?(
+            <div className='rounded-xl border-8 w-full h-full pb-96 text-center text-3xl text-neutral-950 bg-white p-32'>
+              Coming Soon
             </div>
+          ):(
+            <div className='rounded-xl border-8 w-full h-3/4'>
+            <tableau-viz id="tableauViz"  
+              src={links[month]}>
+            </tableau-viz>
           </div>
-          <RequestDemo />
+          )}
+          
+        </div>
+
+        </div>
+        
+       
+
         </Section>
     );
   };
 
-  export default CaseDetail;
+  export default ProductDetail;
