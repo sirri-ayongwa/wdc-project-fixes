@@ -22,6 +22,7 @@ import lilla from "../assets/team/lilla.png";
 import manho from "../assets/team/man-ho.png";
 import francine from "../assets/team/francine.png";
 import norbert from "../assets/team/norbert.png";
+import doux from "../assets/team/doux.png";
 import boaz from "../assets/team/boaz.png";
 import elvis from "../assets/team/elvis.png";
 import jamesmbogo from "../assets/team/JamesMbogo.png";
@@ -64,15 +65,15 @@ function TeamPage() {
       name: "David C. Kangamina",
       image: davidboard,
     },
-    // {
-    //   location: "Canada",
-    //   title: "Complaints Officer @ Elections Canada",
-    //   bio: "",
-    //   email: "",
-    //   socials: [],
-    //   name: "Doux Kelvin",
-    //   image: WDCLogo,
-    // },
+    {
+      location: "Canada",
+      title: "Complaints Officer @ Elections Canada",
+      bio: "",
+      email: "",
+      socials: [],
+      name: "Doux Kelvin",
+      image: doux,
+    },
     // {
     //   location: "USA",
     //   title: "",

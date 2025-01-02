@@ -214,17 +214,28 @@ export const pricing = [
 export const benefits = [
   {
     id: "00",
-    title: "Our Solutions",
+    title: "Tailored Solutions",
     text: "At WDC, we provide technology-driven solutions designed to strengthen disaster preparedness, optimize crisis response, and empower decision-makers. Our services focus on equipping vulnerable communities with the tools and insights needed to mitigate risks, respond effectively, and recover sustainably.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
     hyperlink: "",
     comingsoon: false,
-    url: "/what-we-do",
+    url: "/solution",
   },
   {
-    id: "01",
+    id: "02",
+    title: "Global Products",
+    text: "WDC's Global Products are designed to strengthen disaster resilience and preparedness globally. By providing actionable insights, connecting resources, and offering comprehensive analyses, they empower communities and organizations to make informed decisions and respond effectively.",
+    backgroundUrl: "assets/benefits/card-1.svg",
+    iconUrl: benefitIcon1,
+    imageUrl: "",
+    hyperlink: "",
+    comingsoon: false,
+    url: "/global-products",
+  },
+  {
+    id: "03",
     title: "Roster",
     text: "WDC’s roster includes experienced professionals, local experts, partner organizations, private companies, all ready for immediate action in disaster-affected areas. We value the unique contributions of every member, recognizing that a range of perspectives, skills, and local experiences enhance our ability to respond effectively.",
     backgroundUrl: "assets/benefits/card-1.svg",
@@ -235,7 +246,7 @@ export const benefits = [
     url: "/signin",
   },
   {
-    id: "02",
+    id: "04",
     title: "Partnerships",
     text: "WDC partners with strategic, technical, and funding collaborators, including financial sponsors and software providers, to bring our solutions to life. Supported by long-term investment partners and in-kind contributions, these collaborations drive sustainable and impactful disaster preperadness, response and recovery innovations.",
     backgroundUrl: "assets/benefits/card-1.svg",
@@ -245,14 +256,6 @@ export const benefits = [
     comingsoon: true,
     url: "",
   },
-  // {
-  //   id: "0",
-  //   title: "Detection System",
-  //   text: "Aggregate data from multiple sources to detect and predict natural man-made disasters.",
-  //   backgroundUrl: "assets/benefits/card-1.svg",
-  //   iconUrl: benefitIcon1,
-  //   imageUrl: benefitImage2,
-  // },
   // {
   //   id: "1",
   //   title: "Real-Time Alerts",
@@ -323,9 +326,11 @@ export const dropdownData = [
   {
     title: "What We Do",
     routings: {
-      "Our Solutions": "/what-we-do",
+      "Tailored Solutions": "/solution",
+      "Global Products": "/global-products",
     },
   },
+  
   {
     title: "Resources",
     routings: {

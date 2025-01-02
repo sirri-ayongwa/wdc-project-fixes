@@ -616,7 +616,17 @@ const WhoWeAre = () => {
                   Strengthening Resilience Against Disasters
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                We are the World Disaster Center, a global nonprofit dedicated to transforming how the world prepares for, responds to, and recovers from disasters. Recognizing the gaps in preventive action, fragmented responses, and strained resources that lead to unnecessary loss of life, WDC bridges these challenges with a unified approach. By leveraging cutting-edge technology, uniting global efforts, and empowering communities, we deliver bold, innovative solutions that place people at the center of everything we do—ensuring safety, resilience, and hope for a brighter tomorrow.
+                Some of us have seen our parents killed, uncles and aunts vanish as if they never existed. Some have forgotten what it means to smile.
+
+Meanwhile, about 80% of the global population is exposed to disasters, and the world watches, seemingly indifferent. This is where the World Disaster Center (WDC) steps in—a humble organization of young dreamers who believe disasters can be stopped or, at the very least, their impacts mitigated.
+
+We believe the world must urgently review outdated frameworks. 
+<br></br>
+<br></br>
+At WDC, we utilize advanced technologies to coordinate existing initiatives, support individuals, organizations, and companies, and provide people with simple, user-friendly tools to ensure their safety. By empowering individuals, we allow them to focus on their development and achieve their dreams.
+
+Our founders and advisors have learned that progress is only possible when people feel safe. Safety is the foundation for a better world—everything else follows smoothly.
+
                 </p>
                 {/* <p className="mb-8 text-base text-body-color dark:text-dark-6">
                   WDC leverages a revolutionary approach that combines

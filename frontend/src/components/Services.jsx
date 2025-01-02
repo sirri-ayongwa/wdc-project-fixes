@@ -92,19 +92,19 @@ const Services = () => {
             <div className="text-2xl m-4 font-bold" >
               Action Oriented:
               <div className="text-sm mx-4 my-2 font-normal">
-                We prioritize immediate, impactful responses over lengthy deliberations, ensuring lives are saved without delay.
+              We prioritize immediate action over prolonged discussions because every moment counts when lives are at risk. Delays lead to preventable suffering, and WDC is committed to saying “enough is enough.
               </div>
             </div>
             <div className="text-2xl m-4 font-bold" >
-              Collaboration:
+              Collaboration & Coordination:
               <div className="text-sm mx-4 my-2 font-normal">
-                We believe in the power of partnerships, fostering a spirit of unity to achieve shared goals.
+              We believe in the power of partnerships. By building strong, transparent relationships, we can achieve meaningful impact and deliver swift solutions anywhere, anytime.
               </div>
             </div>
             <div className="text-2xl m-4 font-bold" >
               Innovation:
               <div className="text-sm mx-4 my-2 font-normal">
-                We work tirelessly to develop and implement forward-thinking solutions that address evolving disaster challenges.
+              Our team works tirelessly, driven by a passion for change. We innovate relentlessly to ensure disasters no longer dictate the lives of millions.
               </div>
             </div>
             <div className="text-2xl m-4 font-bold" >
@@ -114,9 +114,9 @@ const Services = () => {
               </div>
             </div>
             <div className="text-2xl m-4 font-bold" >
-              Inclusivity
+              Inclusivity:
               <div className="text-sm mx-4 my-2 font-normal">
-                We embrace diversity and create opportunities for all voices to be heard and valued.
+              We embrace diversity, welcoming people from all backgrounds, ages, and cultures. Differences are our strength, and our global team reflects the inclusivity we champion.
               </div>
             </div>
           </div>

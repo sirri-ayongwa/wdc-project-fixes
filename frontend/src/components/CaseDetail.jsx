@@ -35,7 +35,7 @@ const CaseDetail = () => {
               alt = "Michael Picture" 
             />
             <div className="w-3/4"> 
-            <iframe src="https://gtvault-my.sharepoint.com/personal/zakhtar8_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={2c1a15b0-52ff-4adf-ac65-d61acd743203}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="476px" height="288px" className="w-full h-full rounded-2xl" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+            <iframe src="https://www.slideshare.net/slideshow/embed_code/key/4CANGsyqn4SmlV?hostedIn=slideshare&page=upload" width="476px" height="288px" className="w-full h-full rounded-2xl" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
             </div>
           </div>
           <RequestDemo />

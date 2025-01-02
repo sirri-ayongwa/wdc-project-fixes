@@ -1,19 +1,19 @@
 import { useState } from "react";
 import MOBILEGIF from "../assets/gif/mobilephones.gif";
 import MICHAEL from "../assets/gif/Michael_Website.gif";
-import DREAM from "../assets/gif/dream.gif";
+import WORLD from "../assets/gif/world_blue.gif";
 import { Link } from "react-router-dom";
 import { GradientLight } from "./design/Benefits";
 
 const items = [
   {
     id: 1,
-    title: "Your Support Saves Lives",
+    title: "END DISASTER IMPACTS",
     description:
-      "Every Dollar Powers Cutting-Edge Technology and Real-Time Solutions for Disaster-Stricken Communities",
-    buttonText: "Donate now →",
-    link: "https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE",
-    image: MOBILEGIF,
+      "World Disaster Center: A New Era of Resilience and Empowerment. Together, We Can Make the World Safer for Everyone.",
+    buttonText: "Learn about our Mission →",
+    link: "/about",
+    image: WORLD,
   },
   {
     id: 2,
@@ -26,12 +26,18 @@ const items = [
   },
   {
     id: 3,
-    title: "Because Every Dream Deserves a Safe Place to Grow",
-    description:
-      "We Empower Dreams by Protecting Lives. Together, We Can Make the World Safer for Everyone.",
-    buttonText: "Learn about our Mission →",
-    link: "/about",
-    image: DREAM,
+    title: "Your Support Can Save Lives",
+    description: (
+      <>
+        Out of 8 billion people worldwide, only 1.4 billion feel safe from disasters. The rest face risks daily.   Your contribution ensures that everyone, everywhere, has the opportunity to dream and thrive.
+        {/* With just $5, you can give someone access to our Michael app, a lifeline in disaster preparedness. <br /><br />
+        A $1 monthly subscription helps WDC deploy teams globally to prevent disasters and save lives. <br /><br /> */}
+        
+      </>
+    ), 
+    buttonText: "Donate now →",
+    link: "https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE",
+    image: MOBILEGIF,
   },
 ];
 

@@ -17,11 +17,11 @@ const Benefits = () => {
           tag=" Benefits"
         />
 
-        <div className="flex flex-wrap gap-10 mb-10 justify-around">
+        <div className="flex flex-wrap gap-2 mb-10 justify-between">
           {benefits.map((item) => (
             <Link
               to={item.url === "" ? "/" : item.url}
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] flex-grow md:basis-[35%]"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}

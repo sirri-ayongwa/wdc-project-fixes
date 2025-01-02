@@ -8,7 +8,7 @@ export const caseStudies = [
     description: 'Empowering Vulnerable Communities with Real-Time Disaster Alerts and AI Predictions.',
     image: imageCase2,
     coming_soon: false,
-    link: 'https://gtvault-my.sharepoint.com/personal/zakhtar8_gatech_edu/_layouts/15/Doc.aspx?sourcedoc={2c1a15b0-52ff-4adf-ac65-d61acd743203}&amp;action=embedview&amp;wdAr=1.7777777777777777',
+    link: 'https://1drv.ms/p/s!AomLDkNDuTrRb_IYPECTx1n2Tpo?e=Gx4ayi?embed=1&amp;em=2&amp;wdAr=1.7777777777777777',
   },
   {
     title: 'Argus',

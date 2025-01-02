@@ -40,11 +40,8 @@ export default function CaseStudies() {
     <Section crosses>
         <div className='container '>
           <Heading  title='What We Do'
-          text={`Discover how we revolutionize disaster management using AI and advanced data 
-            technologies. Our case studies show how intelligent systems and real-time data improve 
-            response times, enhance decision-making, and save lives. Learn how our solutions empower 
-            organizations to manage crises, mitigate risks, and build resilience.`}
-          tag={`Solutions`}
+          text={`Our innovative solutions strengthen disaster preparedness, accelerate real-time response, empower informed decision-making, and save lives. Tailored to each country, these solutions support vulnerable communities, crisis responders, decision-makers, and organizations to build resilience and drive meaningful impact.`}
+          tag={`Tailored Solutions`}
           />
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
             {currentItems.map((item, index) => (

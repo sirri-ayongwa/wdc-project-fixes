@@ -122,8 +122,8 @@ function NewFooter() {
                 </Link>
               </li>
               <li>
-                <Link to="/what-we-do" className="hover:text-gray-300">
-                  Our Solutions
+                <Link to="/solution" className="hover:text-gray-300">
+                  Tailored Solutions
                 </Link>
               </li>
               <li>

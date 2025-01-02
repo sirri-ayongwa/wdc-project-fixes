@@ -23,10 +23,10 @@ const HomePage = () => {
       <Hero /> */}
       <Slideshow />
       <Benefits />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <CaseStudies />
       <NewsGrid/>
-      <Collaboration />
+      {/* <Collaboration /> */}
       {/* <Services /> */}
       {/* <Blogs isHome={false} /> */}
       <NewsLetter2 />

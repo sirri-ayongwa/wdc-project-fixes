@@ -8,7 +8,7 @@ function NewsLetter2() {
       <Section crosses>
         <div className="max-w-3xl mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-4 animate-fade-in">Stay Updated</h2>
-          <p className="text-gray-400 mb-8 animate-fade-in">Subscribe to our newsletter and get the latest updates on industry news, events, and insights.</p>
+          <p className="text-gray-400 mb-8 animate-fade-in">Subscribe to our newsletter and get the latest updates on WDC news, events, and insights. Be part of the change!</p>
           <form 
             action="https://worlddisastercenter.us22.list-manage.com/subscribe/post?u=c90ad2e6157e6eac27328c681&amp;id=a73ca4362c&amp;f_id=0044d6e1f0"
             method="post"

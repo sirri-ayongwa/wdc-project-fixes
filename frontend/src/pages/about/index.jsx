@@ -15,7 +15,7 @@ function AboutPage() {
     <div className="justify-center items-center flex flex-col p-8 mt-10 mx-28">
       <div className='border-t-2 mb-6 border-gray-400 rounded-full w-full'></div>
       <div className="text-4xl text-center mb-6">
-        "We are on a mission to minimize the impact of disasters everywhere."
+        "We are on a mission to end disaster impacts everywhere."
       </div>
       <div className='border-b-2 mb-4 border-gray-400 rounded-full w-full'></div>
         <WhoWeAre />
@@ -26,7 +26,7 @@ function AboutPage() {
       </div> */}
       <div className='border-t-2 mb-6 border-gray-400 rounded-full w-full'></div>
       <div className="text-4xl text-center mb-6">
-      "We envision a world where no life is lost to unpreparedness, where communities thrive in safety, and individuals achieve their dreams free from the fear of disasters."
+      "We envision a world where disasters no longer disrupt determination, dreams, or aspiration."
       </div>
       <div className='border-b-2 mb-4 border-gray-400 rounded-full w-full'></div>
       <HowWeWork />

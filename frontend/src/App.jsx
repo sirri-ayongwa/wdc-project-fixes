@@ -42,6 +42,7 @@ import CaseDetail from "./components/CaseDetail.jsx";
 import PrivacyPolicyPage from "./pages/privacyPolicy/index.jsx";
 import TermsAndConditionPage from "./pages/termsCondition/index.jsx";
 import WhatWeDo from "./pages/solution/index.jsx";
+import Products from "./pages/product/index.jsx";
 import News from "./pages/news/index.jsx";
 import CookieConsent from "./components/CookieConsent.jsx";
 import Story from './pages/story/index.jsx'
@@ -89,7 +90,8 @@ const App = () => {
           <Route path="/profile/type/:id" element={<TypePage />} />
           <Route path="/profile/update/:id" element={<UpdateProfile />} />
           {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
-          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/solution" element={<WhatWeDo />} />
+          <Route path="/global-products" element={<Products />} />
           <Route path="/events" element={<BlogsPage />} />
           <Route path="/blog/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
@@ -123,7 +125,7 @@ const App = () => {
           {/* Dynamic route for cases */}
         <Route path="/cases/:caseName" element={<CaseDetail />} />
           <Route path="*" element={<NotfoundPage />} />
-        
+
         <Route path="/News/:newsName" element= {<NewsDetail />} />
         <Route path="/events/:eventsName" element= {<EventsDetail />} />
         </Routes>

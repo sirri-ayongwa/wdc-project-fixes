@@ -11,9 +11,7 @@ function CareerPage() {
         <Heading
           tag="Careers at World Disaster Center"
           title="Career Opportunities"
-          text={`World Disaster Center embraces a youthful and flexible spirit,
-                enabling us to swiftly adapt to current research,
-                conditions, and customer demands through our advanced technology.`}
+          text={`Dream of making a global impact while achieving personal goals? Join WDC, where your work will help shape a safer, better world. We welcome talent from all backgrounds.`}
         />
 
         {/* Open Positions List */}
@@ -59,7 +57,7 @@ function CareerPage() {
         {/* CV Submission Section */}
         <div className="xl:max-w-6xl w-auto mx-auto xl:py-28 md:py-16 py-10 xl:px-0 px-10">
           <h3 className="text-gray-400 text-center lg:text-2xl text-xl font-bold leading-10 mb-5">
-            World Disaster Center thrives on a spirit of agility
+          Your door to meaningful change is here
           </h3>
 
           <div className="lg:mt-18 mt-10 bg-gradient-to-l from-green-600 to-indigo-600 p-12 rounded-lg">
