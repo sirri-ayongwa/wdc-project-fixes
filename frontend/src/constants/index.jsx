@@ -342,9 +342,9 @@ export const dropdownData = [
     title: "Get Involved",
     routings: {
       // "Get Involved":"/",
-      // "Donate & Ways to Give": "/donate",
-      "Contact": "/contact",
+      "Donate & Ways to Give": "/donate",
       Careers:"/careers",
+      "Contact Us": "/contact",
     },
   },
   

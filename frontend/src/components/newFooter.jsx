@@ -172,27 +172,25 @@ function NewFooter() {
         </div>
 
         <div className="border-t border-gray-600 mt-6 pt-4">
-  <div className="flex justify-between items-center text-sm text-white">
-    <p>© 2025 World Disaster Center. All rights reserved.</p>
-    <div>
-      <a
-        href="/policy"
-        className="hover:text-blue-500 hover:underline"
-        style={{ color: "white" }}
-      >
-        Privacy Policy
-      </a>
-      {" "} | {" "}
-      <a
-        href="/terms-conditions"
-        className="hover:text-blue-500 hover:underline"
-        style={{ color: "white" }}
-      >
-        Terms and Conditions
-      </a>
+      <div className="text-sm text-white">
+        <p className="mb-2">
+          © {new Date().getFullYear()}{" "}
+          <Link to="/" className="hover:text-blue-500 hover:underline">
+            World Disaster Center
+          </Link>
+          <span className="mx-2">•</span>
+          World Disaster Center is a 501(c)(3) tax-exempt organization
+          <span className="mx-2">•</span>
+          <Link to="/policy" className="hover:text-blue-500 hover:underline">
+            Privacy Policy
+          </Link>
+          <span className="mx-2">•</span>
+          <Link to="/terms-conditions" className="hover:text-blue-500 hover:underline">
+            Terms & Conditions
+          </Link>
+        </p>
+      </div>
     </div>
-  </div>
-</div>
       </div>
     </Section>
   );

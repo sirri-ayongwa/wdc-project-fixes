@@ -29,14 +29,11 @@ const items = [
     title: "Your Support Can Save Lives",
     description: (
       <>
-        Out of 8 billion people worldwide, only 1.4 billion feel safe from disasters. The rest face risks daily.   Your contribution ensures that everyone, everywhere, has the opportunity to dream and thrive.
-        {/* With just $5, you can give someone access to our Michael app, a lifeline in disaster preparedness. <br /><br />
-        A $1 monthly subscription helps WDC deploy teams globally to prevent disasters and save lives. <br /><br /> */}
-        
+        Out of 8 billion people worldwide, only 1.4 billion feel safe from disasters. The rest face risks daily. Your contribution ensures that everyone, everywhere, has the opportunity to dream and thrive.
       </>
-    ), 
+    ),
     buttonText: "Donate now →",
-    link: "https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE",
+    link: "/donate",
     image: MOBILEGIF,
   },
 ];
@@ -51,14 +48,13 @@ const Slideshow = () => {
     }
   };
 
-  //test
-
   return (
     <div className="relative flex flex-col w-full mb-24 overflow-visible">
       {/* Gradient Light */}
       <div className="overflow-hidden w-full h-[600px] absolute inset-0 -z-10 ">
-          <GradientLight className="w-full h-full"/>
+        <GradientLight className="w-full h-full" />
       </div>
+
       {/* Main Content */}
       <div
         className="relative flex flex-row transition-transform duration-300"
@@ -71,12 +67,14 @@ const Slideshow = () => {
             key={item.id}
             className="w-full h-[600px] flex-shrink-0 flex flex-row items-center"
           >
-            {/* Left Image */}
-            <div className="w-full h-full">
+            {/* Left Image with Red Background */}
+            <div className="w-full h-full flex items-center justify-center bg-red-600 rounded-t-3xl overflow-hidden">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover rounded-t-3xl"
+                className={`object-contain rounded-t-3xl transition-transform duration-500 ${
+                  item.id === 2 ? "w-[80%]" : "w-full"
+                }`}
               />
             </div>
 
@@ -121,4 +119,3 @@ const Slideshow = () => {
 };
 
 export default Slideshow;
-

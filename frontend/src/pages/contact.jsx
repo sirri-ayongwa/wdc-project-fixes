@@ -10,8 +10,8 @@ function ContactPage() {
         <div className="container">
             <Heading
                 title="Contact Us"
-                text={`We would love to hear from you! Whether you're interested in collaborating with the World Disaster Center, have questions about our work, or wish to share feedback on our website, please don’t hesitate to get in touch with us through phone, email, or the form below.`}
-                tag="World Disaster Center"
+                text={`Whether you're interested in collaborating with the World Disaster Center, have questions about our work, or wish to share feedback on our website, please don’t hesitate to get in touch with us through phone, email, or the form below.`}
+                tag="We would love to hear from you"
                 className="mb-8"
                 crosses
             />
