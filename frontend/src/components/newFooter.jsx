@@ -159,13 +159,13 @@ function NewFooter() {
           {/* Headquarters */}
           <div className="mb-6 sm:mb-0">
             <h4 className="font-bold uppercase mb-4">Headquarters</h4>
-            <p className="text-sm mb-2 text-gray-400">
+            <p className="text-sm mb-2 text-white-400">
               1660 Madison Avenue, 10029 New York, United States
             </p>
-            <p className="text-sm mb-2 text-gray-400">
+            <p className="text-sm mb-2 text-white-400">
             Wolf-Dietrich Straße 32/4/2, 5020 Salzburg, Austria
             </p>
-            <p className="text-sm mb-2 text-gray-400">
+            <p className="text-sm mb-2 text-white-400">
             EIN: 33-1869013 / Steuernummer: 91 323/2005
             </p>
           </div>
