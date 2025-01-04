@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Section from "./Section";
 import Heading from "./Heading";
-import { FaUserShield, FaUsers, FaSchool } from "react-icons/fa"; // Import icons
+import { FaUserShield, FaUsers, FaSchool, FaHandsHelping, FaTools, FaSatelliteDish, FaCity, FaUserFriends, FaShieldAlt } from "react-icons/fa"; // Import icons
 import BeforeAfterVisual from "./BeforeAfterVisual";
-import story from "../assets/images/onedollarstory.png"; 
-
+import story from "../assets/images/onedollarstory.png";
 
 function DonationSection() {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const fullText = "But HOPE starts with YOU.";
 
+  // Typewriter Effect
   useEffect(() => {
     let index = 0;
 
@@ -66,14 +66,9 @@ function DonationSection() {
           <p className="text-lg text-gray-700">
             Just $5 provides one family with access to the Michael app, giving them the tools they need to stay safe.
           </p>
-          {/* <div className="flex justify-center mt-8">
-            <div className="w-full h-48 bg-gray-300 rounded-lg flex items-center justify-center">
-              <p className="text-gray-500">Placeholder for Before/After Visual</p>
-            </div>
-          </div> */}
-            <div className="flex justify-center mt-8">
-    <BeforeAfterVisual />
-  </div>
+          <div className="flex justify-center mt-8">
+            <BeforeAfterVisual />
+          </div>
         </div>
 
         {/* Section 4: Where Your $1 Monthly Goes */}
@@ -81,15 +76,59 @@ function DonationSection() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             The Journey of Every $1
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-6">
             Your $1 monthly donation helps empower communities with life-saving tools and sustainable rebuilding solutions.
           </p>
-          <div className="flex justify-center mt-8">
-            <img
-              src={story}
-              alt="The Journey of Every $1"
-              className="w-full max-w-3xl rounded-lg shadow-md"
-            />
+
+          {/* Circles with Icons and Text */}
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            {/* Circle 1 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaShieldAlt className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                PROACTIVE DISASTER RISK REDUCTION
+              </h3>
+            </div>
+
+            {/* Circle 2 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaTools className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                EQUIP LOCAL RESPONDERS WITH TOOLS
+              </h3>
+            </div>
+
+            {/* Circle 3 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaSatelliteDish className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                DEVELOP ADVANCED TECHNOLOGIES
+              </h3>
+            </div>
+
+            {/* Circle 4 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaCity className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                REBUILD COMMUNITIES TO BE SAFER
+              </h3>
+            </div>
+
+            {/* Circle 5 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaUserFriends className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                CONNECT EXPERTS AND LOCALS
+              </h3>
+            </div>
+
+            {/* Circle 6 */}
+            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
+              <FaHandsHelping className="text-blue-600 text-4xl mb-2" />
+              <h3 className="text-sm font-semibold text-gray-900 text-center">
+                DISASTER RESPONSE PROGRAMS
+              </h3>
+            </div>
           </div>
         </div>
 
@@ -99,7 +138,7 @@ function DonationSection() {
             One Small Step for You, One Giant Leap for Safety
           </h2>
           <p className="text-lg mb-12">
-          One donation. Countless lives changed. A safer world for all. Choose a donation tier and help us save lives.
+            One donation. Countless lives changed. A safer world for all. Choose a donation tier and help us save lives.
           </p>
 
           {/* Three Equal-Sized Donation Boxes */}
@@ -110,14 +149,14 @@ function DonationSection() {
               <h3 className="text-xl font-bold text-blue-600 mb-2">$5 = Access for one person</h3>
               <p className="text-gray-700 mb-4">Provide one person with access to the Michael app for disaster preparedness.</p>
               <a
-    href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-      Donate Now
-    </button>
-  </a>
+                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
+                  Donate Now
+                </button>
+              </a>
             </div>
 
             {/* Box 2 */}
@@ -126,14 +165,14 @@ function DonationSection() {
               <h3 className="text-xl font-bold text-blue-600 mb-2">$10 = Access for two people</h3>
               <p className="text-gray-700 mb-4">Help two people prepare for disasters with the Michael app and a chance to stay safe.</p>
               <a
-    href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-      Donate Now
-    </button>
-  </a>
+                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
+                  Donate Now
+                </button>
+              </a>
             </div>
 
             {/* Box 3 */}
@@ -142,14 +181,14 @@ function DonationSection() {
               <h3 className="text-xl font-bold text-blue-600 mb-2">$50 = Community Safety</h3>
               <p className="text-gray-700 mb-4">Provide safety training for 10 individuals in vulnerable communities.</p>
               <a
-    href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-      Donate Now
-    </button>
-  </a>
+                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
+                  Donate Now
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -159,4 +198,3 @@ function DonationSection() {
 }
 
 export default DonationSection;
-

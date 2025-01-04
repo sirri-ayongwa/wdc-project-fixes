@@ -83,7 +83,7 @@ const Slideshow = () => {
               <h2 className="text-3xl font-bold mb-4">{item.title}</h2>
               <p className="mb-6 text-sky-300">{item.description}</p>
               <button className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md">
-                <Link to={item.link} target="_blank">
+                <Link to={item.link}>
                   {item.buttonText}
                 </Link>
               </button>
