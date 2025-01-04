@@ -1,117 +1,202 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa"; // Icons
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [pending, setPending] = useState(false);
   const form = useRef();
 
+  // Function to validate form fields
+  const validateForm = () => {
+    if (!firstName || !lastName || !email || !subject || !message) {
+      toast.error("All fields are required!", { theme: "dark" });
+      return false;
+    }
+    return true;
+  };
+
+  // Function to send the email
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // Validate the form before sending
+    if (!validateForm()) return;
+
     setPending(true);
-    // toast.success("hello");
-    // return
-    // console.log("working")
     emailjs
       .sendForm(
-        "service_d3yy0xf",
-        "template_zsnn9zs",
+        "service_d3yy0xf", // Replace with your service ID
+        "template_zsnn9zs", // Replace with your template ID
         form.current,
-        "S6rrT9Cqk-qhVNtap"
+        "S6rrT9Cqk-qhVNtap" // Replace with your public key
       )
-      .then((result) => {
+      .then(() => {
         setPending(false);
-        toast.success("Message sent", { theme: "dark" });
+        toast.success("Message sent successfully!", { theme: "dark" });
+        setFirstName("");
+        setLastName("");
         setEmail("");
-        setName("");
+        setSubject("");
         setMessage("");
       })
       .catch((err) => {
-        // console.log(err)
         setPending(false);
-        toast.error(err.text);
+        toast.error(`Error: ${err.text}`);
       });
   };
 
   return (
-    <div className="flex justify-center items-center flex-wrap">
-      <div className="p-1">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2177.384248128347!2d-73.94953446419014!3d40.796686391626764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f61b2c85265d%3A0xecccdb9f66f2ad4e!2s1660%20Madison%20Ave%2C%20New%20York%2C%20NY%2010029%2C%20USA!5e0!3m2!1sen!2scd!4v1728035163853!5m2!1sen!2scd"
-          height="450"
-          style={{ border: "0", width: "100%", minWidth: "400px" }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-      <div className="p-2 min-w-[400px]">
-        <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-blue-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-green-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
-          <h2 className="text-2xl font-bold text-white mb-6">Keep in Touch</h2>
-          <form ref={form} onSubmit={sendEmail} action="#">
-            <div className="mb-4">
-              <label
-                className="block text-sm font-medium text-gray-300"
-                htmlFor="name"
-              >
-                Full Name
-              </label>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                name="from_name"
-                className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-                type="text"
-              />
-            </div>
+    <div className="flex flex-col lg:flex-row items-start bg-gradient-to-b from-gray-900 to-gray-800 text-white py-12 px-6 lg:px-24 gap-16">
+      {/* Office Information Section */}
+      <div className="w-full lg:w-1/2 bg-gray-900 p-8 rounded-md shadow-lg">
+        <h2 className="text-3xl font-bold mb-8 text-blue-400">Our Offices</h2>
 
-            <div className="mb-4">
-              <label
-                className="block text-sm font-medium text-gray-300"
-                htmlFor="email"
-              >
-                Email Address
-              </label>
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-                name="from_email"
-                id="email"
-                type="email"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label
-                className="block text-sm font-medium text-gray-300"
-                htmlFor="Message"
-              >
-                Message
-              </label>
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-                rows="3"
-                name="message"
-                id="bio"
-              ></textarea>
-            </div>
-
-            <div className="flex justify-end">
-              <button
-                className="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
-                type="submit"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+        {/* Austria Office */}
+        <div className="mb-10">
+          <h3 className="text-xl font-bold mb-2">World Disaster Center Austria Office</h3>
+          <p className="text-sm text-gray-400 mb-4">
+            World Disaster Center is a non-profit organisation registered in Vienna, Austria.<br />
+            ZVR: 1671774845<br />
+            Steuernummer: 91 323/2005
+          </p>
+          <p>Wolf-Dietrich-Straße 32/4/2</p>
+          <p>5020 Salzburg</p>
+          <p>Austria</p>
+          <p className="mt-2 flex items-center gap-2">
+            <FaPhoneAlt /> (+43) 6603984436
+          </p>
+          <p className="flex items-center gap-2">
+            <FaEnvelope />
+            <a href="mailto:office@worlddisastercenter.org" className="text-blue-400 hover:underline">office@worlddisastercenter.org</a>
+          </p>
         </div>
+
+        <hr className="my-6 border-gray-700" />
+
+        {/* New York Office */}
+        <div>
+          <h3 className="text-xl font-bold mb-2">World Disaster Center New York Office</h3>
+          <p className="text-sm text-gray-400 mb-4">
+            World Disaster Center is a trusted 501(c)(3) non-profit in New York, United States.<br />
+            EIN: 33-1869013
+          </p>
+          <p>1660 Madison Avenue</p>
+          <p>10029 New York</p>
+          <p>United States</p>
+          <p className="mt-2 flex items-center gap-2">
+            <FaPhoneAlt /> (+1) 7185212743
+          </p>
+          <p className="flex items-center gap-2">
+            <FaEnvelope />
+            <a href="mailto:office@worlddisastercenter.org" className="text-blue-400 hover:underline">office@worlddisastercenter.org</a>
+          </p>
+        </div>
+      </div>
+
+      {/* Contact Form Section */}
+      <div className="w-full lg:w-1/2 bg-gray-800 p-10 rounded-md shadow-lg relative min-h-[600px]">
+        <h2 className="text-3xl font-bold mb-6 text-blue-400">Keep in Touch</h2>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            {/* First Name */}
+            <div>
+              <label className="block text-sm font-medium text-gray-300" htmlFor="first_name">
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                name="first_name"
+                className="mt-1 p-3 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                type="text"
+                placeholder="First Name"
+                required
+              />
+            </div>
+
+            {/* Last Name */}
+            <div>
+              <label className="block text-sm font-medium text-gray-300" htmlFor="last_name">
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                name="last_name"
+                className="mt-1 p-3 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+                type="text"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+          </div>
+
+          {/* Email Address */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-300" htmlFor="email">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="from_email"
+              id="email"
+              className="mt-1 p-3 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+              type="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          {/* Subject */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-300" htmlFor="subject">
+              Subject <span className="text-red-500">*</span>
+            </label>
+            <input
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              name="subject"
+              className="mt-1 p-3 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+              type="text"
+              placeholder="Subject"
+              required
+            />
+          </div>
+
+          {/* Message */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-300" htmlFor="message">
+              Message <span className="text-red-500">*</span>
+            </label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              name="message"
+              id="message"
+              className="mt-1 p-3 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+              rows="6"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-4 py-3 font-bold rounded-md hover:bg-blue-700 transition-transform transform hover:scale-105"
+            >
+              {pending ? "Sending..." : "Send Message"}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

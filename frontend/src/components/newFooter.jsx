@@ -160,30 +160,39 @@ function NewFooter() {
           <div className="mb-6 sm:mb-0">
             <h4 className="font-bold uppercase mb-4">Headquarters</h4>
             <p className="text-sm mb-2 text-gray-400">
-              1660 Madison Avenue, New York, NY, 10029
+              1660 Madison Avenue, 10029 New York, United States
             </p>
             <p className="text-sm mb-2 text-gray-400">
-              Austria 5020, Wolf-Dietrich Strabe 31
+            Wolf-Dietrich Straße 32/4/2, 5020 Salzburg, Austria
+            </p>
+            <p className="text-sm mb-2 text-gray-400">
+            EIN: 33-1869013 / Steuernummer: 91 323/2005
             </p>
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-6 pt-4 text-center">
-          <p className="text-sm">
-            <a href="/policy" className="hover:text-gray-300 underline text-n-3">
-              Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a
-              href="/terms-conditions"
-              className="hover:text-gray-300 underline text-n-3"
-            >
-              Terms and Conditions
-            </a>{" "}
-            | © {new Date().getFullYear()}{" "}
-            <Link to="/">World Disaster Center</Link>. All rights reserved.
-          </p>
-        </div>
+        <div className="border-t border-gray-600 mt-6 pt-4">
+  <div className="flex justify-between items-center text-sm text-white">
+    <p>© 2025 World Disaster Center. All rights reserved.</p>
+    <div>
+      <a
+        href="/policy"
+        className="hover:text-blue-500 hover:underline"
+        style={{ color: "white" }}
+      >
+        Privacy Policy
+      </a>
+      {" "} | {" "}
+      <a
+        href="/terms-conditions"
+        className="hover:text-blue-500 hover:underline"
+        style={{ color: "white" }}
+      >
+        Terms and Conditions
+      </a>
+    </div>
+  </div>
+</div>
       </div>
     </Section>
   );

@@ -5,7 +5,7 @@ import Heading from "../../components/Heading";
 function PrivacyPolicyPage() {
   return  (<Section crosses>
      <div className="container p">
-    <Heading title="Privacy Policy" tag='Last updated: 5th July 2024' />
+    <Heading title="Privacy Policy" tag='Last updated: 4 January, 2025' />
     <div className="flex flex-col gap-6 leading-8">
       <div className=" flex flex-col gap-6 text-gray-300 ">
         <h1 className="  h3">Overview</h1>

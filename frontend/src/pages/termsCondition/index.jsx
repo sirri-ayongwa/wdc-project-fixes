@@ -6,7 +6,7 @@ function TermsAndConditionPage() {
   return (
     <Section crosses>
       <div className="container p">
-        <Heading title="Terms & Conditions" tag='Last Updated: October 4, 2024' />
+        <Heading title="Terms & Conditions" tag='Last Updated: 4 January, 2025' />
         <div className="flex flex-col gap-6 leading-8">
           <div className=" flex flex-col gap-6 text-gray-300 ">
             <h1 className="  h3">Overview</h1>

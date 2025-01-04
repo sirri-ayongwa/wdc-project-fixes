@@ -33,7 +33,7 @@ function AboutPage() {
       <Services />
       <div className='border-t-2 mb-6 border-gray-400 rounded-full w-full'></div>
       <div className="text-4xl text-center mb-6">
-      "World Disaster Center: Because Safety Is the Foundation of a Better Tomorrow."
+      "We are dedicated to transforming challenges into opportunities."
       </div>
       <div className='border-t-2 mb-6 border-gray-400 rounded-full w-full'></div>
     </div>

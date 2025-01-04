@@ -16,7 +16,7 @@ function NewsLetter2() {
             name="mc-embedded-subscribe-form"
             target="_blank"
             className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-slide-up">
-            <input type="email" placeholder="Enter your email" className="py-3 px-6 text-black rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600 w-full sm:w-80" />
+            <input type="email" placeholder="Enter your email" className="py-3 px-6 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600 w-full sm:w-80" />
             <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
               Subscribe
             </button>

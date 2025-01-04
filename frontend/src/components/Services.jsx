@@ -41,7 +41,7 @@ const Services = () => {
       />
       <h3 className="text-xl font-bold mb-2">Connects the World</h3>
       <p className="text-sm text-gray-100">
-        Our global network spans governments, NGOs, businesses, and individuals, creating a holistic approach that leverages existing expertise & resources.
+      Our global network spans governments, NGOs, businesses, and individuals, ensuring that we leverage existing expertise & resources.
       </p>
       <br></br>
     </div>
