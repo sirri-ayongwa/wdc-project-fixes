@@ -19,11 +19,11 @@ import Slideshow from "../../components/Slideshow";
 const HomePage = () => {
   return (
     <>
-    {/* <TopHero/>
-      <Hero /> */}
-      <Slideshow />
+    {/* <TopHero/> */}
+      <Hero />
+      {/* <Slideshow /> */}
+      <VideoSection />
       <Benefits />
-      {/* <VideoSection /> */}
       <CaseStudies />
       <NewsGrid/>
       {/* <Collaboration /> */}

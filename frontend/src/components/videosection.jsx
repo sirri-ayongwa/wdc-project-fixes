@@ -34,7 +34,7 @@ function VideoSection() {
                     <Link 
                       to = "/about"
                     >
-                      More about us &rarr;
+                      Learn About Our Mission &rarr;
                     </Link>
                     
                   </Button>
