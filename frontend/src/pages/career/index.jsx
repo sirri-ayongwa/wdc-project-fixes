@@ -87,7 +87,7 @@ function CareerPage() {
           {/* Fraud Alert Section */}
           <div className="bg-red-100 border border-red-400 p-6 rounded-lg shadow-md w-full max-w-4xl text-center">
             <div className="flex items-center justify-center mb-4">
-              <div className="bg-red-500 text-white rounded-full p-4 mr-4">
+              {/* <div className="bg-red-500 text-white rounded-full p-4 mr-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8"
@@ -102,7 +102,23 @@ function CareerPage() {
                     d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"
                   />
                 </svg>
-              </div>
+              </div> */}
+<div className="bg-red-500 text-white rounded-full p-2 mr-4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-5 w-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2.5"
+      d="M12 4v10m0 4h.01"
+    />
+  </svg>
+</div>
               <h3 className="text-lg font-bold text-red-700">Fraud Alert</h3>
             </div>
             <p className="text-gray-700 mb-4">
