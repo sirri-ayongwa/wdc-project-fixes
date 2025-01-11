@@ -16,6 +16,7 @@ import NewsLetter2 from "../../components/newsletter2";
 import VideoSection from "../../components/videosection";
 import TopHero from "../../components/TopHero";
 import Slideshow from "../../components/Slideshow";
+import News from "../news";
 const HomePage = () => {
   return (
     <>
@@ -25,11 +26,12 @@ const HomePage = () => {
       <VideoSection />
       <Benefits />
       <CaseStudies />
-      <NewsGrid/>
+      {/* <NewsGrid/> */}
+      <News />
       {/* <Collaboration /> */}
       {/* <Services /> */}
       {/* <Blogs isHome={false} /> */}
-      <NewsLetter2 />
+      {/* <NewsLetter2 /> */}
       {/* <Pricing /> */}
       {/* <Pricing />
       <Roadmap /> */}
