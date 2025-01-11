@@ -1,84 +1,135 @@
 import SAPIENS from '../../assets/images/events/sapiens_wdc.jpeg'
-import ZAINAB from '../../assets/images/events/ZainabScience.jpg'
+import ESRI from '../../assets/images/events/esri_wdc.png'
+import DMULUME from '../../assets/images/events/conference_david.jpeg'
+import cifrrica from '../../assets/images/events/CIFRRICA.jpeg'
+import workshop from '../../assets/images/events/linkedin_workshop_2.png'
+import drc_workshop from '../../assets/images/events/workshop.jpg'
 
 export const eventItems = []
 
 
 export const eventItemsSpecial = [
   {
-    title: "Test Event",
-    image: SAPIENS, 
-    description: "Test event descriptiong",
+    title: "Esri Developer & Technology Summit",
+    image: ESRI, 
+    description: "WDC’s Co-Founder and CEO to present Michael at ESRI's Summit in March 2025.",
     link: "",
 
     doc:[
       {
         "type": "header",
-        "content" : "October 2024"
-      },
-      {
-        "type": "paragraph",
-        "content" : "The World Disaster Center (WDC) is proud to announce its recognition as one of the top 10 finalists in the highly competitive UNFCCC TEC AI Innovation Grand Challenge 2024, an event designed to spotlight groundbreaking applications of artificial intelligence in addressing climate change challenges. Competing against hundreds of visionary projects from around the globe, this achievement underscores WDC’s commitment to leveraging advanced technologies for a resilient future."
+        "content" : "Date: March 11–14, 2025"
       },
       {
         "type": "header",
-        "content" : "About the UNFCCC AI Innovation Grand Challenge"
+        "content" : "Location: Palm Springs, California, USA"
       },
       {
         "type": "paragraph",
-        "content" : "Hosted by the United Nations Framework Convention on Climate Change (UNFCCC) Technology Executive Committee (TEC), this annual challenge seeks to identify AI-driven solutions that address critical issues related to climate change. The competition draws innovators, technologists, and thought leaders from across the world, with a shared mission to redefine sustainability through innovation."
+        "content" : "Join us at the Esri Developer & Technology Summit, where WDC’s Co-Founder and CEO will present an inspiring keynote on the life-saving potential of Geo-AI technology in disaster management.        "
       },
       {
         "type": "link",
-        "href" : "https://enter.innovationgrandchallenge.ai/2024",
-        "content" : "Learn more about the challenge here"
+        "href" : "https://www.esri.com/en-us/about/events/devtech/overview",
+        "content" : "Learn more about the Esri Developer & Technology Summit"
       },
       {
         "type" : "image",
         "src" : SAPIENS,
         "alt" : "Image",
-        "caption" : ""
+        "caption" : "",
+      },
+
+      {
+        "type": "paragraph",
+        "content" : "At the World Disaster Center, we believe that disasters don’t have to devastate. Our revolutionary Michael app harnesses the power of data from multiple sources, AI and human intelligence to predict and prevent disasters with unprecedented precision, saving lives and protecting communities worldwide. "
+      },
+      {
+        "type": "quote",
+        "content": "Don’t miss this chance to hear about WDC’s journey in advancing technology for global resilience and how the Michael app is shaping the future of disaster response. "
+      },
+    ]
+    
+
+  },
+  {
+    title: "Climate Change Resilience in Africa",
+    image: cifrrica, 
+    description: "WDC’s Head of Research, Analysis and Digitial Innovation, David Mulume, will present Michael at CIFRRICA in February 2025.",
+    link: "",
+
+    doc:[
+      {
+        "type": "header",
+        "content" : "Date: February 24–26, 2025"
       },
       {
         "type": "header",
-        "content" : "WDC’s Innovative Contribution"
+        "content" : "Bibliotheca Alexandrina and Senghor University, Alexandria, Egypt"
       },
       {
         "type": "paragraph",
-        "content" : "WDC’s entry focused on integrating AI-driven predictive modeling with real-time disaster monitoring to address vulnerabilities posed by climate-induced disasters. Our solution highlighted:"
+        "content" : "Discover how WDC’s cutting-edge disaster monitoring and alert system, Michael, leverages AI, location data, and satellite imagery to provide real-time alerts and enhance climate resilience across Africa. By integrating local participatory data, Michael empowers communities with predictive insights and faster response times to mitigate the impact of climate-related disasters. "
+      },
+      {
+        "type": "link",
+        "href" : "https://www.usenghor-francophonie.org/cifrrica/",
+        "content" : "Learn more about CIFRRiCA 2025."
+      },
+      {
+        "type" : "image",
+        "src" : DMULUME,
+        "alt" : "Image",
+        "caption" : "",
+      },
+      {
+        "type": "quote",
+        "content": "Don’t miss this chance to hear about WDC’s journey in advancing technology for climate global resilience."
+      },
+    ]
+  },
+  {
+    title: "Workshop on Disaster Resilience in Kinshasa",
+    image: drc_workshop, 
+    description: "World Disaster Center in collaboration with GHTC (Global Hub of Technology in Congo) to hold a workshop on 23rd December 2024, to collaborate with key stakeholders and contribute to an initiative aimed at stopping the impacts of disasters in DRC.",
+    link: "",
+
+    doc:[
+      {
+        "type": "header",
+        "content" : "Date: December 23, 2024 & Time: 8:30 AM - 16:30 PM GMT+1"
+      },
+      {
+        "type": "header",
+        "content" : "Location: COTEX Concession No. 63, Avenue Colonel Mondjiba, Kinshasa, Congo "
+      },
+      {
+        "type": "paragraph",
+        "content" : "The World Disaster Center (WDC), in partnership with the Global Hub of Technology in Congo (GHTC), will unveils its groundbreaking pilot project, Mickaeli, live from Kinshasa. "
+      },
+
+      {
+        "type" : "image",
+        "src" : workshop,
+        "alt" : "Image",
+        "caption" : "",
+      },
+      {
+        "type": "paragraph",
+        "content" : "Event Highlights:"
       },
       {
         "type": "list",
         "items": [
-          "Advanced AI Forecasting Tools: Predicts natural disasters (e.g., earthquakes, hurricanes, and floods) and conflicts with remarkable precision, enabling communities to act proactively.",
-          "Real-Time Data Integration: Combines data from satellite imagery, IoT sensors, seismic detectors, and crowdsourced community reports to deliver actionable insights.",
-          "AI-Driven Early Detection: Utilizes natural language processing to analyze news and social media for early signs of disasters or conflicts, providing critical lead time for preventative action.",
-          "User-Centric Design: Delivers location-based early warnings via web and mobile apps, enhanced with a built-in chatbot offering preparation guidance, evacuation routes, and shelter locations.",
-          "Crowdsourced Reporting: Empowers users to report disasters in real-time, with AI algorithms validating and analyzing this data to provide accurate, localized insights for first responders.",
-          "Global Accessibility and Inclusivity: Tailored for vulnerable communities with multilingual support and adaptable media formats, ensuring no one is left behind in disaster preparedness."
+          "In-depth discussions on disaster trends and challenges in the DRC.",
+          "A live demonstration of Mickaeli's capabilities and tailored solutions.",
+          "Collaborative sessions with key stakeholders to explore partnership opportunities.",
+          "Recognition of local disaster management initiatives.",
         ]
       },
       {
-        "type": "paragraph",
-        "content": "These features, aligned with WDC’s mission to empower communities and decision-makers globally, captured the judges’ attention and positioned us as a frontrunner in the competition."
-      },
-      {
-        "type": "header",
-        "content": "What This Recognition Means for WDC"
-      },
-      {
-        "type": "paragraph",
-        "content": "While the project did not advance to the final round, being among the top 10 is a significant milestone. It reflects the innovation, dedication, and impact of WDC’s work. According to the UNFCCC, WDC’s project demonstrated an exceptional capacity to leverage AI in addressing one of humanity’s most pressing challenges: climate change."
-      },
-      {
         "type": "quote",
-        "content": "“This recognition validates the importance of using advanced technology to prepare for and mitigate the impacts of disasters,” said Zainab Akhtar, Co-Founder and Chief Scientific Officer of World Disaster Center. “Our team is inspired to continue pushing boundaries and collaborating with global partners to enhance disaster resilience.”"
-      },
-      {
-        "type" : "image",
-        "src" : SAPIENS,
-        "alt" : "imagenew",
-        "caption" : ""
+        "content": "Be part of the movement to revolutionize disaster prevention and resilience in the DRC!"
       },
     ]
     
