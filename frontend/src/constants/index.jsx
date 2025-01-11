@@ -334,7 +334,7 @@ export const dropdownData = [
   {
     title: "Resources",
     routings: {
-      // Events: "/events",
+      Events: "/Events",
       News: "/News",
     },
   },

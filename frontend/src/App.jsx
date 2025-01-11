@@ -26,7 +26,6 @@ import Testing from "./pages/recordPage.jsx";
 import EagleProject from "./pages/project/eagle";
 import { useEffect, useState } from "react";
 import TeamPage from "./components/team.jsx";
-import EventsPage from "./components/events";
 import PartnersPage from "./components/partner";
 import ProfileForm from "./pages/profileForm";
 import UpdateProfile from "./pages/updateProfile";
@@ -44,11 +43,14 @@ import TermsAndConditionPage from "./pages/termsCondition/index.jsx";
 import WhatWeDo from "./pages/solution/index.jsx";
 import Products from "./pages/product/index.jsx";
 import News from "./pages/news/index.jsx";
+import Events from "./pages/events/index.jsx";
 import CookieConsent from "./components/CookieConsent.jsx";
 import Story from './pages/story/index.jsx'
 import Africa from './pages/where_we_work/africa/index.jsx'
+
 import NewsDetail from "./components/NewsDetail.jsx";
-import EventsDetail from "./components/NewsDetail.jsx";
+import EventsDetail from "./components/EventsDetail.jsx";
+
 import ProductDetail from "./components/ProductDetail.jsx";
 
 const App = () => {
@@ -95,7 +97,6 @@ const App = () => {
           <Route path="/solution" element={<WhatWeDo />} />
           <Route path="/global-products" element={<Products />} />
 
-          <Route path="/events" element={<BlogsPage />} />
           <Route path="/blog/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
           <Route path="/about/what-we-offer" element={<WhatWeOfferPage />} />
@@ -112,12 +113,14 @@ const App = () => {
           <Route path="/donate" element={<DonorsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/eagle" element={<EagleProject />} />
-          <Route path="/events" element={<EventsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/terms-conditions" element={<TermsAndConditionPage />} />
           <Route path="/policy" element={<PrivacyPolicyPage />} />
-          <Route path="/news" element={<News />} />
+
+
+          <Route path="/News" element={<News />} />
+          <Route path="/Events" element={<Events />} />
 
           <Route
             path="/management/wdc/worddisastercenter/admin"
@@ -131,7 +134,7 @@ const App = () => {
 
         <Route path="/News/:newsName" element= {<NewsDetail />} />
         <Route path="/global-products/:productName" element= {<ProductDetail />} />
-        <Route path="/events/:eventsName" element= {<EventsDetail />} />
+        <Route path="/Events/:eventsName" element= {<EventsDetail />} />
         </Routes>
       
 
