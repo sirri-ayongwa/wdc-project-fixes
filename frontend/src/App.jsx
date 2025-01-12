@@ -27,6 +27,7 @@ import EagleProject from "./pages/project/eagle";
 import { useEffect, useState } from "react";
 import TeamPage from "./components/team.jsx";
 import PartnersPage from "./components/partner";
+import MembershipPage from './pages/membership/index.jsx'
 import ProfileForm from "./pages/profileForm";
 import UpdateProfile from "./pages/updateProfile";
 import TypePage from "./pages/typePage";
@@ -117,6 +118,7 @@ const App = () => {
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/terms-conditions" element={<TermsAndConditionPage />} />
           <Route path="/policy" element={<PrivacyPolicyPage />} />
+          <Route path="/membership" element={<MembershipPage />} />
 
 
           <Route path="/News" element={<News />} />

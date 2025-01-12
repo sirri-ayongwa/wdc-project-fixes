@@ -74,6 +74,16 @@ const Header = () => {
                   Donate
                 </Link>
               </button>
+
+              <button  className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
+                <Link
+                  to = "/membership"
+                  // target = "_blank"
+                >
+                  Membership
+                </Link>
+              </button>
+              
              </div>
           </div>
           <HamburgerMenu />
