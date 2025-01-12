@@ -165,7 +165,7 @@ function ImpactPage() {
                 </tr>
                 <tr className="border-b border-gray-300">
                   <th className="py-4 px-6 text-gray-700 font-bold bg-blue-100">
-                    Local Organization for Implementation
+                    Local Implementation Organization
                   </th>
                   <td className="py-4 px-6 text-gray-700">Global Hub of Technology in Congo (GHTC)</td>
                 </tr>
