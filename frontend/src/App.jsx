@@ -28,6 +28,7 @@ import { useEffect, useState } from "react";
 import TeamPage from "./components/team.jsx";
 import PartnersPage from "./components/partner";
 import MembershipPage from './pages/membership/index.jsx'
+import ImpactPage from './pages/impact/index.jsx'
 import ProfileForm from "./pages/profileForm";
 import UpdateProfile from "./pages/updateProfile";
 import TypePage from "./pages/typePage";
@@ -104,6 +105,7 @@ const App = () => {
           <Route path="/about/story" element={<Story />} />
           <Route path="/about/vision" element={<VisionPage />} />
           <Route path="/about/values" element={<OurValuePage />} />
+          <Route path="/impact" element={<ImpactPage />} />
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/about/team" element={<TeamPage />} />
           <Route path="/where-we-work/africa" element={<Africa />} />
