@@ -139,7 +139,7 @@ function ImpactPage() {
                   <th className="py-4 px-6 text-gray-700 font-bold bg-blue-100">
                     Coverage Period
                   </th>
-                  <td className="py-4 px-6 text-gray-700">19 December 2024 - 16 January 2024</td>
+                  <td className="py-4 px-6 text-gray-700">19 December 2024 - 16 January 2025</td>
                 </tr>
                 <tr className="border-b border-gray-300">
                   <th className="py-4 px-6 text-gray-700 font-bold bg-blue-100">
