@@ -26,6 +26,8 @@ import { FaUserShield, FaUsers, FaSchool } from "react-icons/fa";
 import WDCLogo from "../../assets/images/wdclogobg.png";
 import GHTCLogo from "../../assets/images/GHTC.jpeg";
 import banner from "../../assets/images/workshop_banner.jpg";
+import NewsLetter from "../../components/newsletter"; 
+
 
 // Modal Component
 function Modal({ onClose }) {
@@ -262,8 +264,15 @@ function ImpactPage() {
           </div>
         </div>
       </div>
+      <Section>
+  <div className="container">
+      <NewsLetter />
+  </div>
+</Section>
     </Section>
+    
   );
+
 }
 
 export default ImpactPage;
