@@ -72,7 +72,7 @@ function ImpactPage() {
         <Heading
           tag="Success Stories"
           title="Impact"
-          text="Showcasing the impact of WDC’s solutions impelmented across variosu countries and continents."
+          text="Showcasing the impact of WDC’s solutions impelmented across various countries and continents."
         />
 
         {/* Country Button */}
