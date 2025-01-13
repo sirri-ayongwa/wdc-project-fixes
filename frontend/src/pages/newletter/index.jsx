@@ -177,12 +177,6 @@ function NewsLetterPage() {
       {/* Newsletter Signup Section at the Bottom */}
       <Section className="bg-blue-600 py-12">
         <div className="container">
-          <div className="text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Join Our Newsletter</h2>
-            <p className="text-lg mb-8">
-              Stay informed about our latest updates, disaster resilience efforts, and global impact stories.
-            </p>
-          </div>
           <NewsLetter />
         </div>
       </Section>
