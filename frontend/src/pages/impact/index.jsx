@@ -1,24 +1,3 @@
-// import Section from "../../components/Section";
-// import Heading from "../../components/Heading";
-
-// function ImpactPage() {
-//   return (
-//     <Section className="overflow-hidden" id="membership">
-//       <div className="container flex flex-col justify-center items-center">
-//         {/* Heading */}
-//         <Heading
-//           tag="Success Stories"
-//           title="Impact"
-//           text="This is a teset"
-//         />
-
-//       </div>
-
-//     </Section>
-//   );
-// }
-
-// export default ImpactPage;
 import Section from "../../components/Section";
 import Heading from "../../components/Heading";
 import { useState } from "react";
@@ -51,7 +30,7 @@ function Modal({ onClose }) {
 
 function ImpactPage() {
   // State to manage expanded section
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
   // State to manage modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
