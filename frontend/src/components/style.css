@@ -1,9 +1,69 @@
+.swiper {
+    padding: 20px 0;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bg-white {
+    background-color: #ffffff;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
 .small-image {
     height: 100px; /* Adjust the height as needed */
     object-fit: contain; /* Ensures the image scales correctly */
   }
-
-.news-letter-container {
+  .news-letter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #1a1a2e;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-news-letter {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  .input-field::placeholder {
+    color: #666;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #0078d4;
+  }
+  
+  button {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005bb5;
+  }
+/* .news-letter-container {
 
     .form-news-letter {
         display: flex;
@@ -70,7 +130,7 @@
         border: none;
         outline: none;
     }
-}
+} */
 
 .payPal {
     width: 15%;

@@ -243,7 +243,7 @@ export const benefits = [
     imageUrl: "",
     hyperlink: "",
     comingsoon: false,
-    url: "/signin",
+    url: "/membership",
   },
   {
     id: "04",
@@ -339,6 +339,7 @@ export const dropdownData = [
     routings: {
       Events: "/Events",
       News: "/News",
+      Newsletter:  "/newsletter",
     },
   },
   {

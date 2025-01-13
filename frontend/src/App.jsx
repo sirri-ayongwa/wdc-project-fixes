@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import SignUp from "./pages/signup";
 import AdminPage from "./pages/admin";
 import ProfilePage from "./pages/profile";
-import BlogsPage from "./pages/blogs";
+// import BlogsPage from "./pages/blogs";
 import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
 import ServicesPage from "./pages/services";
@@ -99,6 +99,7 @@ const App = () => {
           <Route path="/solution" element={<WhatWeDo />} />
           <Route path="/global-products" element={<Products />} />
 
+          {/* <Route exact path="/blogs2" element={<BlogsPage />} /> */}
           <Route path="/blog/:id" element={<SingleBlogDisplay />} />
           <Route exact path="/about" element={<AboutPage />} />
           <Route path="/about/what-we-offer" element={<WhatWeOfferPage />} />
@@ -112,7 +113,7 @@ const App = () => {
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/newsletter" element={<NewsLetterPage />} />
           <Route path="/request-demo" element={<DemoPage />} />
-          <Route path="/services" element={<ServicesPage />} />
+          {/* <Route path="/services" element={<ServicesPage />} /> */}
           <Route path="/donate" element={<DonorsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/eagle" element={<EagleProject />} />
