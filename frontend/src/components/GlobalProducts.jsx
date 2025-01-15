@@ -1,8 +1,6 @@
-import React, {useState}  from 'react';
+import React, { useState } from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import TagLine from "./Tagline";
 import Section from './Section';
 import Heading from './Heading';
@@ -21,38 +19,34 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function GlobalProducts() {
-    
-    const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  
-  const totalPages = Math.ceil(products.length / itemsPerPage);
-  
-    const currentItems = products.slice(
-        (currentPage - 1) * itemsPerPage,
-       currentPage * itemsPerPage
-   );
 
-  // Handle clicking on a page number
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  // Slice the products to show only the current items
+  const currentItems = products.slice(0, currentPage * itemsPerPage);
+
+  // Load More Button Logic
+  const handleLoadMore = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
   };
+
   return (
     <Section crosses>
-        <div className='container '>
-          <Heading  title='What We Do'
-          text={`
-          Our Global Products are designed to enhance disaster resilience and preparedness worldwide. They leverage advanced analytics, real-time data, and collaborative platforms to empower decision-makers with actionable insights.`}
+      <div className="container">
+        <Heading
+          title="What We Do"
+          text={`Our Global Products are designed to enhance disaster resilience and preparedness worldwide. They leverage advanced analytics, real-time data, and collaborative platforms to empower decision-makers with actionable insights.`}
           tag={`Global Products`}
-          />
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-            {currentItems.map((item, index) => (
-              <Link
-                to={item.coming_soon ? '#' : `/global-products/${item.title}`}
-                key={index}
-                href={item.link}
-                className= "block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"
-                style={{ backgroundImage: `url(${item.image})` }}
-              >
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {currentItems.map((item, index) => (
+            <Link
+              to={item.coming_soon ? '#' : `/global-products/${item.title}`}
+              key={index}
+              className="block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 text-white">
                 {item.coming_soon && (
                   <div className="absolute inset-0 flex items-center justify-center group bg-cover bg-center rounded-md overflow-hidden">
@@ -63,31 +57,25 @@ export default function GlobalProducts() {
                     </div>
                   </div>
                 )}
-
                 <div className="text-lg font-semibold">{item.title}</div>
                 <div className="mt-2 text-gray-300 line-clamp-2">{item.description}</div>
               </div>
-                
-              </Link>
-            ))}
-          </div>
-
-    <div className="flex justify-center mt-4 space-x-2">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => goToPage(index + 1)}
-            className={`px-3  py-1 rounded ${
-              currentPage === index + 1 ? 'bg-n-4 text-white' : 'bg-gray-300'
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-
-
+            </Link>
+          ))}
         </div>
+
+        {/* Load More Button */}
+        {currentItems.length < products.length && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleLoadMore}
+              className="bg-blue-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
+            >
+              Load More
+            </button>
+          </div>
+        )}
+      </div>
     </Section>
   );
 }

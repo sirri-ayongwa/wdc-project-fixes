@@ -22,8 +22,8 @@ function Modal({ onClose }) {
 
 const membershipData = {
   professionals: {
-    title: "Professionals (Experts & Specialists)",
-    description: `Join a network of disaster experts, engineers, medical professionals, and policy advisors contributing to disaster preparedness, response, and recovery efforts worldwide.`,
+    title: "Experts & Disaster Specialists",
+    description: `Are you a disaster expert, GIS/Remote Sensing Analyst, medical professional, policy advisor etc. contributing to disaster management? As a Professional Member, you'll have the opportunity to contribute to global disaster preparedness, response, and recovery efforts.`,
     benefits: [
       { name: "Who Can Join?", description: "Disaster experts, engineers, policy advisors, medical professionals, etc." },
       { name: "Key Contribution", description: "Provide expertise in disaster phases (Preparedness, Response, Recovery)." },
@@ -37,7 +37,7 @@ const membershipData = {
     ],
   },
   locals: {
-    title: "Locals (Community Members)",
+    title: "Locals & Community Members",
     description: `Are you a community member living in a disaster-prone area or someone passionate about building local disaster resilience? As a Local Member, you’ll receive training opportunities, participate in paid tasks such as reporting local disaster conditions, and join WDC’s community-driven efforts to strengthen preparedness and response at the local level.`,
     benefits: [
       { name: "Who Can Join?", description: "Individuals living in disaster-prone areas or interested in capacity-building." },

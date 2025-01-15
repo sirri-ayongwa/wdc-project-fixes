@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import React, { useState } from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -21,72 +21,46 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function CaseStudies() {
-    
-    const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  
-  const totalPages = Math.ceil(caseStudies.length / itemsPerPage);
-  
-    const currentItems = caseStudies.slice(
-        (currentPage - 1) * itemsPerPage,
-       currentPage * itemsPerPage
-   );
 
-  // Handle clicking on a page number
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  // Slicing the items based on the current page
+  const currentItems = caseStudies.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
     <Section crosses>
-        <div className='container '>
-          <Heading  title='What We Do'
+      <div className="container">
+        <Heading
+          title="What We Do"
           text={`Our innovative solutions strengthen disaster preparedness, accelerate real-time response, empower informed decision-making, and save lives. Tailored to each country, these solutions support vulnerable communities, crisis responders, decision-makers, and organizations to build resilience and drive meaningful impact.`}
           tag={`Tailored Solutions`}
-          />
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-            {currentItems.map((item, index) => (
-              <Link
-                to={item.coming_soon ? '#' : `/cases/${item.title}`}
-                key={index}
-                href={item.link}
-                className= "block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"
-                style={{ backgroundImage: `url(${item.image})` }}
-              >
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {currentItems.map((item, index) => (
+            <Link
+              to={item.coming_soon ? '#' : `/cases/${item.title}`}
+              key={index}
+              className="block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 text-white">
                 {item.coming_soon && (
                   <div className="absolute inset-0 flex items-center justify-center group bg-cover bg-center rounded-md overflow-hidden">
-                    <div
-                      className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white backdrop-blur-sm bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    >
+                    <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white backdrop-blur-sm bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       Coming Soon!
                     </div>
                   </div>
                 )}
-
                 <div className="text-lg font-semibold">{item.title}</div>
                 <div className="mt-2 text-gray-300 line-clamp-2">{item.description}</div>
               </div>
-                
-              </Link>
-            ))}
-          </div>
-
-    <div className="flex justify-center mt-4 space-x-2">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => goToPage(index + 1)}
-            className={`px-3  py-1 rounded ${
-              currentPage === index + 1 ? 'bg-n-4 text-white' : 'bg-gray-300'
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-
-
+            </Link>
+          ))}
         </div>
+      </div>
     </Section>
   );
 }
