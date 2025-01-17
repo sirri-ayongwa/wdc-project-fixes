@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import ButtonGradient from "../../assets/svg/ButtonGradient";
 import Benefits from "../../components/Benefits";
 import Solutions from "../../components/CaseStudies";
@@ -41,6 +42,28 @@ const HomePage = () => {
 
   return (
     <>
+                {/* Add Helmet for title and meta tags */}
+                <Helmet>
+                <title>World Disaster Center</title>
+                <meta
+                    name="description"
+                    content="We are on a mission to End Disaster Impacts globally."
+                />
+                <meta
+                    name="keywords"
+                    content="World Disaster Center, disaster news, global crises, disaster resources, emergency preparedness, disaster preperadness, disaster response, disasters"
+                />
+                <meta name="author" content="World Disaster Center" />
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="World Disaster Center" />
+                <meta
+                    property="og:description"
+                    content="END DISASTER IMPACTS"
+                />
+                <meta property="og:url" content="https://www.worlddisastercenter.org" />
+                <meta property="og:type" content="website" />
+            </Helmet>
+
     {/* <TopHero/> */}
       <Hero />
       {/* <Slideshow /> */}
