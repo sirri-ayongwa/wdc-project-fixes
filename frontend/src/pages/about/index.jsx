@@ -9,7 +9,7 @@ import OurMission from "../../components/OurMission";
 import OurVision from "../../components/OurVision";
 import OurValues from "../../components/ourValues";
 import Button from "../../components/Button";
-import { Helmet } from "react-helmet-async";
+import { HelmetProvider, Helmet } from "react-helmet-async";
   
   function AboutPage() {
     return (
