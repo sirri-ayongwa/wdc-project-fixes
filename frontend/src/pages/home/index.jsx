@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async"; // Import Helmet from react-helmet-async
 import ButtonGradient from "../../assets/svg/ButtonGradient";
 import Benefits from "../../components/Benefits";
 import Solutions from "../../components/CaseStudies";
@@ -23,48 +22,28 @@ import News from "../news";
 import Events from "../events";
 
 const HomePage = () => {
-  // State to manage the active section
-  const [activeSection, setActiveSection] = useState("News");
+    // // State to manage the active section
+    const [activeSection, setActiveSection] = useState("News");
 
-  const handleSwitchSection = () => {
-    setActiveSection((prevSection) =>
-      prevSection === "News" ? "Events" : "News"
-    );
-  };
-
-  const [solutionsSection, setSolutionsSection] = useState("Solutions");
-  const handleSolutionsSwitch = () => {
-    setSolutionsSection((prevSection) =>
-      prevSection === "Solutions" ? "GlobalProducts" : "Solutions"
-    );
-  };
+    // Function to switch between sections
+    const handleSwitchSection = () => {
+      setActiveSection((prevSection) =>
+        prevSection === "News" ? "Events" : "News"
+      );
+    };
+    
+    const [solutionsSection, setSolutionsSection] = useState("Solutions");
+    const handleSolutionsSwitch = () => {
+      setSolutionsSection((prevSection) =>
+        prevSection === "Solutions" ? "GlobalProducts" : "Solutions"
+      );
+    };
 
   return (
     <>
-      {/* Helmet for managing meta tags */}
-      <Helmet>
-        <title>World Disaster Center | End Disaster Impacts Globally</title>
-        <meta
-          name="description"
-          content="We are on a mission to end disaster impacts globally. Stay informed about disaster preparedness, response, and recovery resources."
-        />
-        <meta
-          name="keywords"
-          content="World Disaster Center, disaster news, global crises, disaster resources, emergency preparedness, disaster preparedness, disaster response, disasters"
-        />
-        <meta name="author" content="World Disaster Center" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="World Disaster Center" />
-        <meta
-          property="og:description"
-          content="We are dedicated to ending disaster impacts globally. Learn more about our mission and resources."
-        />
-        <meta property="og:url" content="https://www.worlddisastercenter.org" />
-        <meta property="og:type" content="website" />
-      </Helmet>
-
-      {/* Page Content */}
+    {/* <TopHero/> */}
       <Hero />
+      {/* <Slideshow /> */}
       <VideoSection />
       <Benefits />
       
@@ -92,6 +71,8 @@ const HomePage = () => {
         </button>
       </div>
 
+      {/* <NewsGrid/> */}
+
       <div style={styles.sectionContainer}>
         {activeSection === "News" ? <News /> : <Events />}
         
@@ -115,6 +96,15 @@ const HomePage = () => {
           →
         </button>
       </div>
+
+      {/* <Events /> */}
+      {/* <Collaboration /> */}
+      {/* <Services /> */}
+      {/* <Blogs isHome={false} /> */}
+      {/* <NewsLetter2 /> */}
+      {/* <Pricing /> */}
+      {/* <Pricing />
+      <Roadmap /> */}
     </>
   );
 };
@@ -142,15 +132,16 @@ const styles = {
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
   },
   leftArrow: {
-    left: "100px",
+    left: "100px", // Adjust this value to move it closer to the center
     top: "50%",
     transform: "translateY(-50%)",
   },
   rightArrow: {
-    right: "100px",
+    right: "100px", // Adjust this value to move it closer to the center
     top: "50%",
     transform: "translateY(-50%)",
   },
+
 };
 
 export default HomePage;

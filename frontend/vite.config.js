@@ -11,9 +11,4 @@ import mkcert from 'vite-plugin-mkcert'
 export default defineConfig({
   // server: { https: true }, 
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      external: ["react-helmet-async"], // Add react-helmet-async as an external dependency
-    },
-  },
 })
