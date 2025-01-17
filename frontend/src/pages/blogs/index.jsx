@@ -5,7 +5,6 @@ import Heading from "../../components/Heading";
 import Section from "../../components/Section";
 import { Link } from "react-router-dom";
 import NewsLetter from "../../components/newsletter"; 
-import { Helmet } from "react-helmet";
 
 function BlogsPage() {
   return (
