@@ -48,9 +48,9 @@ function NewsLetterPage() {
       description:
         "Learn about our global missions, including the ongoing Democratic Republic of Congo mission for disaster preparedness.",
       iframeSrc:
-        "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=16bef64757",
+        "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=c5e328cd5f",
       buttonLink:
-        "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=16bef64757",
+        "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=c5e328cd5f",
       pastNewsletters: [
         { text: "DRC Mission Day #1", link: "https://mailchi.mp/4ba37c816f3a/world-disaster-center-a-new-era-of-resilience-and-empowerment-30323?e=35f8125fc4" },
         { text: "DRC Mission Day #2", link: "https://mailchi.mp/2741d3203daf/world-disaster-center-a-new-era-of-resilience-and-empowerment-30404?e=35f8125fc4" },
@@ -78,6 +78,7 @@ function NewsLetterPage() {
         { text: "DRC Mission Day #24", link: "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=61cd0a6e7a" },
         { text: "DRC Mission Day #25", link: "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=3e392c42f0" },
         { text: "DRC Mission Day #26", link: "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=3ab643e812" },
+        { text: "DRC Mission Day #27", link: "https://us22.campaign-archive.com/?u=c90ad2e6157e6eac27328c681&id=16bef64757" },
       ],
     },
   ];
