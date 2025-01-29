@@ -73,43 +73,12 @@ const Hero = () => {
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
               <Link to="/request-demo">
-                <div className="cursor-pointer aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/550]">
+                <div className="cursor-pointer overflow-hidden">
                   <img
                     src={GIF1}
-                    className=" cursor-pointer w-full scale-[0.2] translate-y-[5%] md:scale-[1] md:-translate-y-[20%] lg:-translate-y-[2%] object-cover"
-                    width={404}
+                    className="w-full object-contain"
                     alt="AI"
                   />
-                  {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                      {/* {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
-                      </li>
-                    ))} */}
-                      <li className="p-5">
-                        <MdTornado />
-                      </li>
-                      <li className="p-5">
-                        <MdCloud />
-                      </li>
-                      <li className="p-5">
-                        <FaWater />
-                      </li>
-                      <li className="p-5">
-                        <FaWaveSquare />
-                      </li>
-                    </ul>
-                  </ScrollParallax>
-
-                  <ScrollParallax isAbsolutelyPositioned>
-                    <Notification
-                      className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                      title="Real-time alerts for various types of disasters"
-                    />
-                  </ScrollParallax>
                 </div>
               </Link>
             </div>

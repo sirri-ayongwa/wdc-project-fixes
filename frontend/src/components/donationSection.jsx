@@ -40,13 +40,13 @@ function DonationSection() {
 
         {/* Section 2: Global Disaster Safety Overview */}
         <div className="rounded-lg shadow-lg p-8 mb-12 w-full max-w-6xl text-center">
-          <p className="text-lg text-white-700">
+          <p className="text-lg text-gray-700">
             Out of 8 billion people, only 1.4 billion feel safe from disasters. For the rest, every day is a battle against uncertainty.
           </p>
           <div className="flex justify-center mt-8">
             {/* Typewriter Effect */}
-            <div className="w-full h-30 bg-white-300 rounded-lg flex items-center justify-center">
-              <p className="text-white-900 text-3xl lg:text-5xl font-bold">
+            <div className="w-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
+              <p className="text-gray-900 text-3xl lg:text-5xl font-bold break-words">
                 {displayedText.split("HOPE")[0]}
                 <span className="text-blue-400">HOPE</span>
                 {displayedText.split("HOPE")[1]?.split("YOU")[0]}
@@ -59,17 +59,39 @@ function DonationSection() {
         </div>
 
         {/* Section 3: Impact of $5 Donation */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12 w-full max-w-6xl text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            What Your $5 Can Do
-          </h2>
-          <p className="text-lg text-gray-700">
-            Just $5 provides one family with access to the Michael app, giving them the tools they need to stay safe.
-          </p>
-          <div className="flex justify-center mt-8">
-            <BeforeAfterVisual />
-          </div>
-        </div>
+       {/* Section 3: Impact of $5 Donation */}
+<div className="bg-white rounded-lg shadow-lg p-8 mb-12 w-full max-w-6xl text-center">
+  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+    What Your $5 Can Do
+  </h2>
+  <p className="text-md sm:text-lg text-gray-700">
+    Just $5 provides one family with access to the Michael app, giving them the tools they need to stay safe.
+  </p>
+  <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
+    <div className="flex flex-col items-center">
+      <div className="text-3xl sm:text-5xl mb-2">
+        <span className="inline-block">$</span>
+        <span className="inline-block">5</span>
+      </div>
+      <p className="text-sm sm:text-base font-medium">Donation</p>
+    </div>
+    <div className="text-2xl sm:text-3xl text-gray-600">→</div>
+    <div className="flex flex-col items-center">
+      <div className="text-3xl sm:text-5xl mb-2">
+        <i className="fas fa-globe"></i> {/* Replace with your globe icon */}
+      </div>
+      <p className="text-sm sm:text-base font-medium">Michael App Access</p>
+    </div>
+    <div className="text-2xl sm:text-3xl text-gray-600">→</div>
+    <div className="flex flex-col items-center">
+      <div className="text-3xl sm:text-5xl mb-2">
+        <i className="fas fa-users"></i> {/* Replace with your family icon */}
+      </div>
+      <p className="text-sm sm:text-base font-medium">Increased Safety for One Family</p>
+    </div>
+  </div>
+</div>
+
 
         {/* Section 4: Where Your $1 Monthly Goes */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12 w-full max-w-6xl text-center">
@@ -82,59 +104,30 @@ function DonationSection() {
 
           {/* Circles with Icons and Text */}
           <div className="flex flex-wrap justify-center gap-6 mt-8">
-            {/* Circle 1 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaShieldAlt className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                PROACTIVE DISASTER RISK REDUCTION
-              </h3>
-            </div>
-
-            {/* Circle 2 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaTools className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                EQUIP LOCAL RESPONDERS WITH TOOLS
-              </h3>
-            </div>
-
-            {/* Circle 3 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaSatelliteDish className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                DEVELOP ADVANCED TECHNOLOGIES
-              </h3>
-            </div>
-
-            {/* Circle 4 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaCity className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                REBUILD COMMUNITIES TO BE SAFER
-              </h3>
-            </div>
-
-            {/* Circle 5 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaUserFriends className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                CONNECT EXPERTS AND LOCALS
-              </h3>
-            </div>
-
-            {/* Circle 6 */}
-            <div className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-40 h-40 p-4 shadow-md">
-              <FaHandsHelping className="text-blue-600 text-4xl mb-2" />
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
-                DISASTER RESPONSE PROGRAMS
-              </h3>
-            </div>
+            {[ 
+              { icon: FaShieldAlt, text: "PROACTIVE DISASTER RISK REDUCTION" },
+              { icon: FaTools, text: "EQUIP LOCAL RESPONDERS WITH TOOLS" },
+              { icon: FaSatelliteDish, text: "DEVELOP ADVANCED TECHNOLOGIES" },
+              { icon: FaCity, text: "REBUILD COMMUNITIES TO BE SAFER" },
+              { icon: FaUserFriends, text: "CONNECT EXPERTS AND LOCALS" },
+              { icon: FaHandsHelping, text: "DISASTER RESPONSE PROGRAMS" },
+            ].map(({ icon: Icon, text }, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-32 h-32 sm:w-40 sm:h-40 p-4 shadow-md"
+              >
+                <Icon className="text-blue-600 text-4xl mb-2" />
+                <h3 className="text-sm sm:text-base font-semibold text-gray-900 text-center">
+                  {text}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Section 6: Call to Action with Donation Boxes */}
         <div className="text-center bg-blue-600 text-white rounded-lg p-12 mb-12 w-full max-w-6xl">
-          <h2 className="text-4xl font-bold mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             One Small Step for You, One Giant Leap for Safety
           </h2>
           <p className="text-lg mb-12">
@@ -142,54 +135,44 @@ function DonationSection() {
           </p>
 
           {/* Three Equal-Sized Donation Boxes */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Box 1 */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-              <FaUserShield className="text-blue-500 text-5xl mb-4" />
-              <h3 className="text-xl font-bold text-blue-600 mb-2">$5 = Access for one person</h3>
-              <p className="text-gray-700 mb-4">Provide one person with access to the Michael app for disaster preparedness.</p>
-              <a
-                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[ 
+              {
+                icon: FaUserShield,
+                title: "$5 = Access for one person",
+                description: "Provide one person with access to the Michael app for disaster preparedness.",
+              },
+              {
+                icon: FaUsers,
+                title: "$10 = Access for two people",
+                description: "Help two people prepare for disasters with the Michael app and a chance to stay safe.",
+              },
+              {
+                icon: FaSchool,
+                title: "$50 = Community Safety",
+                description: "Provide safety training for 10 individuals in vulnerable communities.",
+              },
+            ].map(({ icon: Icon, title, description }, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center"
               >
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-                  Donate Now
-                </button>
-              </a>
-            </div>
-
-            {/* Box 2 */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-              <FaUsers className="text-blue-500 text-5xl mb-4" />
-              <h3 className="text-xl font-bold text-blue-600 mb-2">$10 = Access for two people</h3>
-              <p className="text-gray-700 mb-4">Help two people prepare for disasters with the Michael app and a chance to stay safe.</p>
-              <a
-                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-                  Donate Now
-                </button>
-              </a>
-            </div>
-
-            {/* Box 3 */}
-            <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-              <FaSchool className="text-blue-500 text-5xl mb-4" />
-              <h3 className="text-xl font-bold text-blue-600 mb-2">$50 = Community Safety</h3>
-              <p className="text-gray-700 mb-4">Provide safety training for 10 individuals in vulnerable communities.</p>
-              <a
-                href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
-                  Donate Now
-                </button>
-              </a>
-            </div>
+                <Icon className="text-blue-500 text-5xl mb-4" />
+                <h3 className="text-xl font-bold text-blue-600 mb-2">
+                  {title}
+                </h3>
+                <p className="text-gray-700 mb-4">{description}</p>
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-700 transition-all">
+                    Donate Now
+                  </button>
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
