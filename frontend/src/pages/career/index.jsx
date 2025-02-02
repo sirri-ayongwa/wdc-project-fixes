@@ -53,7 +53,7 @@ function CareerPage() {
         </div>
 
         {/* CV Submission Section */}
-        <div className="w-full mt-12 bg-gradient-to-l from-green-600 to-indigo-600 p-8 rounded-lg shadow-md max-w-4xl text-center">
+        {/* <div className="w-full mt-12 bg-gradient-to-l from-green-600 to-indigo-600 p-8 rounded-lg shadow-md max-w-4xl text-center">
           <h3 className="text-white text-3xl font-bold mb-4">Don't see the role you're interested in?</h3>
           <p className="text-indigo-100 text-lg mb-6">
             We’re always looking for talented people to join our team. Send us your CV and we will contact you for any future roles.
@@ -80,7 +80,7 @@ function CareerPage() {
               />
             </svg>
           </button>
-        </div>
+        </div> */}
 
         {/* Fraud Alert and Equal Opportunity Employer Section */}
         <div className="w-full mt-12 flex flex-col gap-6 items-center">
