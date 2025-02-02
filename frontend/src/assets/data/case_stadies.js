@@ -9,7 +9,9 @@ export const caseStudies = [
     description: 'Empowering Vulnerable Communities with Real-Time Disaster Alerts and AI Predictions.',
     image: imageCase2,
     coming_soon: false,
-    link: 'https://1drv.ms/p/s!AomLDkNDuTrRb_IYPECTx1n2Tpo?e=Gx4ayi?embed=1&amp;em=2&amp;wdAr=1.7777777777777777',
+    // link: 'https://1drv.ms/p/s!AomLDkNDuTrRb_IYPECTx1n2Tpo?e=Gx4ayi?embed=1&amp;em=2&amp;wdAr=1.7777777777777777',
+    link : "https://michael-v2-workshop.vercel.app/",
+    slideShow : "https://www.slideshare.net/slideshow/embed_code/key/4CANGsyqn4SmlV?hostedIn=slideshare&page=upload"
   },
   {
     title: 'Lifeline',
@@ -17,13 +19,15 @@ export const caseStudies = [
     // title: 'Argus',
     // description: 'Revolutionizing Disaster Management with AI, Drones, IoT, and Blockchain .',
     image: imageCase4,
-    coming_soon: true,
-    link: '',
+    coming_soon: false,
+    link : '',
+    slideShow : '',
   }, 
   {
     title: 'Tectra',
     description: 'A Global Platform for Predicting Climate, Migration, and Conflict Dynamics.',
     image: imageCase3,
     coming_soon: true,
-    link: '',
+    link : '',
+    slideShow : '',
   }];

@@ -9,14 +9,14 @@ export const products = [
     description: 'Nostradamus offers a monthly global disaster overview with projections for the upcoming month and a detailed action plan. It prioritizes response strategies across regions, ensuring rapid mobilization and enhanced disaster readiness.',
     image: imageCase1,
     coming_soon: false,
-    link: '',
+    link: 'https://public.tableau.com/views/WorldDisasterCentreReport/Overview?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
   },
   {
     title: 'Crisis Atlas',
     description: 'Crisis Atlas offers a weekly global disaster overview with projections',
     image: imageCase4,
-    coming_soon: true,
-    link: '',
+    coming_soon: false,
+    link: 'https://public.tableau.com/views/WorldDisasterCentreReport-ActNowforTomorrow/WeeklyDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
   }, 
   {
     title: 'Global Disaster Roster Portal',
