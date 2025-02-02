@@ -16,26 +16,26 @@ function CareerPage() {
         {/* Open Volunteering Positions Section */}
         <div className="w-full mt-12 bg-white border border-gray-300 p-6 rounded-lg shadow-md max-w-4xl">
           <h5 className="text-gray-900 text-center text-2xl font-bold mb-4">
-            Open Volunteering Positions
+            Open Positions
           </h5>
           <div className="flex flex-col gap-4">
             {[
               {
-                position: "Website Design and Development",
-                link: "https://www.volunteermatch.org/search/opp3853051.jsp",
+                position: "Report Writing Consultant",
+                link: "https://ideali.st/7mvtKk",
               },
-              {
-                position: "Graphic Designers",
-                link: "https://www.volunteermatch.org/search/opp3853054.jsp",
-              },
-              {
-                position: "Legal Consultant",
-                link: "https://www.volunteermatch.org/search/opp3853064.jsp",
-              },
-              {
-                position: "Grant Writer",
-                link: "https://www.volunteermatch.org/search/opp3853049.jsp",
-              },
+              // {
+              //   position: "Graphic Designers",
+              //   link: "https://www.volunteermatch.org/search/opp3853054.jsp",
+              // },
+              // {
+              //   position: "Legal Consultant",
+              //   link: "https://www.volunteermatch.org/search/opp3853064.jsp",
+              // },
+              // {
+              //   position: "Grant Writer",
+              //   link: "https://www.volunteermatch.org/search/opp3853049.jsp",
+              // },
             ].map((item, index) => (
               <div
                 key={index}
