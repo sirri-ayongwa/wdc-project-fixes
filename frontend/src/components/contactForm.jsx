@@ -103,7 +103,7 @@ function ContactForm() {
         <div>
           <h3 className="text-xl font-bold mb-2">Canada Office</h3>
           <p className="text-sm text-gray-400 mb-4">
-            World Disaster Center is a non-profit organization in Ottawa, Canada.
+            World Disaster Center is a non-profit organization in Ottawa, Canada with CRA: 721487825 RC 0001.
           </p>
           <p>586 Prince Albert St</p>
           <p>Ottawa, ON K1K1Y6</p>
