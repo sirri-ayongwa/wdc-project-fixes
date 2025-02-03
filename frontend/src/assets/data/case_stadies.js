@@ -19,7 +19,7 @@ export const caseStudies = [
     // title: 'Argus',
     // description: 'Revolutionizing Disaster Management with AI, Drones, IoT, and Blockchain .',
     image: imageCase4,
-    coming_soon: false,
+    coming_soon: true,
     link : '',
     slideShow : '',
   }, 
