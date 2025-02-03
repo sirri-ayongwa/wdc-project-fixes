@@ -38,7 +38,7 @@ const ProductDetail = () => {
         />
 
         {/* Month Selection Buttons */}
-        <div className="flex flex-row items-center justify-center gap-6 mb-8">
+        {/* <div className="flex flex-row items-center justify-center gap-6 mb-8">
           {['November', 'December', 'January'].map((monthName) => (
             <button
               key={monthName}
@@ -52,7 +52,7 @@ const ProductDetail = () => {
               {monthName} 2024
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Embedded Dashboard or Coming Soon Message */}
         <div className="flex justify-center items-center bg-gray-900 rounded-lg overflow-hidden shadow-lg" style={{ height: '100vh' }}>

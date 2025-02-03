@@ -13,7 +13,7 @@ export const products = [
   },
   {
     title: 'Crisis Atlas',
-    description: 'Crisis Atlas offers a weekly global disaster overview with projections',
+    description: 'Crisis Atlas offers a weekly global disaster overview of the latest disasters happening globally, as well as the projected disater events in the following week.',
     image: imageCase4,
     coming_soon: false,
     link: 'https://public.tableau.com/views/WorldDisasterCentreReport-ActNowforTomorrow/WeeklyDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link',
