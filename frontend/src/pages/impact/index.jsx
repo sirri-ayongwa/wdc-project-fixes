@@ -390,15 +390,15 @@ function ImpactPage() {
             For example, with react-simple-maps or Leaflet. 
             This is just a placeholder below. Replace/modify as needed.
         */}
-        <div className="w-full max-w-6xl mb-10">
+        {/* <div className="w-full max-w-6xl mb-10">
           <div className="bg-gray-100 p-8 rounded-lg shadow-md text-center">
             <p className="text-gray-700 font-semibold">Interactive Map Placeholder</p>
             <p className="text-gray-500">Insert your CADRI-like map here.</p>
           </div>
-        </div>
+        </div> */}
 
         {/* === Madagascar Section (In Progress) === */}
-        <button
+        {/* <button
           className={`w-full max-w-6xl bg-blue-600 text-white text-lg font-semibold py-6 rounded-lg mb-8 flex justify-between items-center px-8 shadow-md ${
             isMadagascarExpanded ? "bg-blue-700" : ""
           }`}
@@ -420,10 +420,10 @@ function ImpactPage() {
               here as the project progresses.
             </p>
           </div>
-        )}
+        )} */}
 
         {/* === Haiti Section (In Progress) === */}
-        <button
+        {/* <button
           className={`w-full max-w-6xl bg-blue-600 text-white text-lg font-semibold py-6 rounded-lg mb-8 flex justify-between items-center px-8 shadow-md ${
             isHaitiExpanded ? "bg-blue-700" : ""
           }`}
@@ -445,7 +445,7 @@ function ImpactPage() {
               here as the project progresses.
             </p>
           </div>
-        )}
+        )} */}
 
         {/* === Burundi Section (In Progress) === */}
         <button
