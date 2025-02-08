@@ -44,7 +44,7 @@ export default function GlobalProducts() {
             <Link
               to={item.coming_soon ? '#' : `/global-products/${item.title}`}
               key={index}
-              className="block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative"
+              className="block min-h-60 bg-cover bg-center rounded-md overflow-hidden relative group transition-transform duration-300 ease-in-out transform hover:scale-105"
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4 text-white">

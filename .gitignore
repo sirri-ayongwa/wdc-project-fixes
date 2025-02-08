@@ -11,6 +11,7 @@
 # production
 /frontend/node_modules
 /backend/node_modules
+/backend/dist
 package-lock.json
 /frontend/package-lock.json
 /backend/package-lock.json

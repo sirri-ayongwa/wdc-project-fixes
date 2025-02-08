@@ -40,13 +40,13 @@ function DonationSection() {
 
         {/* Section 2: Global Disaster Safety Overview */}
         <div className="rounded-lg shadow-lg p-8 mb-12 w-full max-w-6xl text-center">
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-100">
             Out of 8 billion people, only 1.4 billion feel safe from disasters. For the rest, every day is a battle against uncertainty.
           </p>
           <div className="flex justify-center mt-8">
             {/* Typewriter Effect */}
-            <div className="w-full bg-gray-100 rounded-lg flex items-center justify-center p-4">
-              <p className="text-gray-900 text-3xl lg:text-5xl font-bold break-words">
+            <div className="w-full  rounded-lg flex items-center justify-center p-4">
+              <p className="text-gray-100 text-3xl lg:text-5xl font-bold break-words">
                 {displayedText.split("HOPE")[0]}
                 <span className="text-blue-400">HOPE</span>
                 {displayedText.split("HOPE")[1]?.split("YOU")[0]}
@@ -69,25 +69,25 @@ function DonationSection() {
   </p>
   <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
     <div className="flex flex-col items-center">
-      <div className="text-3xl sm:text-5xl mb-2">
+      <div className="text-3xl sm:text-5xl mb-2 text-blue-600">
         <span className="inline-block">$</span>
         <span className="inline-block">5</span>
       </div>
-      <p className="text-sm sm:text-base font-medium">Donation</p>
+      <p className="text-sm sm:text-base font-medium text-blue-600">Donation</p>
     </div>
-    <div className="text-2xl sm:text-3xl text-gray-600">→</div>
+    <div className="text-2xl sm:text-3xl text-blue-600">→</div>
     <div className="flex flex-col items-center">
       <div className="text-3xl sm:text-5xl mb-2">
         <i className="fas fa-globe"></i> {/* Replace with your globe icon */}
       </div>
-      <p className="text-sm sm:text-base font-medium">Michael App Access</p>
+      <p className="text-sm sm:text-2xl font-medium text-blue-600"><b>Michael</b> App <br></br>Access</p>
     </div>
-    <div className="text-2xl sm:text-3xl text-gray-600">→</div>
+    <div className="text-2xl sm:text-3xl text-blue-600">→</div>
     <div className="flex flex-col items-center">
       <div className="text-3xl sm:text-5xl mb-2">
         <i className="fas fa-users"></i> {/* Replace with your family icon */}
       </div>
-      <p className="text-sm sm:text-base font-medium">Increased Safety for One Family</p>
+      <p className="text-sm sm:text-2xl font-medium text-blue-600">Increased <b>Safety </b><br></br>for 1 Family</p>
     </div>
   </div>
 </div>
@@ -117,9 +117,9 @@ function DonationSection() {
                 className="flex flex-col items-center justify-center bg-blue-100 rounded-full w-32 h-32 sm:w-40 sm:h-40 p-4 shadow-md"
               >
                 <Icon className="text-blue-600 text-4xl mb-2" />
-                <h3 className="text-sm sm:text-base font-semibold text-gray-900 text-center">
+                <h4 className="text-sm sm:text-base font-semibold text-gray-900 text-center">
                   {text}
-                </h3>
+                </h4>
               </div>
             ))}
           </div>

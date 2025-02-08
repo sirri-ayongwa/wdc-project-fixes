@@ -23,7 +23,7 @@ const CaseDetail = () => {
         />
         <div className="mt-4 flex justify-center">
           <a
-            href="https://michael-v2-workshop.vercel.app/" // Replace with your specific URL
+            href= {caseStudy.link} // Replace with your specific URL
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600"
@@ -36,7 +36,7 @@ const CaseDetail = () => {
       {/* Embedded SlideShare Presentation */}
       <div className="flex justify-center items-center w-full mt-8">
         <iframe
-          src="https://www.slideshare.net/slideshow/embed_code/key/4CANGsyqn4SmlV?hostedIn=slideshare&page=upload"
+          src= {caseStudy.slideShow}
           className="w-full max-w-screen-xl h-[480px] md:h-[720px] rounded-lg shadow-lg"
           frameBorder="0"
           allowFullScreen
@@ -64,7 +64,7 @@ const CaseDetail = () => {
         </div>
       </div> */}
 
-      <RequestDemo />
+      {caseName == "Michael" ? <RequestDemo /> : null}
     </Section>
   );
 };
