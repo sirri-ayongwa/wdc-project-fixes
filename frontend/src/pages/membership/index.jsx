@@ -23,42 +23,56 @@ function Modal({ onClose }) {
 const membershipData = {
   professionals: {
     title: "Experts & Disaster Specialists",
-    description: `Are you a disaster expert, GIS/Remote Sensing Analyst, medical professional, policy advisor etc. contributing to disaster management? As a Professional Member, you'll have the opportunity to contribute to global disaster preparedness, response, and recovery efforts.`,
+    description: `For disaster experts, engineers, GIS/Remote sensing analyst, policy advisors, medical professionals, etc.`,
     benefits: [
-      { name: "Who Can Join?", description: "Disaster experts, engineers, policy advisors, medical professionals, etc." },
-      { name: "Key Contribution", description: "Provide expertise in disaster phases (Preparedness, Response, Recovery)." },
-      { name: "Training Opportunities", description: "Lead virtual or in-person training sessions." },
-      { name: "Networking", description: "Join a global network of disaster professionals." },
-      { name: "Recognition", description: "Featured in WDC’s 'Experts Hub'." },
-      { name: "Newsletter", description: "Yes" },
-      { name: "Event Invitations", description: "Priority access to WDC conferences, workshops, and webinars." },
-      { name: "Paid Opportunities", description: "Eligible for project-based disaster management roles." },
-      { name: "Annual Membership Fee", description: "$20/year or 10 hours of pro bono service." },
+        "Annual Membership: $20/year or 10 hours of pro bono service.",
+        "Receive newsletters.",
+        "Provide expertise in disaster phases (Preparedness, Response, Recovery).",
+        "Lead virtual or in-person training sessions.",
+        "Join a global network of disaster professionals.",
+        "Featured in WDC’s 'Experts Hub'.",
+        "Priority access to WDC conferences, workshops, and webinars.",
+        "Eligible for project-based disaster management roles.",
     ],
   },
   locals: {
     title: "Locals & Community Members",
-    description: `Are you a community member living in a disaster-prone area or someone passionate about building local disaster resilience? As a Local Member, you’ll receive training opportunities, participate in paid tasks such as reporting local disaster conditions, and join WDC’s community-driven efforts to strengthen preparedness and response at the local level.`,
+    description: `For individuals living in disaster-prone areas or interested in capacity-building.`,
     benefits: [
-      { name: "Who Can Join?", description: "Individuals living in disaster-prone areas or interested in capacity-building." },
-      { name: "Key Contribution", description: "Participate in local training, crowdsourcing tasks, and resilience initiatives." },
-      { name: "Training Opportunities", description: "Receive free or discounted training from professionals." },
-      { name: "Networking", description: "Connect with experts and peers for mentorship opportunities." },
-      { name: "Recognition", description: "Earn certificates for completing training programs." },
-      { name: "Newsletter", description: "No" },
-      { name: "Event Invitations", description: "Invitations to local workshops and events." },
-      { name: "Paid Opportunities", description: "Eligible for paid crowdsourcing tasks (e.g., local condition reporting)." },
-      { name: "Annual Membership Fee", description: "Free or minimal fee (based on region)." },
+      "Annual Membership: Fee is free or minimal (based on region).",
+      "Participate in local training, crowdsourcing tasks, and resilience initiatives.",
+      "Receive free or discounted training from professionals.",
+      "Connect with experts and peers for mentorship opportunities.",
+      "Earn certificates for completing training programs.",
+      "Invitations to local workshops and events.",
+      "Eligible for paid crowdsourcing tasks (e.g., local condition reporting).",
+    ],
+  },
+  NGOS: {
+    title: "Non-Governmental Organizations",
+    description: `For NGOs, humanitarian organizations, and community-based organizations.`,
+    benefits: [
+      "Annual Membership: Fee varies by organization size and focus area.",
+      "Receive exclusive newsletters and updates.",
+      "Collaborate with global teams to implement disaster strategies.",
+      "Participate in workshops and training by WDC experts.",
+      "Expand networks with similar organizations worldwide.",
+      "Feature on the WDC partners' page.",
+      "Special invitations to WDC-led global events.",
+      "Access funding opportunities for joint projects.",
     ],
   },
 };
 
 function MembershipPage() {
-  const [activeTab, setActiveTab] = useState("professionals");
+  const [activeTab, setActiveTab] = useState(""); // No active tab by default
+  const [clickedTab, setClickedTab] = useState(""); // Tracks clicked button for animation
   const [showModal, setShowModal] = useState(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+    setClickedTab(tab); // Trigger animation
+    setTimeout(() => setClickedTab(""), 1000); // Reset animation after it plays once
   };
 
   const currentData = membershipData[activeTab];
@@ -74,64 +88,125 @@ function MembershipPage() {
         />
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mt-8 space-x-4">
-          <button
-            onClick={() => handleTabChange("professionals")}
-            className={`px-6 py-3 rounded-lg font-semibold ${
-              activeTab === "professionals"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
-            }`}
-          >
-            Professionals
-          </button>
-          <button
-            onClick={() => handleTabChange("locals")}
-            className={`px-6 py-3 rounded-lg font-semibold ${
-              activeTab === "locals"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
-            }`}
-          >
-            Locals
-          </button>
-        </div>
+      <div className="flex flex-col sm:flex-row justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
+        <button
+          onClick={() => handleTabChange("professionals")}
+          className={
+            `px-6 py-4 sm:py-6 rounded-lg border-4 border-blue-800 font-semibold text-center ${
+            activeTab === "professionals" ? "bg-blue-600 border-4 border-white text-white" : "bg-gray-200 text-gray-700"  
+            } ${clickedTab === "professionals" ? "animate-bounce" : ""}`}
+        >
+            <span className="block text-3xl font-bold">Professionals</span>
+            <hr
+              className={`h-px my-6 border-0 ${
+              activeTab === "professionals" ? "bg-white" : "bg-black"
+              }`}
+            ></hr>
+            <span className="block mt-2 text-sm font-normal">
+              As a Professional Member, you'll have the opportunity to contribute to global disaster preparedness, response, and recovery efforts.
+            </span>
+        </button>
+
+        <button
+          onClick={() => handleTabChange("locals")}
+          className={`px-6 py-4 sm:py-6 rounded-lg border-4 border-blue-800 font-semibold text-center ${
+            activeTab === "locals" ? "bg-blue-600 border-4 border-white text-white" : "bg-gray-200 text-gray-700"
+          } ${clickedTab === "locals" ? "animate-bounce" : ""}`}
+        >
+          <span className="block text-3xl font-bold">Locals</span>
+          <hr
+              className={`h-px my-6 border-0 ${
+              activeTab === "locals" ? "bg-white" : "bg-black"
+              }`}
+            ></hr>
+          <span className="block mt-2 text-sm font-normal">
+            As a Local Member, you’ll be able to get training, take part in paid tasks and join WDC’s community-driven efforts to improve readiness and response locally
+          </span>
+        </button>
+
+        <button
+          onClick={() => handleTabChange("NGOS")}
+          className={`px-6 py-4 sm:py-6 rounded-lg border-4 border-blue-800 font-semibold text-center ${
+            activeTab === "NGOS" ? "bg-blue-600 border-4 border-white text-white" : "bg-gray-200 text-gray-700"
+          } ${clickedTab === "NGOS" ? "animate-bounce" : ""}`}
+        >
+          <span className="block text-3xl font-bold">NGOs</span>
+          <hr
+              className={`h-px my-6 border-0 ${
+              activeTab === "NGOS" ? "bg-white" : "bg-black"
+              }`}
+            ></hr>
+          <span className="block mt-2 text-sm font-normal">
+          As an NGO member, you'll collaborate with WDC to enhance disaster preparedness, mitigation, and recovery strategies in disaster-prone regions.
+          </span>
+        </button>
+      </div>
+
 
         {/* Membership Details */}
-        <div className="mt-10 bg-white shadow-md rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-blue-600 text-center">{currentData.title}</h2>
-          <p className="mt-4 text-gray-600 text-center">{currentData.description}</p>
+        {currentData && (
+          // <div className="relative rounded-3xl mt-10 bg-white p-6 ring-1 shadow-2xl ring-gray-900/10 sm:p-10 transition-opacity duration-500 ease-in-out opacity-100">
+          <div className="relative mt-10 bg-white p-6 ring-1 shadow-2xl ring-gray-900/10 sm:p-10 rounded-3xl w-full max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-blue-600 text-center break-words">
+              {currentData.title}
+            </h2>
+            <p className="mt-2 text-1xl italic text-gray-600 text-center">
+              {currentData.description}
+            </p>
 
-          {/* Benefits Table */}
-          <div className="overflow-x-auto mt-6">
-            <table className="w-full border-collapse border border-gray-300 bg-white rounded-lg text-center">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="border border-gray-300 px-4 py-3 text-gray-700 font-semibold">Benefits</th>
-                  <th className="border border-gray-300 px-4 py-3 text-gray-700 font-semibold">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentData.benefits.map((benefit, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : ""}>
-                    <td className="border border-gray-300 px-4 py-3 font-medium text-gray-700">{benefit.name}</td>
-                    <td className="border border-gray-300 px-4 py-3 text-gray-600">{benefit.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+            {/* Benefits Section */}
+            <div className="mt-10 space-y-3">
+            <th className="mt-3 text-4xl text-gray-700 font-semibold">
+                      Benefits
+                    </th>
+              {currentData.benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <span className="flex-shrink-0 text-blue-600">
+                    {/* Checkmark icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <p className="text-gray-600 break-words">{benefit}</p>
+                </div>
+              ))}
+            </div>
 
-          {/* Apply Button */}
-          <div className="mt-8 text-center">
-            <button
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
-              onClick={() => setShowModal(true)}
-            >
-              Apply Now
-            </button>
+
+            {/* Apply Button */}
+            <div className="mt-8 flex justify-center">
+              <button
+                // className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 flex items-center space-x-2"
+                onClick={() => setShowModal(true)}
+              >
+              
+                Apply Now
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"  
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Show Modal */}
