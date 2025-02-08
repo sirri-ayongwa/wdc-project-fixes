@@ -78,50 +78,44 @@ const Services = () => {
             className=""
           />
         </div> */}
-        <div className="text-4xl font-bold text-center pb-16">
-              Our Values
+ <div className="text-4xl font-bold text-center text-white py-16">Our Values</div>
+<div className="relative w-full h-auto flex flex-wrap justify-center items-center gap-y-0 gap-x-0 px-4">
+  {[
+    { title: "Action-Oriented", description: "We take immediate action to save lives, knowing that every moment counts." },
+    { title: "Collaboration Based", description: "We build strong partnerships to deliver swift and impactful solutions." },
+    { title: "Tech-Driven", description: "We use cutting-edge technologies like AI and real-time data to improve disaster governance." },
+    { title: "Inclusive", description: "We ensure disaster responses meet the needs of all, with a focus on marginalized groups." },
+    { title: "Real-Time", description: "We provide real-time alerts and insights to empower effective decision-making and risk mitigation." },
+    { title: "Worldwide", description: "Our global efforts unite organizations and individuals to build a more resilient and sustainable world." }
+  ].map((value, index) => (
+    <div 
+      key={index}
+      className="
+        group 
+        w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] 
+        border-[4px] sm:border-[5px] lg:border-[6px] border-blue-300 
+        rounded-full flex justify-center items-center 
+        text-center text-white text-lg sm:text-xl font-bold 
+        transition-all duration-300 ease-in-out 
+        hover:bg-blue-500 hover:border-transparent hover:text-white cursor-pointer"
+    >
+      <div className="relative w-full h-full flex justify-center items-center">
+        {/* Title will hide on hover */}
+        <span className="z-10 transition-opacity duration-300 ease-in-out group-hover:opacity-0">{value.title}</span>
+        
+        {/* Description will show on hover */}
+        <div className="absolute inset-0 bg-blue-500 bg-opacity-90 text-sm sm:text-lg font-normal flex justify-center items-center p-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+          {value.description}
         </div>
-        <div className="flex flex-row justify-center items-center w-full h-full">
-          <div className="w-full h-full justify-center items-center mr-8"> 
-            <img 
-              src= {corevalues}
-              alt = "strengths"
-            />
-          </div>
-          <div className=" w-4/5 h-full justify-center items-center">
-            <div className="text-2xl m-4 font-bold" >
-              Action Oriented:
-              <div className="text-sm mx-4 my-2 font-normal">
-              We prioritize immediate action over prolonged discussions because every moment counts when lives are at risk. Delays lead to preventable suffering, and WDC is committed to saying “enough is enough.
-              </div>
-            </div>
-            <div className="text-2xl m-4 font-bold" >
-              Collaboration & Coordination:
-              <div className="text-sm mx-4 my-2 font-normal">
-              We believe in the power of partnerships. By building strong, transparent relationships, we can achieve meaningful impact and deliver swift solutions anywhere, anytime.
-              </div>
-            </div>
-            <div className="text-2xl m-4 font-bold" >
-              Innovation:
-              <div className="text-sm mx-4 my-2 font-normal">
-              Our team works tirelessly, driven by a passion for change. We innovate relentlessly to ensure disasters no longer dictate the lives of millions.
-              </div>
-            </div>
-            <div className="text-2xl m-4 font-bold" >
-              Empathy:
-              <div className="text-sm mx-4 my-2 font-normal">
-                At our core, we are driven by compassion and a deep commitment to alleviating human suffering.
-              </div>
-            </div>
-            <div className="text-2xl m-4 font-bold" >
-              Inclusivity:
-              <div className="text-sm mx-4 my-2 font-normal">
-              We embrace diversity, welcoming people from all backgrounds, ages, and cultures. Differences are our strength, and our global team reflects the inclusivity we champion.
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
+  ))}
+</div>
+<br></br>
+<br></br>
+
+
+     </div>
   );
 };
 

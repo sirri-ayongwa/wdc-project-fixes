@@ -33,7 +33,7 @@ const Hero = () => {
       id="hero"
     >
       <video
-        className="absolute backgroundImageGif object-cover"
+        className="absolute backgroundImageGif object-cover brightness-50 h-screen"
         autoPlay={true}
         loop={true}
         muted

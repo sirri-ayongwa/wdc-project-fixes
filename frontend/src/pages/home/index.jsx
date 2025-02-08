@@ -46,56 +46,93 @@ const HomePage = () => {
       {/* <Slideshow /> */}
       <VideoSection />
       <Benefits />
-      
-      <div style={styles.sectionContainer}>
-        {solutionsSection === "Solutions" ? <Solutions /> : <GlobalProducts />}
+      <div className="container sm:px-2">
+  <button
+    onClick={() => setSolutionsSection("GlobalProducts")}
+    className={`w-1/2 px-6 py-4 font-semibold text-lg focus:outline-none transition-colors duration-300 relative ${
+      solutionsSection === "GlobalProducts"
+        ? "bg-blue-600 text-white"
+        : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+    }`}
+  >
+    Global Products
+    {solutionsSection === "GlobalProducts" && (
+      <div
+        className="absolute bottom-[-16px] left-1/2 transform -translate-x-1/2
+                   w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px]
+                   border-transparent border-t-blue-600"
+      ></div>
+    )}
+  </button>
+  <button
+    onClick={() => setSolutionsSection("Solutions")}
+    className={`w-1/2 px-6 py-4 font-semibold text-lg focus:outline-none transition-colors duration-300 relative ${
+      solutionsSection === "Solutions"
+        ? "bg-blue-600 text-white"
+        : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+    }`}
+  >
+    Tailored Solutions
+    {solutionsSection === "Solutions" && (
+      <div
+        className="absolute bottom-[-16px] left-1/2 transform -translate-x-1/2
+                   w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px]
+                   border-transparent border-t-blue-600"
+      ></div>
+    )}
+  </button>
+</div>
 
-        {/* Left Arrow */}
-        <button
-          onClick={handleSolutionsSwitch}
-          style={{ ...styles.arrowButton, ...styles.leftArrow }}
-          onMouseEnter={(e) => (e.target.style.color = "#007BFF")}
-          onMouseLeave={(e) => (e.target.style.color = "#333")}
-        >
-          ←
-        </button>
+{/* Content for Products/Solutions */}
+<div className="w-full rounded-lg">
+  {solutionsSection === "Solutions" ? <Solutions /> : <GlobalProducts />}
+</div>
 
-        {/* Right Arrow */}
-        <button
-          onClick={handleSolutionsSwitch}
-          style={{ ...styles.arrowButton, ...styles.rightArrow }}
-          onMouseEnter={(e) => (e.target.style.color = "#007BFF")}
-          onMouseLeave={(e) => (e.target.style.color = "#333")}
-        >
-          →
-        </button>
-      </div>
+{/* Tab Navigation for News/Events */}
+<div className="container sm:px-2">
+  <button
+    onClick={() => setActiveSection("News")}
+    className={`w-1/2 px-6 py-4 font-semibold text-lg focus:outline-none transition-colors duration-300 relative ${
+      activeSection === "News"
+        ? "bg-blue-600 text-white"
+        : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+    }`}
+  >
+    News
+    {activeSection === "News" && (
+      <div
+        className="absolute bottom-[-16px] left-1/2 transform -translate-x-1/2
+                   w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px]
+                   border-transparent border-t-blue-600"
+      ></div>
+    )}
+  </button>
+  <button
+    onClick={() => setActiveSection("Events")}
+    className={`w-1/2 px-6 py-4 font-semibold text-lg focus:outline-none transition-colors duration-300 relative ${
+      activeSection === "Events"
+        ? "bg-blue-600 text-white"
+        : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+    }`}
+  >
+    Events
+    {activeSection === "Events" && (
+      <div
+        className="absolute bottom-[-16px] left-1/2 transform -translate-x-1/2
+                   w-0 h-0 border-l-[16px] border-r-[16px] border-t-[16px]
+                   border-transparent border-t-blue-600"
+      ></div>
+    )}
+  </button>
+</div>
 
-      {/* <NewsGrid/> */}
-
-      <div style={styles.sectionContainer}>
-        {activeSection === "News" ? <News /> : <Events />}
-        
-        {/* Left Arrow */}
-        <button
-          onClick={() => handleSwitchSection("left")}
-          style={{ ...styles.arrowButton, ...styles.leftArrow }}
-          onMouseEnter={(e) => (e.target.style.color = "#007BFF")}
-          onMouseLeave={(e) => (e.target.style.color = "#333")}
-        >
-          ←
-        </button>
-
-        {/* Right Arrow */}
-        <button
-          onClick={() => handleSwitchSection("right")}
-          style={{ ...styles.arrowButton, ...styles.rightArrow }}
-          onMouseEnter={(e) => (e.target.style.color = "#007BFF")}
-          onMouseLeave={(e) => (e.target.style.color = "#333")}
-        >
-          →
-        </button>
-      </div>
+{/* Content for News/Events */}
+<div className="w-full rounded-lg">
+  {activeSection === "News" ? <News /> : <Events />}
+</div>
+    </>
+  );
+};
 
       {/* <Events /> */}
       {/* <Collaboration /> */}
@@ -105,10 +142,7 @@ const HomePage = () => {
       {/* <Pricing /> */}
       {/* <Pricing />
       <Roadmap /> */}
-    </>
-  );
-};
-
+  
 const styles = {
   sectionContainer: {
     position: "relative",

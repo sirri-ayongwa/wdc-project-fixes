@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50   lg:bg-n-8/90 lg:backdrop-blur-sm ${
+    className={`fixed top-0 left-0 w-full z-50   min-[1340px]:bg-n-8/90 min-[1340px]:backdrop-blur-sm ${
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
@@ -45,9 +45,9 @@ const Header = () => {
         <nav
           className={`${
             openNavigation ? "flex " : "hidden"
-          } fixed top-[5rem] left-0  right-0 bottom-0 bg-n-8 lg:static lg:flex lg:bg-transparent opacity-90`}
+          } fixed top-[5rem] left-0  right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90`}
         >
-          <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto lg:flex-row">
+          <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
             <Link
               className="mr-4 text-white font-light hover:text-sky-300"
               to ="/"
@@ -64,7 +64,7 @@ const Header = () => {
 
                 
               ))}
-              <div className="flex   gap-4 items-center lg:ml-4">
+              <div className="flex   gap-4 items-center min-[1340px]:ml-4">
               <Link
               className="mr-4 text-white font-light hover:text-sky-300"
               to ="/impact"
@@ -98,7 +98,7 @@ const Header = () => {
         
         </nav>
         <Button
-          className="ml-auto lg:hidden"
+          className="ml-auto min-[1340px]:hidden"
           px="px-3"
           onClick={toggleNavigation}
         >
