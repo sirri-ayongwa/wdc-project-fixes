@@ -278,7 +278,7 @@ export const benefits = [
     imageUrl: "",
     hyperlink: "",
     comingsoon: true,
-    url: "",
+    url: "/about/partners",
   },
   // {
   //   id: "1",
