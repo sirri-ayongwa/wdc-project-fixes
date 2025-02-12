@@ -21,6 +21,21 @@
     animation: fadeIn 2s ease-in-out forwards;
   }
 
+   .animate-marquee {
+       display: inline-block;
+       white-space: nowrap;
+       animation: marquee 15s linear infinite;
+     }
+    
+     @keyframes marquee {
+     from {
+         transform: translateX(100%);
+       }
+       to {
+         transform: translateX(-100%);
+       }
+     }
+
   /* Slide-up animation */
   @keyframes slideUp {
     0% {

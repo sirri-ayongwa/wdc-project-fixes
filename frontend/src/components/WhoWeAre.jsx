@@ -616,17 +616,13 @@ const WhoWeAre = () => {
                   Strengthening Resilience Against Disasters
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                Some of us have seen our parents killed, uncles and aunts vanish as if they never existed. Some have forgotten what it means to smile.
-
-Meanwhile, about 80% of the global population is exposed to disasters, and the world watches, seemingly indifferent. This is where the World Disaster Center (WDC) steps in—a humble organization of young dreamers who believe disasters can be stopped or, at the very least, their impacts mitigated.
-
-We believe the world must urgently review outdated frameworks. 
+                Some of us have witnessed unimaginable loss—parents taken, uncles and aunts disappearing without a trace. For many, the ability to smile has faded. Yet, while 80% of the global population is exposed to disasters, the world remains largely indifferent. This cannot continue.
 <br></br>
 <br></br>
-At WDC, we utilize advanced technologies to coordinate existing initiatives, support individuals, organizations, and companies, and provide people with simple, user-friendly tools to ensure their safety. By empowering individuals, we allow them to focus on their development and achieve their dreams.
-
-Our founders and advisors have learned that progress is only possible when people feel safe. Safety is the foundation for a better world—everything else follows smoothly.
-
+The World Disaster Center (WDC) was founded by young dreamers who believe disasters can be prevented—or at the very least, their impacts reduced. Outdated frameworks must urgently be reexamined.
+<br></br>
+<br></br>
+At WDC, we harness advanced technologies to connect initiatives, support individuals and organizations, and equip people with simple, user-friendly tools to safeguard their lives. When people feel safe, they can build, grow, and dream. Safety is not a privilege—it is the foundation of progress.
                 </p>
                 {/* <p className="mb-8 text-base text-body-color dark:text-dark-6">
                   WDC leverages a revolutionary approach that combines

@@ -26,6 +26,24 @@ import Fire from "../assets/fire.png";
 import Earthquake from "../assets/earthquake.png";
 import desert from "../assets/desert.png";
 import Flooding from "../assets/floooding.png";
+import avielon from "../assets/logos/Avielon_logo.png";
+import ghtc from "../assets/logos/GHTC_logo.jpeg";
+import opendeved from "../assets/logos/opendeved_logo.png";
+import rha from "../assets/logos/rha_logo.png";
+import equity from "../assets/logos/equity_logo.png";
+import codeforafrica from "../assets/logos/codeforafrica_logo.png";
+import rapidgrowth from "../assets/logos/rapidgrowth_logo.jpeg";
+import orange from "../assets/logos/orange_logo.png";
+import kaizenmind from "../assets/logos/kaizenmind_logo.png";
+import pui from "../assets/logos/pui_logo.png";
+import undp from "../assets/logos/undp_logo.png";
+import gcse from "../assets/logos/gsce_logo.png";
+import esri from "../assets/logos/esri_logo.png";
+import google from "../assets/logos/google_logo.png";
+import burohelp from "../assets/logos/burohelp_logo.png";
+import canadagovernment from "../assets/logos/govermentofcanada_logo.png";
+import ada from "../assets/logos/ada_logo.png";
+import esa from "../assets/logos/esa_logo.png";
 // import raindrop from '../assets/'
 
 export const navigation = [
@@ -81,7 +99,13 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [];
 
-export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
+// export const companyLogos = [ghtc, avielon, pui, opendeved, ada];
+export const strategicpartner_companyLogos = [ canadagovernment, esa, orange, gcse, pui, kaizenmind, burohelp,rapidgrowth];
+export const collaborator_companyLogos = [ada, codeforafrica, opendeved];
+export const technicalsponsor_companyLogos = [google, esri];
+export const implmentationpartner_companyLogos = [undp, rha, ghtc];
+export const financialpartner_companyLogos = [equity];
+export const technicalpartner_companyLogos = [avielon];
 
 export const brainwaveServices = ["Detection System", "Real-Time Alerts"];
 
@@ -304,11 +328,13 @@ export const dropdownData = [
   {
     title: "About Us",
     routings: {
-      "About Us": "/about",
+      "About WDC": "/about",
       // "Our Mission": "/about/mission",
       // "Our Story": "/about/story",
       // "Our Values": "/about/values",
       "Our Team": "/about/team",
+      "Our Partners": "/about/partners",
+      // "Partner With Us": "/about/partnerwithus",
     },
   },
   // {

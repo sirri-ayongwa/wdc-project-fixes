@@ -712,6 +712,7 @@ function ImpactPage() {
           <NewsLetter />
         </div>
       </Section>
+
     </Section>
   );
 }

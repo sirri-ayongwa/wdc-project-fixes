@@ -176,6 +176,15 @@ function TeamPage() {
       image: Rolande,
     },
     {
+      location: "DRC",
+      title: "Chief Technical Officer",
+      bio: "A passionate and results-driven software developer with expertise in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I specialize in building robust, scalable, and efficient web applications that deliver seamless user experiences. I thrive on solving complex problems, learning emerging technologies, and collaborating with teams to deliver innovative solutions. My projects showcase my ability to create cutting-edge applications that balance functionality with a great user experience.",
+      email: "",
+      socials: [],
+      name: "David Kabanga",
+      image: david,
+    },
+    {
       location: "",
       title: "Chief Information Officer",
       bio: "A self driven Geo-Information management specialist/GIS/IMSMA expert and a practicing GPS Land Surveyor with over 20 years’ professional experience. I have in-depth knowledge in Biometrics Information systems, Information Management Systems for mine Action (IMSMA), Geographic Information System (GIS), Geospatial analysis, Remote sensing and GPS mapping, relational database and related information management systems field with extensive experience with international organizations, NGOs, private and international organizations including the UNICEF, UNOCHA, IMMAP UNSOS, AMISOM, UN-DPKO, UNOPS, UNMAS and other UN agencies. I have implemented state-of-the-art technology transfer, through knowledge of best practices in capacity building and enterprise-wide data and application systems including decision support systems incorporating socio-economic and biophysical information of multiple formats and sources. I have also professional experience of inter-agency/inter-cluster collaboration and management between multiple organizations to develop inter-agency GIS/IM/IMSMA/IT systems.",
@@ -185,14 +194,24 @@ function TeamPage() {
       image: jamesmbogo,
     },
     {
-      location: "DRC",
-      title: "Chief Technical Officer",
-      bio: "A passionate and results-driven software developer with expertise in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I specialize in building robust, scalable, and efficient web applications that deliver seamless user experiences. I thrive on solving complex problems, learning emerging technologies, and collaborating with teams to deliver innovative solutions. My projects showcase my ability to create cutting-edge applications that balance functionality with a great user experience.",
+      location: "Germany",
+      title: "Advocacy Lead",
+      bio: "Lilla Albert is an international development professional specializing in governance, climate change, and reform systems. She holds an MSc in Environment and Development from the University of Leeds and a BSc in International Relations and Sociology from Aston University. Lilla has worked with the United Nations, including the Office of the High Commissioner for Human Rights, where she contributed to humanitarian responses and early warning systems. At DCAF, she addressed military and police security sector reform challenges, designing and delivering professional development programs while also advocating for accountability and transparency in governance systems. Currently, Lilla serves as the Head of Advocacy at the World Disaster Center, where she leads global efforts in disaster risk reduction and resilience. A seasoned speaker and trainer, she has facilitated workshops on human rights, climate resilience, and security reform, empowering diverse audiences to drive sustainable and inclusive solutions.",
       email: "",
       socials: [],
-      name: "David Kabanga",
-      image: david,
+      name: "Lilla Albert",
+      image: lilla,
     },
+    {
+      location: "Kenya",
+      title: "Forecast Lead",
+      bio: "Hi, I am Ruth Ndegwa, my passion lies in making real difference  in disaster management by utilizing cutting-edge Artificial Intelligence (AI) and Human Intelligence (HUMINT) to revolutionize global catastrophe management. I have a special viewpoint on disaster risk management because of my background in humanitarian operations, data analysis, and strategic planning. I have worked in academic research, corporate strategy, and as a field worker for the UN World Food Programme, where I enhanced the delivery of humanitarian food by streamlining data gathering procedures. My goal at the World Disaster Center is to improve response plans and our knowledge of disasters by combining cutting-edge analytical technologies with real-time, crowdsourced data. My approach focuses on uplifting marginalized groups and encouraging technology and ground-level efforts to work together.  My enthusiasm lies in spearheading inventive, data-centric solutions that not only address calamities but also foster resilience and sustainable growth. My purpose is in line with WDC's vision to redefine global disaster management, and I am excited to work with the team in safeguarding the most vulnerable populations on the planet by making well-informed and well-timed decisions.",
+      email: "",
+      socials: [],
+      name: "Ruth Ndegwa",
+      image: Ruth,
+    },
+    
   ];
 
   const staffs = [
@@ -305,15 +324,6 @@ function TeamPage() {
       image: josephb,
     },
     {
-      location: "Germany",
-      title: "Advocacy",
-      bio: "Lilla Albert is an international development professional specializing in governance, climate change, and reform systems. She holds an MSc in Environment and Development from the University of Leeds and a BSc in International Relations and Sociology from Aston University. Lilla has worked with the United Nations, including the Office of the High Commissioner for Human Rights, where she contributed to humanitarian responses and early warning systems. At DCAF, she addressed military and police security sector reform challenges, designing and delivering professional development programs while also advocating for accountability and transparency in governance systems. Currently, Lilla serves as the Head of Advocacy at the World Disaster Center, where she leads global efforts in disaster risk reduction and resilience. A seasoned speaker and trainer, she has facilitated workshops on human rights, climate resilience, and security reform, empowering diverse audiences to drive sustainable and inclusive solutions.",
-      email: "",
-      socials: [],
-      name: "Lilla Albert",
-      image: lilla,
-    },
-    {
       location: "",
       title: "Forecast Developer",
       bio: "Man Ho is a volunteer developer at the World Disaster Center, where he works in the Forecast team. Man Ho is a career switcher who is currently pursuing a Master’s degree in Computer Science at the Georgia Institute of Technology. Before this, he worked as a neuroscience researcher at various institutions in the US, after completing his doctoral study in neuroscience at the International Max Planck Research School in Germany. He also holds a Bachelor’s degree in biotechnology from the Hong Kong Polytechnic University. Throughout his academic journey, he has cultivated a strong interest in data science and scientific software development. Additionally, he is passionate about global development and human-centered technology, hoping to use his skills to contribute to the betterment of global society.",
@@ -348,15 +358,6 @@ function TeamPage() {
       socials: [],
       name: "Norbert Balisha",
       image: norbert,
-    },
-    {
-      location: "Kenya",
-      title: "Forecast",
-      bio: "Hi, I am Ruth Ndegwa, my passion lies in making real difference  in disaster management by utilizing cutting-edge Artificial Intelligence (AI) and Human Intelligence (HUMINT) to revolutionize global catastrophe management. I have a special viewpoint on disaster risk management because of my background in humanitarian operations, data analysis, and strategic planning. I have worked in academic research, corporate strategy, and as a field worker for the UN World Food Programme, where I enhanced the delivery of humanitarian food by streamlining data gathering procedures. My goal at the World Disaster Center is to improve response plans and our knowledge of disasters by combining cutting-edge analytical technologies with real-time, crowdsourced data. My approach focuses on uplifting marginalized groups and encouraging technology and ground-level efforts to work together.  My enthusiasm lies in spearheading inventive, data-centric solutions that not only address calamities but also foster resilience and sustainable growth. My purpose is in line with WDC's vision to redefine global disaster management, and I am excited to work with the team in safeguarding the most vulnerable populations on the planet by making well-informed and well-timed decisions.",
-      email: "",
-      socials: [],
-      name: "Ruth Ndegwa",
-      image: Ruth,
     },
     {
       location: "Ivory Coast",

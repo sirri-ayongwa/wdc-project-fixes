@@ -78,39 +78,100 @@ const Services = () => {
             className=""
           />
         </div> */}
- <div className="text-4xl font-bold text-center text-white py-16">Our Values</div>
-<div className="relative w-full h-auto flex flex-wrap justify-center items-center gap-y-0 gap-x-0 px-4">
-  {[
-    { title: "Action-Oriented", description: "We take immediate action to save lives, knowing that every moment counts." },
-    { title: "Collaboration Based", description: "We build strong partnerships to deliver swift and impactful solutions." },
-    { title: "Tech-Driven", description: "We use cutting-edge technologies like AI and real-time data to improve disaster governance." },
-    { title: "Inclusive", description: "We ensure disaster responses meet the needs of all, with a focus on marginalized groups." },
-    { title: "Real-Time", description: "We provide real-time alerts and insights to empower effective decision-making and risk mitigation." },
-    { title: "Worldwide", description: "Our global efforts unite organizations and individuals to build a more resilient and sustainable world." }
-  ].map((value, index) => (
-    <div 
-      key={index}
-      className="
-        group 
-        w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] 
-        border-[4px] sm:border-[5px] lg:border-[6px] border-blue-300 
-        rounded-full flex justify-center items-center 
-        text-center text-white text-lg sm:text-xl font-bold 
-        transition-all duration-300 ease-in-out 
-        hover:bg-blue-500 hover:border-transparent hover:text-white cursor-pointer"
-    >
-      <div className="relative w-full h-full flex justify-center items-center">
-        {/* Title will hide on hover */}
-        <span className="z-10 transition-opacity duration-300 ease-in-out group-hover:opacity-0">{value.title}</span>
-        
-        {/* Description will show on hover */}
-        <div className="absolute inset-0 bg-blue-500 bg-opacity-90 text-sm sm:text-lg font-normal flex justify-center items-center p-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-          {value.description}
+<div className="text-4xl font-bold text-center text-white py-16">
+  Our Values
+</div>
+
+<div className="w-full px-4">
+  <div
+    className="
+      grid
+      grid-cols-1        /* Single column on mobile */
+      sm:grid-cols-2     /* Two columns on small screens and above */
+      lg:grid-cols-3     /* Three columns on large screens and above */
+
+      /* Control horizontal and vertical spacing separately */
+      gap-x-0            /* No horizontal gap */
+      gap-y-6            /* Spacing of 6 between rows */
+      
+      place-items-center
+    "
+  >
+    {[
+      { title: "Action-Oriented", description: "We take immediate action to save lives, knowing that every moment counts." },
+      { title: "Collaboration Based", description: "We build strong partnerships to deliver swift and impactful solutions." },
+      { title: "Tech-Driven", description: "We use cutting-edge technologies like AI and real-time data to improve disaster governance." },
+      { title: "Inclusive", description: "We ensure disaster responses meet the needs of all, with a focus on marginalized groups." },
+      { title: "Real-Time", description: "We provide real-time alerts and insights to empower effective decision-making and risk mitigation." },
+      { title: "Worldwide", description: "Our global efforts unite organizations and individuals to build a more resilient and sustainable world." }
+    ].map((value, index) => (
+      <div 
+        key={index}
+        className="
+          group
+          flex
+          flex-col
+          items-center
+          justify-center
+          text-center
+          text-white
+          font-bold
+          border-4
+          border-blue-300
+          rounded-full
+          cursor-pointer
+          transition-all
+          duration-300
+          ease-in-out
+          hover:bg-blue-500
+          hover:border-transparent
+          hover:text-white
+
+          /* Circle sizing at different breakpoints */
+          w-36 h-36
+          sm:w-44 sm:h-44
+          lg:w-48 lg:h-48
+        "
+      >
+        <div className="relative w-full h-full flex justify-center items-center p-2">
+          {/* Title hides on hover */}
+          <span className="z-10 transition-opacity duration-300 ease-in-out group-hover:opacity-0">
+            {/* Smaller, responsive text sizes for the title */}
+            <span className="text-[10px] sm:text-xs md:text-sm">
+              {value.title}
+            </span>
+          </span>
+
+          {/* Description appears on hover */}
+          <div
+            className="
+              absolute
+              inset-0
+              flex
+              justify-center
+              items-center
+              bg-blue-500
+              bg-opacity-90
+              rounded-full
+              p-2
+              opacity-0
+              group-hover:opacity-100
+              transition-opacity
+              duration-300
+              ease-in-out
+            "
+          >
+            {/* Smaller, responsive text sizes for the description */}
+            <span className="text-[9px] sm:text-xs md:text-sm font-normal">
+              {value.description}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  ))}
+    ))}
+  </div>
 </div>
+
 <br></br>
 <br></br>
 

@@ -20,6 +20,7 @@ import TopHero from "../../components/TopHero";
 import Slideshow from "../../components/Slideshow";
 import News from "../news";
 import Events from "../events";
+import Animation from "../../components/animator";
 
 const HomePage = () => {
     // // State to manage the active section
@@ -126,11 +127,14 @@ const HomePage = () => {
   </button>
 </div>
 
+
 {/* Content for News/Events */}
 <div className="w-full rounded-lg">
   {activeSection === "News" ? <News /> : <Events />}
 </div>
+<Animation />
     </>
+    
   );
 };
 
@@ -144,6 +148,7 @@ const HomePage = () => {
       <Roadmap /> */}
   
 const styles = {
+  
   sectionContainer: {
     position: "relative",
     marginBottom: "30px",

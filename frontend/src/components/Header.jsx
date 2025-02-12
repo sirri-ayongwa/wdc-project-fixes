@@ -110,6 +110,7 @@
 // };
 
 // export default Header;
+
 import { Link, useLocation } from "react-router-dom";
 import WDC from "../assets/images/wdcimage.png";
 import { dropdownData } from "../constants";
@@ -184,7 +185,7 @@ const Header = () => {
             </Link>
 
             {/* Optional: keep Search here if you want */}
-            <SearchButton />
+            {/* <SearchButton /> */}
 
             {/* Donate button */}
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
