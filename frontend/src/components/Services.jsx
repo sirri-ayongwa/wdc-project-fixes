@@ -87,7 +87,7 @@ const Services = () => {
     className="
       grid
       grid-cols-1        /* Single column on mobile */
-      sm:grid-cols-2     /* Two columns on small screens and above */
+      min-[460px]:grid-cols-2     /* Two columns on small screens and above */
       lg:grid-cols-3     /* Three columns on large screens and above */
 
       /* Control horizontal and vertical spacing separately */
@@ -129,8 +129,9 @@ const Services = () => {
 
           /* Circle sizing at different breakpoints */
           w-36 h-36
-          sm:w-44 sm:h-44
-          lg:w-48 lg:h-48
+          sm:w-40 sm:h-40
+          lg:w-44 lg:h-44
+          xl:w-48 xl:h-48
         "
       >
         <div className="relative w-full h-full flex justify-center items-center p-2">
