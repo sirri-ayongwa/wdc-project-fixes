@@ -41,6 +41,12 @@ export default function ContactForm() {
       .then(() => {
         setPending(false);
         toast.success("Message sent successfully!", { theme: "dark" });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: "",
+        });
       })
       .catch((err) => {
         setPending(false);
