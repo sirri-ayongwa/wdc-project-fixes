@@ -35,6 +35,7 @@ import { Modal } from "@mui/material";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
+import { FaMapMarkerAlt, FaEnvelope, FaLinkedin } from "react-icons/fa"; // Import icons
 
 function TeamPage() {
   const board = [
@@ -58,7 +59,7 @@ function TeamPage() {
     // },
     {
       location: "USA",
-      title: "USCIS OFFICER @ United States Department of Homeland Security",
+      title: "USCIS OFFICER @ U.S. Department of Homeland Security",
       bio: "David Kangamina is a distinguished expert specializing in armed conflict analysis, gender-based violence (GBV), child protection, and international human rights and humanitarian law. With extensive experience as a Legal Advisor, Attorney, and Program Manager, he has a demonstrated history of driving impactful results in civic and social organizations. David is highly skilled in public speaking, human resource management, conference interpreting, policy analysis, and legal research. He holds a Master of Laws (LL.M.) in Public International Law from the University of Lubumbashi and a Master’s in International Human Rights and Humanitarian Law from American University, Washington, DC.",
       email: "",
       socials: [],
@@ -472,7 +473,6 @@ function TeamPage() {
   };
 
   const [teamkey, setTeamKey] = useState("clevelexecutives");
-
   const [open, setOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
 
@@ -488,191 +488,112 @@ function TeamPage() {
 
   return (
     <Section crosses>
-        <div className='container '>
-          <Heading  title='Meet Our Team'
-          text={`At World Disaster Center, our team is the heart and soul of our
-            mission.`}
-          tag={`Disaster Hereos`}
-          />
-          <div className="flex items-center justify-center">
-            <div className="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
-              <button
-                onClick={() => {
-                  handleChangeTeamKey("clevelexecutives");
-                }}
-                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
-                  teamkey === "clevelexecutives"
-                    ? "bg-blue-600 text-white"
-                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
-                }`}
-              >
-                Executives
-              </button>
-              <button
-                onClick={() => {
-                  handleChangeTeamKey("staff");
-                }}
-                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
-                  teamkey === "staff"
-                    ? "bg-blue-600 text-white"
-                    : " transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
-                }`}
-              >
-                Staff
-              </button>
-              <button
-                onClick={() => {
-                  handleChangeTeamKey("board");
-                }}
-                className={`px-4 py-2 text-sm font-medium md:py-3  rounded-xl md:px-12 capitalize ${
-                  teamkey === "board"
-                    ? "bg-blue-600 text-white"
-                    : "transition-colors duration-300 md:py-3 text-blue-600 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white"
-                }`}
-              >
-                Board
-              </button>
-          
+      <div className="container">
+        <Heading
+          title="Meet Our Team"
+          text="At World Disaster Center, our team is the heart and soul of our mission."
+          tag="Disaster Heroes"
+        />
+        <div className="flex items-center justify-center">
+          <div className="flex items-center p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
+            <button
+              onClick={() => handleChangeTeamKey("clevelexecutives")}
+              className={`px-4 py-2 text-sm font-medium rounded-xl md:px-12 capitalize ${teamkey === "clevelexecutives" ? "bg-blue-600 text-white" : "text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white"}`}
+            >
+              Executives
+            </button>
+            <button
+              onClick={() => handleChangeTeamKey("staff")}
+              className={`px-4 py-2 text-sm font-medium rounded-xl md:px-12 capitalize ${teamkey === "staff" ? "bg-blue-600 text-white" : "text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white"}`}
+            >
+              Staff
+            </button>
+            <button
+              onClick={() => handleChangeTeamKey("board")}
+              className={`px-4 py-2 text-sm font-medium rounded-xl md:px-12 capitalize ${teamkey === "board" ? "bg-blue-600 text-white" : "text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white"}`}
+            >
+              Board
+            </button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-15 mt-8 xl:mt-16 md:grid-cols-3 xl:grid-cols-3">
+          {team_data[teamkey].map((member, index) => (
+            <div key={index} className="relative w-full group cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => handleOpen(member)}>
+              <img
+                className="object-cover w-full h-full rounded-xl border-4 border-white transition-transform duration-300"
+                src={member?.image}
+                alt={member.name}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 text-center p-2 rounded-b-xl transition-transform duration-300">
+                <h1 className="text-lg font-semibold text-gray-900">{member.name}</h1>
+                <p className="text-xs text-gray-600">{member.title}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
-          {teamkey === "board" &&
-              team_data.board.map((member, index) => {
-                return (
-                  <div
-                    key={`${index}-member`}
-                    className="flex flex-col items-center"
-                    onClick={() => handleOpen(member)}
-                  >
-                    <div className="" style={{ background: "#ffffffaa" }}>
-                      <img
-                        className="object-cover w-full rounded-xl aspect-square"
-                        src={member?.image}
-                        alt={member.name}
-                        style={{ height: "200px", aspectRation: "4:3" }}
-                      />
-                    </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
-                      {member.name}
-                    </h1>
-
-                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200 text-center">
-                      {member?.title}
-                    </p>
-                  </div>
-                );
-              })}
-
-
-            {teamkey === "clevelexecutives" &&
-              team_data.clevelexecutives.map((member, index) => {
-                return (
-                  <div
-                    key={`${index}-member`}
-                    className="flex flex-col items-center"
-                    onClick={() => handleOpen(member)}
-                  >
-                    <div className="" style={{ background: "#ffffffaa" }}>
-                      <img
-                        className="object-cover w-full rounded-xl aspect-square"
-                        src={member?.image}
-                        alt={member.name}
-                        style={{ height: "200px", aspectRation: "4:3" }}
-                      />
-                    </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
-                      {member.name}
-                    </h1>
-
-                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200">
-                      {member?.title}
-                    </p>
-                  </div>
-                );
-              })}
-
-            {teamkey === "staff" &&
-              team_data.staff.map((member, index) => {
-                return (
-                  <div
-                    key={`${index}-member`}
-                    className="flex flex-col items-center"
-                    onClick={() => handleOpen(member)}
-                  >
-                    <div className="" style={{ background: "#ffffffaa" }}>
-                      <img
-                        className="object-cover w-full rounded-xl aspect-square"
-                        src={member?.image}
-                        alt={member.name}
-                        style={{ height: "200px", aspectRation: "4:3" }}
-                      />
-                    </div>
-                    <h1 className="mt-4 text-2xl font-semibold text-gray-100 capitalize dark:text-white">
-                      {member.name}
-                    </h1>
-
-                    <p className="mt-2 text-gray-300 capitalize dark:text-gray-200">
-                      {member?.title}
-                    </p>
-                  </div>
-                );
-              })}
-          </div>
+          ))}
+        </div>
       </div>
 
-       {/* Modal */}
-      <Modal open={open} onClose={handleClose}>
-        <Box
-          className="bg-white rounded-none p-6"
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '60%',
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          {selectedMember && (
-            <div className="flex flex-col gap-6">
-              <div className="flex gap-4 w-full h-full">
-                    <div className="w-full lg:w-2/5 overflow-hidden rounded-none  border-r-2">
-                        <img
-                          className="object-fit border-2 shadow-sm shadow-n-4"
-                          src={selectedMember.image}
-                          alt={selectedMember.name}
-                  />
-                     <Typography variant="h6" component="h2" className="text-gray-900 font-semibold">
-                            {selectedMember.name}
-                          </Typography>
-                          <Typography className="mt-2 text-gray-700">{selectedMember.title}</Typography>
-                          <Typography className="mt-4 text-gray-600">
-                            {selectedMember.description}
-                          </Typography>
-                </div>
-                <div className="w-full">
-                  <p className="text-black">
-                    {selectedMember.bio}
-                    {selectedMember.email}
-                  </p>
-                </div>
-              </div>
-             
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleClose}
-                className="mt-6 w-max self-end"
-              >
-                Close
-              </Button>
-            </div>
-          )}
-        </Box>
-      </Modal>
-      </Section>
+      {/* Modal */}
+<Modal open={open} onClose={handleClose}>
+  <Box
+    className="bg-white p-6 rounded-lg shadow-lg flex"
+    sx={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: "60%",
+      boxShadow: 30,
+    }}
+  >
+    {selectedMember && (
+      <div className="flex w-full">
+        {/* Left Section - Image & Icons */}
+        <div className="w-1/3 flex flex-col items-center bg-gray-100 p-4 rounded-lg">
+          <img className="w-full h-auto mt-10 rounded-lg object-cover" src={selectedMember.image} alt={selectedMember.name} />
+          
+          {/* Location */}
+          <div className="flex items-center mt-5 text-gray-600">
+            <FaMapMarkerAlt className="text-red-500 text-lg" />
+            <span className="ml-1 mt-1">{selectedMember.location}</span>
+          </div>
+
+          {/* Email & LinkedIn*/}
+          <div className="flex items-center mt-10">
+            <a href={`mailto:${selectedMember.email}`} className="flex items-center text-blue-500 hover:scale-110">
+              <FaEnvelope className="text-3xl" />
+            </a>
+            <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-700 hover:scale-110 cursor-pointer">
+              <FaLinkedin className="ml-5 text-3xl" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Section - Name, Title, Bio */}
+        <div className="w-2/3 p-6 -mt-6">
+          <Typography variant="h3" className="font-bold text-black">
+            {selectedMember.name}
+          </Typography>
+          <Typography className="italic text-gray-700 mt-1">
+            {selectedMember.title}
+          </Typography>
+          <Typography className="text-gray-600" sx={{ mt: 4 }}>
+            {selectedMember.bio}
+          </Typography>
+
+          {/* Close Button */}
+          <div className="mt-6">
+            <Button variant="contained" color="primary" onClick={handleClose}>
+              Close
+            </Button>
+          </div>
+        </div>
+      </div>
+    )}
+  </Box>
+</Modal>
+    </Section>
   );
 }
 

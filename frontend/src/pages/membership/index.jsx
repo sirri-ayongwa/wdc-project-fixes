@@ -97,7 +97,7 @@ function MembershipPage() {
             } ${clickedTab === "professionals" ? "animate-bounce" : ""}`}
         >
             <span className="block text-3xl font-bold">Professionals</span>
-            <hr
+            <hr 
               className={`h-px my-6 border-0 ${
               activeTab === "professionals" ? "bg-white" : "bg-black"
               }`}
