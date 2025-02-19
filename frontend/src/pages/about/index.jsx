@@ -12,7 +12,7 @@ import Button from "../../components/Button";
 
 function AboutPage() {
   return (
-    <div className="justify-center items-center flex flex-col p-8 mt-10 mx-28">
+    <div className="justify-center items-center flex flex-col p-8 mt-10 mx-2 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-24 2xl:mx-28">
       <div className='border-t-2 mb-6 border-gray-400 rounded-full w-full'></div>
       <div className="text-4xl text-center mb-6">
         "We are on a mission to end disaster impacts everywhere."
