@@ -42,7 +42,7 @@ const Benefits = () => {
                     href={item?.url}
                     className="ml-auto font-code text-xs font-bold uppercase tracking-wider hover:text-cyan-300"
                   >
-                    {item?.url === "" ? "Coming soon" : "Explore more"}
+                    {item?.url === "" ? "Coming soon" : `Explore ${item.title}`}
                   </a>
 
                   {item?.url === "" ? "" : <Arrow />}

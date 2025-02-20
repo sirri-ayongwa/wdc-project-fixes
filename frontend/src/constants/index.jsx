@@ -260,7 +260,7 @@ export const benefits = [
   },
   {
     id: "03",
-    title: "Roster",
+    title: "Roster Membership",
     text: "WDC’s roster includes experienced professionals, local experts, partner organizations, private companies, all ready for immediate action in disaster-affected areas. We value the unique contributions of every member, recognizing that a range of perspectives, skills, and local experiences enhance our ability to respond effectively.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,

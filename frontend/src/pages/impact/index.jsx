@@ -339,7 +339,7 @@ import { FaUserShield, FaUsers, FaSchool } from "react-icons/fa";
 import WDCLogo from "../../assets/images/wdclogobg.png";
 import GHTCLogo from "../../assets/images/GHTC.jpeg";
 import banner from "../../assets/images/workshop_banner.jpg";
-import burundi from "../../assets/images/burundi-national.jpg";
+import burundi from "../../assets/images/burundi.png";
 import NewsLetter from "../../components/newsletter";
 
 // Modal Component
