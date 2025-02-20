@@ -11,7 +11,6 @@ import james from "../assets/team/james.png";
 import jane from "../assets/team/Jane.png";
 import josephb from "../assets/team/joseph.png";
 import kibwe from "../assets/team/kibwe.png";
-import ledoux from "../assets/team/LedouxMedi.png";
 import marie from "../assets/team/marie.png";
 import oluwan from "../assets/team/Oluwandosin.png";
 import Rolande from "../assets/team/RolandeNamegabe.png";
