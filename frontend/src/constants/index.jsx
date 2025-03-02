@@ -23,8 +23,8 @@ import Wave from "../assets/wave.png";
 import Mud from "../assets/mud.png";
 import Floods from "../assets/floods.png";
 import Fire from "../assets/fire.png";
-import Earthquake from "../assets/earthquake.png";
-import desert from "../assets/desert.png";
+// import Earthquake from "../assets/earthquake.png";
+// import desert from "../assets/desert.png";
 import Flooding from "../assets/floooding.png";
 import avielon from "../assets/logos/Avielon_logo.png";
 import ghtc from "../assets/logos/GHTC_logo.jpeg";
@@ -334,6 +334,7 @@ export const dropdownData = [
       // "Our Values": "/about/values",
       "Our Team": "/about/team",
       "Our Partners": "/about/partners",
+      "Partner With Us": "/about/partner-with-us",
       // "Partner With Us": "/about/partnerwithus",
     },
   },

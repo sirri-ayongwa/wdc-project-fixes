@@ -49,6 +49,7 @@ import Events from "./pages/events/index.jsx";
 import CookieConsent from "./components/CookieConsent.jsx";
 import Story from './pages/story/index.jsx'
 import Africa from './pages/where_we_work/africa/index.jsx'
+import PartnerWithUs from './pages/partnerWithUs/index.jsx';
 
 import NewsDetail from "./components/NewsDetail.jsx";
 import EventsDetail from "./components/EventsDetail.jsx";
@@ -109,6 +110,7 @@ const App = () => {
           <Route path="/impact" element={<ImpactPage />} />
           <Route path="/about/mission" element={<MissionPage />} />
           <Route path="/about/team" element={<TeamPage />} />
+          <Route path="/about/partner-with-us" element={<PartnerWithUs />} />
           <Route path="/where-we-work/africa" element={<Africa />} />
           <Route path="/careers" element={<CareerPage />} />
           <Route path="/newsletter" element={<NewsLetterPage />} />
