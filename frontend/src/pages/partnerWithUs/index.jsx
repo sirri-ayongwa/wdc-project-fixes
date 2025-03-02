@@ -1,15 +1,14 @@
 import { useRef, useState } from "react";
-// import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-// import client from "../../api/client";
-import axios from "axios";
-
+import client from "../../api/client";
 export default function PartnerWithUs() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     organizationName: "",
+    organizationWebsite: "",
+    partnershipInterests: "",
     message: "",
   });
   const [pending, setPending] = useState(false);
@@ -22,7 +21,7 @@ export default function PartnerWithUs() {
   };
 
   const validateForm = () => {
-    if (!formData.firstName || !formData.lastName || !formData.email) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.organizationName || !formData.partnershipInterests) {
       toast.error("First Name, Last Name, and Email are required fields.", {
         theme: "dark",
       });
@@ -31,29 +30,30 @@ export default function PartnerWithUs() {
     return true;
   };
 
-  const submitForm =async (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    // if (!validateForm()) return;
-    // setPending(true);
-    try{
-      await axios.post("http://localhost:9000/api/organization/create", {firstName: formData.firstName, lastName: formData.lastName, email: formData.email, organizationName:formData.organizationName, message:formData.message})
-    }
-    catch(e){console.log(e)}
-    // emailjs
-    //   .sendForm(
-    //     "service_d3yy0xf", // Replace with your service ID
-    //     "template_zsnn9zs", // Replace with your template ID
-    //     form.current,
-    //     "S6rrT9Cqk-qhVNtap", // Replace with your public key
-    //   )
-    //   .then(() => {
-    //     setPending(false);
-    //     toast.success("Message sent successfully!", { theme: "dark" });
-    //   })
-    //   .catch((err) => {
-    //     setPending(false);
-    //     toast.error(`Error: ${err.text}`);
-    //   });
+    client.post("/api/organization/create", formData)
+      .then((res) => {
+        setPending(false);
+        if (res.data.success) {
+          toast.success(res.data.message, { theme: "dark" });
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            organizationName: "",
+            organizationWebsite: "",
+            partnershipInterests: "",
+            message: "",
+          });
+        } else {
+          toast.error(res.data.message, { theme: "dark" });
+        }
+      })
+      .catch((err) => {
+        setPending(false);
+        toast.error(err.message, { theme: "dark" });
+      });
   };
 
   return (
@@ -121,7 +121,7 @@ export default function PartnerWithUs() {
               <input
                 value={formData.company}
                 onChange={(e) =>
-                  setFormData({ ...formData, company: e.target.value })
+                  setFormData({ ...formData, organizationName: e.target.value })
                 }
                 name="company"
                 className={`${classes.inputField}`}
@@ -130,9 +130,40 @@ export default function PartnerWithUs() {
                 required
               />
             </div>
+            <div>
+              <label className={`${classes.label}`}>
+              Organization Website (Optional) <span className="text-red-500">*</span>
+              </label>
+              <input
+                value={formData.company}
+                onChange={(e) =>
+                  setFormData({ ...formData, organizationWebsite: e.target.value })
+                }
+                name="company"
+                className={`${classes.inputField}`}
+                type="text"
+                placeholder="Your Website"
+              />
+            </div>
+            <div>
+              <label className={`${classes.label}`}>
+              Partnership Interests <span className="text-red-500">*</span>
+              </label>
+              <input
+                value={formData.company}
+                onChange={(e) =>
+                  setFormData({ ...formData, partnershipInterests: e.target.value })
+                }
+                name="company"
+                className={`${classes.inputField}`}
+                type="text"
+                placeholder="Your Interests With WDC"
+                required
+              />
+            </div>
           </div>
           <div className="mb-6">
-            <label className={`${classes.label}`}>Message (Optional)</label>
+            <label className={`${classes.label}`}>Message</label>
             <textarea
               value={formData.message}
               onChange={(e) =>
@@ -142,6 +173,7 @@ export default function PartnerWithUs() {
               className={`${classes.inputField}`}
               rows="6"
               placeholder="Your Message"
+              required
             ></textarea>
           </div>
           <div className="flex justify-end">

@@ -3,7 +3,6 @@ import Organization from "../models/organizationModel";
 
 export const createOrganization = async (req: Request, res: Response):Promise<void> => {
   try {
-    console.log("checkkkk")
     const { firstName, lastName, email, organizationName, organizationWebsite, partnershipInterests, message } = req.body;
     
     if (!firstName || !lastName || !email || !organizationName || !partnershipInterests || !message) {
@@ -17,18 +16,18 @@ export const createOrganization = async (req: Request, res: Response):Promise<vo
         return;
     }
 
-    const organization = await Organization.create(
+    await Organization.create(
       {
         firstName,
         lastName,
         email,
         organizationName,
-        organizationWebsite:"www.wdc.org",
-        partnershipInterests:"strargeic",
+        organizationWebsite,
+        partnershipInterests,
         message
       }
     );
-    res.status(201).json(organization);
+    res.status(201).json({ success: true, message: "Message created successfully" });
   } catch (error) {
     res.status(400).json(error);
   }

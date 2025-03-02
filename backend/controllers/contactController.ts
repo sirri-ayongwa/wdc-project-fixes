@@ -20,7 +20,7 @@ export const createContact = async (req: Request, res: Response): Promise<void> 
     // Save contact
     await contact.save();
     // Send response
-    res.status(201).json({ success: true, contact });
+    res.status(201).json({ success: true, message: "Message sent successfully." });
   } catch (error) {
     // Send error
     res.status(500).json({ message: "Internal server error." });

@@ -29,7 +29,7 @@ app.use(morgan("dev")); // Request Logger
 app.use(express.json()); // Body Parser
 app.use(express.urlencoded({ extended: true })); // Body Parser With URL Encoded
 app.use(cookieParser()); // Cookie Parser
-app.use(cors()); // CORS
+app.use(cors({credentials: true, origin: "http://localhost:5173"})); // CORS
 app.use(mongoSanitize()); // Sanitize MongoDB / Prevent NoSQL Injection
 app.use(rateLimit({ //Rate Limit / Limit Request per 15 minutes
   windowMs: 15 * 60 * 1000,
