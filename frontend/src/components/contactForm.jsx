@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa"; // Icons
+import client from "../api/client";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,31 +26,29 @@ export default function ContactForm() {
     return true;
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setPending(true);
-    emailjs
-      .sendForm(
-        "service_d3yy0xf", // Replace with your service ID
-        "template_zsnn9zs", // Replace with your template ID
-        form.current,
-        "S6rrT9Cqk-qhVNtap", // Replace with your public key
-      )
-      .then(() => {
+    client.post("/api/contact/create", formData)
+      .then((res) => {
         setPending(false);
-        toast.success("Message sent successfully!", { theme: "dark" });
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          message: "",
-        });
+        if (res.data.success) {
+          toast.success(res.data.message, { theme: "dark" });
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          });
+        } else {
+          toast.error(res.data.message, { theme: "dark" });
+        }
       })
       .catch((err) => {
         setPending(false);
-        toast.error(`Error: ${err.text}`);
+        toast.error(err.response.data.message, { theme: "dark" });
       });
   };
 
