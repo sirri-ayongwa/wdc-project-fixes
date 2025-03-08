@@ -27,35 +27,3 @@ export const checkSMSVerificationCode = async (phoneNumber:string, code:string):
     return false;
   }
 }
-export const sendVerificationEmail = async (email:string, res:Response):Promise<void> => {
-  try {
-      const client = twilio(accountSid, authToken);
-      await client.verify.v2
-      .services(process.env.TWILIO_SERVICE_SID || "undefined value")
-      .verifications.create({
-        channel: "email",
-        to: email,
-      });
-      res.status(201).json("Code has been successfully to your email");
-    } catch (error:any) {
-      res.status(400).json(error.message);
-    }
-}
-export const checkEmailVerificationCode = async (email:string, code:string):Promise<boolean> => {
-  try{
-      const client = twilio(accountSid, authToken);
-      const verificationCheck = await client.verify.v2
-      .services(process.env.TWILIO_SERVICE_SID || "undefined value")
-      .verificationChecks.create({
-        code: code,
-        to: email,
-      });
-      if(verificationCheck.status === "approved"){
-        return true;
-      } else {
-        return false;
-      }
-  }catch{
-    return false;
-  }
-}

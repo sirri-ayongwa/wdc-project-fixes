@@ -1,5 +1,5 @@
 import { Request, RequestHandler, Response } from "express";
-import { checkSMSVerificationCode } from "../twilio/twilio";
+import { checkSMSVerificationCode } from "../utils/twilio";
 import Local from "../models/localModel";
 
 export const registerLocal:RequestHandler = async (req: Request, res: Response):Promise<void> => {

@@ -1,6 +1,7 @@
 import {Request, RequestHandler, Response } from 'express'
 import Professional from '../models/professionalModel'
-
+import VerificationCode from '../models/verificationCodeModel';
+import { verifyEmailVerificationCode } from "./nodemailerController"
 export const registerProfessional: RequestHandler = async (req: Request, res: Response):Promise<void> => {
     try{
         //Destructure request body
@@ -9,7 +10,8 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
             password, 
             firstName, 
             lastName,
-            phoneNumber
+            phoneNumber,
+            code
         } = req.body;
 
         //Check if all fields are filled
@@ -40,6 +42,16 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
         if (existingUser){
             res.status(400).json({ message: 'User already exists' });
             return;
+        }
+        //Check if code already sent
+        const existingCode = await VerificationCode.findOne({ email });
+        if(!existingCode){
+            res.status(400).json("Code doesn't exist");
+        }
+        //CHeck if the code is valid
+        const validCode = await verifyEmailVerificationCode(email,code);
+        if(!validCode){
+            res.status(400).json("Invalid code");
         }
         //Create new user
         const newUser = new Professional({
