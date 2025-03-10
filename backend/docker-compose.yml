@@ -1,0 +1,15 @@
+services:
+  backend:
+    container_name: backend
+    build: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env
+    restart: always
+
+
+    
+    
