@@ -47,11 +47,13 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
         const existingCode = await VerificationCode.findOne({ email });
         if(!existingCode){
             res.status(400).json("Code doesn't exist");
+            return;
         }
         //CHeck if the code is valid
         const validCode = await verifyEmailVerificationCode(email,code);
         if(!validCode){
             res.status(400).json("Invalid code");
+            return;
         }
         //Create new user
         const newUser = new Professional({

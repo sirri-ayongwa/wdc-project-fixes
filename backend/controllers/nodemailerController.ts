@@ -34,6 +34,7 @@ export const verifyEmailVerificationCode = async (email: string, code: string): 
         if(existingCode.code !== code){
             return false;
         }
+        await VerificationCode.deleteOne({ email });
         return true;
     } catch (error) {
         return false;
