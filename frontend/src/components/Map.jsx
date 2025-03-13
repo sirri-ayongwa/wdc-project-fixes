@@ -12,7 +12,7 @@ const mapData = { // 1 = In progress 2 = Completed
   HT: 3
 };
 
-const VectorMapComponent = () => {
+const VectorMapComponent = ({ onCountryClick }) => {
   const mapRef = useRef(null);
   const containerRef = useRef(null);
   const [key, setKey] = useState(0);
@@ -47,6 +47,11 @@ const VectorMapComponent = () => {
             },
           ],
         },
+        onRegionClick: (event, code) => {
+          if (mapData[code]) {
+            onCountryClick(code);
+          }
+        }
         // selectedRegions: ["CD", "BI"], // Preselect these countries
       });
     }

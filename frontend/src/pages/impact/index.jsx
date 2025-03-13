@@ -39,19 +39,30 @@ const statusColors = {
 };
 
 
+
 function ImpactPage() {
   // States for each collapsible section
-  const [isMadagascarExpanded, setIsMadagascarExpanded] = useState(false);
-  const [isHaitiExpanded, setIsHaitiExpanded] = useState(false);
-  const [isBurundiExpanded, setIsBurundiExpanded] = useState(false);
-  const [isDRCExpanded, setIsDRCExpanded] = useState(false);
-
   // Modal control
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const openModal = () => setIsModalOpen(true);
+  // const closeModal = () => setIsModalOpen(false);
 
   const [selectedProject, setSelectedProject] = useState(null)
+
+  const handleCountryClick = (countryCode) => {
+    let foundProject = null;
+    Object.values(impact).forEach((projects) => {
+      projects.forEach((project) => {
+        if (String(project.countryCode) === countryCode) { 
+          foundProject = project;
+        }
+      });
+    });
+
+    if (foundProject) {
+      setSelectedProject(foundProject);
+    }
+  }
 
   return (
     <Section className="overflow-hidden" id="membership">
@@ -64,7 +75,7 @@ function ImpactPage() {
         />
 
         <div className="w-full h-full mb-10">
-          <Map />
+          <Map onCountryClick={handleCountryClick}/>
         </div>
         
         <div className="flex flex-col lg:flex-row  w-full m-4 mt-10">
@@ -99,7 +110,7 @@ function ImpactPage() {
             <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
               {/* Close Button */}
               <button
-                className="absolute top-2 right-2 text-gray-700 text-2xl font-bold"
+                className="absolute top-0 right-0 px-2 text-gray-700 text-2xl rounded-full font-bold"
                 onClick={() => setSelectedProject(null)}
               >
                 ×
@@ -158,9 +169,6 @@ function ImpactPage() {
                       <td className="py-2 px-4 text-gray-700">{selectedProject.LocalImplementationOrganization || "Not Available"}</td>
                     </tr>
                   )}
-
-                  
-
                   <tr className="border-b border-gray-300">
                     <th className="py-2 px-4 text-gray-700 font-bold bg-blue-100">Contact Person</th>
                     <td className="py-2 px-4 text-gray-700">

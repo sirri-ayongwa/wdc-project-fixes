@@ -2,12 +2,12 @@ import WDCLogo from "../../assets/images/wdclogobg.png";
 import GHTCLogo from "../../assets/images/GHTC.jpeg";
 import banner from "../../assets/images/workshop_banner.jpg";
 import burundi from "../../assets/images/burundi.png";
-import { LocalLaundryService } from "@mui/icons-material";
 
 export const impact = {
   "Completed": [
     {
       country: "Democratic Republic of Congo",
+      countryCode: "CD",
       banner: banner,
       ProjectTitle: "Michael: Global Disaster Monitoring and Alert System Implementation",
       description: "The World Disaster Center (WDC) successfully executed a one-month pilot disaster management program in Kinshasa, the capital of the Democratic Republic of Congo (DRC). Conducted in collaboration with the Global Hub of Technology in Congo (GHTC), the initiative aimed to empower local communities, humanitarian organizations, and partners to strengthen disaster preparedness through the use of Michael, WDC’s innovative, real-time disaster monitoring and alert solution.",
@@ -33,6 +33,7 @@ export const impact = {
   "In Progress": [
     { 
       country: "Burundi",
+      countryCode: "BI",
       banner: burundi,
       ProjectTitle: "Michael: Global Disaster Monitoring and Alert System Implementation",
       description: "The World Disaster Center (WDC) is currently on the ground in Burundi to execute a one-month pilot program in one of Africa’s most disaster-prone countries. This mission is dedicated to empowering local communities, humanitarian organizations, and key partners by enhancing disaster preparedness and response. At the heart of this initiative is Michael, WDC’s real-time disaster monitoring and alert platform, designed to provide early warnings, improve coordination, and mitigate the impact of crises before they escalate.",
@@ -58,10 +59,11 @@ export const impact = {
   "Upcoming": [
     {
       country: "Madagascar",
-      status: "Upcoming",
+      countryCode: "MG",
     },
     {
       country: "Haiti",
+      countryCode: "HT",
     }
   ]
 };
