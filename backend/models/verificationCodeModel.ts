@@ -1,5 +1,4 @@
 import mongoose, { Document, Schema, Model } from "mongoose";
-import crypto from "crypto"
 
 interface IVerificationCode {
     email: string;
@@ -8,7 +7,7 @@ interface IVerificationCode {
 }
 const VerificationCodeSchema: Schema<IVerificationCode> = new Schema<IVerificationCode>({
     email: { type: String, required: true},
-    code: { type: String, default: crypto.randomInt(100000,999999).toString()},
+    code: { type: String, required: true},
     createdAt: { type: Date, default: Date.now, expires: 300 }
 })
 

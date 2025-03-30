@@ -1,73 +1,84 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { profile, signin, signup } from "../../api/user";
+import { sendVerificationCode, signupLocal } from "../../api/user";
 import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [sentVerificationCode, setSentVerificationCode] = useState(false);
+  const [code, setCode] = useState("");
   const [pending, setPending] = useState(false);
-  const [name, setName] = useState("");
   const navigate = useNavigate();
-
-  const myprofile = async () => {
-    const res = await profile();
-    if (res?.success) {
-      //   console.log(res);
-      navigate("/profile");
-    }
-  };
-
-  useEffect(() => {
-    // navigate("");
-    myprofile();
-  }, []);
-
-  const HandleSubmit = async (e) => {
+  const handleSignupLocal = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      toast.warn("Fill all the required field first");
+    try{
+      if (!code || !phoneNumber || !firstName || !lastName) {
+        toast.warn("Fill all the required field first");
+      }
+      setPending(true);
+      await signupLocal({ firstName, lastName, phoneNumber, code });
+      toast.success("Successfully Signed Up");
+      navigate("/");
+    } catch (e) {
+      toast.error("Error Siggning Up");
+    } finally {
+      setPending(false)
     }
-    if (password !== confirm) {
-      toast.warn("The two password do not match!");
-    }
-    setPending(true);
-    const res = await signup({ name, email, password });
-    if (res?.success) {
-      toast.success(`Sign up Complete`);
-      //   console.log(res);
-      navigate("/signin");
-      setPending(false);
-    } else {
-      //   console.log(res.response.data);
-      toast.error(
-        res?.response?.data?.error || "Erreur! Verifier votre connection"
-      );
+  };
+  const handleSendVerificationCode = async (e) => {
+    e.preventDefault();
+    try {
+      if (!phoneNumber || !firstName || !lastName) {
+        toast.warn("Fill all the required field first");
+      }
+      setPending(true);
+      const res = await sendVerificationCode(phoneNumber);
+      toast.success(res.data.message);
+      setSentVerificationCode(true);
+    } catch (e) {
+      toast.error(e.response.data.message);
+    } finally {
       setPending(false);
     }
   };
-
   return (
     <div className="m-4">
       <br />
       <br />
       <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-gray-800 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-blue-600 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-green-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
         <h2 className="text-2xl text-center font-bold text-white mb-6">
-          Register
+          Register Local
         </h2>
-
-        <form onSubmit={HandleSubmit}>
+        
+        <form onSubmit={handleSignupLocal}>
           <div className="mb-4">
             <label
               className="block text-sm font-medium text-gray-300"
               htmlFor="name"
             >
-              Full Name
+              First Name
             </label>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
+              name="name"
+              type="text"
+              required
+            />
+          </div>         
+          <div className="mb-4">
+            <label
+              className="block text-sm font-medium text-gray-300"
+              htmlFor="name"
+            >
+              Last Name
+            </label>
+            <input
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               name="name"
               id="email"
@@ -78,70 +89,60 @@ function SignUp() {
           <div className="mb-4">
             <label
               className="block text-sm font-medium text-gray-300"
-              htmlFor="email"
+              htmlFor="name"
             >
-              Email Address
+              Phone Number
             </label>
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-              name="email"
-              id="email"
-              type="email"
+              type="text"
               required
             />
           </div>
 
-          <div className="mb-4">
-            <label
-              className="block text-sm font-medium text-gray-300"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
-              rows="3"
-              name="password"
-              type="password"
-              id="bio"
-              required
-            ></input>
-          </div>
-          <div className="mb-4">
+          {sentVerificationCode && <div className="mb-4">
             <label
               className="block text-sm font-medium text-gray-300"
               htmlFor="confirmpassword"
             >
-              Confirm Password
+              Verifiaction Code
             </label>
             <input
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
               className="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-white"
               rows="3"
-              name="confirmpassword"
-              type="password"
+              name="verificationCode"
+              type="text"
               id="bio"
+              maxLength={6}
               required
             ></input>
-          </div>
+          </div>}
 
+          {!sentVerificationCode ? <div className="flex justify-center">
+            <button
+              disabled={pending}
+              className="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
+              onClick={handleSendVerificationCode}
+            >
+              {!pending ? "Sign Up" : "..."}
+            </button>
+          </div> :
           <div className="flex justify-center">
             <button
               disabled={pending}
               className="bg-gradient-to-r from-purple-600 via-purple-400 to-blue-500 text-white px-4 py-2 font-bold rounded-md hover:opacity-80"
-              type="submit"
+              onClick={handleSignupLocal}
             >
               {!pending ? "Sign Up" : "..."}
             </button>
-          </div>
+          </div>}
           <div className="text-center m-2">
             <span>Already have an account ? </span>{" "}
-            <Link className="underline text-center" to="/signin">
+            <Link className="underline text-center" to="/signinLocal">
               Login
             </Link>
           </div>

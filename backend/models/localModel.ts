@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 
 interface userId {
   userId: any;
+  phoneNumber: string;
 }
 
 interface ILocal extends Document {
@@ -45,7 +46,7 @@ interface ILocal extends Document {
   };
   additionalInfo?: string;
   comparePassword(enteredPassword: string): Promise<boolean>;
-  setJwtToken({ userId }: userId, res: Response): void;
+  setJwtToken({ userId, phoneNumber }: userId, res: Response): void;
 }
 
 const localSchema: Schema<ILocal> = new mongoose.Schema<ILocal>(
@@ -100,9 +101,12 @@ localSchema.pre('save', async function (next) {
 });
 
 // Generate JWT Token
-localSchema.methods.setJwtToken = function ({ userId }: userId, res: Response): void {
+localSchema.methods.setJwtToken = function ({ userId, phoneNumber }: userId, res: Response): void {
   const token = jwt.sign({ userId }, process.env.JWTSK || '17181919', { expiresIn: '1d' });
   res.cookie('jwt', token);
+  res.cookie('phoneNumber', phoneNumber, {
+    maxAge: 24 * 60 * 60 * 1000,
+  });
 };
 
 const Local: Model<ILocal> = mongoose.model<ILocal>('Local', localSchema);

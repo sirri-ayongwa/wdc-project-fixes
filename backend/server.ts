@@ -18,6 +18,7 @@ import organizationRoutes from "./routes/organizationRoutes"
 import nodemailerRoutes from "./routes/nodemailerRoutes"
 
 const app = express(); //Initialize Express Server
+app.set('trust proxy', 1);
 dotenv.config(); //Initialize dotenv
 
 mongoose //Connect to MongoDB
@@ -30,7 +31,7 @@ app.use(morgan("dev")); // Request Logger
 app.use(express.json()); // Body Parser
 app.use(express.urlencoded({ extended: true })); // Body Parser With URL Encoded
 app.use(cookieParser()); // Cookie Parser
-app.use(cors({credentials: true, origin: "http://localhost:5173"})); // CORS
+app.use(cors({credentials: true, origin: [ process.env.ORIGIN || "", process.env.ORIGIN2 || "" ]})); // CORS
 app.use(mongoSanitize()); // Sanitize MongoDB / Prevent NoSQL Injection
 app.use(rateLimit({ //Rate Limit / Limit Request per 15 minutes
   windowMs: 15 * 60 * 1000,

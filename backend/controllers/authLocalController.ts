@@ -32,7 +32,7 @@ export const registerLocal:RequestHandler = async (req: Request, res: Response):
             },
         });
         //Set JWT Token
-        res.cookie("jwt",newUser.setJwtToken({userId: newUser._id}, res));
+        newUser.setJwtToken({ userId: newUser._id, phoneNumber: newUser.phoneNumber[0].phoneNumber }, res);
         //Save user
         await newUser.save();
         //Send response
@@ -59,7 +59,7 @@ export const loginLocal = async (req: Request, res: Response):Promise<void> => {
             return;
         }
         //Set JWT Token
-        res.cookie("jwt",user.setJwtToken({userId: user._id}, res));
+        user.setJwtToken({ userId: user._id, phoneNumber: user.phoneNumber[0].phoneNumber}, res);
         //Send response
         res.status(200).json("Successfully logged in");
     } catch (error) {

@@ -1,21 +1,75 @@
 import client from "./client";
-import axios from "axios";
 const api_suffix = "/api/users/";
 
-export const signup = async (body) => {
+export const signupProfessional = async (body) => {
   try {
-    const { data } = await client.post(`${api_suffix}signup`, body, {
+    const res = await client.post(`/api/professional/register`, body);
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
+export const signupLocal = async (body) => {
+  try {
+    const res = await client.post(`/api/local/register`, body);
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
+export const sendVerificationCodeEmail = async (email) => {
+  if (!email) {
+    throw new Error("Email is required");
+  }
+  try {
+    const data = await client.post(`/api/nodemailer/sendEmailVerificationCode`, {
+      email,
+    });
+    return data;
+  } catch (error) {
+    console.log(error);
+    if(error.response.data.message == "Code already sent") {
+      return "Code already sent";
+    }
+    throw error;
+  }
+}
+export const sendVerificationCode = async (phoneNumber) => {
+  if (!phoneNumber) {
+    throw new Error("PhoneNumber is required");
+  }
+  try {
+    const data = await client.post(`/api/twilio/sendSMSVerificationCode`, {
+      phoneNumber,
+    });
+    console.log(phoneNumber);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+export const signinProfessional = async (body) => {
+  try {
+    const res = await client.post(`/api/professional/login`, body, {
       withCredentials: true,
       method: "POST",
     });
-    // console.log(data);
-    return data;
+    return res;
   } catch (error) {
-    // console.log(error);
-    return error;
+    throw error;
   }
 };
-
+export const signinLocal = async (body) => {
+  try {
+    const res = await client.post(`/api/local/login`, body, {
+      withCredentials: true,
+      method: "POST",
+    });
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
 export const completeProfile = async (body, id) => {
   try {
     console.log(body);
@@ -79,20 +133,6 @@ export const updateProfile = async (body, id) => {
         },
       }
     );
-    // console.log(data);
-    return data;
-  } catch (error) {
-    // console.log(error);
-    return error;
-  }
-};
-
-export const signin = async (credentials) => {
-  try {
-    const { data } = await client.post(`${api_suffix}signin`, credentials, {
-      withCredentials: true,
-      method: "POST",
-    });
     // console.log(data);
     return data;
   } catch (error) {

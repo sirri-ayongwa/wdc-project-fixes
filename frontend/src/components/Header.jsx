@@ -188,7 +188,7 @@ const Header = () => {
             {/* <SearchButton /> */}
 
             {/* Donate button */}
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 my-1">
               <Link
                 to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
                 target="_blank"
@@ -198,8 +198,11 @@ const Header = () => {
             </button>
 
             {/* Membership immediately after Donate */}
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
+            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
               <Link to="/membership">Membership</Link>
+            </button>
+            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
+              <Link to="/profile">Profile</Link>
             </button>
           </div>
           <HamburgerMenu />

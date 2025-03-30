@@ -5,12 +5,13 @@ import jwt from 'jsonwebtoken';
 
 interface userId {
   userId: any;
+  email: string;
 }
 
 interface IProfessional extends Document {
   firstName: string;
   lastName: string;
-  phoneNumber: string[];
+  phoneNumber?: string[];
   email: string[];
   password: string;
   role: string;
@@ -113,13 +114,13 @@ interface IProfessional extends Document {
   }[];
   attachments?: string[];
   comparePassword(enteredPassword: string): Promise<boolean>;
-  setJwtToken({ userId }: userId, res: Response): void;
+  setJwtToken({ userId, email }: userId, res: Response): void;
 }
 
 const ProfessionalSchema: Schema<IProfessional> = new Schema<IProfessional>({
   firstName: { type: String, required: true, trim: true },
   lastName: { type: String, required: true, trim: true },
-  phoneNumber: { type: [String], required: true },
+  phoneNumber: { type: [String] },
   email: { type: [String], required: true, unique: true },
   profileStatus: { type: String, enum: ['Incomplete', 'Inprogress', 'Completed'], default: 'Incomplete' },
   password: { type: String, required: true },
@@ -150,10 +151,13 @@ ProfessionalSchema.methods.comparePassword = async function (enteredPassword: st
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-ProfessionalSchema.methods.setJwtToken = function ({ userId }: userId, res: Response): void {
+ProfessionalSchema.methods.setJwtToken = function ({ userId, email }: userId, res: Response): void {
   const token = jwt.sign({ userId }, process.env.JWTSK || '17181919', { expiresIn: '1d' });
   res.cookie('jwt', token, {
     httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  });
+  res.cookie('email', email, {
     maxAge: 24 * 60 * 60 * 1000,
   });
 };
