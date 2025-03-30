@@ -10,12 +10,10 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
             password, 
             firstName, 
             lastName,
-            phoneNumber,
             code
         } = req.body;
-
         //Check if all fields are filled
-        if (!email || !password || !firstName || !lastName || !phoneNumber) {
+        if (!email || !password || !firstName || !lastName || !code) {
             res.status(403).json("Please fill all the mandatory fields");
             return;
         }
@@ -31,12 +29,6 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
             res.status(403).json("Your password must contain at least 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character")
             return;
         }
-        //Phone Number Validation
-        const phoneRegexTest = /^(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?$/
-        if(!phoneRegexTest.test(phoneNumber)){
-            res.status(403).json("Please check your phone number")
-            return;
-        } 
         //Check if user already exists
         const existingUser = await Professional.findOne({ email });
         if (existingUser){
@@ -61,11 +53,10 @@ export const registerProfessional: RequestHandler = async (req: Request, res: Re
             password, 
             firstName, 
             lastName,
-            phoneNumber,
             role: 'Professional'
         });
         //Set JWT Token
-        newUser.setJwtToken({userId: newUser._id}, res);
+        newUser.setJwtToken({userId: newUser._id, email: newUser.email[0]}, res);
         //Save user
         await newUser.save();
         //Send response to client
@@ -80,25 +71,25 @@ export const loginProfessional: RequestHandler = async (req: Request, res: Respo
         //Check if all fields are filled
         const { email, password } = req.body;
         if (!email || !password) {
-            res.status(403).json("Please add an email and a password");
+            res.status(403).json({ message:"Please add an email and a password" });
             return;
         }
         //Check if user exists
         const user = await Professional.findOne({ email });
         if (!user) {
-            res.status(400).json("Invalid credentials");
+            res.status(400).json({ message:"Invalid credentials" });
             return;
         }
         //Check if password is correct
         const isValid = await user.comparePassword(password);
         if (!isValid) {
-            res.status(400).json("Invalid credentials");
+            res.status(400).json({ message:"Invalid credentials" });
             return;
         }        
         //Set JWT Token
-        user.setJwtToken({userId: user._id},res);
+        user.setJwtToken({userId: user._id, email: user.email[0]},res);
         //Send response to client
-        res.status(200).json("Successfully logged in")
+        res.status(200).json({ message:"Successfully logged in" });
     } catch (error) {
         //Send error to client
         res.status(400).json(error)

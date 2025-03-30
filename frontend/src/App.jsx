@@ -1,14 +1,17 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import HomePage from "./pages/home";
 import NotfoundPage from "./pages/notfound";
-import SignIn from "./pages/signin";
+
+import SignInProfessional from "./pages/signinProfessional";
+import SignUpProfessional from "./pages/signupProfessional";
+import SignUpLocal from "./pages/signupLocal";
+import SignInLocal from "./pages/signinLocal";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import SignUp from "./pages/signup";
 import AdminPage from "./pages/admin";
 import ProfilePage from "./pages/profile";
 // import BlogsPage from "./pages/blogs";
@@ -55,10 +58,12 @@ import NewsDetail from "./components/NewsDetail.jsx";
 import EventsDetail from "./components/EventsDetail.jsx";
 
 import ProductDetail from "./components/ProductDetail.jsx";
+import Cookies from "js-cookie";
 
 const App = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -79,8 +84,11 @@ const App = () => {
 
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signinProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignInProfessional />} />
+          <Route path="/signupProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignUpProfessional />} />
+          <Route path="/signupLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignUpLocal />} />
+          <Route path="/signinLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignInLocal />} />
+
           <Route
             path="/profile/individual/complete/:id"
             element={<ProfileForm />}
