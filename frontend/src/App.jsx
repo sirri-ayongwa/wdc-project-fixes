@@ -17,6 +17,7 @@ import ProfilePage from "./pages/profile";
 // import BlogsPage from "./pages/blogs";
 import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
+import Register from "./pages/register";
 import ServicesPage from "./pages/services";
 import ContactPage from "./pages/contact";
 import DonorsPage from "./pages/donors";
@@ -84,6 +85,7 @@ const App = () => {
 
         <Routes>
           <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/register" element={<Register />} />
           <Route path="/signinProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignInProfessional />} />
           <Route path="/signupProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignUpProfessional />} />
           <Route path="/signupLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignUpLocal />} />
