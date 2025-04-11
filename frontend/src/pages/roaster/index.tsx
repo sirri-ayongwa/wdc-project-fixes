@@ -5,6 +5,7 @@ import BasicInfoForm from '../../components/onboarding/BasicInfoForm';
 import ReviewSubmit from '../../components/onboarding/ReviewSubmit';
 import RegistrationSuccess from '../../components/onboarding/RegistrationSuccess';
 import ProgressIndicator from '../../components/onboarding/ProgressIndicator';
+import ImageUpload from '../../components/onboarding/ImageUpload';
 import { RosterType, DocumentData } from '../../types/roaster';
 import { ArrowRight, ArrowLeft, Loader2 } from 'lucide-react';
 
@@ -18,6 +19,8 @@ const Register = () => {
     phone: '',
     address: '',
     documents: [] as DocumentData[],
+    image: null as File | null,
+    imagePreview: null as string | null,
   });
 
   const steps = ["Type", "Documents", "Info", "Review"];
@@ -32,6 +35,26 @@ const Register = () => {
 
   const handleDocumentsChange = (documents: DocumentData[]) => {
     setFormData(prev => ({ ...prev, documents }));
+  };
+
+  const handleImageUpload = (file: File) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setFormData(prev => ({
+        ...prev,
+        image: file,
+        imagePreview: reader.result as string
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleImageRemove = () => {
+    setFormData(prev => ({
+      ...prev,
+      image: null,
+      imagePreview: null
+    }));
   };
 
   const handleNextStep = () => {
@@ -61,6 +84,16 @@ const Register = () => {
         showToast(
           "Required Documents Missing",
           "Please upload all required documents before proceeding.",
+          "error"
+        );
+        return;
+      }
+
+      // Validate image upload
+      if (!formData.image) {
+        showToast(
+          "Profile Image Required",
+          "Please upload a profile image before proceeding.",
           "error"
         );
         return;
@@ -119,11 +152,22 @@ const Register = () => {
       case 1:
         if (!formData.type) return null;
         return (
-          <DocumentsSection
-            rosterType={formData.type}
-            documents={formData.documents}
-            onDocumentsChange={handleDocumentsChange}
-          />
+          <div className="space-y-6">
+            <DocumentsSection
+              rosterType={formData.type}
+              documents={formData.documents}
+              onDocumentsChange={handleDocumentsChange}
+            />
+            {formData.type && (
+              <ImageUpload
+                rosterType={formData.type}
+                image={formData.image}
+                preview={formData.imagePreview}
+                onUpload={handleImageUpload}
+                onRemove={handleImageRemove}
+              />
+            )}
+          </div>
         );
       case 2:
         if (!formData.type) return null;
@@ -151,6 +195,10 @@ const Register = () => {
               address: formData.address,
             }}
             documents={formData.documents}
+            profileImage={{
+              file: formData.image,
+              preview: formData.imagePreview
+            }}
           />
         );
       default:

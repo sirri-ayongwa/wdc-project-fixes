@@ -11,13 +11,23 @@ interface ReviewSubmitProps {
     address: string;
   };
   documents: DocumentData[];
+  profileImage: {
+    file: File | null;
+    preview: string | null;
+  };
 }
 
-const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents }) => {
+const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents, profileImage }) => {
   const rosterTypeLabels = {
     individual: "Individual",
     company: "Company",
     organization: "Organization"
+  };
+
+  const imageLabels = {
+    individual: "Profile Picture",
+    company: "Company Logo",
+    organization: "Organization Logo"
   };
 
   const extractedFields = documents
@@ -56,8 +66,29 @@ const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents
           </div>
         </div>
 
+        {/* Profile/Logo Image Section */}
+        {profileImage.preview && (
+          <div className="rounded-lg border shadow-sm overflow-hidden">
+            <div className="px-4 py-3 border-b">
+              <h3 className="text-lg font-semibold">{imageLabels[rosterType]}</h3>
+            </div>
+            <div className="px-4 py-4">
+              <div className="flex flex-col items-center">
+                <img 
+                  src={profileImage.preview} 
+                  alt={imageLabels[rosterType]} 
+                  className="object-cover w-32 h-32 rounded-lg border" 
+                />
+                <p className="text-sm text-gray-500 mt-2">
+                  {profileImage.file?.name}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Basic Information Section */}
-        <div className=" rounded-lg border shadow-sm overflow-hidden">
+        <div className="rounded-lg border shadow-sm overflow-hidden">
           <div className="px-4 py-3 border-b">
             <h3 className="text-lg font-semibold">Basic Information</h3>
           </div>
@@ -84,7 +115,7 @@ const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents
         </div>
 
         {/* Uploaded Documents Section */}
-        <div className=" rounded-lg border shadow-sm overflow-hidden">
+        <div className="rounded-lg border shadow-sm overflow-hidden">
           <div className="px-4 py-3 border-b">
             <h3 className="text-lg font-semibold">Uploaded Documents</h3>
           </div>
@@ -104,7 +135,7 @@ const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents
 
         {/* AI-Extracted Information Section */}
         {extractedFields.length > 0 && (
-          <div className=" rounded-lg border shadow-sm overflow-hidden">
+          <div className="rounded-lg border shadow-sm overflow-hidden">
             <div className="px-4 py-3 border-b">
               <h3 className="text-lg font-semibold">AI-Extracted Information</h3>
             </div>

@@ -38,7 +38,7 @@ const RosterTypeSelector: React.FC<RosterTypeSelectorProps> = ({ selectedType, o
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {options.map((option) => (
-          <div 
+          <div
             key={option.type}
             className={`bg-white rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:shadow-md ${
               selectedType === option.type 
@@ -49,9 +49,9 @@ const RosterTypeSelector: React.FC<RosterTypeSelectorProps> = ({ selectedType, o
           >
             <div className="p-4 pb-2">
               <div className="flex justify-between items-center">
-                <div 
+                <div
                   className={`p-2 rounded-full ${
-                    selectedType === option.type ? 'bg-black  text-white ' : 'bg-gray-500 text-white'
+                    selectedType === option.type ? 'bg-black text-white' : 'bg-gray-500 text-white'
                   }`}
                 >
                   {option.icon}
