@@ -68,6 +68,11 @@ export const navigation = [
     url: "/services",
   },
   {
+    id: "8",
+    title: "Academy",
+    url: "/academy",
+  },
+  {
     id: "7",
     title: "Contact",
     url: "/contact",
@@ -367,6 +372,15 @@ export const dropdownData = [
       Events: "/Events",
       News: "/News",
       Newsletter:  "/newsletter",
+    },
+  },
+  {
+    title: "Academy",
+    routings: {
+      Training: "/academy/training",
+      Mooc: "/academy/mooc",
+      Webinar: "/academy/webinar",
+      Workshop: "/academy/workshop",
     },
   },
   {

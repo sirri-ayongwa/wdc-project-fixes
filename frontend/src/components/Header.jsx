@@ -137,58 +137,53 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 min-[1340px]:bg-n-8/90 min-[1340px]:backdrop-blur-sm ${
-        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
-      }`}
-    >
-      <div className="container flex items-center justify-between py-2">
-        <Link to="/">
-          <div className="flex whitespace-nowrap gap-1">
-            <img src={WDC} alt="Brainwave" className="w-16 h-16" />
-            <div className="flex flex-col items-center justify-center text-center">
-              <span className="logo-style-1">WORLD DISASTER</span>
-              <span className="logo-style-2">CENTER</span>
-            </div>
+    className={`fixed top-0 left-0 w-full z-50 min-[1340px]:bg-n-8/90 min-[1340px]:backdrop-blur-sm ${
+      openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+    }`}
+  >
+    <div className="container flex flex-col min-[1340px]:flex-row items-center justify-between py-2">
+  
+      {/* Left: Logo */}
+      <Link to="/" className="shrink-0">
+        <div className="flex whitespace-nowrap  mr-5 gap-1">
+          <img src={WDC} alt="Brainwave" className="w-16 h-16" />
+          <div className="flex flex-col items-center justify-center text-center">
+            <span className="logo-style-1">WORLD DISASTER</span>
+            <span className="logo-style-2">CENTER</span>
           </div>
-        </Link>
-
-        <nav
-          className={`${
-            openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90`}
-        >
-          <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
-            {/* Home Link */}
-            <Link
-              className="mr-4 text-white font-light hover:text-sky-300"
-              to="/"
-            >
-              Home
-            </Link>
-            
-            {/* Dropdowns (About Us, What We Do, Resources, Get Involved) */}
-            {dropdownData.map((dropdown, index) => (
-              <DropdownItem
-                key={index}
-                setOpenNavigation={setOpenNavigation}
-                title={dropdown.title}
-                routings={dropdown.routings}
-              />
-            ))}
-            
-            {/* Impact below Get Involved */}
-            <Link
-              className="mr-4 text-white font-light hover:text-sky-300"
-              to="/impact"
-            >
-              Impact
-            </Link>
-
-            {/* Optional: keep Search here if you want */}
-            {/* <SearchButton /> */}
-
-            {/* Donate button */}
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 my-1">
+        </div>
+      </Link>
+  
+      {/* Middle: Navigation */}
+      <nav
+        className={`${
+          openNavigation ? "flex" : "hidden"
+        } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90 flex-grow justify-center`}
+      >
+        <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
+          <Link className="mr-8 text-white font-light hover:text-sky-300" to="/">
+            Home
+          </Link>
+  
+          {dropdownData.map((dropdown, index) => (
+            <DropdownItem
+              key={index}
+              setOpenNavigation={setOpenNavigation}
+              title={dropdown.title}
+              routings={dropdown.routings}
+            />
+          ))}
+  
+          <Link
+            className="mr-4 text-white font-light hover:text-sky-300"
+            to="/impact"
+          >
+            Impact
+          </Link>
+  
+          {/* Action Buttons */}
+          <div className="flex flex-col gap-2 min-[1340px]:flex-row items-center justify-center">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
               <Link
                 to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
                 target="_blank"
@@ -196,28 +191,28 @@ const Header = () => {
                 Donate
               </Link>
             </button>
-
-            {/* Membership immediately after Donate */}
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
+            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
               <Link to="/membership">Membership</Link>
             </button>
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
+            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
               <Link to="/profile">Profile</Link>
             </button>
           </div>
-          <HamburgerMenu />
-        </nav>
-
-        {/* Mobile toggle button */}
-        <Button
-          className="ml-auto min-[1340px]:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-        >
-          <MenuSvg openNavigation={openNavigation} />
-        </Button>
-      </div>
+        </div>
+        <HamburgerMenu />
+      </nav>
+  
+      {/* Mobile Toggle */}
+      <Button
+        className="ml-auto min-[1340px]:hidden"
+        px="px-3"
+        onClick={toggleNavigation}
+      >
+        <MenuSvg openNavigation={openNavigation} />
+      </Button>
     </div>
+  </div>
+  
   );
 };
 

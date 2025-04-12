@@ -53,12 +53,14 @@ import CookieConsent from "./components/CookieConsent.jsx";
 import Story from './pages/story/index.jsx'
 import Africa from './pages/where_we_work/africa/index.jsx'
 import PartnerWithUs from './pages/partnerWithUs/index.jsx';
+import AcademyPage from "./pages/academy/index.jsx";
 
 import NewsDetail from "./components/NewsDetail.jsx";
 import EventsDetail from "./components/EventsDetail.jsx";
 
 import ProductDetail from "./components/ProductDetail.jsx";
 import Cookies from "js-cookie";
+import Training from "./pages/trainings/index.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -70,7 +72,7 @@ const App = () => {
   }, [location]);
   useEffect(() => {
     setLoading(true);
-     
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -144,20 +146,24 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
 
           {/* Dynamic route for cases */}
-        <Route path="/cases/:caseName" element={<CaseDetail />} />
+          <Route path="/cases/:caseName" element={<CaseDetail />} />
           <Route path="*" element={<NotfoundPage />} />
 
-        <Route path="/News/:newsName" element= {<NewsDetail />} />
-        <Route path="/global-products/:productName" element= {<ProductDetail />} />
-        <Route path="/Events/:eventsName" element= {<EventsDetail />} />
+          <Route path="/News/:newsName" element={<NewsDetail />} />
+          <Route path="/global-products/:productName" element={<ProductDetail />} />
+          <Route path="/Events/:eventsName" element={<EventsDetail />} />
+
+          < Route path="/academy" element={<AcademyPage />} />
+          <Route path="/academy/training" element={<Training />} />
+
         </Routes>
-      
+
 
         <ToastContainer />
         <NewFooter />
         {/* <Footer /> */}
       </div>
-      <CookieConsent/>
+      <CookieConsent />
       <ChatBotComponent />
       <ButtonGradient />
     </>
