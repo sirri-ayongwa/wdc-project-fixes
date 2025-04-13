@@ -110,7 +110,6 @@
 // };
 
 // export default Header;
-
 import { Link, useLocation } from "react-router-dom";
 import WDC from "../assets/images/wdcimage.png";
 import { dropdownData } from "../constants";
@@ -119,8 +118,6 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState, useEffect } from "react";
 import DropdownItem from "./dropdownItem";
-import LanguageDropdown from "./MultiLangue";
-import SearchButton from "./SearchButton";
 
 const Header = () => {
   const pathname = useLocation();
@@ -137,82 +134,83 @@ const Header = () => {
 
   return (
     <div
-    className={`fixed top-0 left-0 w-full z-50 min-[1340px]:bg-n-8/90 min-[1340px]:backdrop-blur-sm ${
-      openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
-    }`}
-  >
-    <div className="container flex flex-col min-[1340px]:flex-row items-center justify-between py-2">
-  
-      {/* Left: Logo */}
-      <Link to="/" className="shrink-0">
-        <div className="flex whitespace-nowrap  mr-5 gap-1">
-          <img src={WDC} alt="Brainwave" className="w-16 h-16" />
-          <div className="flex flex-col items-center justify-center text-center">
-            <span className="logo-style-1">WORLD DISASTER</span>
-            <span className="logo-style-2">CENTER</span>
+      className={`fixed top-0 left-0 w-full z-50 min-[1340px]:bg-n-8/90 min-[1340px]:backdrop-blur-sm ${
+        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+      }`}
+    >
+      <div className="container flex flex-wrap items-center justify-between py-2">
+        {/* Left: Logo */}
+        <Link to="/" className="shrink-0">
+          <div className="flex whitespace-nowrap mr-5 gap-1">
+            <img src={WDC} alt="Brainwave" className="w-12 h-12" />
+            <div className="flex flex-col items-center justify-center text-center">
+              <span className="logo-style-1 text-sm">WORLD DISASTER</span>
+              <span className="logo-style-2 text-xs">CENTER</span>
+            </div>
           </div>
-        </div>
-      </Link>
-  
-      {/* Middle: Navigation */}
-      <nav
-        className={`${
-          openNavigation ? "flex" : "hidden"
-        } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90 flex-grow justify-center`}
-      >
-        <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
-          <Link className="mr-8 text-white font-light hover:text-sky-300" to="/">
-            Home
-          </Link>
-  
-          {dropdownData.map((dropdown, index) => (
-            <DropdownItem
-              key={index}
-              setOpenNavigation={setOpenNavigation}
-              title={dropdown.title}
-              routings={dropdown.routings}
-            />
-          ))}
-  
-          <Link
-            className="mr-4 text-white font-light hover:text-sky-300"
-            to="/impact"
-          >
-            Impact
-          </Link>
-  
-          {/* Action Buttons */}
-          <div className="flex flex-col gap-2 min-[1340px]:flex-row items-center justify-center">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
-              <Link
-                to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-                target="_blank"
-              >
-                Donate
-              </Link>
-            </button>
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
-              <Link to="/membership">Membership</Link>
-            </button>
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300">
-              <Link to="/profile">Profile</Link>
-            </button>
+        </Link>
+
+        {/* Middle: Navigation */}
+        <nav
+          className={`${
+            openNavigation ? "flex" : "hidden"
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90 flex-grow justify-center`}
+        >
+          <div className="relative w-full gap-x-2 z-2 flex flex-wrap items-center justify-center">
+            <Link
+              className="text-white font-light text-sm hover:text-sky-300"
+              to="/"
+            >
+              Home
+            </Link>
+
+            {dropdownData.map((dropdown, index) => (
+              <DropdownItem
+                key={index}
+                setOpenNavigation={setOpenNavigation}
+                title={dropdown.title}
+                routings={dropdown.routings}
+              />
+            ))}
+
+            <Link
+              className="text-white font-light text-sm hover:text-sky-300"
+              to="/impact"
+            >
+              Impact
+            </Link>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-2 items-center justify-center">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-xs py-1 px-3 rounded transition duration-300">
+                <Link
+                  to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                  target="_blank"
+                >
+                  Donate
+                </Link>
+              </button>
+              <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold text-xs py-1 px-3 rounded border border-blue-500 transition duration-300">
+                <Link to="/membership">Membership</Link>
+              </button>
+              <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold text-xs py-1 px-3 rounded border border-blue-500 transition duration-300">
+                <Link to="/profile">Profile</Link>
+              </button>
+            </div>
           </div>
-        </div>
-        <HamburgerMenu />
-      </nav>
-  
-      {/* Mobile Toggle */}
-      <Button
-        className="ml-auto min-[1340px]:hidden"
-        px="px-3"
-        onClick={toggleNavigation}
-      >
-        <MenuSvg openNavigation={openNavigation} />
-      </Button>
+          <HamburgerMenu />
+        </nav>
+
+        {/* Mobile Toggle */}
+        <Button
+          className="ml-auto min-[1340px]:hidden"
+          px="px-3"
+          onClick={toggleNavigation}
+        >
+          <MenuSvg openNavigation={openNavigation} />
+        </Button>
+      </div>
     </div>
-  </div>
-  
   );
 };
 

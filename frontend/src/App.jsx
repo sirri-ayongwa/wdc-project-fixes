@@ -61,6 +61,8 @@ import EventsDetail from "./components/EventsDetail.jsx";
 import ProductDetail from "./components/ProductDetail.jsx";
 import Cookies from "js-cookie";
 import Training from "./pages/trainings/index.jsx";
+import Individuals from "./pages/individuals/index.jsx";
+import Organizations from "./pages/organizations/index.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -155,6 +157,11 @@ const App = () => {
 
           < Route path="/academy" element={<AcademyPage />} />
           <Route path="/academy/training" element={<Training />} />
+          <Route path="/academy/training/individuals" element={<Individuals />} />
+          <Route path="/academy/training/organizations" element={<Organizations />} />
+
+         
+          
 
         </Routes>
 
