@@ -378,9 +378,8 @@ export const dropdownData = [
     title: "Academy",
     routings: {
       Training: "/academy/training",
-      Mooc: "/academy/mooc",
-      Webinar: "/academy/webinar",
-      Workshop: "/academy/workshop",
+      Individuals: "/academy/training/individuals",
+      Organizations: "/academy/training/organizations",
     },
   },
   {

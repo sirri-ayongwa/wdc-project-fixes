@@ -144,7 +144,7 @@ const Header = () => {
           <div className="flex whitespace-nowrap mr-5 gap-1">
             <img src={WDC} alt="Brainwave" className="w-12 h-12" />
             <div className="flex flex-col items-center justify-center text-center">
-              <span className="logo-style-1 text-sm">WORLD DISASTER</span>
+              <span className="logo-style-1 text-sm mb-2">WORLD DISASTER</span>
               <span className="logo-style-2 text-xs">CENTER</span>
             </div>
           </div>

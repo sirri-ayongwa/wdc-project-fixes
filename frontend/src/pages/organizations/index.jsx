@@ -7,23 +7,23 @@ const organizationOptions = [
 
     title: "In Person",
     description: "Tailored in-person training sessions for your team.",
-    link: "/academy/training/organizations/in-person",
+    link: "/academy/training/in-person",
     totalPeople: "Up to 50 people",
-    icon: <FaChalkboardTeacher className="text-blue-500 text-4xl mb-4" />,
+  icon: <FaChalkboardTeacher className="text-[#8E499B] text-6xl mb-4" />
   },
   {
     title: "MOOCs",
     description: "Online courses designed for organizational teams.",
-    link: "/academy/training/organizations/moocs",
+    link: "/academy/training/moocs",
     totalPeople: "Unlimited participants",
-    icon: <FaLaptop className="text-blue-500 text-4xl mb-4" />,
+      icon: <FaUsers className="text-[#35AC46] text-6xl mb-4" />,
   },
   {
     title: "Webinars",
     description: "Live webinars for your organization's staff.",
-    link: "/academy/training/organizations/webinars",
+    link: "/academy/training/webinars",
     totalPeople: "Up to 100 people",
-    icon: <FaUsers className="text-blue-500 text-4xl mb-4" />,
+      icon: <FaLaptop className="text-[#004574] text-6xl mb-4" />,
   },
 ];
 
@@ -40,19 +40,21 @@ const Organizations = () => {
         {organizationOptions.map((option, index) => (
           <div
             key={index}
-            className="border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow"
+            className="bg-white mb-4 rounded-lg shadow-md overflow-hidden p-6"
           >
 
             <div className="flex justify-center">{option.icon}</div>
-            <h2 className="text-xl font-semibold mb-2">{option.title}</h2>
-            <p className="text-white-600 mb-2">{option.description}</p>
-            <p className="text-white-500 mb-4">Capacity: {option.totalPeople}</p>
+            <h2 className="text-xl  text-emerald-950  text-center mb-2">{option.title}</h2>
+            <p className=" text-emerald-950 text-center mb-4">{option.description}</p>
+            <p className=" text-emerald-950 text-center mb-4">Capacity: {option.totalPeople}</p>
+            <div className=" flex justify-center">
             <a
               href={option.link}
-              className="text-blue-500 hover:underline font-medium"
+              className="flex text-blue-500  text-center hover:underline font-medium"
             >
               Learn More
             </a>
+            </div>
           </div>
         ))}
       </div>
