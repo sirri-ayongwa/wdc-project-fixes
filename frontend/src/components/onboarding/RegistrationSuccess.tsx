@@ -32,18 +32,11 @@ const RegistrationSuccess: React.FC<RegistrationSuccessProps> = ({ name, email }
       </div>
       
       <div className="pt-4">
-        <Link 
-          to="/" 
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 mr-3"
+        <Link
+          to="/"
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
         >
           Return to Home
-        </Link>
-        
-        <Link 
-          to="/dashboard" 
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-brand-600 hover:bg-brand-700 text-white h-10 px-4 py-2"
-        >
-          View Dashboard
         </Link>
       </div>
     </div>
