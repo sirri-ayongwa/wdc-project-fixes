@@ -101,8 +101,8 @@ const AdminDashboard: React.FC = () => {
     <div className="min-h-screen  p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-100">Registration Admin Dashboard</h1>
-          <p className="text-gray-500 mt-1">Manage and view user registrations</p>
+          <h1 className="text-2xl font-bold text-gray-100">Roaster Admin Dashboard</h1>
+          <p className="text-gray-500 mt-1">Manage and view user roaster details</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
