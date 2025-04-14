@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { File, Upload, X, Check, Loader2 } from "lucide-react";
 import { DocumentRequirement, DocumentData } from '../../types/roaster';
+import GeminiService from '../../service/gemini';
+
+// Add type declarations for environment variables
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      REACT_APP_GEMINI_API_KEY: string;
+    }
+  }
+  
+  interface ImportMeta {
+    env: {
+      VITE_GEMINI_API_KEY: string;
+      [key: string]: any;
+    }
+  }
+}
+
+// Initialize the Gemini service with your API key
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+const geminiService = new GeminiService(apiKey);
 
 interface DocumentUploadProps {
   requirement: DocumentRequirement;
-  document: DocumentData | undefined;
-  onUpload: (docId: string, file: File) => void;
+  documentData: DocumentData | undefined;
+  onUpload: (docId: string, file: File, extractedData?: Record<string, string>) => void;
   onRemove: (docId: string) => void;
 }
 
 const DocumentUpload: React.FC<DocumentUploadProps> = ({ 
   requirement, 
-  document, 
+  documentData,
   onUpload, 
   onRemove 
 }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [processingStatus, setProcessingStatus] = useState<'idle' | 'uploading' | 'extracting' | 'success' | 'error'>('idle');
+  const [extractionError, setExtractionError] = useState<string | null>(null);
+  
+  // Log API key on component mount (for debugging only, remove in production)
+  React.useEffect(() => {
+    if (!apiKey || apiKey.trim() === '') {
+      console.warn("Missing Gemini API key. Document extraction will likely fail.");
+    } else {
+      console.log("Gemini API key is configured");
+    }
+  }, []);
   
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -39,7 +71,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
     }
   };
 
-  const handleFileUpload = (file: File) => {
+  const handleFileUpload = async (file: File) => {
     // Check if file is PDF or image
     if (!file.type.match('application/pdf|image/jpeg|image/png|image/jpg')) {
       showToast("Invalid file type", "Please upload a PDF or image file (JPEG, PNG)", "error");
@@ -51,27 +83,83 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
       return;
     }
 
-    onUpload(requirement.id, file);
+    try {
+      setProcessingStatus('uploading');
+      setExtractionError(null);
+      
+      // First, generate preview (for display purposes)
+      const preview = await readFileAsDataURL(file);
+      
+      // Update the document in UI to show it's being processed
+      onUpload(requirement.id, file);
+      
+      // Start AI extraction process
+      setProcessingStatus('extracting');
+      
+      // Log that we're starting extraction
+      console.log(`Starting extraction for ${requirement.id} using Gemini API`);
+      
+      // Call Gemini API to extract data from the document
+      const extractionResult = await geminiService.extractDocumentData(file, requirement.id);
+      
+      if (!extractionResult.success || !extractionResult.extractedData) {
+        setProcessingStatus('error');
+        const errorMsg = extractionResult.error || "Unknown error occurred during extraction";
+        setExtractionError(errorMsg);
+        showToast("Extraction Failed", errorMsg, "error");
+        return;
+      }
+      
+      // Update document with extracted data
+      onUpload(requirement.id, file, extractionResult.extractedData);
+      setProcessingStatus('success');
+      showToast(
+        "Data Extracted Successfully",
+        `We've extracted the information from your ${requirement.name}.`,
+        "success"
+      );
+      
+    } catch (error: any) {
+      console.error("Error in file processing:", error);
+      setProcessingStatus('error');
+      const errorMessage = error.message || "An unexpected error occurred. Please try again.";
+      setExtractionError(errorMessage);
+      showToast("Processing Error", errorMessage, "error");
+    }
+  };
+  
+  // Helper function to read file as data URL for preview
+  const readFileAsDataURL = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(new Error('Failed to read file'));
+      reader.readAsDataURL(file);
+    });
   };
 
-  // Simple toast function to replace shadcn toast
+  // Simple toast function 
   const showToast = (title: string, message: string, type: 'success' | 'error') => {
-    // Here you would implement your own toast notification
-    // This is a simple example that you would replace with your preferred method
-    alert(`${title}: ${message}`);
+    const event = new CustomEvent('show-toast', {
+      detail: { title, description: message, variant: type }
+    });
+    window.document.dispatchEvent(event);
   };
 
   const handleRemoveFile = () => {
     onRemove(requirement.id);
+    setProcessingStatus('idle');
+    setExtractionError(null);
   };
 
-  const isUploaded = !!document?.file;
-  const isProcessing = document?.status === 'processing';
-  const isExtracted = document?.status === 'extracted';
-  const isError = document?.status === 'error';
+  // Use document status or local processing status
+  const isUploaded = !!documentData?.file;
+  const isProcessing = processingStatus === 'uploading' || processingStatus === 'extracting';
+  const isExtracted = documentData?.status === 'extracted' || processingStatus === 'success';
+  const isError = documentData?.status === 'error' || processingStatus === 'error';
 
   return (
-    <div className=" border rounded-lg shadow-sm overflow-hidden">
+    <div className="border rounded-lg shadow-sm overflow-hidden">
       <div className="p-4 pb-3 border-b">
         <div className="flex justify-between items-center">
           <h3 className="text-base font-medium">{requirement.name}</h3>
@@ -108,16 +196,23 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
                 <File className="h-8 w-8 text-brand-600" />
                 <div className="space-y-1">
                   <p className="text-sm font-medium truncate max-w-[180px]">
-                    {document?.file?.name}
+                    {documentData?.file?.name}
                   </p>
                   <p className="text-xs text-gray-500">
-                    {((document?.file?.size ?? 0) / 1024).toFixed(1)} KB
+                    {((documentData?.file?.size ?? 0) / 1024).toFixed(1)} KB
                   </p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-2">
-                {isProcessing && <Loader2 className="h-4 w-4 animate-spin text-brand-600" />}
+                {isProcessing && (
+                  <div className="flex items-center">
+                    <Loader2 className="h-4 w-4 animate-spin text-brand-600 mr-2" />
+                    <span className="text-xs text-brand-600">
+                      {processingStatus === 'uploading' ? 'Uploading...' : 'AI Extracting...'}
+                    </span>
+                  </div>
+                )}
                 {isExtracted && <Check className="h-4 w-4 text-green-600" />}
                 {isError && <X className="h-4 w-4 text-red-600" />}
                 <button
@@ -129,15 +224,15 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
               </div>
             </div>
             
-            {document?.preview && (
+            {documentData?.preview && (
               <div className="mt-4 border rounded-md overflow-hidden">
-                {document.file?.type === 'application/pdf' ? (
+                {documentData.file?.type === 'application/pdf' ? (
                   <div className="flex items-center justify-center bg-gray-100 h-20">
                     <p className="text-xs text-gray-500">PDF Preview</p>
                   </div>
                 ) : (
                   <img 
-                    src={document.preview} 
+                    src={documentData.preview} 
                     alt="Document preview" 
                     className="object-cover w-full h-32" 
                   />
@@ -145,13 +240,13 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
               </div>
             )}
             
-            {isExtracted && (
+            {isExtracted && documentData?.extractedData && (
               <div className="mt-4">
                 <p className="text-xs font-semibold text-brand-600 mb-2">
-                  Extracted Information
+                  AI Extracted Information
                 </p>
                 <div className="bg-gray-100 text-black rounded p-2.5 text-xs">
-                  {document?.extractedData && Object.entries(document.extractedData).map(([key, value]) => (
+                  {Object.entries(documentData.extractedData).map(([key, value]) => (
                     <div key={key} className="grid grid-cols-2 gap-2 py-1">
                       <span className="text-gray-500">{key}:</span>
                       <span className="font-medium">{value}</span>
@@ -164,7 +259,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
             {isError && (
               <div className="mt-3">
                 <p className="text-xs text-red-600">
-                  Error extracting data. Please try uploading again.
+                  {extractionError || "Error extracting data. Please try uploading again."}
                 </p>
               </div>
             )}

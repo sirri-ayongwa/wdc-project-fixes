@@ -338,8 +338,12 @@ export const dropdownData = [
       // "Our Story": "/about/story",
       // "Our Values": "/about/values",
       // "Our Team": "/about/team",
+      "Roster":  "/roster",
+  
       "Our Partners": "/about/partners",
       "Partner With Us": "/about/partner-with-us",
+      "Careers":"/careers",
+
       // "Partner With Us": "/about/partnerwithus",
     },
   },
@@ -372,7 +376,7 @@ export const dropdownData = [
       Events: "/Events",
       News: "/News",
       Newsletter:  "/newsletter",
-      Roster:  "/roster",
+    
     },
   },
   {
@@ -388,7 +392,7 @@ export const dropdownData = [
     routings: {
       // "Get Involved":"/",
       "Donate & Ways to Give": "/donate",
-      Careers:"/careers",
+      // Careers:"/careers",
       "Contact Us": "/contact",
     },
   },

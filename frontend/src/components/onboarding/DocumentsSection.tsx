@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DocumentUpload from './DocumentUpload';
 import { documentRequirements, RosterType, DocumentData } from '../../types/roaster';
-import { mockExtractedData } from '../../types/roaster';
 
 interface DocumentsSectionProps {
   rosterType: RosterType;
@@ -15,7 +14,7 @@ export const showToast = (title: string, description: string, variant: 'success'
   const event = new CustomEvent('show-toast', {
     detail: { title, description, variant }
   });
-  document.dispatchEvent(event);
+  window.document.dispatchEvent(event);
 };
 
 const DocumentsSection: React.FC<DocumentsSectionProps> = ({
@@ -25,7 +24,7 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({
 }) => {
   const requirements = documentRequirements[rosterType];
 
-  const handleUpload = (docId: string, file: File) => {
+  const handleUpload = (docId: string, file: File, extractedData?: Record<string, string>) => {
     const fileReader = new FileReader();
     fileReader.onload = () => {
       const preview = fileReader.result as string;
@@ -39,8 +38,8 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({
         name: requirements.find(r => r.id === docId)?.name || "Document",
         file: file,
         preview,
-        extractedData: null,
-        status: "processing"
+        extractedData: extractedData || null,
+        status: extractedData ? "extracted" : "processing"
       };
       
       // Update documents array
@@ -54,43 +53,11 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({
       
       onDocumentsChange(newDocuments);
       
-      // Simulate AI processing
-      setTimeout(() => {
-        const updatedDocuments = newDocuments.map(doc => {
-          if (doc.id === docId) {
-            // Check if we have mock data for this document type
-            if (mockExtractedData[docId]) {
-              return {
-                ...doc,
-                status: "extracted" as const,
-                extractedData: mockExtractedData[docId]
-              };
-            } else {
-              return {
-                ...doc,
-                status: "error" as const
-              };
-            }
-          }
-          return doc;
-        });
-        
-        onDocumentsChange(updatedDocuments);
-        
-        if (mockExtractedData[docId]) {
-          showToast(
-            "Data Extracted Successfully",
-            `We've extracted the information from your ${requirements.find(r => r.id === docId)?.name}.`,
-            "success"
-          );
-        } else {
-          showToast(
-            "Extraction Failed",
-            "We couldn't extract data from this document. Please try again.",
-            "error"
-          );
-        }
-      }, 2000);
+      // If AI didn't extract data yet, we'll show a processing state
+      if (!extractedData) {
+        // This is for backward compatibility with your existing code
+        // In the updated flow, AI extraction happens in DocumentUpload component
+      }
     };
     
     fileReader.readAsDataURL(file);
@@ -115,7 +82,7 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({
           <DocumentUpload
             key={requirement.id}
             requirement={requirement}
-            document={documents.find(doc => doc.id === requirement.id)}
+            documentData={documents.find(doc => doc.id === requirement.id)} // Changed from 'document' to 'documentData'
             onUpload={handleUpload}
             onRemove={handleRemove}
           />
