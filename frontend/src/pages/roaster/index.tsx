@@ -58,72 +58,46 @@ const Register = () => {
   };
 
   const handleNextStep = () => {
-    // Validation before moving to next step
     if (currentStep === 0 && !formData.type) {
-      showToast(
-        "Selection Required",
-        "Please select a registration type to continue.",
-        "error"
-      );
+      showToast("Selection Required", "Please select a registration type to continue.", "error");
       return;
     }
 
     if (currentStep === 1) {
-      // Check if required documents are uploaded
       const requiredDocIds = formData.type === 'individual'
         ? ['id_document']
         : formData.type === 'company'
           ? ['business_registration', 'tax_document']
           : ['org_certification', 'org_structure'];
-      
+
       const missingRequired = requiredDocIds.some(
         id => !formData.documents.find(doc => doc.id === id)
       );
 
       if (missingRequired) {
-        showToast(
-          "Required Documents Missing",
-          "Please upload all required documents before proceeding.",
-          "error"
-        );
+        showToast("Required Documents Missing", "Please upload all required documents before proceeding.", "error");
         return;
       }
 
-      // Validate image upload
       if (!formData.image) {
-        showToast(
-          "Profile Image Required",
-          "Please upload a profile image before proceeding.",
-          "error"
-        );
+        showToast("Profile Image Required", "Please upload a profile image before proceeding.", "error");
         return;
       }
     }
 
     if (currentStep === 2) {
-      // Validate basic info
       if (!formData.name || !formData.email || !formData.phone || !formData.address) {
-        showToast(
-          "Missing Information",
-          "Please fill in all fields before continuing.",
-          "error"
-        );
+        showToast("Missing Information", "Please fill in all fields before continuing.", "error");
         return;
       }
 
-      // Simple email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        showToast(
-          "Invalid Email",
-          "Please enter a valid email address.",
-          "error"
-        );
+        showToast("Invalid Email", "Please enter a valid email address.", "error");
         return;
       }
     }
 
-    // Move to the next step
     setCurrentStep(prevStep => prevStep + 1);
   };
 
@@ -131,14 +105,70 @@ const Register = () => {
     setCurrentStep(prevStep => Math.max(0, prevStep - 1));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsSubmitting(true);
-    
-    // Simulate API request
-    setTimeout(() => {
+
+    try {
+      // ✅ Merge all extractedData objects
+      const aiData = formData.documents.reduce((acc, doc) => {
+        if (doc.extractedData) {
+          return { ...acc, ...doc.extractedData };
+        }
+        return acc;
+      }, {});
+
+      const payload = {
+        registrationType: formData.type,
+        profilePicture: formData.imagePreview,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        idNumber: aiData["ID Number"] || "",
+        nationality: aiData["Nationality"] || "",
+        documentAddress: aiData["Document Address"] || "",
+        accountNumber: aiData["Account Number"] || "",
+
+        CompanyLogo: formData.imagePreview,
+        CompanyName: aiData["Company Name"] || "",
+        RegistrationNumber: aiData["Registration Number"] || "",
+        CompanyType: aiData["Company Type"] || "",
+        RegistrationDate: aiData["Registration Date"] || "",
+        TaxID: aiData["Tax ID"] || "",
+        TaxYear: aiData["Tax Year"] || "",
+        FilingStatus: aiData["Filing Status"] || "",
+        OrganizationName: aiData["Organization Name"] || "",
+        CertificationNumber: aiData["Certification Number"] || "",
+        IssueDate: aiData["Issue Date"] || "",
+        Status: aiData["Status"] || "",
+        Founded: aiData["Founded"] || "",
+        President: aiData["President"] || "",
+      };
+
+      console.log("Payload being sent:", payload); // ✅ Debug check
+
+      const response = await fetch("http://localhost:9000/api/roaster/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit registration");
+      }
+
+      const result = await response.json();
+      console.log("Submission successful:", result);
+
       setIsSubmitting(false);
-      setCurrentStep(steps.length); // Move to success page
-    }, 1500);
+      setCurrentStep(steps.length);
+    } catch (error) {
+      console.error("Submission error:", error);
+      setIsSubmitting(false);
+      showToast("Submission Failed", "An error occurred while submitting. Please try again.", "error");
+    }
   };
 
   const renderStepContent = () => {
@@ -158,15 +188,13 @@ const Register = () => {
               documents={formData.documents}
               onDocumentsChange={handleDocumentsChange}
             />
-            {formData.type && (
-              <ImageUpload
-                rosterType={formData.type}
-                image={formData.image}
-                preview={formData.imagePreview}
-                onUpload={handleImageUpload}
-                onRemove={handleImageRemove}
-              />
-            )}
+            <ImageUpload
+              rosterType={formData.type}
+              image={formData.image}
+              preview={formData.imagePreview}
+              onUpload={handleImageUpload}
+              onRemove={handleImageRemove}
+            />
           </div>
         );
       case 2:
@@ -212,10 +240,10 @@ const Register = () => {
         {currentStep < steps.length && (
           <ProgressIndicator steps={steps} currentStep={currentStep} />
         )}
-        
-        <div className="max-w-3xl mx-auto  rounded-lg shadow-sm border p-6 md:p-8">
+
+        <div className="max-w-3xl mx-auto rounded-lg shadow-sm border p-6 md:p-8">
           {renderStepContent()}
-          
+
           {currentStep < steps.length && (
             <div className="flex justify-between mt-8">
               {currentStep > 0 ? (
@@ -230,18 +258,18 @@ const Register = () => {
               ) : (
                 <div></div>
               )}
-              
+
               {currentStep < steps.length - 1 ? (
-                <button 
-                  onClick={handleNextStep} 
+                <button
+                  onClick={handleNextStep}
                   className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700"
                 >
                   Next
                   <ArrowRight className="h-4 w-4" />
                 </button>
               ) : (
-                <button 
-                  onClick={handleSubmit} 
+                <button
+                  onClick={handleSubmit}
                   disabled={isSubmitting}
                   className="px-4 py-2 bg-blue-600 text-white rounded-md flex items-center gap-2 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
