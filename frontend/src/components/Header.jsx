@@ -110,7 +110,6 @@
 // };
 
 // export default Header;
-
 import { Link, useLocation } from "react-router-dom";
 import WDC from "../assets/images/wdcimage.png";
 import { dropdownData } from "../constants";
@@ -119,8 +118,6 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState, useEffect } from "react";
 import DropdownItem from "./dropdownItem";
-import LanguageDropdown from "./MultiLangue";
-import SearchButton from "./SearchButton";
 
 const Header = () => {
   const pathname = useLocation();
@@ -141,32 +138,32 @@ const Header = () => {
         openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}
     >
-      <div className="container flex items-center justify-between py-2">
-        <Link to="/">
-          <div className="flex whitespace-nowrap gap-1">
-            <img src={WDC} alt="Brainwave" className="w-16 h-16" />
+      <div className="container flex flex-wrap items-center justify-between py-2">
+        {/* Left: Logo */}
+        <Link to="/" className="shrink-0">
+          <div className="flex whitespace-nowrap mr-5 gap-1">
+            <img src={WDC} alt="Brainwave" className="w-12 h-12" />
             <div className="flex flex-col items-center justify-center text-center">
-              <span className="logo-style-1">WORLD DISASTER</span>
-              <span className="logo-style-2">CENTER</span>
+              <span className="logo-style-1 text-sm mb-2">WORLD DISASTER</span>
+              <span className="logo-style-2 text-xs">CENTER</span>
             </div>
           </div>
         </Link>
 
+        {/* Middle: Navigation */}
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90`}
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 min-[1340px]:static min-[1340px]:flex min-[1340px]:bg-transparent opacity-90 flex-grow justify-center`}
         >
-          <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
-            {/* Home Link */}
+          <div className="relative w-full gap-x-2 z-2 flex flex-wrap items-center justify-center">
             <Link
-              className="mr-4 text-white font-light hover:text-sky-300"
+              className="text-white font-light text-sm hover:text-sky-300"
               to="/"
             >
               Home
             </Link>
-            
-            {/* Dropdowns (About Us, What We Do, Resources, Get Involved) */}
+
             {dropdownData.map((dropdown, index) => (
               <DropdownItem
                 key={index}
@@ -175,40 +172,36 @@ const Header = () => {
                 routings={dropdown.routings}
               />
             ))}
-            
-            {/* Impact below Get Involved */}
+
             <Link
-              className="mr-4 text-white font-light hover:text-sky-300"
+              className="text-white font-light text-sm hover:text-sky-300"
               to="/impact"
             >
               Impact
             </Link>
 
-            {/* Optional: keep Search here if you want */}
-            {/* <SearchButton /> */}
-
-            {/* Donate button */}
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 my-1">
-              <Link
-                to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
-                target="_blank"
-              >
-                Donate
-              </Link>
-            </button>
-
-            {/* Membership immediately after Donate */}
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
-              <Link to="/membership">Membership</Link>
-            </button>
-            <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold py-2 px-4 rounded border border-blue-500 transition duration-300 my-1">
-              <Link to="/profile">Profile</Link>
-            </button>
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-2 items-center justify-center">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-xs py-1 px-3 rounded transition duration-300">
+                <Link
+                  to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
+                  target="_blank"
+                >
+                  Donate
+                </Link>
+              </button>
+              <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold text-xs py-1 px-3 rounded border border-blue-500 transition duration-300">
+                <Link to="/membership">Membership</Link>
+              </button>
+              <button className="bg-white hover:bg-blue-100 text-blue-500 font-bold text-xs py-1 px-3 rounded border border-blue-500 transition duration-300">
+                <Link to="/profile">Profile</Link>
+              </button>
+            </div>
           </div>
           <HamburgerMenu />
         </nav>
 
-        {/* Mobile toggle button */}
+        {/* Mobile Toggle */}
         <Button
           className="ml-auto min-[1340px]:hidden"
           px="px-3"
