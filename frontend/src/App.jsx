@@ -17,8 +17,8 @@ import ProfilePage from "./pages/profile";
 // import BlogsPage from "./pages/blogs";
 import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
-import Roaster from "./pages/roaster";
-import RoasterDetails from "./pages/roaster-details";
+import Roster from "./pages/roster";
+import RosterDetails from "./pages/roster-details";
 import ServicesPage from "./pages/services";
 import ContactPage from "./pages/contact";
 import DonorsPage from "./pages/donors";
@@ -93,8 +93,8 @@ const App = () => {
 
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/roaster" element={<Roaster />} />
-          <Route exact path="/roaster-details" element={<RoasterDetails />} />
+          <Route exact path="/roster" element={<Roster />} />
+          <Route exact path="/roster-details" element={<RosterDetails />} />
           <Route path="/signinProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignInProfessional />} />
           <Route path="/signupProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignUpProfessional />} />
           <Route path="/signupLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignUpLocal />} />

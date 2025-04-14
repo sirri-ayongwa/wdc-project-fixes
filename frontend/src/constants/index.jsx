@@ -372,6 +372,7 @@ export const dropdownData = [
       Events: "/Events",
       News: "/News",
       Newsletter:  "/newsletter",
+      Roster:  "/roster",
     },
   },
   {
