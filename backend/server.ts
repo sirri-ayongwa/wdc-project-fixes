@@ -8,6 +8,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import hpp from "hpp";
 import dotenv from "dotenv";
+import roasterRoutes from "./routes/roaster";
 
 //Import Routes
 import localAuthRoutes from "./routes/localAuthRoutes"
@@ -17,12 +18,22 @@ import contactRoutes from "./routes/contactRoutes"
 import organizationRoutes from "./routes/organizationRoutes"
 import nodemailerRoutes from "./routes/nodemailerRoutes"
 
+
+
 const app = express(); //Initialize Express Server
 app.set('trust proxy', 1);
 dotenv.config(); //Initialize dotenv
 
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
+}));
+
 mongoose //Connect to MongoDB
-  .connect(process.env.DATABASE || "mongodb", {dbName: "wdc"})
+.connect(
+  "mongodb+srv://kiruikev99:nmi6M3g2AIjFBGyv@cluster0.jpvjpqb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  { dbName: "RoasterDB" })
   .then(() => console.log("DB connected"))
   .catch((err:any) => console.log(err));
 
@@ -49,6 +60,7 @@ app.use("/api/twilio", twilioRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/organization", organizationRoutes);
 app.use("/api/nodemailer", nodemailerRoutes);
+app.use("/api/roaster", roasterRoutes);
 //Default Route
 app.get("/", (req, res) => {
   res.send("API is running....");
