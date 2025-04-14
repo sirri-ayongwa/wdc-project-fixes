@@ -2,6 +2,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "react-helmet": "^6.1.0",
+    "resend": "^4.2.0",
     "swiper": "^11.2.1"
   }
 }

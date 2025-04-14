@@ -1,8 +1,6 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "build": {
-    "env": {
-      "COREPACK_USE_PNPM": "9"
-    }
+    "command": "pnpm install --no-frozen-lockfile && pnpm build"
   }
 }
