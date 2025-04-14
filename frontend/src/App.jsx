@@ -55,12 +55,19 @@ import CookieConsent from "./components/CookieConsent.jsx";
 import Story from './pages/story/index.jsx'
 import Africa from './pages/where_we_work/africa/index.jsx'
 import PartnerWithUs from './pages/partnerWithUs/index.jsx';
+import AcademyPage from "./pages/academy/index.jsx";
 
 import NewsDetail from "./components/NewsDetail.jsx";
 import EventsDetail from "./components/EventsDetail.jsx";
 
 import ProductDetail from "./components/ProductDetail.jsx";
 import Cookies from "js-cookie";
+import Training from "./pages/trainings/index.jsx";
+import Individuals from "./pages/individuals/index.jsx";
+import Organizations from "./pages/organizations/index.jsx";
+import InPerson from "./pages/inperson/index.jsx";
+import Moocs from "./pages/moocs/index.jsx";
+import Webinars from "./pages/webinars/index.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -72,7 +79,7 @@ const App = () => {
   }, [location]);
   useEffect(() => {
     setLoading(true);
-     
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -148,20 +155,32 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
 
           {/* Dynamic route for cases */}
-        <Route path="/cases/:caseName" element={<CaseDetail />} />
+          <Route path="/cases/:caseName" element={<CaseDetail />} />
           <Route path="*" element={<NotfoundPage />} />
 
-        <Route path="/News/:newsName" element= {<NewsDetail />} />
-        <Route path="/global-products/:productName" element= {<ProductDetail />} />
-        <Route path="/Events/:eventsName" element= {<EventsDetail />} />
+          <Route path="/News/:newsName" element={<NewsDetail />} />
+          <Route path="/global-products/:productName" element={<ProductDetail />} />
+          <Route path="/Events/:eventsName" element={<EventsDetail />} />
+
+          < Route path="/academy" element={<AcademyPage />} />
+          <Route path="/academy/training" element={<Training />} />
+          <Route path="/academy/training/individuals" element={<Individuals />} />
+          <Route path="/academy/training/organizations" element={<Organizations />} />
+          <Route path="/academy/training/in-person" element={<InPerson />} />
+          <Route path="/academy/training/moocs" element={<Moocs />} />
+          <Route path="/academy/training/webinars" element={<Webinars />} />
+
+
+
+
         </Routes>
-      
+
 
         <ToastContainer />
         <NewFooter />
         {/* <Footer /> */}
       </div>
-      <CookieConsent/>
+      <CookieConsent />
       <ChatBotComponent />
       <ButtonGradient />
     </>
