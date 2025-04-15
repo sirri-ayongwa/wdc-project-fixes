@@ -35,6 +35,9 @@ class GeminiService {
         };
       }
 
+      // Log file details for debugging
+      console.log(`Processing ${documentType} document: ${file.name}, type: ${file.type}, size: ${(file.size / 1024).toFixed(1)}KB`);
+
       // Convert the file to base64
       const base64Data = await this.fileToBase64(file);
       if (!base64Data) {
@@ -104,24 +107,25 @@ class GeminiService {
         {
           headers: {
             'Content-Type': 'application/json'
-          }
+          },
+          timeout: 60000 // 60 second timeout for large files
         }
       );
 
       // Process the response to extract structured data
       const result = this.processGeminiResponse(response.data, fieldsToExtract);
       
-      // Add mock data if extraction failed (FOR DEVELOPMENT ONLY - REMOVE IN PRODUCTION)
-      if (!result.success && import.meta.env.DEV) {
-        const mockData = this.getMockDataForDocumentType(documentType);
-        if (mockData) {
-          console.warn('Using mock data for development purposes');
-          return {
-            success: true,
-            extractedData: mockData
-          };
-        }
-      }
+      // // Add mock data if extraction failed (FOR DEVELOPMENT ONLY - REMOVE IN PRODUCTION)
+      // if (!result.success && import.meta.env.DEV) {
+      //   const mockData = this.getMockDataForDocumentType(documentType);
+      //   if (mockData) {
+      //     console.warn('Using mock data for development purposes');
+      //     return {
+      //       success: true,
+      //       extractedData: mockData
+      //     };
+      //   }
+      // }
       
       return result;
       
@@ -150,6 +154,16 @@ class GeminiService {
         errorMessage = `Request Error: ${error.message}`;
       }
       
+      // Special handling for timeouts
+      if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+        errorMessage = "The request timed out. Your file may be too large or complex to process.";
+      }
+      
+      // PDF-specific error handling
+      if (error.message?.includes('PDF') || (error.file && error.file.type === 'application/pdf')) {
+        errorMessage = "There was an issue processing your PDF. The file may be corrupted, password-protected, or too complex.";
+      }
+      
       return {
         success: false,
         error: errorMessage
@@ -158,14 +172,47 @@ class GeminiService {
   }
 
   /**
-   * Convert a file to base64 format
+   * Convert a file to base64 format with improved PDF handling
    */
   private fileToBase64(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = error => reject(error);
+      
+      // Use readAsArrayBuffer for PDFs for better handling
+      if (file.type === 'application/pdf') {
+        reader.readAsArrayBuffer(file);
+        reader.onload = () => {
+          try {
+            const arrayBuffer = reader.result as ArrayBuffer;
+            const bytes = new Uint8Array(arrayBuffer);
+            let binary = '';
+            const chunkSize = 1024; // Process in chunks to avoid memory issues
+            
+            // Process the PDF data in chunks
+            for (let i = 0; i < bytes.byteLength; i += chunkSize) {
+              const chunk = bytes.slice(i, Math.min(i + chunkSize, bytes.byteLength));
+              chunk.forEach(byte => {
+                binary += String.fromCharCode(byte);
+              });
+            }
+            
+            const base64 = btoa(binary);
+            resolve(`data:${file.type};base64,${base64}`);
+          } catch (error) {
+            console.error("Error converting PDF to base64:", error);
+            reject(error);
+          }
+        };
+      } else {
+        // Use the existing method for images
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result as string);
+      }
+      
+      reader.onerror = error => {
+        console.error("FileReader error:", error);
+        reject(error);
+      };
     });
   }
 
@@ -202,6 +249,14 @@ class GeminiService {
       
       case 'org_structure':
         return `Extract the following information from this organizational structure document: ${fieldsList}.
+                Format your response as a JSON object with these fields as keys.
+                Return ONLY the JSON object without any additional text.
+                If a field is not visible or readable, use "N/A" as the value.`;
+      
+      case 'Curricumulum Vitae':
+        return `Extract the following information from this CV or resume: ${fieldsList}.
+                For workExperience, provide a summary of the most recent positions.
+                For skills, provide a comma-separated list of key skills.
                 Format your response as a JSON object with these fields as keys.
                 Return ONLY the JSON object without any additional text.
                 If a field is not visible or readable, use "N/A" as the value.`;
@@ -247,6 +302,12 @@ class GeminiService {
         return [
           "organizationName", "legalStructure", "mainDepartments", 
           "governingBody", "numberOfMembers", "registrationStatus"
+        ];
+      
+      case 'Curricumulum Vitae':
+        return [
+          "fullName", "email", "phone", "education", 
+          "workExperience", "skills", "certifications"
         ];
       
       default:
@@ -371,54 +432,63 @@ class GeminiService {
    * Get mock data for development purposes
    * DEVELOPMENT ONLY - REMOVE IN PRODUCTION
    */
-  private getMockDataForDocumentType(documentType: string): Record<string, string> | null {
-    const mockData: Record<string, Record<string, string>> = {
-      'id_document': {
-        'fullName': 'John A. Smith',
-        'idNumber': 'X123456789',
-        'dateOfBirth': '1985-05-15',
-        'expiryDate': '2028-06-30',
-        'nationality': 'United States',
-        'gender': 'Male',
-        'issueDate': '2018-06-30',
-        'issuingAuthority': 'Department of State'
-      },
-      'business_registration': {
-        'companyName': 'Acme Corporation',
-        'registrationNumber': 'BRN-987654321',
-        'registrationDate': '2015-03-12',
-        'companyType': 'Limited Liability Company',
-        'registeredAddress': '123 Business Ave, Suite 500, New York, NY 10001',
-        'taxIdentificationNumber': 'TIN-12345678901'
-      },
-      'tax_document': {
-        'taxIdNumber': 'TAX-9876543210',
-        'taxYear': '2023',
-        'taxableIncome': '$1,250,000',
-        'taxPaid': '$312,500',
-        'filingDate': '2024-04-15',
-        'taxAuthority': 'Internal Revenue Service'
-      },
-      'org_certification': {
-        'organizationName': 'Global Health Initiative',
-        'certificationType': '501(c)(3) Non-Profit',
-        'certificationNumber': 'NPO-543210',
-        'issueDate': '2018-01-23',
-        'expiryDate': 'Perpetual',
-        'issuingBody': 'Internal Revenue Service'
-      },
-      'org_structure': {
-        'organizationName': 'Global Health Initiative',
-        'legalStructure': 'Non-profit Corporation',
-        'mainDepartments': 'Executive, Operations, Fundraising, Programs',
-        'governingBody': 'Board of Directors',
-        'numberOfMembers': '12 Board Members',
-        'registrationStatus': 'Active'
-      }
-    };
+  // private getMockDataForDocumentType(documentType: string): Record<string, string> | null {
+    // const mockData: Record<string, Record<string, string>> = {
+    //   'id_document': {
+    //     'fullName': 'John A. Smith',
+    //     'idNumber': 'X123456789',
+    //     'dateOfBirth': '1985-05-15',
+    //     'expiryDate': '2028-06-30',
+    //     'nationality': 'United States',
+    //     'gender': 'Male',
+    //     'issueDate': '2018-06-30',
+    //     'issuingAuthority': 'Department of State'
+    //   },
+    //   'business_registration': {
+    //     'companyName': 'Acme Corporation',
+    //     'registrationNumber': 'BRN-987654321',
+    //     'registrationDate': '2015-03-12',
+    //     'companyType': 'Limited Liability Company',
+    //     'registeredAddress': '123 Business Ave, Suite 500, New York, NY 10001',
+    //     'taxIdentificationNumber': 'TIN-12345678901'
+    //   },
+    //   'tax_document': {
+    //     'taxIdNumber': 'TAX-9876543210',
+    //     'taxYear': '2023',
+    //     'taxableIncome': '$1,250,000',
+    //     'taxPaid': '$312,500',
+    //     'filingDate': '2024-04-15',
+    //     'taxAuthority': 'Internal Revenue Service'
+    //   },
+    //   'org_certification': {
+    //     'organizationName': 'Global Health Initiative',
+    //     'certificationType': '501(c)(3) Non-Profit',
+    //     'certificationNumber': 'NPO-543210',
+    //     'issueDate': '2018-01-23',
+    //     'expiryDate': 'Perpetual',
+    //     'issuingBody': 'Internal Revenue Service'
+    //   },
+    //   'org_structure': {
+    //     'organizationName': 'Global Health Initiative',
+    //     'legalStructure': 'Non-profit Corporation',
+    //     'mainDepartments': 'Executive, Operations, Fundraising, Programs',
+    //     'governingBody': 'Board of Directors',
+    //     'numberOfMembers': '12 Board Members',
+    //     'registrationStatus': 'Active'
+    //   },
+    //   'Curricumulum Vitae': {
+    //     'fullName': 'Sarah J. Thompson',
+    //     'email': 'sarah.thompson@example.com',
+    //     'phone': '+1 (555) 123-4567',
+    //     'education': 'MBA, Stanford University; BS Computer Science, MIT',
+    //     'workExperience': 'Senior Product Manager at Tech Solutions Inc. (2019-Present); Product Analyst at Innovation Labs (2015-2019)',
+    //     'skills': 'Product Management, Agile Methodologies, Data Analysis, Project Planning, Team Leadership',
+    //     'certifications': 'Certified Scrum Product Owner (CSPO), Google Analytics Certification'
+    //   }
+    // };
     
-    return mockData[documentType] || null;
+    // return mockData[documentType] || null;
   }
-}
+// }
 
 export default GeminiService;

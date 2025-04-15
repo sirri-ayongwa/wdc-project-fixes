@@ -27,9 +27,9 @@ export const documentRequirements: Record<RosterType, DocumentRequirement[]> = {
     },
     {
       id: 'proof_of_address',
-      name: 'Proof of Address',
-      description: 'Utility bill, bank statement, or official mail (not older than 3 months)',
-      required: false
+      name: 'Professional CV',
+      description: 'Upload your latest CV or resume',
+      required: true
     }
   ],
   company: [

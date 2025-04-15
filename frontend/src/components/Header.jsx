@@ -159,13 +159,13 @@ const Header = () => {
         >
           <div className="relative w-full gap-x-1 z-2 flex flex-col items-center m-auto min-[1340px]:flex-row">
             {/* Home Link */}
-            <Link
+            {/* <Link
               className="mr-4 text-white font-light hover:text-sky-300"
               to="/"
             >
               Home
             </Link>
-            
+             */}
             {/* Dropdowns (About Us, What We Do, Resources, Get Involved) */}
             {dropdownData.map((dropdown, index) => (
               <DropdownItem
