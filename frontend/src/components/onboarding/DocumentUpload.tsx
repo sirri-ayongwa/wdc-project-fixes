@@ -11,11 +11,9 @@ declare global {
     }
   }
   
-  interface ImportMeta {
-    env: {
-      VITE_GEMINI_API_KEY: string;
-      [key: string]: any;
-    }
+  interface ImportMetaEnv {
+    VITE_GEMINI_API_KEY: string;
+    [key: string]: string | undefined;
   }
 }
 
