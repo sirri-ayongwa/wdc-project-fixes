@@ -14,7 +14,6 @@ import {
   sliders04,
   telegram,
   twitter,
-  yourlogo,
 } from "../assets";
 
 import Volcano from "../assets/volcano.png";
@@ -334,67 +333,75 @@ export const dropdownData = [
     title: "About Us",
     routings: {
       "About WDC": "/about",
-      // "Our Mission": "/about/mission",
-      // "Our Story": "/about/story",
-      // "Our Values": "/about/values",
-      // "Our Team": "/about/team",
-      "Roster":  "/roster",
-  
+      "Our Mission": "/about/mission",
+      "Our Story": "/about/story",
+      "Our Values": "/about/values",
+      "Our Team": "/about/team",
+      "Roster": "/roster",
       "Our Partners": "/about/partners",
       "Partner With Us": "/about/partner-with-us",
-      "Careers":"/careers",
-
-      // "Partner With Us": "/about/partnerwithus",
+      "Careers": "/careers",
+      "Annual Reports": "/about/reports",
+      "Press Room": "/about/press",
     },
   },
-  // {
-  //   title: "Where We Work",
-  //   routings: {
-  //     Africa: "/where-we-work/africa",
-  //     // Asia: "/",
-  //     // "South America": "/",
-  //     // Europe: "/about",
-  //     // "North America": "/",
-  //     // Antarctica: "/",
-  //     // Oceania: "/",
-  //   },
-  // },
   {
     title: "What We Do",
     routings: {
       "Tailored Solutions": "/solution",
       "Global Products": "/global-products",
+      "Disaster Prevention": "/solutions/prevention",
+      "Early Warning Systems": "/solutions/early-warning",
+      "Response Coordination": "/solutions/response",
+      "Recovery Planning": "/solutions/recovery",
+      "Data Analytics": "/solutions/analytics",
+      "Climate Resilience": "/solutions/climate",
+      "Case Studies": "/solutions/case-studies",
     },
   },
-  // {
-  //   title: "Impact",
-  //   route: "/impact",
-  // },
   {
     title: "Resources",
     routings: {
-      Events: "/Events",
-      News: "/News",
-      Newsletter:  "/newsletter",
-    
+      "Events": "/events",
+      "News": "/news",
+      "Newsletter": "/newsletter",
+      "Publications": "/resources/publications",
+      "Research Papers": "/resources/research",
+      "Toolkits": "/resources/toolkits",
+      "Webinars": "/resources/webinars",
+      "Disaster Database": "/resources/database",
+      "Policy Briefs": "/resources/policy",
+      "Infographics": "/resources/infographics",
     },
   },
   {
     title: "Academy",
     routings: {
-      Training: "/academy/training",
-      Individuals: "/academy/training/individuals",
-      Organizations: "/academy/training/organizations",
+      "Training": "/academy/training",
+      "Individuals": "/academy/training/individuals",
+      "Organizations": "/academy/training/organizations",
+      "Certification Programs": "/academy/certification",
+      "Online Courses": "/academy/courses",
+      "Workshops": "/academy/workshops",
+      "Mentorship": "/academy/mentorship",
+      "Disaster Simulations": "/academy/simulations",
+      "Learning Resources": "/academy/resources",
+      "Faculty": "/academy/faculty",
     },
   },
   {
     title: "Get Involved",
     routings: {
-      // "Get Involved":"/",
       "Donate & Ways to Give": "/donate",
-      // Careers:"/careers",
+      "Volunteer": "/get-involved/volunteer",
+      "Partnerships": "/get-involved/partnerships",
+      "Corporate Engagement": "/get-involved/corporate",
+      "Advocacy": "/get-involved/advocacy",
+      "Fundraising": "/get-involved/fundraising",
+      "Community Initiatives": "/get-involved/community",
+      "Student Involvement": "/get-involved/students",
       "Contact Us": "/contact",
     },
   },
-  
 ];
+  
