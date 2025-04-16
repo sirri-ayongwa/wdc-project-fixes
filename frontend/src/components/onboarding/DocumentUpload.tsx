@@ -4,18 +4,18 @@ import { DocumentRequirement, DocumentData } from '../../types/roaster';
 import GeminiService from '../../service/gemini';
 
 // Add type declarations for environment variables
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      REACT_APP_GEMINI_API_KEY: string;
-    }
-  }
-  
-  interface ImportMetaEnv {
-    VITE_GEMINI_API_KEY: string;
-    [key: string]: string | undefined;
-  }
-}
+// declare global {
+//   namespace NodeJS {
+//     interface ProcessEnv {
+//       REACT_APP_GEMINI_API_KEY: string;
+//     }
+//   }
+
+//   // interface ImportMetaEnv {
+//   //   VITE_GEMINI_API_KEY: string;
+//   //   [key: string]: string | undefined;
+//   // }
+// }
 
 // Initialize the Gemini service with your API key
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
@@ -28,16 +28,16 @@ interface DocumentUploadProps {
   onRemove: (docId: string) => void;
 }
 
-const DocumentUpload: React.FC<DocumentUploadProps> = ({ 
-  requirement, 
+const DocumentUpload: React.FC<DocumentUploadProps> = ({
+  requirement,
   documentData,
-  onUpload, 
-  onRemove 
+  onUpload,
+  onRemove
 }) => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [processingStatus, setProcessingStatus] = useState<'idle' | 'uploading' | 'extracting' | 'success' | 'error'>('idle');
   const [extractionError, setExtractionError] = useState<string | null>(null);
-  
+
   // Log API key on component mount (for debugging only, remove in production)
   React.useEffect(() => {
     if (!apiKey || apiKey.trim() === '') {
@@ -46,7 +46,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
       console.log("Gemini API key is configured");
     }
   }, []);
-  
+
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -55,7 +55,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       handleFileUpload(e.dataTransfer.files[0]);
     }
@@ -84,22 +84,22 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
     try {
       setProcessingStatus('uploading');
       setExtractionError(null);
-      
+
       // First, generate preview (for display purposes)
       const preview = await readFileAsDataURL(file);
-      
+
       // Update the document in UI to show it's being processed
       onUpload(requirement.id, file);
-      
+
       // Start AI extraction process
       setProcessingStatus('extracting');
-      
+
       // Log that we're starting extraction
       console.log(`Starting extraction for ${requirement.id} using Gemini API`);
-      
+
       // Call Gemini API to extract data from the document
       const extractionResult = await geminiService.extractDocumentData(file, requirement.id);
-      
+
       if (!extractionResult.success || !extractionResult.extractedData) {
         setProcessingStatus('error');
         const errorMsg = extractionResult.error || "Unknown error occurred during extraction";
@@ -107,7 +107,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
         showToast("Extraction Failed", errorMsg, "error");
         return;
       }
-      
+
       // Update document with extracted data
       onUpload(requirement.id, file, extractionResult.extractedData);
       setProcessingStatus('success');
@@ -116,7 +116,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
         `We've extracted the information from your ${requirement.name}.`,
         "success"
       );
-      
+
     } catch (error: any) {
       console.error("Error in file processing:", error);
       setProcessingStatus('error');
@@ -125,7 +125,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
       showToast("Processing Error", errorMessage, "error");
     }
   };
-  
+
   // Helper function to read file as data URL for preview
   const readFileAsDataURL = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -167,7 +167,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
         </div>
         <p className="text-xs text-gray-500 mt-1">{requirement.description}</p>
       </div>
-      
+
       <div>
         {!isUploaded ? (
           <div
@@ -201,7 +201,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-2">
                 {isProcessing && (
                   <div className="flex items-center">
@@ -221,7 +221,7 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
                 </button>
               </div>
             </div>
-            
+
             {documentData?.preview && (
               <div className="mt-4 border rounded-md overflow-hidden">
                 {documentData.file?.type === 'application/pdf' ? (
@@ -229,15 +229,15 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
                     <p className="text-xs text-gray-500">PDF Preview</p>
                   </div>
                 ) : (
-                  <img 
-                    src={documentData.preview} 
-                    alt="Document preview" 
-                    className="object-cover w-full h-32" 
+                  <img
+                    src={documentData.preview}
+                    alt="Document preview"
+                    className="object-cover w-full h-32"
                   />
                 )}
               </div>
             )}
-            
+
             {isExtracted && documentData?.extractedData && (
               <div className="mt-4">
                 <p className="text-xs font-semibold text-brand-600 mb-2">
@@ -247,13 +247,19 @@ const DocumentUpload: React.FC<DocumentUploadProps> = ({
                   {Object.entries(documentData.extractedData).map(([key, value]) => (
                     <div key={key} className="grid grid-cols-2 gap-2 py-1">
                       <span className="text-gray-500">{key}:</span>
-                      <span className="font-medium">{value}</span>
+                      <span className="font-medium">
+                        {typeof value === 'object' ? (
+                          <pre className="whitespace-pre-wrap">{JSON.stringify(value, null, 2)}</pre>
+                        ) : (
+                          value
+                        )}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
-            
+
             {isError && (
               <div className="mt-3">
                 <p className="text-xs text-red-600">

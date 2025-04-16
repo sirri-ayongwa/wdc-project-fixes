@@ -74,10 +74,10 @@ const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents
             </div>
             <div className="px-4 py-4">
               <div className="flex flex-col items-center">
-                <img 
-                  src={profileImage.preview} 
-                  alt={imageLabels[rosterType]} 
-                  className="object-cover w-32 h-32 rounded-lg border" 
+                <img
+                  src={profileImage.preview}
+                  alt={imageLabels[rosterType]}
+                  className="object-cover w-32 h-32 rounded-lg border"
                 />
                 <p className="text-sm text-gray-500 mt-2">
                   {profileImage.file?.name}
@@ -150,7 +150,15 @@ const ReviewSubmit: React.FC<ReviewSubmitProps> = ({ rosterType, data, documents
                         {doc.extractedData && Object.entries(doc.extractedData).map(([key, value]) => (
                           <div key={key} className="grid grid-cols-3 gap-2">
                             <dt className="col-span-1 text-xs text-muted-foreground">{key}:</dt>
-                            <dd className="col-span-2 text-sm font-medium">{value}</dd>
+                            <dd className="col-span-2 text-sm font-medium">
+                              {typeof value === 'object' ? (
+                                <pre className="bg-muted p-2 rounded text-xs whitespace-pre-wrap">
+                                  {JSON.stringify(value, null, 2)}
+                                </pre>
+                              ) : (
+                                value
+                              )}
+                            </dd>
                           </div>
                         ))}
                       </dl>

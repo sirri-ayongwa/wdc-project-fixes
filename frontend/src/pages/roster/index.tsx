@@ -212,6 +212,7 @@ const Register = () => {
         );
       case 3:
         if (!formData.type) return null;
+        console.log("Step 2 validation: ", formData);
         return (
           <ReviewSubmit
             rosterType={formData.type}
