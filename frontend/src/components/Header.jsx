@@ -189,7 +189,7 @@ const Header = () => {
                   ? "bg-blue-100 text-blue-700 border border-blue-700"
                   : "bg-white text-blue-500 border border-blue-500"
               }`}>
-                <Link to="/membership" className="relative z-10">
+                <Link to="https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE" className="relative z-10">
                   Subscribe
                 </Link>
                 <span className={`absolute inset-0 bg-blue-700 transform -translate-x-full transition-transform duration-500 ease-out ${
@@ -288,7 +288,7 @@ const Header = () => {
                     Subscribe
                   </Link>
                   <span className={`absolute inset-0 ${
-                    location.pathname === "/membership"
+                    location.pathname === "https://www.paypal.com/donate/?hosted_button_id=XXS7D6VJDM2YE"
                       ? "bg-blue-100 border border-blue-700"
                       : "bg-white border border-blue-500"
                   }`}></span>
