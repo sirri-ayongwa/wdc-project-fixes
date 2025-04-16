@@ -146,7 +146,6 @@ const Register = () => {
       };
 
       console.log("Payload being sent:", payload); // ✅ Debug check
-
       const response = await fetch("http://localhost:9000/api/roaster/create", {
         method: "POST",
         headers: {
