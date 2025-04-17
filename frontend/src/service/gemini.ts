@@ -274,6 +274,9 @@ class GeminiService {
    */
   private getFieldsForDocumentType(documentType: string): string[] {
     switch(documentType) {
+      case 'proof_of_address':
+        return ["name", "address", "date", "documentType", "issuer"];
+        
       case 'id_document':
         return [
           "fullName", "idNumber", "dateOfBirth", "expiryDate", 
@@ -427,68 +430,6 @@ class GeminiService {
       };
     }
   }
-
-  /**
-   * Get mock data for development purposes
-   * DEVELOPMENT ONLY - REMOVE IN PRODUCTION
-   */
-  // private getMockDataForDocumentType(documentType: string): Record<string, string> | null {
-    // const mockData: Record<string, Record<string, string>> = {
-    //   'id_document': {
-    //     'fullName': 'John A. Smith',
-    //     'idNumber': 'X123456789',
-    //     'dateOfBirth': '1985-05-15',
-    //     'expiryDate': '2028-06-30',
-    //     'nationality': 'United States',
-    //     'gender': 'Male',
-    //     'issueDate': '2018-06-30',
-    //     'issuingAuthority': 'Department of State'
-    //   },
-    //   'business_registration': {
-    //     'companyName': 'Acme Corporation',
-    //     'registrationNumber': 'BRN-987654321',
-    //     'registrationDate': '2015-03-12',
-    //     'companyType': 'Limited Liability Company',
-    //     'registeredAddress': '123 Business Ave, Suite 500, New York, NY 10001',
-    //     'taxIdentificationNumber': 'TIN-12345678901'
-    //   },
-    //   'tax_document': {
-    //     'taxIdNumber': 'TAX-9876543210',
-    //     'taxYear': '2023',
-    //     'taxableIncome': '$1,250,000',
-    //     'taxPaid': '$312,500',
-    //     'filingDate': '2024-04-15',
-    //     'taxAuthority': 'Internal Revenue Service'
-    //   },
-    //   'org_certification': {
-    //     'organizationName': 'Global Health Initiative',
-    //     'certificationType': '501(c)(3) Non-Profit',
-    //     'certificationNumber': 'NPO-543210',
-    //     'issueDate': '2018-01-23',
-    //     'expiryDate': 'Perpetual',
-    //     'issuingBody': 'Internal Revenue Service'
-    //   },
-    //   'org_structure': {
-    //     'organizationName': 'Global Health Initiative',
-    //     'legalStructure': 'Non-profit Corporation',
-    //     'mainDepartments': 'Executive, Operations, Fundraising, Programs',
-    //     'governingBody': 'Board of Directors',
-    //     'numberOfMembers': '12 Board Members',
-    //     'registrationStatus': 'Active'
-    //   },
-    //   'Curricumulum Vitae': {
-    //     'fullName': 'Sarah J. Thompson',
-    //     'email': 'sarah.thompson@example.com',
-    //     'phone': '+1 (555) 123-4567',
-    //     'education': 'MBA, Stanford University; BS Computer Science, MIT',
-    //     'workExperience': 'Senior Product Manager at Tech Solutions Inc. (2019-Present); Product Analyst at Innovation Labs (2015-2019)',
-    //     'skills': 'Product Management, Agile Methodologies, Data Analysis, Project Planning, Team Leadership',
-    //     'certifications': 'Certified Scrum Product Owner (CSPO), Google Analytics Certification'
-    //   }
-    // };
-    
-    // return mockData[documentType] || null;
-  }
-// }
+}
 
 export default GeminiService;
