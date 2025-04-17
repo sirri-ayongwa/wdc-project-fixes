@@ -1,13 +1,3 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "pnpm install --no-frozen-lockfile",
-          "buildCommand": "vercel-build-override.bat"
-      }
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
