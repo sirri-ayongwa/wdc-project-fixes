@@ -5,7 +5,7 @@
       "use": "@vercel/node",
       "config": {
         "installCommand": "pnpm install --no-frozen-lockfile",
-        "buildCommand": "pnpm build"
+          "buildCommand": "vercel-build-override.bat"
       }
     }
   ]
