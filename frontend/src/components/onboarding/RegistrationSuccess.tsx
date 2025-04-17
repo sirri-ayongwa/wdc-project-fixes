@@ -18,7 +18,7 @@ const RegistrationSuccess: React.FC<RegistrationSuccessProps> = ({ name, email }
       
       <div className="max-w-md mx-auto">
         <p className="text-muted-foreground">
-          Thank you for registering with RosterAI. We've sent a confirmation email to <span className="font-medium text-foreground">{email}</span>.
+          Thank you for registering with RosterAI.
         </p>
       </div>
       
