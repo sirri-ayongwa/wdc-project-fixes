@@ -19,6 +19,7 @@ import organizationRoutes from "./routes/organizationRoutes";
 import nodemailerRoutes from "./routes/nodemailerRoutes";
 
 // Initialize dotenv and Express
+//slight change
 dotenv.config();
 const app = express();
 app.set('trust proxy', 1);
