@@ -385,7 +385,7 @@ export const dropdownData = [
   },
 
   {
-    title: "About Us",
+    title: "About",
     routings: {
       // Column 1: About WDC
       "About the World Disaster Center": "/about/wdc",
@@ -396,7 +396,7 @@ export const dropdownData = [
       "Media & Analyst Briefings": "/about/media",
       "Contact Us": "/about/contact",
       "WDC Academy": "/about/academy",
-      "Roaster Membership": "/about/roster",
+      "Roaster Membership": "/roster",
       
       // Column 2: About Disaster
       "What Is a Disaster?": "/about/disaster",
