@@ -44,7 +44,6 @@ import canadagovernment from "../assets/logos/govermentofcanada_logo.png";
 import ada from "../assets/logos/ada_logo.png";
 import esa from "../assets/logos/esa_logo.png";
 // import raindrop from '../assets/'
-
 export const navigation = [
   {
     id: "0",
@@ -58,40 +57,25 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "About",
-    url: "/about",
-  },
-  {
-    id: "3",
-    title: "Services",
-    url: "/services",
-  },
-  {
-    id: "8",
-    title: "Academy",
-    url: "/academy",
-  },
-  {
-    id: "7",
     title: "Contact",
     url: "/contact",
   },
   {
-    id: "4",
+    id: "3",
     title: "Sign up",
     url: "/signup",
     onlyMobile: true,
     notconnected: true,
   },
   {
-    id: "5",
+    id: "4",
     title: "Sign in",
     url: "/signin",
     onlyMobile: true,
     notconnected: true,
   },
   {
-    id: "6",
+    id: "5",
     title: "Profile",
     url: "/profile",
     onlyMobile: true,
@@ -103,8 +87,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [];
 
-// export const companyLogos = [ghtc, avielon, pui, opendeved, ada];
-export const strategicpartner_companyLogos = [ canadagovernment, esa, orange, gcse, pui, kaizenmind, burohelp,rapidgrowth];
+export const strategicpartner_companyLogos = [canadagovernment, esa, orange, gcse, pui, kaizenmind, burohelp, rapidgrowth];
 export const collaborator_companyLogos = [ada, codeforafrica, opendeved];
 export const technicalsponsor_companyLogos = [google, esri];
 export const implmentationpartner_companyLogos = [undp, rha, ghtc];
@@ -276,7 +259,7 @@ export const benefits = [
   {
     id: "04",
     title: "Partnerships",
-    text: "WDC partners with strategic, technical, and funding collaborators, including financial sponsors and software providers, to bring our solutions to life. Supported by long-term investment partners and in-kind contributions, these collaborations drive sustainable and impactful disaster preperadness, response and recovery innovations.",
+    text: "WDC partners with strategic, technical, and funding collaborators, including financial sponsors and software providers, to bring our solutions to life. Supported by long-term investment partners and in-kind contributions, these collaborations drive sustainable and impactful disaster preparedness, response and recovery innovations.",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon1,
     imageUrl: "",
@@ -284,14 +267,6 @@ export const benefits = [
     comingsoon: true,
     url: "/about/partners",
   },
-  // {
-  //   id: "1",
-  //   title: "Real-Time Alerts",
-  //   text: "Notifies stakeholders of potential disasters as they are detected, enabling immediate response.",
-  //   backgroundUrl: "assets/benefits/card-1.svg",
-  //   iconUrl: benefitIcon1,
-  //   imageUrl: benefitImage2,
-  // },
 ];
 
 export const socials = [
@@ -327,81 +302,110 @@ export const socials = [
   },
 ];
 
-
 export const dropdownData = [
+  {
+    title: "Products",
+    routings: {
+      "Michael": "/products/michael",
+      "Lifeline": "/products/lifeline",
+      "Tectra": "/products/tectra",
+      "Crisis Atlas": "/products/crisis-atlas",
+      "Nostradamus": "/products/nostradamus",
+      "Risk Matrix": "/products/risk-matrix",
+      "Assessment Builder": "/products/assessment-builder",
+      "Field Collector": "/products/field-collector",
+      "Eagle": "/products/eagle",
+      "Argus": "/products/argus",
+    },
+  },
+  {
+    title: "Industries",
+    routings: {
+      "Disaster Risk Reduction & Emergency Management": "/industries/disaster-risk-reduction",
+      "Humanitarian Operations & Relief Logistics": "/industries/humanitarian-operations",
+      "Climate Change & Environmental Management": "/industries/climate-change",
+      "Health & Epidemic Intelligence": "/industries/health-epidemic",
+      "Urban Planning & Resilient Cities": "/industries/urban-planning",
+      "Water, Sanitation & Hygiene (WASH)": "/industries/wash",
+      "Food Security & Nutrition Systems": "/industries/food-security",
+      "Energy, Infrastructure & Utilities": "/industries/energy-infrastructure",
+      "Finance, Insurance & Risk Modeling": "/industries/finance-insurance",
+      "Education, Research & Knowledge Systems": "/industries/education-research",
+      "Natural Resource Governance & Mining": "/industries/natural-resources",
+      "Transportation & Logistics": "/industries/transportation-logistics",
+      "Telecommunications & Digital Infrastructure": "/industries/telecommunications",
+      "Governance, Policy & Global Cooperation": "/industries/governance-policy",
+      "Defense & Security": "/industries/defense-security",
+    },
+  },
+  {
+    title: "Support & Services",
+    routings: {
+      // Preparedness & Early Warning
+      "Real-Time Disaster Monitoring System Deployment": "/services/preparedness/monitoring-deployment",
+      "Custom Early Warning Systems": "/services/preparedness/early-warning",
+      "Hazard Mapping & Vulnerability Profiling": "/services/preparedness/hazard-mapping",
+      "Risk Index Development": "/services/preparedness/risk-index",
+      "Offline Early Alert Infrastructure Deployment": "/services/preparedness/offline-alert",
+      "Installation of Predictive Dashboards": "/services/preparedness/predictive-dashboards",
+      "Community-Based Preparedness Program Design": "/services/preparedness/community-preparedness",
+      "Climate Forecasting & Scenario Planning": "/services/preparedness/climate-forecasting",
+      // Response & Field Operations
+      
+      // Training & Capacity Building
+      "Access to WDC Academy Courses": "/services/training/academy-courses",
+      "Simulation-Based Preparedness Drills": "/services/training/preparedness-drills",
+      "On-Demand or In-Country Custom Training Programs": "/services/training/custom-training",
+      "Technical Training": "/services/training/technical-training",
+      "Emergency Response Certification": "/services/training/response-certification",
+      "Integration Workshops": "/services/training/integration-workshops",
+      // System Integration & Data Services
+      "Custom Dashboard Development": "/services/integration/dashboard-development",
+      "Secure System Integration": "/services/integration/system-integration",
+      "Real-Time Data Visualization & Analytics": "/services/integration/data-visualization",
+      "Automated Donor Reporting Systems": "/services/integration/donor-reporting",
+      "APIs for Partner Access": "/services/integration/partner-apis",
+      "Offline & Mobile Access Customization": "/services/integration/offline-access",
+      "Real-Time Risk Feed Integration": "/services/integration/risk-feed",
+  
+    },
+  },
+  {
+    title: " Arenas",
+    routings: {
+      "Crisis Chronicles": "/stories/crisis-chronicles",
+      "Impact Diaries": "/stories/impact-diaries",
+      "Forecasted Futures": "/stories/forecasted-futures",
+      "Visual Atlas": "/stories/visual-atlas",
+      "Behind the Systems": "/stories/behind-systems",
+      "Ground Zero": "/stories/ground-zero",
+      "Disasterpedia": "/stories/disasterpedia",
+      "Voices of Resilience": "/stories/voices-resilience",
+    },
+  },
+
   {
     title: "About Us",
     routings: {
-      "About WDC": "/about",
-      "Our Mission": "/about/mission",
-      "Our Story": "/about/story",
-      "Our Values": "/about/values",
-      "Our Team": "/about/team",
-      "Roster": "/roster",
-      "Our Partners": "/about/partners",
-      "Partner With Us": "/about/partner-with-us",
-      "Careers": "/careers",
-      "Annual Reports": "/about/reports",
-      "Press Room": "/about/press",
-    },
-  },
-  {
-    title: "What We Do",
-    routings: {
-      "Tailored Solutions": "/solution",
-      "Global Products": "/global-products",
-      "Disaster Prevention": "/solutions/prevention",
-      "Early Warning Systems": "/solutions/early-warning",
-      "Response Coordination": "/solutions/response",
-      "Recovery Planning": "/solutions/recovery",
-      "Data Analytics": "/solutions/analytics",
-      "Climate Resilience": "/solutions/climate",
-      "Case Studies": "/solutions/case-studies",
-    },
-  },
-  {
-    title: "Resources",
-    routings: {
-      "Events": "/events",
-      "News": "/news",
-      "Newsletter": "/newsletter",
-      "Publications": "/resources/publications",
-      "Research Papers": "/resources/research",
-      "Toolkits": "/resources/toolkits",
-      "Webinars": "/resources/webinars",
-      "Disaster Database": "/resources/database",
-      "Policy Briefs": "/resources/policy",
-      "Infographics": "/resources/infographics",
-    },
-  },
-  {
-    title: "Academy",
-    routings: {
-      "Training": "/academy/training",
-      "Individuals": "/academy/training/individuals",
-      "Organizations": "/academy/training/organizations",
-      "Certification Programs": "/academy/certification",
-      "Online Courses": "/academy/courses",
-      "Workshops": "/academy/workshops",
-      "Mentorship": "/academy/mentorship",
-      "Disaster Simulations": "/academy/simulations",
-      "Learning Resources": "/academy/resources",
-      "Faculty": "/academy/faculty",
-    },
-  },
-  {
-    title: "Get Involved",
-    routings: {
-      "Donate & Ways to Give": "/donate",
-      "Volunteer": "/get-involved/volunteer",
-      "Partnerships": "/get-involved/partnerships",
-      "Corporate Engagement": "/get-involved/corporate",
-      "Advocacy": "/get-involved/advocacy",
-      "Fundraising": "/get-involved/fundraising",
-      "Community Initiatives": "/get-involved/community",
-      "Student Involvement": "/get-involved/students",
-      "Contact Us": "/contact",
+      // Column 1: About WDC
+      "About the World Disaster Center": "/about/wdc",
+      "WDC Programs & Global Missions": "/about/programs",
+      "Events & Deployments": "/about/events",
+      "Strategic Partners": "/about/partners",
+      "Join the Team": "/about/join",
+      "Media & Analyst Briefings": "/about/media",
+      "Contact Us": "/about/contact",
+      "WDC Academy": "/about/academy",
+      "Roaster Membership": "/about/roster",
+      
+      // Column 2: About Disaster
+      "What Is a Disaster?": "/about/disaster",
+      "How to End Disaster Impacts?": "/about/end-disaster",
+      // Column 3: Commitment to Innovation
+      "Artificial Intelligence": "/about/innovation/ai",
+      "Satellite & Drone Integration": "/about/innovation/satellite-drone",
+      "Blockchain-Enabled Disaster Finance": "/about/innovation/blockchain",
+      "Digital Humanitarian Transformation": "/about/innovation/digital-transformation",
     },
   },
 ];
-  

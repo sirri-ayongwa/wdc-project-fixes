@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Section crosses className="!px-0 !py-10">
+    <Section crosses className="!px-0 !py-10 ">
       <div className="container flex justify-center ">
         <div>
           <NewsLetter />
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container flex justify-around">
+      <div className="container flex justify-around ">
         <div>
           <br />
           <br />
