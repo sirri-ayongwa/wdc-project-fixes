@@ -393,10 +393,11 @@ export const dropdownData = [
       "Events & Deployments": "/about/events",
       "Strategic Partners": "/about/partners",
       "Join the Team": "/about/join",
+      "Roaster Membership": "/roster",
       "Media & Analyst Briefings": "/about/media",
       "Contact Us": "/about/contact",
       "WDC Academy": "/about/academy",
-      "Roaster Membership": "/roster",
+    
       
       // Column 2: About Disaster
       "What Is a Disaster?": "/about/disaster",
