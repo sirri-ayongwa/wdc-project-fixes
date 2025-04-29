@@ -331,6 +331,7 @@ export const dropdownData = [
       // "Our Values": "/about/values",
       "Our Team": "/about/team",
       "Our Partners": "/about/partners",
+      "Roster": "/roster",
       // "Partner With Us": "/about/partnerwithus",
     },
   },
