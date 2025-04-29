@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import Button from "../../components/Button";
 import Section from "../../components/Section";
-import TagLine from "../../components/Tagline";
+// import TagLine from "../../components/Tagline";
 import Heading from "../../components/Heading";
 
 function NotfoundPage() {

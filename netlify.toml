@@ -1,0 +1,12 @@
+# netlify.toml
+[build]
+  # Adjust the command to match your build command in package.json
+  command = "npm run build"
+  # Adjust to match your build output directory
+  publish = "dist"  # or "build" for Create React App
+
+# This tells Netlify to redirect all requests to index.html so React Router can handle them
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

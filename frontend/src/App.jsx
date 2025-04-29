@@ -92,6 +92,7 @@ const App = () => {
         <Header />
 
         <Routes>
+     
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/roster" element={<Roster />} />
           <Route exact path="/roster-details" element={<RosterDetails />} />
