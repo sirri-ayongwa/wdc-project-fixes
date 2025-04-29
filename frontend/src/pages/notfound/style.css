@@ -1,0 +1,41 @@
+.notfound-container {
+    background: linear-gradient(135deg, rgb(105, 160, 241) 0%, rgb(27, 8, 94)00%);
+  }
+  
+  .notfound-text {
+    font-size: 80px;
+    font-weight: 900;
+    fill: #f3f5f8;
+    opacity: 0.8;
+  }
+  
+  .notfound-circle {
+    fill: #606c80;
+    opacity: 0.6;
+  }
+  
+  .notfound-line {
+    stroke: #9fb9e4;
+    stroke-width: 2;
+    opacity: 0.6;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .notfound-circle {
+      animation: pulse 3s infinite;
+    }
+    
+    .notfound-line {
+      animation: dash 3s infinite;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+  }
+  
+  @keyframes dash {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+  }

@@ -1,7 +1,7 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, Navigate } from "react-router-dom";
 import HomePage from "./pages/home";
 import NotfoundPage from "./pages/notfound";
 
@@ -19,7 +19,7 @@ import SingleBlogDisplay from "./pages/blog";
 import AboutPage from "./pages/about";
 import Roster from "./pages/roster";
 import RosterDetails from "./pages/roster-details";
-import ServicesPage from "./pages/services";
+// import ServicesPage from "./pages/services";
 import ContactPage from "./pages/contact";
 import DonorsPage from "./pages/donors";
 import VisionPage from "./pages/vision";
@@ -27,7 +27,7 @@ import OurValuePage from "./pages/value";
 import MissionPage from "./pages/mission";
 import ProjectsPage from "./pages/project";
 import WhatWeOfferPage from "./pages/offer";
-import Testing from "./pages/recordPage.jsx";
+// import Testing from "./pages/recordPage.jsx";
 import EagleProject from "./pages/project/eagle";
 import { useEffect, useState } from "react";
 // import TeamPage from "./components/team.jsx";
@@ -85,10 +85,24 @@ const App = () => {
     }, 1000);
   }, []);
 
+  const is404Page = location.pathname === "/404" || location.pathname === "/not-found";
+
+  if (loading) {
+    return <LoaderAnimation />;
+  }
+
+  // Render different layouts based on the current route
   return (
     <>
-      {loading ? <LoaderAnimation /> : null}
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      {is404Page ? (
+        // 404 page layout - standalone without header/footer
+        <Routes>
+          <Route path="/404" element={<NotfoundPage />} />
+          <Route path="/not-found" element={<NotfoundPage />} />
+        </Routes>
+      ) : (
+        // Regular page layout with header and footer
+        <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
 
         <Routes>
@@ -169,21 +183,16 @@ const App = () => {
           <Route path="/academy/training/organizations" element={<Organizations />} />
           <Route path="/academy/training/in-person" element={<InPerson />} />
           <Route path="/academy/training/moocs" element={<Moocs />} />
-          <Route path="/academy/training/webinars" element={<Webinars />} />
-
-
-
-
+          <Route path="/academy/training/webinars" element={<Webinars />} /> 
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
-
-
         <ToastContainer />
-        <NewFooter />
-        {/* <Footer /> */}
-      </div>
-      <CookieConsent />
-      <ChatBotComponent />
-      <ButtonGradient />
+          <NewFooter />
+          <ButtonGradient />
+          <CookieConsent />
+          <ChatBotComponent />
+        </div>
+      )}
     </>
   );
 };
