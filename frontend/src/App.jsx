@@ -77,6 +77,7 @@ const App = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+  
   useEffect(() => {
     setLoading(true);
 
@@ -85,13 +86,13 @@ const App = () => {
     }, 1000);
   }, []);
 
+  // Check if current path is a 404 page
   const is404Page = location.pathname === "/404" || location.pathname === "/not-found";
 
   if (loading) {
     return <LoaderAnimation />;
   }
 
-  // Render different layouts based on the current route
   return (
     <>
       {is404Page ? (
@@ -99,94 +100,94 @@ const App = () => {
         <Routes>
           <Route path="/404" element={<NotfoundPage />} />
           <Route path="/not-found" element={<NotfoundPage />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       ) : (
         // Regular page layout with header and footer
         <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
+          <Header />
 
-        <Routes>
-     
-          <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/roster" element={<Roster />} />
-          <Route exact path="/roster-details" element={<RosterDetails />} />
-          <Route path="/signinProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignInProfessional />} />
-          <Route path="/signupProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignUpProfessional />} />
-          <Route path="/signupLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignUpLocal />} />
-          <Route path="/signinLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignInLocal />} />
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/roster" element={<Roster />} />
+            <Route exact path="/roster-details" element={<RosterDetails />} />
+            <Route path="/signinProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignInProfessional />} />
+            <Route path="/signupProfessional" element={(Cookies.get("email")) || (Cookies.get("phoneNumber")) ? navigate("/") : <SignUpProfessional />} />
+            <Route path="/signupLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignUpLocal />} />
+            <Route path="/signinLocal" element={(Cookies.get("phoneNumber")) || (Cookies.get("email")) ? navigate("/") : <SignInLocal />} />
 
-          <Route
-            path="/profile/individual/complete/:id"
-            element={<ProfileForm />}
-          />
-          <Route
-            path="/profile/enterprise/complete/:id"
-            element={<ProfileEnterprisePage />}
-          />
-          <Route
-            path="/profile/npo/complete/:id"
-            element={<ProfileEnterprisePage />}
-          />
-          <Route path="/profile/type/:id" element={<TypePage />} />
-          <Route path="/profile/update/:id" element={<UpdateProfile />} />
-          {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
+            <Route
+              path="/profile/individual/complete/:id"
+              element={<ProfileForm />}
+            />
+            <Route
+              path="/profile/enterprise/complete/:id"
+              element={<ProfileEnterprisePage />}
+            />
+            <Route
+              path="/profile/npo/complete/:id"
+              element={<ProfileEnterprisePage />}
+            />
+            <Route path="/profile/type/:id" element={<TypePage />} />
+            <Route path="/profile/update/:id" element={<UpdateProfile />} />
+            {/* <Route path="/ms73700841.txt" element={<Testing />} /> */}
 
-          <Route path="/solution" element={<WhatWeDo />} />
-          <Route path="/global-products" element={<Products />} />
+            <Route path="/solution" element={<WhatWeDo />} />
+            <Route path="/global-products" element={<Products />} />
 
-          {/* <Route exact path="/blogs2" element={<BlogsPage />} /> */}
-          <Route path="/blog/:id" element={<SingleBlogDisplay />} />
-          <Route exact path="/about" element={<AboutPage />} />
-          <Route path="/about/what-we-offer" element={<WhatWeOfferPage />} />
-          <Route path="/about/story" element={<Story />} />
-          <Route path="/about/vision" element={<VisionPage />} />
-          <Route path="/about/values" element={<OurValuePage />} />
-          <Route path="/impact" element={<ImpactPage />} />
-          <Route path="/about/mission" element={<MissionPage />} />
-          {/* <Route path="/about/team" element={<TeamPage />} /> */}
-          <Route path="/about/partner-with-us" element={<PartnerWithUs />} />
-          <Route path="/where-we-work/africa" element={<Africa />} />
-          <Route path="/careers" element={<CareerPage />} />
-          <Route path="/newsletter" element={<NewsLetterPage />} />
-          <Route path="/request-demo" element={<DemoPage />} />
-          {/* <Route path="/services" element={<ServicesPage />} /> */}
-          <Route path="/donate" element={<DonorsPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/projects/eagle" element={<EagleProject />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about/partners" element={<PartnersPage />} />
-          <Route path="/terms-conditions" element={<TermsAndConditionPage />} />
-          <Route path="/policy" element={<PrivacyPolicyPage />} />
-          <Route path="/membership" element={<MembershipPage />} />
+            {/* <Route exact path="/blogs2" element={<BlogsPage />} /> */}
+            <Route path="/blog/:id" element={<SingleBlogDisplay />} />
+            <Route exact path="/about" element={<AboutPage />} />
+            <Route path="/about/what-we-offer" element={<WhatWeOfferPage />} />
+            <Route path="/about/story" element={<Story />} />
+            <Route path="/about/vision" element={<VisionPage />} />
+            <Route path="/about/values" element={<OurValuePage />} />
+            <Route path="/impact" element={<ImpactPage />} />
+            <Route path="/about/mission" element={<MissionPage />} />
+            {/* <Route path="/about/team" element={<TeamPage />} /> */}
+            <Route path="/about/partner-with-us" element={<PartnerWithUs />} />
+            <Route path="/where-we-work/africa" element={<Africa />} />
+            <Route path="/careers" element={<CareerPage />} />
+            <Route path="/newsletter" element={<NewsLetterPage />} />
+            <Route path="/request-demo" element={<DemoPage />} />
+            {/* <Route path="/services" element={<ServicesPage />} /> */}
+            <Route path="/donate" element={<DonorsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/eagle" element={<EagleProject />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about/partners" element={<PartnersPage />} />
+            <Route path="/terms-conditions" element={<TermsAndConditionPage />} />
+            <Route path="/policy" element={<PrivacyPolicyPage />} />
+            <Route path="/membership" element={<MembershipPage />} />
 
+            <Route path="/News" element={<News />} />
+            <Route path="/Events" element={<Events />} />
 
-          <Route path="/News" element={<News />} />
-          <Route path="/Events" element={<Events />} />
+            <Route
+              path="/management/wdc/worddisastercenter/admin"
+              element={<AdminPage />}
+            />
+            <Route path="/profile" element={<ProfilePage />} />
 
-          <Route
-            path="/management/wdc/worddisastercenter/admin"
-            element={<AdminPage />}
-          />
-          <Route path="/profile" element={<ProfilePage />} />
+            {/* Dynamic route for cases */}
+            <Route path="/cases/:caseName" element={<CaseDetail />} />
+            
+            <Route path="/News/:newsName" element={<NewsDetail />} />
+            <Route path="/global-products/:productName" element={<ProductDetail />} />
+            <Route path="/Events/:eventsName" element={<EventsDetail />} />
 
-          {/* Dynamic route for cases */}
-          <Route path="/cases/:caseName" element={<CaseDetail />} />
-          <Route path="*" element={<NotfoundPage />} />
-
-          <Route path="/News/:newsName" element={<NewsDetail />} />
-          <Route path="/global-products/:productName" element={<ProductDetail />} />
-          <Route path="/Events/:eventsName" element={<EventsDetail />} />
-
-          < Route path="/academy" element={<AcademyPage />} />
-          <Route path="/academy/training" element={<Training />} />
-          <Route path="/academy/training/individuals" element={<Individuals />} />
-          <Route path="/academy/training/organizations" element={<Organizations />} />
-          <Route path="/academy/training/in-person" element={<InPerson />} />
-          <Route path="/academy/training/moocs" element={<Moocs />} />
-          <Route path="/academy/training/webinars" element={<Webinars />} /> 
-          <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
-        <ToastContainer />
+            <Route path="/academy" element={<AcademyPage />} />
+            <Route path="/academy/training" element={<Training />} />
+            <Route path="/academy/training/individuals" element={<Individuals />} />
+            <Route path="/academy/training/organizations" element={<Organizations />} />
+            <Route path="/academy/training/in-person" element={<InPerson />} />
+            <Route path="/academy/training/moocs" element={<Moocs />} />
+            <Route path="/academy/training/webinars" element={<Webinars />} /> 
+            
+            {/* This catch-all route should be LAST */}
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
+          <ToastContainer />
           <NewFooter />
           <ButtonGradient />
           <CookieConsent />
