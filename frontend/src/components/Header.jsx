@@ -8,7 +8,6 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import MegaDropdown from "./dropdownItem";
 import SearchOverlay from "./SearchOverlay";
-
 const Header = () => {
   const location = useLocation();
   const [activeDropdown, setActiveDropdown] = useState(null);
