@@ -58,6 +58,8 @@ app.use(helmet());
 mongoose.connect(process.env.MONGODB_URI as string, { dbName: "RoasterDB" })
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err: any) => console.error("❌ MongoDB connection error:", err));
+  console.log("→ MONGODB_URI:", process.env.MONGODB_URI);
+
 
 // Routes
 app.use("/api/local", localAuthRoutes);
